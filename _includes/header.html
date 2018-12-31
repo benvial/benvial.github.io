@@ -1,0 +1,31 @@
+
+
+<!-- header top section -->
+<section class="banner" role="banner">
+  <header id="header">
+    <div class="header-content clearfix"> 
+      <a class="logo" href="index.html"><img src="{{ "/images/logo.png"  | prepend: site.baseurl | prepend: site.url }}" alt=""></a>
+      <nav class="navigation" role="navigation">
+        <ul class="primary-nav">
+          {% assign pages = site.pages | sort:"weight" %}
+          <li><a href="{{ site.baseurl }}/">Home</a> </li>
+            {% for page in pages %} 
+              {% if page.url contains "projects/" %} 
+                {% if page.title %}
+                  <li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>  </li>
+                {% endif %}
+                {% else %} 
+                  {% if page.sublink == true %} 
+                  {% else %} 
+                    {% if page.title %}
+                      <li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a> </li>
+                    {% endif %} 
+                  {% endif %} 
+                {% endif %} 
+            {% endfor %}
+        </ul>
+      </nav>
+      <a href="#" class="nav-toggle">Menu<span></span></a> </div>
+  </header>
+</section>
+<!-- header content section -->

@@ -1,0 +1,26 @@
+---
+layout: page
+---
+
+
+  <div id="content" class="container">
+      <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+
+			{{ content | markdownify }}
+
+              <hr>
+
+              <!-- <ul class="pager"> -->
+                  {% if page.previous.url %}
+                  <a class="previous" href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">&laquo; Previous</a>
+      
+                  {% endif %}
+                  {% if page.next.url %}
+                  <a class="next" href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">Next &raquo;</a>
+                  {% endif %}
+              <!-- </ul> -->
+
+          </div>
+      </div>
+  </div>

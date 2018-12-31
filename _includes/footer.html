@@ -1,0 +1,54 @@
+
+  
+  <!-- footer section -->
+  <footer class="footer">
+    <div class="container">
+      <div class="col-md-6 left">
+        <ul class="icons">
+          {% if site.github_username %}
+          <li><a href="https://github.com/{{ site.github_username }}" class="icon fa fa-github">
+                  <!-- <span class="label">Github</span> -->
+                </a></li>
+          {% endif %} 
+          {% if site.arxiv_username %}
+          <li><a href="https://arxiv.org/search/physics?searchtype=author&query={{ site.arxiv_username }}" 
+            class="icon ai ai-arxiv">
+              <!-- <span class="label">arXiv</span> -->
+            </a></li>
+          {% endif %}
+          {% if site.google_scholar_username %}
+          <li><a href="https://scholar.google.co.uk/citations?user={{ site.google_scholar_username }}"
+             class="icon ai ai-google-scholar">
+               <!-- <span class="label">Google Scholar</span> -->
+             </a></li>
+          {% endif %}
+           {% if site.researchgate_username %}
+           <li><a href="https://www.researchgate.net/profile/{{ site.researchgate_username }}"
+             class="icon ai ai-researchgate">
+               <!-- <span class="label">Researchgate</span> -->
+             </a></li>
+          {% endif %} 
+          {% if site.linkedin_username %}
+          <li><a href="https://www.linkedin.com/in/{{ site.linkedin_username }}"
+            class="icon fa fa-linkedin">
+              <!-- <span class="label">Linkedin</span> -->
+            </a></li>
+         {% endif %} 
+          <!-- {% if site.facebook_username %}
+          <li><a href="https://www.facebook.com/{{ site.facebook_username }}"
+            class="icon fa fa-facebook">
+              <span class="label">Facebook</span></a></li>
+          {% endif %}  -->
+        </ul>
+      </div>
+      <div class="col-md-6 right">
+      <p>  &copy; 2018 {{ site.owner }}. Design by <a href="http://www.designstub.com/">Designstub</a>.<br>
+        <!-- <p>© 2015 All rights reserved. All Rights Reserved<br> -->
+          
+      
+          
+          <!-- Made with <i class="fa fa-heart pulse"></i> by <a href="http://www.designstub.com/">Designstub</a></p> -->
+      </div>
+    </div>
+  </footer>
+  <!-- footer section --> 
