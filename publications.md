@@ -5,405 +5,94 @@ description: ""
 header-img: ""
 weight: 3
 ---
-### Articles in international peer-rewied journals 
-
+### Articles in international peer-rewied journals
 
 <ul class="biblio">
-
-<li> 
-B. Vial and Y. Hao, <em>A coupling model for quasi-normal modes of photonic resonators.</em>  J. Opt. 18, 115004, 2016.
-<span class="biblinks">
-<a href="http://dx.doi.org/10.1088/2040-8978/18/11/115004">
-<i class="fa fa-link"></i> DOI
-</a> | 
-<a href="https://benjaminvialblog.files.wordpress.com/2016/10/jopt_18_11_115004.pdf">
-<i class="fa fa-download"></i> download
-</a>
-</span>
-</li>
-
-<li> 
-B. Vial and Y. Hao, <em>Topology optimized all-dielectric cloak: design, performances and modal picture of the invisibility effect.</em> Opt. Express 23, 23551-23560, 2015.
-<span class="biblinks">
-<a href="http://dx.doi.org/10.1364/OE.23.023551">
-<i class="fa fa-link"></i> DOI
-</a> | 
-<a href="https://benjaminvialblog.files.wordpress.com/2016/01/oe-23-18-23551.pdf">
-<i class="fa fa-download"></i> download
-</a>
-</span>
-</li>
- 
-<li> 
-M. Commandré, B. Vial, S.Tisserand, L. Roux, H. Dallaporta, F. Bedu, G. Demésy, A. Nicolet and F. Zolla. <em>Design, fabrication and characterization of resonant metamaterial filters for infrared multispectral imaging.</em> Thin Solid Films, Vol. 592, Part B,  pp. 296-304, Oct 2015. 
-<span class="biblinks">
-<a href="http://dx.doi.org/10.1016/j.tsf.2015.04.026" >
-<i class="fa fa-link"></i> DOI
-</a> | 
-<a href= "https://benjaminvialblog.files.wordpress.com/2016/01/thin_solid_films_aaa.pdf">
-<i class="fa fa-download"></i> download
-</a>
-</span>
-</li>
-
-
-<li> 
-M. Abbarchi, M. Naffouti, B. Vial, A. Benkouider, L. Lermusiaux, L. Favre, A. Ronda, S. Bidault, I. Berbezier and N. Bonod. <em>Wafer Scale Formation of Monocrystalline Silicon-Based Mie Resonators via Silicon-on-Insulator Dewetting.</em> ACS Nano 8.11 pp. 11181–11190, Nov. 2014.
-<span class="biblinks">
-<a href= "http://dx.doi.org/10.1021/nn505632b" >
-<i class="fa fa-link"></i> DOI
-</a> | 
-<a href="https://benjaminvialblog.files.wordpress.com/2016/01/acs_nano_mie.pdf" >
-<i class="fa fa-download"></i> download
-</a>
-</span>
-</li>
-
-
-
-<li> 
-V. Debierre, G. Demésy, T. Durt, A. Nicolet, B. Vial, and F. Zolla. <em>Absorption in quantum electrodynamics cavities in terms of a quantum jump operator.</em>  Phys. Rev. A 90, p. 033806, Sept. 2014.
-<span class="biblinks">
-<a href= "http://dx.doi.org/10.1103/PhysRevA.90.033806">
-<i class="fa fa-link"></i> DOI
-</a> | 
-<a href= "http://arxiv.org/abs/1301.4404">
-<i class="ai ai-arxiv"></i> arXiv
-</a>
-</span>
-</li>
-
-<li> 
-B. Vial, F. Bedu, H. Dallaporta, M. Commandré, G. Demésy, A. Nicolet, F. Zolla, S. Tisserand, and L. Roux. <em>Transmission enhancement through square coaxial apertures arrays in metallic film: when leaky modes filter infrared light.</em> Opt. Lett. 39.16, pp. 4723–4726, Aug. 2014. 
-<span class="biblinks">
-<a href= "http://dx.doi.org/10.1364/OL.39.004723">
-<i class="fa fa-link"></i> DOI
-</a> | 
-<a href="http://arxiv.org/abs/1403.3379">
-<i class="ai ai-arxiv"></i> arXiv
-</a> | 
-<a href="https://benjaminvialblog.files.wordpress.com/2016/01/ol-39-16-4723-3.pdf">
-<i class="fa fa-download"></i> download
-</a>
-</span>
-</li>
-
-
-<li> 
-B. Vial, G. Demésy, F. Zolla, A. Nicolet, M. Commandré, C. Hecquet, T. Begou, S. Tisserand, S. Gautier, and V. Sauget. <em>Resonant metamaterial absorbers for infrared spectral filtering: quasimodal analysis, design, fabrication and characterization.</em>  J. Opt. Soc. Am. B 31.6, pp. 1339–1346, June 2014.
-<span class="biblinks">
-<a href= "http://dx.doi.org/10.1364/JOSAB.31.001339">
-<i class="fa fa-link"></i> DOI
-</a> | 
-<a href="http://arxiv.org/abs/1402.0387">
-<i class="ai ai-arxiv"></i> arXiv
-</a> | 
-<a href="https://benjaminvialblog.files.wordpress.com/2016/01/josab-31-6-1339-4.pdf">
-<i class="fa fa-download"></i> download
-</a>
-</span>
-</li>
-
-
-<li> 
-B. Vial, A. Nicolet, F. Zolla, and M. Commandré. <em>Quasimodal expansion of electromagnetic fields in open two-dimensionnal structures.</em> Phys. Rev. A 89, p. 023829, Feb. 2014.
-<span class="biblinks">
-<a href= "http://dx.doi.org/10.1103/PhysRevA.89.023829">
-<i class="fa fa-link"></i> DOI
-</a> | 
-<a href="https://arxiv.org/abs/1311.3244">
-<i class="ai ai-arxiv"></i> arXiv
-</a> | 
-<a href="https://benjaminvialblog.files.wordpress.com/2016/01/pra_qmem.pdf">
-<i class="fa fa-download"></i> download
-</a>
-</span>
-</li>
-
-<li> 
-B. Vial, F. Zolla, A. Nicolet, M. Commandré, and S. Tisserand. <em>Adaptive perfectly matched layer for Wood's anomalies in diffraction gratings.</em> Opt. Express, 20(27), p.28094-28105, Dec. 2012.
-<span class="biblinks">
-<a href= "http://dx.doi.org/10.1364/OE.20.028094">
-<i class="fa fa-link"></i> DOI
-</a> | 
-<a href="https://arxiv.org/abs/1506.06254">
-<i class="ai ai-arxiv"></i> arXiv
-</a> | 
-<a href="https://benjaminvialblog.files.wordpress.com/2016/01/oe_adaptivepml.pdf">
-<i class="fa fa-download"></i> download
-</a>
-</span>
-</li>
+		<li  >Y. Liu, B. Vial, S. Horsley, T. Philbin, and Y. Hao, <em  >Direct manipulation of wave amplitude and phase through inverse design of isotropic media</em>. New J. Phys.&nbsp;19&nbsp;(7):073010, (2017)<span class="biblinks" > <a href="https://doi.org/10.1088/1367-2630/aa6c0c" ><i class="fa fa-link" > </i> DOI</a> | <a href="https://doi.org/10.1088/1367-2630/aa6c0c" ><i class="fa fa-download" > </i> URL</a></span></li>
+<li  >R. Foster, D. Nagarkoti, J. Gao, B. Vial, F. Nicholls, C. Spooner, S. Haq, and Y. Hao, <em  >Beam-Steering Performance of Flat Luneburg Lens at 60 GHz for Future Wireless Communications</em>. International Journal of Antennas and Propagation&nbsp;2017:1-8, (2017)<span class="biblinks" > <a href="https://doi.org/10.1155/2017/7932434" ><i class="fa fa-link" > </i> DOI</a> | <a href="https://doi.org/10.1155/2017/7932434" ><i class="fa fa-download" > </i> URL</a></span></li>
+<li  >B. Vial, M. Torrico, and Y. Hao, <em  >Optimized microwave illusion device</em>. Sci Rep&nbsp;7&nbsp;(1):3929, (2017)<span class="biblinks" > <a href="https://doi.org/10.1038/s41598-017-04410-4" ><i class="fa fa-link" > </i> DOI</a> | <a href="https://doi.org/10.1038/s41598-017-04410-4" ><i class="fa fa-download" > </i> URL</a></span></li>
+<li  >B. Vial, Y. Liu, S. Horsley, T. Philbin, and Y. Hao, <em  >A class of invisible inhomogeneous media and the control of electromagnetic waves</em>. Phys. Rev. B&nbsp;94&nbsp;(24):245119, (2016)<span class="biblinks" > <a href="https://doi.org/10.1103/physrevb.94.245119" ><i class="fa fa-link" > </i> DOI</a> | <a href="https://doi.org/10.1103/physrevb.94.245119" ><i class="fa fa-download" > </i> URL</a></span></li>
+<li  >B. Vial, and Y. Hao, <em  >A coupling model for quasi-normal modes of photonic resonators</em>. J. Opt.&nbsp;18&nbsp;(11):115004, (2016)<span class="biblinks" > <a href="https://doi.org/10.1088/2040-8978/18/11/115004" ><i class="fa fa-link" > </i> DOI</a> | <a href="https://doi.org/10.1088/2040-8978/18/11/115004" ><i class="fa fa-download" > </i> URL</a></span></li>
+<li  >B. Vial, and Y. Hao, <em  >Topology optimized all-dielectric cloak: Design, performances and modal picture of the invisibility effect</em>. Opt. Express&nbsp;23&nbsp;(18):23551, (2015)<span class="biblinks" > <a href="https://doi.org/10.1364/oe.23.023551" ><i class="fa fa-link" > </i> DOI</a> | <a href="https://doi.org/10.1364/oe.23.023551" ><i class="fa fa-download" > </i> URL</a></span></li>
+<li  >M. Commandr<span class="bibtex-protected">é</span>, B. Vial, S. Tisserand, L. Roux, H. Dallaporta, F. Bedu, G. Dem<span class="bibtex-protected">é</span>sy, A. Nicolet, and F. Zolla, <em  >Design, fabrication and characterization of resonant metamaterial filters for infrared multispectral imaging</em>. Thin Solid Films, (2015)<span class="biblinks" > <a href="https://doi.org/10.1016/j.tsf.2015.04.026" ><i class="fa fa-link" > </i> DOI</a> | <a href="https://doi.org/10.1016/j.tsf.2015.04.026" ><i class="fa fa-download" > </i> URL</a></span></li>
+<li  >M. Abbarchi, M. Naffouti, B. Vial, A. Benkouider, L. Lermusiaux, L. Favre, A. Ronda, S. Bidault, I. Berbezier, and N. Bonod, <em  >Wafer Scale Formation of Monocrystalline Silicon-Based Mie Resonators via Silicon-on-Insulator Dewetting</em>. ACS Nano&nbsp;8&nbsp;(11):11181-11190, (2014)<span class="biblinks" > <a href="https://doi.org/10.1021/nn505632b" ><i class="fa fa-link" > </i> DOI</a> | <a href="https://doi.org/10.1021/nn505632b" ><i class="fa fa-download" > </i> URL</a></span></li>
+<li  >B. Vial, M. Commandré, G. Demésy, A. Nicolet, F. Zolla, F. Bedu, H. Dallaporta, S. Tisserand, and L. Roux, <em  >Transmission enhancement through square coaxial aperture arrays in metallic film: When leaky modes filter infrared light for multispectral imaging</em>. Opt. Lett.&nbsp;39&nbsp;(16):4723, (2014)<span class="biblinks" > <a href="https://doi.org/10.1364/ol.39.004723" ><i class="fa fa-link" > </i> DOI</a> | <a href="https://doi.org/10.1364/ol.39.004723" ><i class="fa fa-download" > </i> URL</a></span></li>
+<li  >B. Vial, F. Zolla, A. Nicolet, and M. Commandré, <em  >Quasimodal expansion of electromagnetic fields in open two-dimensional structures</em>. Phys. Rev. A&nbsp;89&nbsp;(2):023829, (2014)<span class="biblinks" > <a href="https://doi.org/10.1103/physreva.89.023829" ><i class="fa fa-link" > </i> DOI</a> | <a href="https://doi.org/10.1103/physreva.89.023829" ><i class="fa fa-download" > </i> URL</a></span></li>
+<li  >B. Vial, G. Demésy, F. Zolla, A. Nicolet, M. Commandré, C. Hecquet, T. Begou, S. Tisserand, S. Gautier, and V. Sauget, <em  >Resonant metamaterial absorbers for infrared spectral filtering: Quasimodal analysis, design, fabrication, and characterization</em>. J. Opt. Soc. Am. B&nbsp;31&nbsp;(6):1339, (2014)<span class="biblinks" > <a href="https://doi.org/10.1364/josab.31.001339" ><i class="fa fa-link" > </i> DOI</a> | <a href="https://doi.org/10.1364/josab.31.001339" ><i class="fa fa-download" > </i> URL</a></span></li>
+<li  >V. Debierre, G. Demésy, T. Durt, A. Nicolet, B. Vial, and F. Zolla, <em  >Absorption in quantum electrodynamic cavities in terms of a quantum jump operator</em>. Phys. Rev. A&nbsp;90&nbsp;(3):033806, (2014)<span class="biblinks" > <a href="https://doi.org/10.1103/physreva.90.033806" ><i class="fa fa-link" > </i> DOI</a> | <a href="https://doi.org/10.1103/physreva.90.033806" ><i class="fa fa-download" > </i> URL</a></span></li>
+<li  >B. Vial, F. Zolla, A. Nicolet, M. Commandré, and S. Tisserand, <em  >Adaptive perfectly matched layer for Wood's anomalies in diffraction gratings</em>. Opt. Express&nbsp;20&nbsp;(27):28094, (2012)<span class="biblinks" > <a href="https://doi.org/10.1364/oe.20.028094" ><i class="fa fa-link" > </i> DOI</a> | <a href="https://doi.org/10.1364/oe.20.028094" ><i class="fa fa-download" > </i> URL</a></span></li>
 </ul>
 
 <hr />
 
-<h3>Contribution to book chapter</h3>
+### Contribution to a book chapter
 
 <ul class="biblio">
-<li> 
-G. Demésy, A. Nicolet, F. Zolla and B. Vial. <em>Chapter "Finite element method" in Gratings: Theory and Numeric Applications, second edition.</em> Edited by E. Popov, AMU (PUP), ISBN 2-85399-943-4, 2014.
-<span class="biblinks">
-<a href= "http://www.fresnel.fr/files/gratings/Second-Edition/index.htm">
-<i class="fa fa-home"></i> website
-</a> | 
-<a href="http://www.fresnel.fr/files/gratings/Second-Edition/GratingsTheoryandNumericApplicationsSecondEdition.pdf">
-<i class="fa fa-download"></i> download
-</a>
-</span>
-</li>
+		<li  >T. Antonakakis, F. Baida, A. Belkhir, K. Cherednichenko, S. Cooper, R. Craster, G. Dem<span class="bibtex-protected">é</span>sy, J. Desanto, G. Granet, B. Gralak, S. Guenneau, D. Maystre, A. Nicolet, B. Stout, F. Zolla, B. Vial, and E. Popov, <em  >\href http://www.fresnel.fr/numerical-grating-bookGratings: Theory and Numeric Applications</em>. edited by E. Popov, ISBN: 430, (2012)<span class="biblinks" >  <a href="http://hal.archives-ouvertes.fr/hal-00785737" ><i class="fa fa-download" > </i> URL</a></span></li>
 </ul>
 
 <hr />
 
-<h3>Proceedings of international peer-reviewed conferences</h3>
+### Proceedings of international peer-reviewed conferences
 
 <ul class="biblio">
-<li> 
-A. Nicolet, G. Demesy, F. Zolla and B. Vial. <em>Quasi-modal analysis of segmented waveguides.</em> In Conference on Antenna Measurements & Applications (CAMA), IEEE, 2014. 
-<span class="biblinks">
-<a href= "https://benjaminvialblog.files.wordpress.com/2016/01/2014_ieee_cama_nicolet_.pdf">
-<i class="fa fa-download"></i> download
-</a>
-</span>
-</li>
-
-
-<li> 
-B. Vial, G. Demésy, F. Zolla and A. Nicolet. <em>3D FEM Quasimodal Analysis of the Haroche QED Cavity.</em> In Nineteenth COMPUMAG Conference on the Computation of Electromagnetic Fields, Budapest, Hungary, Jun. 2013. Poster session.  
-<span class="biblinks">
-<a  href="https://benjaminvialblog.files.wordpress.com/2016/01/compumag2013_paper.pdf">
-<i class="fa fa-download"></i> paper </a> | 
- <a href="https://benjaminvialblog.files.wordpress.com/2016/01/compumag2013_poster.pdf">
-<i class="fa fa-download"></i> poster
-</a>
-</span>
-</li>
-
-
-<li> 
-A. Nicolet, F. Zolla, Benjamin Vial, G. Demésy, and M. Commandré. <em>Perfectly matched layers via transformation electromagnetism for the computation of quasi-modes.</em> In International Conference on Electromagnetics in Advanced Applications (ICEAA), Cape Town, South Africa, Sept. 2012. Contributed talk.
-<span class="biblinks">
-<a  href="http://dx.doi.org/10.1109/ICEAA.2012.6328596">
-<i class="fa fa-link"></i> DOI </a> | 
- <a href="https://benjaminvialblog.files.wordpress.com/2016/01/2012_perfectly-matched-layers-via-transformation-electromagnetism-for-the-computation-of-quasi-modes.pdf">
-<i class="fa fa-download"></i> download
-</a>
-</span>
-</li>
-
-<li> 
-B. Vial, A. Nicolet, F. Zolla, G. Demésy, M. Commandré, and S. Tisserand. <em>Transformation optics PML and quasi-mode analysis: Application to diffraction gratings.</em> In TaCoNa-Photonics, vol. 1475, pp. 89-91, Bad Honnef, Germany, 2012. AIP. Contributed talk. 
-<span class="biblinks">
-<a  href="http://dx.doi.org/10.1063/1.4750105">
-<i class="fa fa-link"></i> DOI </a> | 
- <a href="https://benjaminvialblog.files.wordpress.com/2016/01/tacona2012_pmlquasimodes.pdf">
-<i class="fa fa-download"></i> download
-</a>
-</span>
-</li>
-
-
-
-<li> 
-B. Vial, M. Commandré, F. Zolla, A. Nicolet, and S. Tisserand. <em>Resonances determination in microstructured films embedded in multilayered stacks.</em> In Proc. SPIE 8168 : Advances in Optical Thin Films IV, Marseille, France, Oct. 2011. Poster session. 
-<span class="biblinks">
-<a  href="http://dx.doi.org/10.1117/12.897347">
-<i class="fa fa-link"></i> DOI </a> | 
- <a href="https://benjaminvialblog.files.wordpress.com/2016/01/papier_spie_compress.pdf">
-<i class="fa fa-download"></i> paper
-</a> | 
-<a href="https://benjaminvialblog.files.wordpress.com/2016/01/poster_spie.pdf">
-<i class="fa fa-download"></i> poster
-</a>
-</span>
-</li>
-
-
-
-<li> 
-B. Vial, M. Commandré, F. Zolla, A. Nicolet, and S. Tisserand. <em>Analysis of diffraction gratings via their resonances.</em> In TaCoNa-Photonics, vol. 1398, pp. 109-111, Bad Honnef, Germany, 2011. AIP. Contributed talk.
-<span class="biblinks">
-<a  href="http://dx.doi.org/10.1063/1.3644228">
-<i class="fa fa-link"></i> DOI </a> | 
- <a href="https://benjaminvialblog.files.wordpress.com/2016/01/tacona2011_fresnel_grat_reson.pdf">
-<i class="fa fa-download"></i> download
-</a>
-</span>
-</li>
-
-
-
+		<li  >B. Vial, and Y. Hao, <em  >Tailoring near and Far Electromagnetic Fields Through Optimization</em>. In 12th European Conference on Antennas and Propagation (EuCAP 2018), London, United Kingdom, (2018)<span class="biblinks" > <a href="https://doi.org/10.1049/cp.2018.0651" ><i class="fa fa-link" > </i> DOI</a> | <a href="https://doi.org/10.1049/cp.2018.0651" ><i class="fa fa-download" > </i> URL</a></span></li>
+<li  >B. Vial, Y. Liu, S. Horsley, T. Philbin, and Y. Hao, <em  >Scattering free graded index profiles and the control of electromagnetic fields</em>. In 2017 11th European Conference on Antennas and Propagation (EUCAP):361--363, Paris, France, (2017)<span class="biblinks" > <a href="https://doi.org/10.23919/eucap.2017.7928537" ><i class="fa fa-link" > </i> DOI</a> | <a href="https://doi.org/10.23919/eucap.2017.7928537" ><i class="fa fa-download" > </i> URL</a></span></li>
+<li  >B. Vial, G. Dem<span class="bibtex-protected">é</span>sy, F. Zolla, and A. Nicolet, <em  >3D FEM Quasimodal Analysis of the Haroche QED Cavity</em>. In <span class="bibtex-protected">Nineteenth COMPUMAG Conference on the Computation of Electromagnetic Fields</span>, Budapest, Hungary, (2013)<span class="biblinks" > </span></li>
+<li  >A. Nicolet, F. Zolla, B. Vial, G. Demesy, and M. Commandre, <em  >Perfectly matched layers via transformation electromagnetism for the computation of quasi-modes</em>. In 2012 International Conference on Electromagnetics in Advanced Applications, Cape Town, South Africa, Contributed talk, (2012)<span class="biblinks" > <a href="https://doi.org/10.1109/iceaa.2012.6328596" ><i class="fa fa-link" > </i> DOI</a> | <a href="https://doi.org/10.1109/iceaa.2012.6328596" ><i class="fa fa-download" > </i> URL</a></span></li>
+<li  >B. Vial, André Nicolet, Frédéric Zolla, G. Demésy, M. Commandré, and Stéphane Tisserand, <em  >Transformation optics PML and quasi-mode analysis: Application to diffraction gratings</em>. In TaCoNa-Photonics&nbsp;1475&nbsp;(1):89-91, Bad Honnef, Germany, Contributed talk, (2012)<span class="biblinks" > <a href="https://doi.org/10.1063/1.4750105" ><i class="fa fa-link" > </i> DOI</a> | <a href="https://doi.org/10.1063/1.4750105" ><i class="fa fa-download" > </i> URL</a></span></li>
+<li  >B. Vial, M. Commandré, F. Zolla, A. Nicolet, and S. Tisserand, <em  >Resonances determination in microstructured films embedded in multilayered stacks</em>. In Advances in Optical Thin Films IV, Marseille, France, Poster session, (2011)<span class="biblinks" > <a href="https://doi.org/10.1117/12.897347" ><i class="fa fa-link" > </i> DOI</a> | <a href="https://doi.org/10.1117/12.897347" ><i class="fa fa-download" > </i> URL</a></span></li>
+<li  >B. Vial, M. Commandré, Frédéric Zolla, André Nicolet, Stéphane Tisserand, and D. Chigrin, <em  >Analysis of diffraction gratings via their resonances</em>. In TaCoNa-Photonics&nbsp;1398&nbsp;(1):109-111, Bad Honnef, Germany, Contributed talk, (2011)<span class="biblinks" > <a href="https://doi.org/10.1063/1.3644228" ><i class="fa fa-link" > </i> DOI</a> | <a href="https://doi.org/10.1063/1.3644228" ><i class="fa fa-download" > </i> URL</a></span></li>
 </ul>
 
 <hr />
 
-
-
-<h3>International peer-reviewed conferences</h3>
-
-
+### International peer-reviewed conferences
 
 <ul class="biblio">
-
-<li> 
-B. Vial and Y. Hao,<em> A class of invisible graded index profiles and the control of electromagnetic waves,</em> In the 10th International Congress on Advanced Electromagnetic Materials in Microwaves and Optics, Chania, Sept. 2016. 
-<span class="biblinks">
-<a  href="https://benjaminvialblog.files.wordpress.com/2016/06/vial-metavi-20160320-023753-aclassofinvisiblegradedin.pdf">
-<i class="fa fa-download"></i> paper </a> | 
- <a href="https://benjaminvialblog.files.wordpress.com/2016/06/bvial_metamaterials_2016.pdf">
-<i class="fa fa-download"></i> slides
-</a>
-</span>
-</li>
-
-<li> 
-B. Vial and Y. Hao, <em>A mode coupling model for meta-molecules</em>, In the 9th International Congress on Advanced Electromagnetic Materials in Microwaves and Optics, Oxford, Sept. 2015
-<span class="biblinks">
-<a  href="https://benjaminvialblog.files.wordpress.com/2016/01/metamaterials_2015_bvial.pdf">
-<i class="fa fa-download"></i> paper </a> | 
- <a href="https://benjaminvialblog.files.wordpress.com/2016/01/poster_oxford2015.pdf">
-<i class="fa fa-download"></i> poster
-</a>
-</span>
-</li>
-
-<li> 
-B.Vial and Y. Hao, <em>Optimization of metamaterials for microwave devices</em>. In Progress In Electromagnetics Research Symposium, Prague, July 2015.
-<span class="biblinks">
-<a  href="https://benjaminvialblog.files.wordpress.com/2016/01/piers_abstract.pdf">
-<i class="fa fa-download"></i> paper </a> | 
- <a href="https://benjaminvialblog.files.wordpress.com/2016/01/benjamin_vial_piers2015.pdf">
-<i class="fa fa-download"></i> slides
-</a>
-</span>
-</li>
-
-<li> 
-B. Vial, A. Nicolet, F. Zolla and G. Demésy. <em>Exact PML and the numerical computation of quasi-modes in electromagnetic open structures.</em> In 2nd Radio and Antenna Days of the Indian Ocean (RADIO), Mauritius, Apr. 2014. Contributed talk.
-<span class="biblinks">
-
-</span>
-</li>
-
-
-<li> 
-B. Vial, M. Commandré, F. Zolla, A. Nicolet, G. Demésy, and S. Tisserand. <em>Analysis of diffraction gratings via their quasi-modes.</em> In XXII Symposium on Electromagnetic Phenomena in Nonlinear Circuits (EPNC), Pula, Croatia, Jun. 2012. Contributed talk.
-<span class="biblinks">
-<a  href="https://benjaminvialblog.files.wordpress.com/2016/01/presentation_epnc_2012.pdf">
-<i class="fa fa-download"></i> slides 
-</a>
-</span>
-</li>
-
-
-
-<li> 
-B. Vial, F. Zolla, A. Nicolet, M. Commandré, and S. Tisserand. <em>Engineering eigenmodes in open microstructured resonators for far infrared filtering applications.</em> In Workshop on Metallic Nano Objects, Saint-Étienne, France, Nov. 2012. Poster session.
-<span class="biblinks">
-<a  href="https://benjaminvialblog.files.wordpress.com/2016/01/poster_mno.pdf">
-<i class="fa fa-download"></i> psoter </a> 
-</span>
-</li>
-
-
+		<li  >F. Bedu, N. Bonod, M. Commandre, B. Demirdjian, C. Henry, A. Karapetyan, I. Ozerov, J. Proust, A. Ranguis, and B. Vial, <em  >Nanofabrication of optical structures (filters, resonators and sensors)</em>. In 4<span class="bibtex-protected">è</span>mes Journees Nationales sur les Technologies Emergentes en Micronanofabrication, Lyon, France, (2015)<span class="biblinks" > </span></li>
+<li  >B. Vial, A. Nicolet, F. Zolla, and G. Dem<span class="bibtex-protected">é</span>sy, <em  >Exact PML and the numerical computation of quasi-modes in electromagnetic open structures</em>. In 2nd Radio and Antenna Days of the Indian Ocean (RADIO), Mauritius, Contributed talk, (2014)<span class="biblinks" > </span></li>
+<li  >B. Vial, M. Commandr<span class="bibtex-protected">é</span>, F. Zolla, A. Nicolet, G. Dem<span class="bibtex-protected">é</span>sy, and S. Tisserand, <em  >Analysis of diffraction gratings via their quasi-modes</em>. In XXII Symposium on Electromagnetic Phenomena in Nonlinear Circuits (EPNC), Pula, Croatia, Contributed talk, (2012)<span class="biblinks" > </span></li>
+<li  >B. Vial, F. Zolla, A. Nicolet, M. Commandr<span class="bibtex-protected">é</span>, and S. Tisserand, <em  >Engineering eigenmodes in open microstructured resonators for far infrared filtering applications</em>. In Workshop on Metallic Nano Objects, Saint-Étienne, France, Poster session, (2012)<span class="biblinks" > </span></li>
 </ul>
 
 <hr />
 
-<h3>National conferences and seminars</h3>
-
+### National conferences and seminars
 
 <ul class="biblio">
-
-<li> 
-B.Vial and Y. Hao, <em>Topology optimization of metamaterials: application to microwave cloaking devices</em>, In Exeter Microwave Metamaterials Meeting, Exeter, Dec. 2015.
-<span class="biblinks">
-<a  href="https://benjaminvialblog.files.wordpress.com/2016/01/seminaire_lpn.pdf">
-<i class="fa fa-download"></i> slides
-</a>
-</span>
-</li>
-
-<li> 
-B. Vial, G. Demésy, F. Zolla, M. Commandré, and A. Nicolet. <em>Étude des modes à fuites dans les métamatériaux et application au filtrage multispectral dans l'infrarouge.</em> In Seminar, LPN, Marcoussis, France, November 2013. Talk.
-<span class="biblinks">
-<a  href="https://benjaminvialblog.files.wordpress.com/2016/01/seminaire_lpn.pdf">
-<i class="fa fa-download"></i> slides
-</a>
-</span>
-</li>
-
-<li> 
-F. Zolla, B. Vial, A. Nicolet, Brahim Guizal, and Didier Felbacq. <em>Comment tordre la lumière à sa guise grâce à des métamatériaux.</em> In Colloque National Métamatériaux, Orsay, France, October 2013. Contributed talk.
-<span class="biblinks">
-</span>
-</li>
-
-<li> 
-B. Vial, G. Demésy, F. Zolla, M. Commandré, and A. Nicolet.<em> Les modes à fuites en électromagnétisme : calcul, excitation et applications.</em> In Seminar POEMS team, ENSTA Paritech, Palaiseau, France, Oct. 2013. Talk.
-<span class="biblinks">
-</span>
-</li>
-
-
-<li> 
-B. Vial, G. Demésy, F. Zolla, M. Commandré, and A. Nicolet. <em>Analyse quasimodale de structures électromagnétiques périodiques et non-périodiques.</em> In Colloque National Métamatériaux, Orsay, France, Oct. 2013. Poster session. 
-<span class="biblinks">
-<a  href="https://benjaminvialblog.files.wordpress.com/2016/01/poster_cnm_2013.pdf">
-<i class="fa fa-download"></i> poster
-</a>
-</span>
-</li>
-
-<li> 
-B. Vial, A. Nicolet, F. Zolla, M. Commandré, and S. Tisserand. <em>Quasimodes in open electromagnetic systems.</em> In Scientific coffee, Institut Fresnel, Marseille, France, 2012. Talk.
-<span class="biblinks">
-<a  href="https://benjaminvialblog.files.wordpress.com/2016/01/cafe_scientifique.pdf">
-<i class="fa fa-download"></i> slides
-</a>
-</span>
-</li>
-
-<li> 
-B. Vial, F. Zolla, A. Nicolet, M. Commandré, and S. Tisserand.<em> Analyse spectrale de réseaux de diffraction par la méthode des éléments finis : décomposition modale du champ électromagnétique diffracté.</em> In NUMELEC, Marseille, France, Jul. 2012. Contributed talk.
-<span class="biblinks">
-<a  href="https://benjaminvialblog.files.wordpress.com/2016/01/abstract_numelec_2012.pdf">
-<i class="fa fa-download"></i> paper
-</a>
-</span>
-</li>
-
-<li> 
-
-B. Vial, A. Nicolet, F. Zolla, M. Commandré, and S. Tisserand. <em>Développement de filtres multi-spectraux dans l'infrarouge à base de structures plasmoniques.</em> In Colloque National Métamatériaux, Orsay, France, Mar. 2011. Poster session. 
-<span class="biblinks">
-<a  href="https://benjaminvialblog.files.wordpress.com/2016/01/poster_cnm_2011.pdf">
-<i class="fa fa-download"></i> poster
-</a>
-</span>
-</li>
-
+		<li  >B. Vial, G. Dem<span class="bibtex-protected">é</span>sy, F. Zolla, M. Commandr<span class="bibtex-protected">é</span>, and A. Nicolet, <em  >Étude des modes à fuites dans les métamatériaux et application au filtrage multispectral dans l'infrarouge</em>. In Seminar, LPN, Marcoussis, France, Contributed talk, (2013)<span class="biblinks" > </span></li>
+<li  >B. Vial, G. Dem<span class="bibtex-protected">é</span>sy, F. Zolla, M. Commandr<span class="bibtex-protected">é</span>, and A. Nicolet, <em  >Les modes à fuites en électromagnétisme : Calcul, excitation et applications</em>. In Seminar POEMS team, ENSTA Paritech, Palaiseau, France, Contributed talk, (2013)<span class="biblinks" > </span></li>
+<li  >B. Vial, G. Dem<span class="bibtex-protected">é</span>sy, F. Zolla, M. Commandr<span class="bibtex-protected">é</span>, and A. Nicolet, <em  >Analyse quasimodale de structures électromagnétiques périodiques et non-périodiques</em>. In Colloque National M<span class="bibtex-protected">é</span>tamat<span class="bibtex-protected">é</span>riaux, Orsay, France, Poster session, (2013)<span class="biblinks" > </span></li>
+<li  >F. Zolla, B. Vial, A. Nicolet, B. Guizal, and D. Felbacq, <em  >Comment tordre la lumière à sa guise grâce à des métamatériaux</em>. In Colloque National M<span class="bibtex-protected">é</span>tamat<span class="bibtex-protected">é</span>riaux, Orsay, France, Contributed talk, (2013)<span class="biblinks" > </span></li>
+<li  >B. Vial, F. Zolla, A. Nicolet, M. Commandr<span class="bibtex-protected">é</span>, and S. Tisserand, <em  >Analyse spectrale de réseaux de diffraction par la méthode des éléments finis : Décomposition modale du champ électromagnétique diffracté</em>. In NUMELEC, Marseille, France, Contributed talk, (2012)<span class="biblinks" > </span></li>
+<li  >B. Vial, A. Nicolet, F. Zolla, M. Commandr<span class="bibtex-protected">é</span>, and S. Tisserand, <em  >Quasimodes in open electromagnetic systems</em>. In Scientific coffee, Institut Fresnel, Marseille, France, (2012)<span class="biblinks" > </span></li>
+<li  >B. Vial, A. Nicolet, F. Zolla, M. Commandr<span class="bibtex-protected">é</span>, and S. Tisserand, <em  >Développement de filtres multi-spectraux dans l'infrarouge à base de structures plasmoniques</em>. In Colloque National M<span class="bibtex-protected">é</span>tamat<span class="bibtex-protected">é</span>riaux, Orsay, France, Poster session, (2011)<span class="biblinks" > </span></li>
 </ul>
 
 <hr />
 
-
-<h3>PhD thesis</h3>
-
+### PhD thesis
 
 <ul class="biblio">
-<li> 
-B. Vial. <em>Study of open electromagnetic resonators by modal approach. Application to infrared mustipectral filtering.</em> PhD thesis, École Centrale Marseille, Apr. 2013, In french.
-<span class="biblinks">
-<a  href="http://tel.archives-ouvertes.fr/docs/00/91/86/51/PDF/these_Benjamin_Vial.pdf">
-<i class="fa fa-link"></i> link </a> | 
- <a href="https://home/bench/Documents/site/html5up-spectral/downloads/PhD_BVIAL.pdf">
-<i class="fa fa-download"></i> dissertation</a> | 
- <a href="https://home/bench/Documents/site/html5up-spectral/downloads/soutenance_BVIAL.pdf">
-<i class="fa fa-download"></i> slides
-</a>
-</span>
-</li>
-
+		<li  >B. Vial, <em  >Study of open electromagnetic resonators by modal approach. Application to infrared multispectral filtering</em>. , <span class="bibtex-protected">Ecole Centrale Marseille</span>, (2013)<span class="biblinks" >  <a href="https://tel.archives-ouvertes.fr/tel-00918651" ><i class="fa fa-download" > </i> URL</a></span></li>
 </ul>
+
+<hr />
+
+### In preparation
+
+<ul class="biblio">
+		<li  >B. Vial, and Y. Hao, <em  >Homogenization of periodic and random ferroelectric-dielectric composites</em>. arXiv preprint arXiv:1810.03647, (2018)<span class="biblinks" >  <a href="https://arxiv.org/abs/1810.03647" ><i class="fa fa-download" > </i> URL</a></span></li>
+</ul>
+
+<hr />
+
+### Software and codes
+
+<ul class="biblio">
+		<li  >B. Vial, <em  >\textttpytheas : Python Electromagnetic Analysis and Simulation with the Finite Element Method</em>. github repository: https://github.com/benvial/pytheas, (2018)<span class="biblinks" >  <a href="https://benvial.github.io/pytheas" ><i class="fa fa-download" > </i> URL</a></span></li>
+</ul>
+
+<hr />
+

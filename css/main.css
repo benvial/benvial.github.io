@@ -305,6 +305,12 @@ ul li {
 .hero p {
 	padding-top: 20px;
 }
+
+.imagebox {
+	margin-top: 5%;
+		margin-bottom: 5%;
+}
+
 /* ------------------------------------------------------------------------------
 	 Portfolio
 -------------------------------------------------------------------------------*/
@@ -504,14 +510,32 @@ ul.biblio {
 	 Buttons
 -------------------------------------------------------------------------------*/
 
+
+
 .btn-group a {
-	align: center;
-	margin-top: 140px;
+	/* align: center; */
+	/* text-align: center; */
+	/* display:block; */
   color: white; /* White text */
-  padding: 10px 30px 10px 24px; /* Some padding */
-  cursor: pointer; /* Pointer/hand icon */
-  float: left; /* Float the buttons side by side */
+  padding: 10px 24px 10px 24px; /* Some padding */
+	margin-top: 20px;
+	margin-bottom: 0px;
+  /* float: left; /* Float the buttons side by side */ */
 }
+
+.btn-primary{
+	border-color:transparent;
+}
+
+.btn-group-lg > .btn, .btn-lg {
+    padding: 10px 16px;
+    font-size: 16px;
+    line-height: 1.3333333;
+    border-radius: 0px;
+}
+.btn-group-lg{
+margin-top:90px;}
+
 
 /* Clear floats (clearfix hack) */
 .btn-group:after {

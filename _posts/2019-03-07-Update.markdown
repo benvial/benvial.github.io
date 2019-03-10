@@ -1,0 +1,13 @@
+---
+layout:     post
+title:      Webpage update
+author:     Benjamin Vial
+tags: 		  website
+description:  	
+category:   news
+---
+
+I finally found some time to update this space, including research and 
+publication list.
+
+ 

@@ -4,7 +4,7 @@
 <section class="banner" role="banner">
   <header id="header">
     <div class="header-content clearfix"> 
-      <a class="logo" href="index.html"><img src="{{ "/images/logo.png"  | prepend: site.baseurl | prepend: site.url }}" alt=""></a>
+      <a class="logo" href="{{ site.baseurl }}/"><img src="{{ "/images/logo.png"  | prepend: site.baseurl | prepend: site.url }}" alt=""></a>
       <nav class="navigation" role="navigation">
         <ul class="primary-nav">
           {% assign pages = site.pages | sort:"weight" %}

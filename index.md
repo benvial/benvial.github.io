@@ -25,19 +25,37 @@ layout: home
         <!-- hero --> 
       </div>
     </div>
+
+
+
+
+</div>
+
+<!-- 
+<div class="row">
+  <div class="col-md-12 text-center">
+    <div class="btn-group btn-group-lg">
+    <a  type="button" href="{{ site.baseurl }}/research" class="btn btn-primary">Research</a>
+    <a  type="button" href="{{ site.baseurl }}/publications" class="btn btn-primary">Publications</a>
+    <a  type="button" href="{{ site.baseurl }}/about"  class="btn btn-primary">About me</a>
+    <a  type="button" href="{{ site.baseurl }}/contact"  class="btn btn-primary">Get in touch</a>
+    <a  type="button" href="{{ site.baseurl }}/projects/News"  class="btn btn-primary">Browse latest news</a>
+</div>
+</div>
+</div> -->
+
+<div class="row">
+  <div class="col-md-12 text-center">
+    <!-- <div class="btn-group btn-group-lg"> -->
+    <div class="btn-group btn-group-lg" role="group" aria-label="...">
+      <!-- <a  href="{{ site.baseurl }}/research" class="btn btn-group-lg btn-primary">Research</a> -->
+      <a  type="button" href="{{ site.baseurl }}/research" class="btn btn-primary">Research</a>
+      <a  type="button" href="{{ site.baseurl }}/publications" class="btn btn-primary">Publications</a>
+      <a  type="button" href="{{ site.baseurl }}/about"  class="btn btn-primary">About me</a>
+      <a  type="button" href="{{ site.baseurl }}/contact"  class="btn btn-primary">Get in touch</a>
+      <a  type="button" href="{{ site.baseurl }}/projects/News"  class="btn btn-primary">Browse latest news</a>
+   </div>
   </div>
-
-
-
-
-<div class="btn-group">
-    <a href="{{ site.baseurl }}/research" class="btn btn-default">Research</a>
-    <a href="{{ site.baseurl }}/publications" class="btn btn-default">Publications</a>
-    <a href="{{ site.baseurl }}/about"  class="btn btn-default">About me</a>
-    <a href="{{ site.baseurl }}/contact"  class="btn btn-default">Get in touch</a>
-    <a href="{{ site.baseurl }}/projects/News"  class="btn btn-default">Browse latest news</a>
-
-
 </div>
 
 </section>
