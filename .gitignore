@@ -73,3 +73,5 @@ gen_modules/
 auto_examples/
 .pytest_cache/
 .hypothesis/
+
+# ./publications.md

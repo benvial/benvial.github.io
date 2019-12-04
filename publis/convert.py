@@ -13,6 +13,10 @@ from pybtex.backends.html import Backend
 from pybtex.richtext import Tag, Text, Symbol, HRef
 from pybtex.database import BibliographyData
 
+sourcefile = "./publis.bib"
+betterbibfile = "./better/pubbetter.bib"
+os.system("betterbib {} {}".format(sourcefile, betterbibfile))
+
 
 class HtmlTag(Tag):
     def __init__(self, name, opt, *args):
@@ -122,7 +126,7 @@ class MyStyle(BaseStyle):
         ret = make_year(ret, context)
         ret = make_links(ret, context)
         return Tag("li", ret)
-        
+
     def format_phdthesis(self, entry):
         context = entry["entry"]
         ret = Text("")
@@ -133,7 +137,7 @@ class MyStyle(BaseStyle):
         ret = make_year(ret, context)
         ret = make_links(ret, context)
         return Tag("li", ret)
-        
+
     def format_misc(self, entry):
         context = entry["entry"]
         ret = Text("")
@@ -199,7 +203,7 @@ class HtmlBackend(Backend):
 
 style = MyStyle()
 back = HtmlBackend()
-bib_data = parse_file("./pubbetter.bib")
+bib_data = parse_file(betterbibfile)
 entries = bib_data.entries
 keys = entries.keys()
 
@@ -278,7 +282,6 @@ for t in ["prep", "software"]:
         contents.append(f.read())
 
 
-
 mdhead = """---
 layout: page
 title: "Publications"
@@ -300,13 +303,12 @@ titles = [
 ]
 
 
-filenames = ["out.html"]
-testfile = "../publications.md"
+mdfile = "../publications.md"
 try:
-    os.system("rm {}".format(testfile))
+    os.system("rm {}".format(mdfile))
 except OSError:
     pass
-with open(testfile, "w") as outfile:
+with open(mdfile, "w") as outfile:
     outfile.write(mdhead)
     for t, c in zip(titles, contents):
         outfile.write(t)
@@ -315,3 +317,6 @@ with open(testfile, "w") as outfile:
         outfile.write(c)
         outfile.write("\n")
         outfile.write("\n")
+
+
+os.system("rm {}".format("out.html"))

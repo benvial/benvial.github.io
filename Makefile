@@ -26,4 +26,8 @@ publis:
 	python convert.py;\
 
 
-save: publis gh
+save: clean publis gh
+
+
+clean:
+	rm -rf _site
