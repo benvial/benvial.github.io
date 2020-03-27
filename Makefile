@@ -25,9 +25,20 @@ publis:
 	cd ./publis;\
 	python convert.py;\
 
+nb:
+	rm -rf ./_posts/notebooks/
+	mkdir ./_posts/notebooks/
+	rm -rf ./downloads/notebooks
+	mkdir ./downloads/notebooks
+	cp ./_notebooks/*.ipynb ./downloads/notebooks/
+	cd ./_notebooks;\
+	./conv_all;\
 
-save: clean publis gh
+save: clean publis nb gh
 
 
 clean:
 	rm -rf _site
+
+
+# http://bvial.info/css/shared/notebook/custom.css

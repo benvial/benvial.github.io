@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+EXT=ipynb
+for i in *.${EXT}; do
+  echo $i
+    ./nbcv --file "$i" --bib ./tex/biblio.bib
+done

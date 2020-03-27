@@ -53,7 +53,7 @@ layout: home
       <a  type="button" href="{{ site.baseurl }}/publications" class="btn btn-primary">Publications</a>
       <a  type="button" href="{{ site.baseurl }}/about"  class="btn btn-primary">About me</a>
       <a  type="button" href="{{ site.baseurl }}/contact"  class="btn btn-primary">Get in touch</a>
-      <a  type="button" href="{{ site.baseurl }}/projects/News"  class="btn btn-primary">Browse latest news</a>
+      <a  type="button" href="{{ site.baseurl }}/blog"  class="btn btn-primary">Browse latest news</a>
    </div>
   </div>
 </div>

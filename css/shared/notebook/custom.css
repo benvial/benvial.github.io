@@ -2101,10 +2101,6 @@ div#preloader { position: fixed;
 }
 
 
-.rise-enabled .output_subarea {
-    font-size: 100%;
-}
-
 .celltoolbar {
     border:none}
 
@@ -2117,4 +2113,8 @@ div#preloader { position: fixed;
 
 .rise-enabled #notebook-container {
   width: 90% !important;
+}
+
+.rise-enabled .output_subarea {
+    font-size: 90%!important;
 }

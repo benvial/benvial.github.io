@@ -20,7 +20,7 @@ I then joined <a href="http://www.fresnel.fr/spip/?&lang=en" target="_blank">Fre
 
 I continued as a Postdoctoral Research Assistant at Fresnel Institute working on the development of simulation tools for ray tracing in complex media and the study of resonant antennas for the control of their emission properties.
 
-I then joined the <a href="http://antennas.eecs.qmul.ac.uk/" target="_blank">Antennas and Electromagnetics research group</a> at <a href="http://www.qmul.ac.uk/" target="_blank">Queen Mary, University of London</a> (London, UK) in July 2014, as part of the <a href="http://www.quest-spatial-transformation.org/" target="_blank">QUEST project</a>. My current work focuses on topology optimization techniques for the design of invisibility cloaks and novel metamaterial based devices with specific electromagnetic properties.
+I then joined the <a href="http://antennas.eecs.qmul.ac.uk/" target="_blank">Antennas and Electromagnetics research group</a> at <a href="http://www.qmul.ac.uk/" target="_blank">Queen Mary, University of London</a> (London, UK) in July 2014, as part of the <a href="http://quest.eecs.qmul.ac.uk/" target="_blank">QUEST project</a>. My current work focuses on topology optimization techniques for the design of invisibility cloaks and novel metamaterial based devices with specific electromagnetic properties.
 
 
 

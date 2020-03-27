@@ -319,4 +319,4 @@ with open(mdfile, "w") as outfile:
         outfile.write("\n")
 
 
-os.system("rm {}".format("out.html"))
+os.system(f"rm out.html")
