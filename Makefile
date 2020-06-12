@@ -27,9 +27,9 @@ publis:
 
 nb:
 	rm -rf ./_posts/notebooks/
-	mkdir ./_posts/notebooks/
+	mkdir -p ./_posts/notebooks/
 	rm -rf ./downloads/notebooks
-	mkdir ./downloads/notebooks
+	mkdir -p ./downloads/notebooks
 	cp ./_notebooks/*.ipynb ./downloads/notebooks/
 	cd ./_notebooks;\
 	./conv_all;\

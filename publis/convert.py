@@ -14,8 +14,9 @@ from pybtex.richtext import Tag, Text, Symbol, HRef
 from pybtex.database import BibliographyData
 
 sourcefile = "./publis.bib"
-betterbibfile = "./better/pubbetter.bib"
-os.system("betterbib {} {}".format(sourcefile, betterbibfile))
+# betterbibfile = "./better/pubbetter.bib"
+betterbibfile = sourcefile
+# os.system("betterbib {} {}".format(sourcefile, betterbibfile))
 
 
 class HtmlTag(Tag):
@@ -86,7 +87,7 @@ def make_links(ret, context):
         sep = Text(" | ")
     if "url" in context.fields:
         icon = HtmlTag("i", 'class="fa fa-download"', " ") + " URL"
-        links += sep + HtmlTag("a", 'href="{}"'.format(context.fields["url"]), icon)
+        links += sep + HtmlTag("a", 'href="{}" target="_blank"'.format(context.fields["url"]), icon)
     ret += HtmlTag("span", 'class="biblinks"', links)
     return ret
 
