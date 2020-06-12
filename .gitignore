@@ -73,5 +73,5 @@ gen_modules/
 auto_examples/
 .pytest_cache/
 .hypothesis/
-.jekyll-cache
+.jekyll-cache/
 # ./publications.md
