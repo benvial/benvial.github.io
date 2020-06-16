@@ -82,7 +82,7 @@ def make_links(ret, context):
     if "doi" in context.fields:
         icon = HtmlTag("i", 'class="fa fa-link"', " ") + " DOI"
         links += HtmlTag(
-            "a", 'href="https://doi.org/{}"'.format(context.fields["doi"]), icon
+            "a", 'href="https://doi.org/{}" target="_blank"'.format(context.fields["doi"]), icon
         )
         sep = Text(" | ")
     if "url" in context.fields:

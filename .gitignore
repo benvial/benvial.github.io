@@ -27,7 +27,6 @@ build/
 node_modules/
 develop-eggs/
 dist/
-downloads/
 eggs/
 .eggs/
 lib/
