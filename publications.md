@@ -29,7 +29,7 @@ weight: 3
 ### Contribution to a book chapter
 
 <ul class="biblio">
-		<li  >T. Antonakakis, F. Baida, A. Belkhir, K. Cherednichenko, S. Cooper, R. Craster, G. Dem<span class="bibtex-protected">é</span>sy, J. Desanto, G. Granet, B. Gralak, S. Guenneau, D. Maystre, A. Nicolet, B. Stout, F. Zolla, B. Vial, and E. Popov, <em  >\href http://www.fresnel.fr/numerical-grating-bookGratings: Theory and Numeric Applications</em>. edited by E. Popov, ISBN: 430, (2012)<span class="biblinks" >  <a href="http://hal.archives-ouvertes.fr/hal-00785737" target="_blank" ><i class="fa fa-download" > </i> URL</a></span></li>
+		<li  >T. Antonakakis, F. Baida, A. Belkhir, K. Cherednichenko, S. Cooper, R. Craster, G. Dem<span class="bibtex-protected">é</span>sy, J. Desanto, G. Granet, B. Gralak, S. Guenneau, D. Maystre, A. Nicolet, B. Stout, F. Zolla, B. Vial, and E. Popov, <em  >\href https://www.fresnel.fr/numerical-grating-bookGratings: Theory and Numeric Applications</em>. edited by E. Popov, ISBN: 430, (2012)<span class="biblinks" >  <a href="https://hal.archives-ouvertes.fr/hal-00785737" target="_blank" ><i class="fa fa-download" > </i> URL</a></span></li>
 </ul>
 
 <hr />

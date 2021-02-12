@@ -14,13 +14,13 @@ My research interests include metamaterials, Transformation Optics, homogenizati
 
 <h2>Biography</h2>
 
-I received the Master's degree in Engineering from <a href="https://www.centrale-marseille.fr/" target="_blank">Centrale Marseille</a> (Marseille, France) and the Master's degree in Physics from <a href="http://edu.univ-amu.fr/en" target="_blank">Aix Marseille University</a> (Marseille, France) in 2009.
+I received the Master's degree in Engineering from <a href="https://www.centrale-marseille.fr/" target="_blank">Centrale Marseille</a> (Marseille, France) and the Master's degree in Physics from <a href="https://edu.univ-amu.fr/en" target="_blank">Aix Marseille University</a> (Marseille, France) in 2009.
 
-I then joined <a href="http://www.fresnel.fr/spip/?&lang=en" target="_blank">Fresnel Institute</a>, CNRS (Marseille, France) where I pursued a PhD in collaboration with the company <a href="http://www.silios.com/" target="_blank">Silios Technologies</a> (Peynier, France). This joint project dealt with the theoretical, numerical and experimental study of electromagnetic metamaterials using a modal approach and their application to infrared multispectral filtering. I received my PhD for this work from Centrale Marseille in April 2013.
+I then joined <a href="https://www.fresnel.fr/spip/?&lang=en" target="_blank">Fresnel Institute</a>, CNRS (Marseille, France) where I pursued a PhD in collaboration with the company <a href="https://www.silios.com/" target="_blank">Silios Technologies</a> (Peynier, France). This joint project dealt with the theoretical, numerical and experimental study of electromagnetic metamaterials using a modal approach and their application to infrared multispectral filtering. I received my PhD for this work from Centrale Marseille in April 2013.
 
 I continued as a Postdoctoral Research Assistant at Fresnel Institute working on the development of simulation tools for ray tracing in complex media and the study of resonant antennas for the control of their emission properties.
 
-I then joined the <a href="http://antennas.eecs.qmul.ac.uk/" target="_blank">Antennas and Electromagnetics research group</a> at <a href="http://www.qmul.ac.uk/" target="_blank">Queen Mary, University of London</a> (London, UK) in July 2014, as part of the <a href="http://quest.eecs.qmul.ac.uk/" target="_blank">QUEST project</a>. My current work focuses on topology optimization techniques for the design of invisibility cloaks and novel metamaterial based devices with specific electromagnetic properties.
+I then joined the <a href="https://antennas.eecs.qmul.ac.uk/" target="_blank">Antennas and Electromagnetics research group</a> at <a href="https://www.qmul.ac.uk/" target="_blank">Queen Mary, University of London</a> (London, UK) in July 2014, as part of the <a href="https://quest.eecs.qmul.ac.uk/" target="_blank">QUEST project</a>. My current work focuses on topology optimization techniques for the design of invisibility cloaks and novel metamaterial based devices with specific electromagnetic properties.
 
 
 

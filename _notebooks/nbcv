@@ -33,7 +33,6 @@ args = parser.parse_args()
 
 static_path = "./"
 
-
 def clean_html_refs(html_file):
     string = """<h1>References</h1><bibliography-placeholder>"""
     clean_file = html_file.replace(string, "")
@@ -149,6 +148,8 @@ def main_convert(args):
                     "jupyter",
                     "nbconvert",
                     file_path,
+                    "--to",
+                    "html",
                     "--config",
                     config_path,
                 ],

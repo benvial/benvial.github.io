@@ -34,11 +34,10 @@ nb:
 	cd ./_notebooks;\
 	./conv_all;\
 
-save: clean publis nb gh
-
+save: clean publis gh
 
 clean:
 	rm -rf _site
 
 
-# http://bvial.info/css/shared/notebook/custom.css
+# https://bvial.info/css/shared/notebook/custom.css
