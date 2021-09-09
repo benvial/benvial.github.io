@@ -9,10 +9,3 @@ category:   news
 
 I finally found some time to update this space, including research and 
 publication list.
-
-
-```python
-
-import numpy as np
-
-```
