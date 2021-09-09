@@ -60,7 +60,7 @@ def add_ref(doc_name, bib_name, keep_label=False, slides=False):
     # find citations
     match = re.findall(r"\[@.*?\]", _file)
     references = []
-    print(match)
+    # print(match)
     for cit in match:
         tmp_cite_html = tempfile.NamedTemporaryFile(suffix=".html", delete=True)
         tmp = tempfile.NamedTemporaryFile(suffix=".md", delete=True)
@@ -70,8 +70,7 @@ def add_ref(doc_name, bib_name, keep_label=False, slides=False):
 
         pandoc_command = [
             "pandoc",
-            "--filter",
-            "pandoc-citeproc",
+            "-C",
             tmp.name,
             "--bibliography",
             bib_path,
@@ -91,7 +90,7 @@ def add_ref(doc_name, bib_name, keep_label=False, slides=False):
         with open(tmp_cite_html.name, "r") as cite_html:
             # Open the file for writing.
             cit_new = cite_html.read()
-            print(cit_new)
+            # print(cit_new)
             if not keep_label:
                 # remove first line
                 cit_new = "\n".join(cit_new.splitlines()[1:])
@@ -198,7 +197,7 @@ def make_post(args):
     name = "_".join(nb_name.split())
     tmod, tcreated = file_dates(args.file_name)
     md_filename = f"{tmod}-{name}.md"
-    print(md_filename)
+    # print(md_filename)
     os.system(f"touch {md_filename}")
     metadata = f"""---
 layout:     notebook

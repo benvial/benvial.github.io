@@ -23,7 +23,7 @@ weight: 2
             <h4>Invisibility cloak and illusion device</h4>
           </div>
         </div>
-          <img src="{{ "/images/research/cloak.png"  | prepend: site.baseurl | prepend: site.url }}" class="img-responsive" width="500" height="500" alt=""></a> </div>
+          <img src="{{ "/images/research/ill.jpg"  | prepend: site.baseurl | prepend: site.url }}" class="img-responsive" width="500" height="500" alt=""></a> </div>
           
           
       <div class="col-sm-6 portfolio-item"> 

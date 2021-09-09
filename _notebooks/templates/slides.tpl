@@ -1,5 +1,6 @@
 
-{%- extends 'basic.tpl' -%}
+{%- extends 'base.html.j2' -%}
+
 
 {%- block any_cell scoped -%}
 {%- if cell.metadata.get('slide_start', False) -%}

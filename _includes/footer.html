@@ -2,22 +2,18 @@
   
   <!-- footer section -->
 <footer class="footer">
-  <div class="col-md-6 left">
+  <div>
     <ul class="icons">
-      {% if site.github_username %}
-      <li><a href="https://github.com/{{ site.github_username }}"  target="_blank" class="icon fa fa-github">
-              <!-- <span class="label">Github</span> -->
-            </a></li>
-      {% endif %} 
-      {% if site.arxiv_username %}
-      <li><a href="https://arxiv.org/search/physics?searchtype=author&query={{ site.arxiv_username }}" 
-         target="_blank" class="icon ai ai-arxiv">
-          <!-- <span class="label">arXiv</span> -->
+      {% if site.linkedin_username %}
+      <li><a href="https://www.linkedin.com/in/{{ site.linkedin_username }}"
+       target="_blank"   class="icon fab fa-linkedin">
+          <!-- <span class="label">Linkedin</span> -->
         </a></li>
-      {% endif %}
+     {% endif %} 
       {% if site.google_scholar_username %}
+      <!-- <i class="ai ai-google-scholar-square ai-3x"></i> -->
       <li><a href="https://scholar.google.co.uk/citations?user={{ site.google_scholar_username }}"
-         target="_blank"  class="icon ai ai-google-scholar">
+         target="_blank"  class="icon ai ai-google-scholar-square">
            <!-- <span class="label">Google Scholar</span> -->
          </a></li>
       {% endif %}
@@ -27,24 +23,35 @@
            <!-- <span class="label">Researchgate</span> -->
          </a></li>
       {% endif %} 
-      {% if site.linkedin_username %}
-      <li><a href="https://www.linkedin.com/in/{{ site.linkedin_username }}"
-       target="_blank"   class="icon fa fa-linkedin">
-          <!-- <span class="label">Linkedin</span> -->
-        </a></li>
+     {% if site.arxiv_username %}
+     <li><a href="https://arxiv.org/search/physics?searchtype=author&query={{ site.arxiv_username }}" 
+        target="_blank" class="icon ai ai-arxiv">
+         <!-- <span class="label">arXiv</span> -->
+       </a></li>
+     {% endif %}
+     {% if site.github_username %}
+     <li><a href="https://github.com/{{ site.github_username }}"  target="_blank" class="icon fab fa-github">
+             <!-- <span class="label">Github</span> -->
+           </a></li>
      {% endif %} 
+     {% if site.gitlab_username %}
+     <li><a href="https://gitlab.com/{{ site.gitlab_username }}"  target="_blank" class="icon fab fa-gitlab">
+             <!-- <span class="label">Gitlab</span> -->
+           </a></li>
+     {% endif %} 
+
       <!-- {% if site.facebook_username %}
        <li><a href="https://www.facebook.com/{{ site.facebook_username }}"
          target="_blank" class="icon fa fa-facebook">
           <span class="label">Facebook</span></a></li>
        {% endif %}  -->
      </ul>
-   </div>
-   <div class="col-md-6 right">
+     </div>
+       <div class="copyright">
    &copy; 2018-{{ site.year }} {{ site.owner }}
    <!-- Design by <a href="https://www.designstub.com/">Designstub</a>. -->
-      
-  </div>
+   
+   </div>
 <script type="text/javascript" src="{{ "/js/foot.js" | prepend: site.baseurl | prepend: site.url }}"></script>
 </footer>
   <!-- footer section --> 

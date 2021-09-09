@@ -1,10 +1,12 @@
 ---
 layout: page
 title: "Contact"
-description: "Let's get in touch!"
+description: ""
 header-img: ""
-weight: 5
+weight: 6
 ---
+
+<!-- Let's get in touch! -->
 
 ### Benjamin Vial
 Postdoctoral Research Assistant  

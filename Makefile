@@ -38,6 +38,9 @@ save: clean publis gh
 
 clean:
 	rm -rf _site
+	
+cnbp:
+	rm -rf _posts/notebooks
 
-
-# https://bvial.info/css/shared/notebook/custom.css
+req:
+	gem install jekyll bundler

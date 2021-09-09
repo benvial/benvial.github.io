@@ -17,31 +17,31 @@ p {
 }
 
 h1 {
-  font-size: 65px;
+  font-size: 300%;
   color: #2d3033;
 }
 
 h2 {
-  font-size: 40px;
+  font-size: 250%;
   color: #2d3033;
 }
 
 h3 {
-  font-size: 28px;
+  font-size: 210%;
   color: #2d3033;
-  font-weight: 300;
+  /* font-weight: 300; */
 }
 
 h4 {
-  font-size: 22px;
+  font-size: 180%;
   color: #2d3033;
-  font-weight: 400;
+  /* font-weight: 400; */
 }
 
 h5 {
-  font-size: 14px;
+  font-size: 150%;
   color: #2d3033;
-  font-weight: 700;
+  /* font-weight: 700; */
 }
 
 .btn {
@@ -90,20 +90,21 @@ a:hover, a:focus {
 }
 
 body {
-  font-family: "Nanum Gothic Coding";
+  font-family: Iosevka;
   font-weight: 400;
-  color: #fff;
+  color: #2d3033;
 }
 
 ul, ol {
   margin: 0;
   padding: 0;
-	font-family: Roboto;
+	font-family: Urbanist;
+  font-size: 13pt;
 }
 
 /* ul li {
 	list-style: none;
-	font-family: Roboto;
+	font-family: Urbanist;
 } */
 .section {
   padding: 50px 0;
@@ -172,7 +173,7 @@ ul, ol {
 }
 
 .navigation li {
-  font-family: "Nanum Gothic Coding";
+  font-family: Iosevka;
   display: inline-block;
   list-style: none;
 }
@@ -441,8 +442,8 @@ ul, ol {
 }
 
 #portfolio p {
-  font-family: Roboto;
-  font-size: 12pt;
+  font-family: Urbanist;
+  font-size: 14pt;
 }
 
 #portfolio h1 {
@@ -494,9 +495,10 @@ ul, ol {
 	 Footer
 -------------------------------------------------------------------------------*/
 .footer {
-  text-align: left;
+  text-align: center;
   background-color: #333;
-  padding: 80px;
+  padding: 40px;
+    color: #fff;
 }
 
 .footer h4 {
@@ -529,12 +531,16 @@ ul, ol {
   margin-bottom: 0.7em;
 }
 
+
+
 .footer ul li {
-  list-style: none;
-  display: inline;
+    list-style: none;
+    display: inline;
+    padding: 0px 6px 0px 6px;
+    font-size: 200%;
 }
 
-.footer .fa:hover {
+.footer .fab:hover {
   color: #d05a65;
   text-decoration: none;
 }
@@ -542,6 +548,14 @@ ul, ol {
 .footer .ai:hover {
   color: #d05a65;
   text-decoration: none;
+}
+.footer .ai{
+font-size: 100%;
+}
+
+
+.copyright {
+  padding: 10px;
 }
 
 /* ------------------------------------------------------------------------------
@@ -565,14 +579,14 @@ ul.biblio {
   list-style-type: none;
   /* margin: 0; */
   /* padding: 0; */
-  /* font-size: 0.9em; */
-  font-family: Roboto;
+  font-size: initial;
+  font-family: Urbanist;
 }
 
 .biblinks {
   display: block;
   margin-bottom: 0.4em;
-  font-family: "Nanum Gothic Coding";
+  font-family: Iosevka;
 }
 
 .biblinks, .biblinks a {
@@ -645,13 +659,13 @@ ul.biblio {
 }
 
 .sectionContent {
-  font-family: Roboto;
-  font-size: 12pt;
+  font-family: Urbanist;
+  font-size: 14pt;
   color: #2d3033;
 }
 
 .sectionContent h3 {
-  font-family: "Nanum Gothic Coding";
+  font-family: Iosevka; 
   margin-top: 2em;
   margin-bottom: 7em;
 }
@@ -704,7 +718,18 @@ ul.biblio {
 .content {
   min-height: calc(100vh - 150px);
 }
-
+/* 
 .footer {
   height: 50px;
+} */
+
+
+.MathJax_Display {
+    font-size: 125%;
+  }
+
+
+.previous, .next{
+  padding: 8px;
+  color:#8c8c8c;
 }

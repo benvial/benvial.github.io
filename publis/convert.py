@@ -270,7 +270,7 @@ for k in keys:
 entries = bib.entries
 keys = entries.keys()
 
-for t in ["prep", "software"]:
+for t in ["code","prep"]:
     bib = BibliographyData()
     for k in keys:
         kw = entries[k].fields["type"]
@@ -299,8 +299,8 @@ titles = [
     "### International peer-reviewed conferences",
     "### National conferences and seminars",
     "### PhD thesis",
-    "### In preparation",
     "### Software and codes",
+    "### In preparation",
 ]
 
 

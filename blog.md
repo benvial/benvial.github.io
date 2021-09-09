@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Blog
-weight: 6
+weight: 7
 ---
 <!-- <h2>Latest Posts</h2> -->
 
