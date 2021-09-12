@@ -113,7 +113,10 @@ def add_ref(doc_name, bib_name, keep_label=False, slides=False):
             with open(doc_name, "w") as f:
                 f.write(_file)
     if not slides:
-        _file = _file.replace("<bibliography-placeholder>", "\n".join(references))
+        if references == []:
+            _file=clean_html_refs(_file)
+        else:
+            _file = _file.replace("<bibliography-placeholder>", "\n".join(references))
         with open(doc_name, "w") as f:
             f.write(_file)
     return

@@ -10,7 +10,6 @@ weight: 4
 
 I created and maintain several Python packages helpful for my research.
 
-
 --------------------
 
 ### gyptis
@@ -56,3 +55,13 @@ Documentation and examples can be found on the website [tdsxtract.github.io/tdsx
 
 
 <img src="https://tdsxtract.github.io/tdsxtract/_images/sphx_glr_plot_tds_001.png" width="50%"/>
+
+
+
+
+
+--------------------
+
+
+##### Github contributions
+<img src="http://ghchart.rshah.org/d05a65/benvial" alt="benvial's Github chart" />

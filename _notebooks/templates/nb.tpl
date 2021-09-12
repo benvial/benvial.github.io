@@ -102,7 +102,7 @@
       <div>
         <form action="javascript:code_toggle()">
           <input type="submit" id="toggleButton" value="Show Code"></form>
-            </div>
+        </div>
 
       {{ super() }}
 

@@ -44,27 +44,7 @@ h5 {
   /* font-weight: 700; */
 }
 
-.btn {
-  background-color: #333;
-  margin: 20px;
-  color: #fff;
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  border-radius: 0px;
-  padding: 20px;
-  display: inline-block;
-  text-transform: uppercase;
-}
 
-.btn:hover, .btn:focus {
-  background-color: #000;
-  color: #fff;
-}
-
-.btn-large {
-  padding: 15px 40px;
-}
 
 /* ------------------------------------------------------------------------------
 	Global Styles
@@ -603,18 +583,49 @@ ul.biblio {
 /* ------------------------------------------------------------------------------
 	 Buttons
 -------------------------------------------------------------------------------*/
+
+
+.btn{
+    background-color: #333;
+    margin: 20px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 0px;
+    padding: 16px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-family: Iosevka;
+    border-color: transparent;
+}
+
+.btn:hover {
+  color: #fff;
+  background-color: #d05a65;
+}
+
+
+.btn.btn-primary:hover {
+    background-color: #d05a65;
+}
+
+.btn-primary.focus, .btn-primary:focus {
+    color: #fff;
+    background-color: #333;
+    border-color: transparent;
+}
+
+.btn-large {
+  padding: 15px 40px;
+}
+
+
 .btn-group a {
-  /* align: center; */
-  /* text-align: center; */
-  /* display:block; */
   color: white;
-  /* White text */
   padding: 10px 24px 10px 24px;
-  /* Some padding */
   margin-top: 20px;
   margin-bottom: 0px;
-  /* float: left; /* Float the buttons side by side */
-  */
 }
 
 .btn-primary {
@@ -674,6 +685,8 @@ ul.biblio {
   font-size: 1.1em;
   margin-top: 20px;
   margin-bottom: 2px;
+  font-weight: bolder;
+  font-family: Iosevka;
 }
 
 .sectionContent h5 {
@@ -732,4 +745,59 @@ ul.biblio {
 .previous, .next{
   padding: 8px;
   color:#8c8c8c;
+}
+
+
+#return-to-top {
+  position: fixed;
+  bottom: 8%;
+  right: 2%;
+  background: #d05a65;
+  width: 40px;
+  height: 40px;
+  display: block;
+  text-decoration: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  display: none;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+#return-to-top i {
+  color: #fff;
+  margin: 0;
+  position: relative;
+  left: 12px !important;
+  top: 9px !important;
+  left: 16px;
+  top: 13px;
+  font-size: 19px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+#return-to-top:hover {
+  background: #d76671;
+}
+#return-to-top:hover i {
+  color: #fff;
+  top: 5px;
+}
+
+
+
+
+#portfolio li {
+  list-style-type: none;
+}
+
+#portfolio h3 {
+    font-family: Iosevka
 }

@@ -18,6 +18,10 @@ sourcefile = "./publis.bib"
 betterbibfile = sourcefile
 # os.system("betterbib {} {}".format(sourcefile, betterbibfile))
 
+try:
+    BUILD_STATS = bool(int(sys.argv[1]))
+except:
+    BUILD_STATS = False
 
 class HtmlTag(Tag):
     def __init__(self, name, opt, *args):
@@ -88,13 +92,21 @@ def make_links(ret, context):
     if "url" in context.fields:
         icon = HtmlTag("i", 'class="fa fa-download"', " ") + " URL"
         links += sep + HtmlTag("a", 'href="{}" target="_blank"'.format(context.fields["url"]), icon)
+    
+    if BUILD_STATS:
+        
+        if "doi" in context.fields:
+            doi = context.fields['doi']
+            if doi != "":
+                links += HtmlTag("span", f'class="__dimensions_badge_embed__" data-doi="{doi}" data-hide-zero-citations="false" data-style="large_rectangle"', " ")
+
     ret += HtmlTag("span", 'class="biblinks"', links)
     return ret
 
 
 def make_year(ret, context):
     if "year" in context.fields:
-        ret = ret + ", (" + context.fields["year"] + ")"
+        ret += ", (" + context.fields["year"] + ")"
     return ret
 
 

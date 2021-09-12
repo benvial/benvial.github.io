@@ -31,26 +31,12 @@ layout: home
 
 </div>
 
-<!-- 
 <div class="row">
   <div class="col-md-12 text-center">
-    <div class="btn-group btn-group-lg">
-    <a  type="button" href="{{ site.baseurl }}/research" class="btn btn-primary">Research</a>
-    <a  type="button" href="{{ site.baseurl }}/publications" class="btn btn-primary">Publications</a>
-    <a  type="button" href="{{ site.baseurl }}/about"  class="btn btn-primary">About me</a>
-    <a  type="button" href="{{ site.baseurl }}/contact"  class="btn btn-primary">Get in touch</a>
-    <a  type="button" href="{{ site.baseurl }}/projects/News"  class="btn btn-primary">Browse latest news</a>
-</div>
-</div>
-</div> -->
-
-<div class="row">
-  <div class="col-md-12 text-center">
-    <!-- <div class="btn-group btn-group-lg"> -->
     <div class="btn-group btn-group-lg" role="group" aria-label="...">
-      <!-- <a  href="{{ site.baseurl }}/research" class="btn btn-group-lg btn-primary">Research</a> -->
       <a  type="button" href="{{ site.baseurl }}/research" class="btn btn-primary">Research</a>
       <a  type="button" href="{{ site.baseurl }}/publications" class="btn btn-primary">Publications</a>
+      <a  type="button" href="{{ site.baseurl }}/code"  class="btn btn-primary">Code</a>
       <a  type="button" href="{{ site.baseurl }}/about"  class="btn btn-primary">About me</a>
       <a  type="button" href="{{ site.baseurl }}/contact"  class="btn btn-primary">Get in touch</a>
       <a  type="button" href="{{ site.baseurl }}/blog"  class="btn btn-primary">Browse latest news</a>

@@ -23,7 +23,7 @@ jekyll:
 	
 publis:
 	cd ./publis;\
-	python convert.py;\
+	python convert.py 1;\
 
 nb:
 	rm -rf ./_posts/notebooks/
