@@ -5,6 +5,7 @@
 
 
 import os
+import sys
 
 from pybtex.style.formatting import BaseStyle
 from pybtex.database import parse_file
@@ -20,8 +21,11 @@ betterbibfile = sourcefile
 
 try:
     BUILD_STATS = bool(int(sys.argv[1]))
+    print(int(sys.argv[1]))
 except:
     BUILD_STATS = False
+    
+print(BUILD_STATS)
 
 class HtmlTag(Tag):
     def __init__(self, name, opt, *args):
