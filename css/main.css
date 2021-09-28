@@ -9,22 +9,6 @@
 /* ------------------------------------------------------------------------------
 	Typography
 -------------------------------------------------------------------------------*/
-/* 
-@font-face {
-   font-family: 'Iosevka';
-   font-style: normal;
-   font-weight: 400;
-   src: url("{{ "/fonts/woff2/iosevka-ss05-regular.woff2" | prepend: site.baseurl | prepend: site.url }}") format("woff2"), url("{{ "/fonts/ttf/iosevka-ss05-regular.ttf" | prepend: site.baseurl | prepend: site.url }}") format("truetype");
- }
-
- @font-face {
-   font-family: 'Iosevka';
-   font-style: normal;
-   font-weight: 700;
-   src: url("{{ "/fonts/woff2/iosevka-ss05-bold.woff2" | prepend: site.baseurl | prepend: site.url }}") format("woff2");
- } */
-
-
 
 
 p {
