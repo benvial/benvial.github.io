@@ -21,11 +21,9 @@ betterbibfile = sourcefile
 
 try:
     BUILD_STATS = bool(int(sys.argv[1]))
-    print(int(sys.argv[1]))
 except:
     BUILD_STATS = False
     
-print(BUILD_STATS)
 
 class HtmlTag(Tag):
     def __init__(self, name, opt, *args):
@@ -96,9 +94,9 @@ def make_links(ret, context):
     if "url" in context.fields:
         icon = HtmlTag("i", 'class="fa fa-download"', " ") + " URL"
         links += sep + HtmlTag("a", 'href="{}" target="_blank"'.format(context.fields["url"]), icon)
-    
+
     if BUILD_STATS:
-        
+
         if "doi" in context.fields:
             doi = context.fields['doi']
             if doi != "":

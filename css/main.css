@@ -9,6 +9,24 @@
 /* ------------------------------------------------------------------------------
 	Typography
 -------------------------------------------------------------------------------*/
+/* 
+@font-face {
+   font-family: 'Iosevka';
+   font-style: normal;
+   font-weight: 400;
+   src: url("{{ "/fonts/woff2/iosevka-ss05-regular.woff2" | prepend: site.baseurl | prepend: site.url }}") format("woff2"), url("{{ "/fonts/ttf/iosevka-ss05-regular.ttf" | prepend: site.baseurl | prepend: site.url }}") format("truetype");
+ }
+
+ @font-face {
+   font-family: 'Iosevka';
+   font-style: normal;
+   font-weight: 700;
+   src: url("{{ "/fonts/woff2/iosevka-ss05-bold.woff2" | prepend: site.baseurl | prepend: site.url }}") format("woff2");
+ } */
+
+
+
+
 p {
   font-size: 14px;
   line-height: 22.4px;
@@ -658,7 +676,7 @@ ul.biblio {
 
 /* .wrapper {
 	margin-top: 30px;
-	display: flex; 
+	display: flex;
 	justify-content: space-between;
 } */
 /* ------------------------------------------------------------------------------
@@ -676,7 +694,7 @@ ul.biblio {
 }
 
 .sectionContent h3 {
-  font-family: Iosevka; 
+  font-family: Iosevka;
   margin-top: 2em;
   margin-bottom: 7em;
 }
@@ -731,7 +749,7 @@ ul.biblio {
 .content {
   min-height: calc(100vh - 150px);
 }
-/* 
+/*
 .footer {
   height: 50px;
 } */
