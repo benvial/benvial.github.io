@@ -18,7 +18,7 @@ gh:
 
 
 jekyll:
-	jekyll serve
+	bundle exec jekyll serve
 	
 	
 publis:

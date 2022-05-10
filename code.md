@@ -12,9 +12,10 @@ I created and maintain several Python packages helpful for my research.
 
 --------------------
 
+
 ### gyptis
 
-<a class="reference external image-reference" href="https://gitlab.com/gyptis/gyptis/-/releases" target="_blank"><img alt="Release" src="https://img.shields.io/badge/dynamic/json.svg?label=release&amp;url=https://gitlab.com/gyptis/gyptis/-/jobs/artifacts/master/file/badges.json?job=badge&amp;query=release_tag&amp;color=d25f5f&amp;labelColor=dedede&amp;style=for-the-badge&amp;logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcKICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIgogICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIgogICB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgeG1sbnM6c29kaXBvZGk9Imh0dHA6Ly9zb2RpcG9kaS5zb3VyY2Vmb3JnZS5uZXQvRFREL3NvZGlwb2RpLTAuZHRkIgogICB4bWxuczppbmtzY2FwZT0iaHR0cDovL3d3dy5pbmtzY2FwZS5vcmcvbmFtZXNwYWNlcy9pbmtzY2FwZSIKICAgd2lkdGg9IjQwbW0iCiAgIGhlaWdodD0iNDBtbSIKICAgdmlld0JveD0iMCAwIDQwIDQwIgogICB2ZXJzaW9uPSIxLjEiCiAgIGlkPSJzdmc4IgogICBpbmtzY2FwZTp2ZXJzaW9uPSIxLjAuMiAoZTg2Yzg3MDg3OSwgMjAyMS0wMS0xNSwgY3VzdG9tKSIKICAgc29kaXBvZGk6ZG9jbmFtZT0iZ3lwdGlzLnN2ZyIKICAgaW5rc2NhcGU6ZXhwb3J0LWZpbGVuYW1lPSIvaG9tZS9iZW5jaC9kZXYvZ3lwdGlzL2d5cHRpcy9kb2NzL19hc3NldHMvZ3lwdGlzLnBuZyIKICAgaW5rc2NhcGU6ZXhwb3J0LXhkcGk9IjYwMCIKICAgaW5rc2NhcGU6ZXhwb3J0LXlkcGk9IjYwMCI+CiAgPGRlZnMKICAgICBpZD0iZGVmczIiIC8+CiAgPHNvZGlwb2RpOm5hbWVkdmlldwogICAgIGlkPSJiYXNlIgogICAgIHBhZ2Vjb2xvcj0iI2ZmZmZmZiIKICAgICBib3JkZXJjb2xvcj0iIzY2NjY2NiIKICAgICBib3JkZXJvcGFjaXR5PSIxLjAiCiAgICAgaW5rc2NhcGU6cGFnZW9wYWNpdHk9IjAuMCIKICAgICBpbmtzY2FwZTpwYWdlc2hhZG93PSIyIgogICAgIGlua3NjYXBlOnpvb209IjQuMDQ1MDY3MSIKICAgICBpbmtzY2FwZTpjeD0iNDkuODM1Nzc4IgogICAgIGlua3NjYXBlOmN5PSI5OS4yMjIzNDIiCiAgICAgaW5rc2NhcGU6ZG9jdW1lbnQtdW5pdHM9Im1tIgogICAgIGlua3NjYXBlOmN1cnJlbnQtbGF5ZXI9ImxheWVyMSIKICAgICBpbmtzY2FwZTpkb2N1bWVudC1yb3RhdGlvbj0iMCIKICAgICBzaG93Z3JpZD0iZmFsc2UiCiAgICAgaW5rc2NhcGU6d2luZG93LXdpZHRoPSIxOTIwIgogICAgIGlua3NjYXBlOndpbmRvdy1oZWlnaHQ9IjEwODAiCiAgICAgaW5rc2NhcGU6d2luZG93LXg9IjAiCiAgICAgaW5rc2NhcGU6d2luZG93LXk9IjAiCiAgICAgaW5rc2NhcGU6d2luZG93LW1heGltaXplZD0iMSIgLz4KICA8bWV0YWRhdGEKICAgICBpZD0ibWV0YWRhdGE1Ij4KICAgIDxyZGY6UkRGPgogICAgICA8Y2M6V29yawogICAgICAgICByZGY6YWJvdXQ9IiI+CiAgICAgICAgPGRjOmZvcm1hdD5pbWFnZS9zdmcreG1sPC9kYzpmb3JtYXQ+CiAgICAgICAgPGRjOnR5cGUKICAgICAgICAgICByZGY6cmVzb3VyY2U9Imh0dHA6Ly9wdXJsLm9yZy9kYy9kY21pdHlwZS9TdGlsbEltYWdlIiAvPgogICAgICAgIDxkYzp0aXRsZT48L2RjOnRpdGxlPgogICAgICA8L2NjOldvcms+CiAgICA8L3JkZjpSREY+CiAgPC9tZXRhZGF0YT4KICA8ZwogICAgIGlua3NjYXBlOmxhYmVsPSJMYXllciAxIgogICAgIGlua3NjYXBlOmdyb3VwbW9kZT0ibGF5ZXIiCiAgICAgaWQ9ImxheWVyMSIKICAgICB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNDMuNTgwMjg1LC0zNC40ODU1MDgpIj4KICAgIDxwYXRoCiAgICAgICBpZD0icmVjdDg1NCIKICAgICAgIHN0eWxlPSJmaWxsOiNkMzVmNWY7ZmlsbC1vcGFjaXR5OjAuOTk2MDc4O3N0cm9rZTojOWIzNjAwO3N0cm9rZS13aWR0aDowIgogICAgICAgZD0iTSA3NS41ODk4NDQsMCA0NS4zNTM1MTYsMzAuMjM2MzI4IFYgMTIwLjk0NTMxIEwgNzUuNTg5ODQ0LDE1MS4xODE2NCAxNTEuMTgxNjQsNzUuNTg5ODQ0IDEyOC41MDU4Niw1Mi45MTQwNjIgSCA5MC43MDcwMzEgViA2OC4wMzEyNSBIIDEwNS44MjYxNyBWIDgzLjE0ODQzOCBIIDkwLjcwNzAzMSA3NS41ODk4NDQgViA2OC4wMzEyNSA1Mi45MTQwNjIgMzcuNzk0OTIyIEggOTAuNzA3MDMxIDExMy4zODY3MiBaIE0gMzAuMjM2MzI4LDQ1LjM1MzUxNiAwLDc1LjU4OTg0NCAzMC4yMzYzMjgsMTA1LjgyNjE3IFoiCiAgICAgICB0cmFuc2Zvcm09Im1hdHJpeCgwLjI2NDU4MzMzLDAsMCwwLjI2NDU4MzMzLDQzLjU4MDI4NSwzNC40ODU1MDgpIiAvPgogIDwvZz4KPC9zdmc+Cg=="></a>
+<a class="reference external image-reference" href="https://gitlab.com/gyptis/gyptis/-/releases" target="_blank"><img alt="Release" src="https://img.shields.io/endpoint?url=https://gitlab.com/gyptis/gyptis/-/jobs/artifacts/master/file/logobadge.json?job=badge"></a>
 
 *Computational Photonics in Python with the finite element method.*
 
@@ -24,12 +25,13 @@ Documentation and examples can be found on the website [gyptis.gitlab.io](https:
 " width="70%"/>
 
 
+
 --------------------
 
 ### nannos
 
 
-<a class="reference external image-reference" href="https://gitlab.com/nannos/nannos/-/releases" target="_blank"><img alt="Release" src="https://img.shields.io/badge/dynamic/json.svg?label=release&amp;url=https://gitlab.com/nannos/nannos/-/jobs/artifacts/master/file/badges.json?job=badge&amp;query=release_tag&amp;color=1672a7&amp;labelColor=dedede&amp;style=for-the-badge&amp;logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcKICAgd2lkdGg9IjQwbW0iCiAgIGhlaWdodD0iNDBtbSIKICAgdmlld0JveD0iMCAwIDQwIDQwIgogICB2ZXJzaW9uPSIxLjEiCiAgIGlkPSJzdmc4IgogICBpbmtzY2FwZTp2ZXJzaW9uPSIxLjEgKGM0ZThmOWVkNzQsIDIwMjEtMDUtMjQpIgogICBzb2RpcG9kaTpkb2NuYW1lPSJuYW5uLnN2ZyIKICAgaW5rc2NhcGU6ZXhwb3J0LWZpbGVuYW1lPSIvaG9tZS9iZW5jaC9kZXYvbmFubi9kb2MvYXNzZXRzL25hbm4ucG5nIgogICBpbmtzY2FwZTpleHBvcnQteGRwaT0iNjAwIgogICBpbmtzY2FwZTpleHBvcnQteWRwaT0iNjAwIgogICB4bWxuczppbmtzY2FwZT0iaHR0cDovL3d3dy5pbmtzY2FwZS5vcmcvbmFtZXNwYWNlcy9pbmtzY2FwZSIKICAgeG1sbnM6c29kaXBvZGk9Imh0dHA6Ly9zb2RpcG9kaS5zb3VyY2Vmb3JnZS5uZXQvRFREL3NvZGlwb2RpLTAuZHRkIgogICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyIKICAgeG1sbnM6Y2M9Imh0dHA6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL25zIyIKICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIj4KICA8ZGVmcwogICAgIGlkPSJkZWZzMiIgLz4KICA8c29kaXBvZGk6bmFtZWR2aWV3CiAgICAgaWQ9ImJhc2UiCiAgICAgcGFnZWNvbG9yPSIjZmZmZmZmIgogICAgIGJvcmRlcmNvbG9yPSIjNjY2NjY2IgogICAgIGJvcmRlcm9wYWNpdHk9IjEuMCIKICAgICBpbmtzY2FwZTpwYWdlb3BhY2l0eT0iMC4wIgogICAgIGlua3NjYXBlOnBhZ2VzaGFkb3c9IjIiCiAgICAgaW5rc2NhcGU6em9vbT0iNC4wNDUwNjcxIgogICAgIGlua3NjYXBlOmN4PSI0OS45MzczNjciCiAgICAgaW5rc2NhcGU6Y3k9Ijk5LjEzMzA5IgogICAgIGlua3NjYXBlOmRvY3VtZW50LXVuaXRzPSJtbSIKICAgICBpbmtzY2FwZTpjdXJyZW50LWxheWVyPSJsYXllcjEiCiAgICAgaW5rc2NhcGU6ZG9jdW1lbnQtcm90YXRpb249IjAiCiAgICAgc2hvd2dyaWQ9ImZhbHNlIgogICAgIGlua3NjYXBlOndpbmRvdy13aWR0aD0iMTkyMCIKICAgICBpbmtzY2FwZTp3aW5kb3ctaGVpZ2h0PSIxMDgwIgogICAgIGlua3NjYXBlOndpbmRvdy14PSIwIgogICAgIGlua3NjYXBlOndpbmRvdy15PSIwIgogICAgIGlua3NjYXBlOndpbmRvdy1tYXhpbWl6ZWQ9IjEiCiAgICAgaW5rc2NhcGU6cGFnZWNoZWNrZXJib2FyZD0iMCIgLz4KICA8bWV0YWRhdGEKICAgICBpZD0ibWV0YWRhdGE1Ij4KICAgIDxyZGY6UkRGPgogICAgICA8Y2M6V29yawogICAgICAgICByZGY6YWJvdXQ9IiI+CiAgICAgICAgPGRjOmZvcm1hdD5pbWFnZS9zdmcreG1sPC9kYzpmb3JtYXQ+CiAgICAgICAgPGRjOnR5cGUKICAgICAgICAgICByZGY6cmVzb3VyY2U9Imh0dHA6Ly9wdXJsLm9yZy9kYy9kY21pdHlwZS9TdGlsbEltYWdlIiAvPgogICAgICAgIDxkYzp0aXRsZSAvPgogICAgICA8L2NjOldvcms+CiAgICA8L3JkZjpSREY+CiAgPC9tZXRhZGF0YT4KICA8ZwogICAgIGlua3NjYXBlOmxhYmVsPSJMYXllciAxIgogICAgIGlua3NjYXBlOmdyb3VwbW9kZT0ibGF5ZXIiCiAgICAgaWQ9ImxheWVyMSIKICAgICB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNDMuNTgwMjg1LC0zNC40ODU1MDgpIj4KICAgIDxwYXRoCiAgICAgICBpZD0icmVjdDkzNCIKICAgICAgIHN0eWxlPSJmaWxsOiMxNjcyYTc7c3Ryb2tlOiM5YjM2MDA7c3Ryb2tlLXdpZHRoOjA7ZmlsbC1vcGFjaXR5OjEiCiAgICAgICBkPSJNIDYzLjY4MjQxNywzNi4yMDYyNDMgNTIuNDg5MzAyLDQ3LjM5OTM1OCB2IDE3LjU1MzQ1MSBsIDUuNzY0NTA2LDUuNzY0NTA2IHYgLTE5LjU3NTU1IGggMTAuNzU3OTk5IHYgMTkuNjc0NzY5IGwgNS42NzIwMDUsLTUuNjcyMDA1IHYgLTE3LjkzNjg5IHogbSAxNS4wMDI3MDIsMTUuMDAyNzAyIHYgOS45MzQyNzcgbCA0Ljk2NzEzNywtNC45NjcxMzkgeiBtIC0zMC4xOTcxMjMsMC4xOTE3MTkgLTQuNzc1NDE5LDQuNzc1NDE5IDQuNzc1NDE5LDQuNzc1NDIgeiIgLz4KICA8L2c+Cjwvc3ZnPgo="></a>
+<a class="reference external image-reference" href="https://gitlab.com/nannos/nannos/-/releases" target="_blank"><img alt="Release" src="https://img.shields.io/endpoint?url=https://gitlab.com/nannos/nannos/-/jobs/artifacts/master/file/logobadge.json?job=badge"></a>
 
 
 
@@ -41,6 +43,77 @@ Documentation and examples can be found on the website [nannos.gitlab.io](https:
 
 
 <img src="https://nannos.gitlab.io/_images/landing.png" width="50%"/>
+
+--------------------
+
+### protis
+
+<a class="reference external image-reference" href="https://gitlab.com/protis/protis/-/releases" target="_blank"><img alt="Release" src="https://img.shields.io/endpoint?url=https://gitlab.com/protis/protis/-/jobs/artifacts/main/file/logobadge.json?job=badge"></a>
+
+
+
+*Plane wave expansion method for photonic crystals with automatic differentiation.*
+
+Documentation and examples can be found on the website [protis.gitlab.io](https://protis.gitlab.io)
+
+
+
+
+<img src="https://protis.gitlab.io/_images/landing.png" width="50%"/>
+
+
+
+--------------------
+
+### refidx
+
+<a class="reference external image-reference" href="https://gitlab.com/benvial/refidx/-/releases" target="_blank"><img alt="Release" src="https://img.shields.io/endpoint?url=https://gitlab.com/benvial/refidx/-/jobs/artifacts/main/file/logobadge.json?job=badge&labelColor=8f8f8f"></a>
+
+
+
+*Python package to retrieve the refractive index of material from  the [refractiveindex.info database](https://refractiveindex.info).*
+
+Documentation and examples can be found on the website [benvial.gitlab.io/refidx](https://benvial.gitlab.io/refidx)
+
+
+
+<img src="https://benvial.gitlab.io/refidx/_images/sphx_glr_plot_index_001.png" width="50%"/>
+
+--------------------
+
+### coaxtract
+
+<a class="reference external image-reference" href="https://gitlab.com/benvial/coaxtract/-/releases" target="_blank"><img alt="Release" src="https://img.shields.io/endpoint?url=https://gitlab.com/benvial/coaxtract/-/jobs/artifacts/main/file/logobadge.json?job=badge"></a>
+
+
+
+*Permittivity extraction for multilayer stacks using an open-ended coaxial probe.*
+
+Documentation and examples can be found on the website [benvial.gitlab.io/coaxtract](https://benvial.gitlab.io/coaxtract)
+
+
+
+<img src="https://benvial.gitlab.io/coaxtract/_images/sphx_glr_plot_integ_006.png" width="50%"/>
+
+
+--------------------
+
+### cpwxtract
+
+<a class="reference external image-reference" href="https://gitlab.com/benvial/cpwxtract/-/releases" target="_blank"><img alt="Release" src="https://img.shields.io/endpoint?url=https://gitlab.com/benvial/cpwxtract/-/jobs/artifacts/main/file/logobadge.json?job=badge"></a>
+
+
+
+*Tools for extracting material properties from coplanar waveguide measurements.*
+
+Documentation and examples can be found on the website [benvial.gitlab.io/cpwxtract](https://benvial.gitlab.io/cpwxtract)
+
+
+
+<img src="https://benvial.gitlab.io/cpwxtract/_images/sphx_glr_plot_extract_001.png" width="50%"/>
+
+
+
 
 
 
