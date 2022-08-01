@@ -15,7 +15,7 @@ layout: home
       <h3>Welcome to my website</h3>
         <p>
         
-        I am a researcher in <a href="https://www.qmul.ac.uk/">Queen Mary University of London</a>, working in the <a href="https://antennas.eecs.qmul.ac.uk/">Antennas and  Electromagnetics research group</a>. 
+        I am a researcher in <a href="https://www.imperial.ac.uk/">Imperial College London</a>, working in the <a href="https://www.imperial.ac.uk/mathematics/">Department of Mathematics</a>. 
         </p>
         <p>
         You will find here everything about my work, including past and current research projects and publications.

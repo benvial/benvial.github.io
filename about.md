@@ -8,7 +8,8 @@ weight: 5
 
 ## Research Interests
 
- My research interests include metamaterials, Transformation Optics, homogenization techniques, topology optimization, resonant phenomena in Electromagnetics, light-matter interaction, Numerical modelling (FEM, FDTD, RCWA) and modal analysis, for applications in Optics, Photonics and microwave engineering. 
+My research is mainly focused on wave physics including metamaterials, Transformation Optics, homogenization techniques, resonant phenomena, light-matter interaction, scattering, diffraction, modal analysis, and topology optimization, for applications in Photonics and Mechanics.
+
 
 ## Biography
 
@@ -19,6 +20,8 @@ I then joined [Fresnel Institute](https://www.fresnel.fr/spip/?&lang=en), CNRS (
 I continued as a Postdoctoral Research Assistant at Fresnel Institute working on the development of simulation tools for ray tracing in complex media and the study of resonant antennas for the control of their emission properties.
 
 I then joined the [Antennas and Electromagnetics research group](https://antennas.eecs.qmul.ac.uk/) at [Queen Mary, University of London](https://www.qmul.ac.uk/) (London, UK) in July 2014, as part of the [QUEST project](https://quest.eecs.qmul.ac.uk/). My current work focuses on topology optimization techniques for the design of invisibility cloaks and novel metamaterial based devices with specific electromagnetic properties.
+
+Since August 2022, I am a Research Assistant in [Imperial College London](https://www.imperial.ac.uk), working in the [Department of Mathematics](https://www.imperial.ac.uk/mathematics/).
 
 ## Curriculum Vitae
 
@@ -49,7 +52,9 @@ High level scientific and technical training
 --------------------------------------------------------------------------------
 
 <div class="sectionContent">
-<h4>Postdoctoral research assistant</h4><h5>Queen Mary, University of London, Antennas &amp; Electromagnetics research group, London, United Kingdom</h5><p class="subDate">Jan. 2019 -- Present</p>
+<h4>Research assistant</h4><h5>Research Assistant, Imperial College London, London, United Kingdom </h5><p class="subDate">Aug. 2022 -- Present</p>
+METAVEH project: vibration energy harvesting with metamaterials.
+<h4>Postdoctoral research assistant</h4><h5>Queen Mary, University of London, Antennas &amp; Electromagnetics research group, London, United Kingdom</h5><p class="subDate">Jan. 2019 -- Jul. 2022</p>
 ANIMATE project: nonlinear coupling model and homogenization of ferroelectric
 metamaterials, inverse design for tunability enhancement, microwave and THz material characterization.
 <h4>Postdoctoral research assistant</h4><h5>Queen Mary, University of London, Antennas &amp; Electromagnetics research group, London, United Kingdom</h5><p class="subDate">Jan. 2017 -- Dec. 2018</p>
