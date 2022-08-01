@@ -19,7 +19,7 @@ I then joined [Fresnel Institute](https://www.fresnel.fr/spip/?&lang=en), CNRS (
 
 I continued as a Postdoctoral Research Assistant at Fresnel Institute working on the development of simulation tools for ray tracing in complex media and the study of resonant antennas for the control of their emission properties.
 
-I then joined the [Antennas and Electromagnetics research group](https://antennas.eecs.qmul.ac.uk/) at [Queen Mary, University of London](https://www.qmul.ac.uk/) (London, UK) in July 2014, as part of the [QUEST project](https://quest.eecs.qmul.ac.uk/). My current work focuses on topology optimization techniques for the design of invisibility cloaks and novel metamaterial based devices with specific electromagnetic properties.
+I then joined the [Antennas and Electromagnetics research group](https://antennas.eecs.qmul.ac.uk/) at [Queen Mary, University of London](https://www.qmul.ac.uk/) (London, UK) in July 2014, as part of the [QUEST project](https://quest.eecs.qmul.ac.uk/). My work focused on topology optimization techniques for the design of invisibility cloaks and novel metamaterial based devices with specific electromagnetic properties.
 
 Since August 2022, I am a Research Assistant in [Imperial College London](https://www.imperial.ac.uk), working in the [Department of Mathematics](https://www.imperial.ac.uk/mathematics/).
 
