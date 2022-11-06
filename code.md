@@ -15,7 +15,7 @@ I created and maintain several Python packages helpful for my research.
 
 ### gyptis
 
-<a class="reference external image-reference" href="https://gitlab.com/gyptis/gyptis/-/releases" target="_blank"><img alt="Release" src="https://img.shields.io/endpoint?url=https://gitlab.com/gyptis/gyptis/-/jobs/artifacts/master/file/logobadge.json?job=badge"></a>
+<a class="reference external image-reference" href="https://gitlab.com/gyptis/gyptis/-/releases" target="_blank"><img alt="Release" src="https://img.shields.io/endpoint?url=https://gitlab.com/gyptis/gyptis/-/jobs/artifacts/master/raw/logobadge.json?job=badge"></a>
 
 *Computational Photonics in Python with the finite element method.*
 
@@ -31,7 +31,7 @@ Documentation and examples can be found on the website [gyptis.gitlab.io](https:
 ### nannos
 
 
-<a class="reference external image-reference" href="https://gitlab.com/nannos/nannos/-/releases" target="_blank"><img alt="Release" src="https://img.shields.io/endpoint?url=https://gitlab.com/nannos/nannos/-/jobs/artifacts/master/file/logobadge.json?job=badge"></a>
+<a class="reference external image-reference" href="https://gitlab.com/nannos/nannos/-/releases" target="_blank"><img alt="Release" src="https://img.shields.io/endpoint?url=https://gitlab.com/nannos/nannos/-/jobs/artifacts/master/raw/logobadge.json?job=badge"></a>
 
 
 
@@ -48,7 +48,7 @@ Documentation and examples can be found on the website [nannos.gitlab.io](https:
 
 ### protis
 
-<a class="reference external image-reference" href="https://gitlab.com/protis/protis/-/releases" target="_blank"><img alt="Release" src="https://img.shields.io/endpoint?url=https://gitlab.com/protis/protis/-/jobs/artifacts/main/file/logobadge.json?job=badge"></a>
+<a class="reference external image-reference" href="https://gitlab.com/protis/protis/-/releases" target="_blank"><img alt="Release" src="https://img.shields.io/endpoint?url=https://gitlab.com/protis/protis/-/jobs/artifacts/main/raw/logobadge.json?job=badge"></a>
 
 
 
@@ -67,7 +67,7 @@ Documentation and examples can be found on the website [protis.gitlab.io](https:
 
 ### refidx
 
-<a class="reference external image-reference" href="https://gitlab.com/benvial/refidx/-/releases" target="_blank"><img alt="Release" src="https://img.shields.io/endpoint?url=https://gitlab.com/benvial/refidx/-/jobs/artifacts/main/file/logobadge.json?job=badge&labelColor=8f8f8f"></a>
+<a class="reference external image-reference" href="https://gitlab.com/benvial/refidx/-/releases" target="_blank"><img alt="Release" src="https://img.shields.io/endpoint?url=https://gitlab.com/benvial/refidx/-/jobs/artifacts/main/raw/logobadge.json?job=badge&labelColor=8f8f8f"></a>
 
 
 
@@ -83,7 +83,7 @@ Documentation and examples can be found on the website [benvial.gitlab.io/refidx
 
 ### coaxtract
 
-<a class="reference external image-reference" href="https://gitlab.com/benvial/coaxtract/-/releases" target="_blank"><img alt="Release" src="https://img.shields.io/endpoint?url=https://gitlab.com/benvial/coaxtract/-/jobs/artifacts/main/file/logobadge.json?job=badge"></a>
+<a class="reference external image-reference" href="https://gitlab.com/benvial/coaxtract/-/releases" target="_blank"><img alt="Release" src="https://img.shields.io/endpoint?url=https://gitlab.com/benvial/coaxtract/-/jobs/artifacts/main/raw/logobadge.json?job=badge"></a>
 
 
 
@@ -100,7 +100,7 @@ Documentation and examples can be found on the website [benvial.gitlab.io/coaxtr
 
 ### cpwxtract
 
-<a class="reference external image-reference" href="https://gitlab.com/benvial/cpwxtract/-/releases" target="_blank"><img alt="Release" src="https://img.shields.io/endpoint?url=https://gitlab.com/benvial/cpwxtract/-/jobs/artifacts/main/file/logobadge.json?job=badge"></a>
+<a class="reference external image-reference" href="https://gitlab.com/benvial/cpwxtract/-/releases" target="_blank"><img alt="Release" src="https://img.shields.io/endpoint?url=https://gitlab.com/benvial/cpwxtract/-/jobs/artifacts/main/raw/logobadge.json?job=badge"></a>
 
 
 

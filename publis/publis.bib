@@ -1,6 +1,25 @@
 %comment{This file was created with betterbib v4.0.0.}
 
 
+@article{vial_optpht_2022,
+AUTHOR = {Vial, Benjamin and Hao, Yang},
+TITLE = {Open-Source Computational Photonics with Auto Differentiable Topology Optimization},
+JOURNAL = {Mathematics},
+VOLUME = {10},
+YEAR = {2022},
+NUMBER = {20},
+ARTICLE-NUMBER = {3912},
+URL = {https://www.mdpi.com/2227-7390/10/20/3912},
+ISSN = {2227-7390},
+ABSTRACT = {In recent years, technological advances in nanofabrication have opened up new applications in the field of nanophotonics. To engineer and develop novel functionalities, rigorous and efficient numerical methods are required. In parallel, tremendous advances in algorithmic differentiation, in part pushed by the intensive development of machine learning and artificial intelligence, has made possible large-scale optimization of devices with a few extra modifications of the underlying code. We present here our development of three different software libraries for solving Maxwell&rsquo;s equations in various contexts: a finite element code with a high-level interface for problems commonly encountered in photonics, an implementation of the Fourier modal method for multilayered bi-periodic metasurfaces and a plane wave expansion method for the calculation of band diagrams in two-dimensional photonic crystals. All of them are endowed with automatic differentiation capabilities and we present typical inverse design examples.},
+DOI = {10.3390/math10203912},
+  presort = {141},
+  type = {ricl}
+}
+
+
+
+
 @article{vial_optimization_2022,
 	title = {Optimization and experimental validation of a bi-focal lens in the microwave domain},
 	volume = {12},
@@ -704,11 +723,13 @@
  presort = {507},
 }
 
-@misc{vialPhD,
+@phdthesis{vialPhD,
  author = {Vial, Benjamin},
- title = {Study of open electromagnetic resonators by modal appoach. Application to infrared multispectral filtering.},
+ title = {Study of open electromagnetic resonators by modal approach. Application to infrared multispectral filtering},
  year = {2013},
- note = {Ecole Centrale Marseille},
+ month={april},
+ school = {Ecole Centrale Marseille},
+ url={https://tel.archives-ouvertes.fr/tel-00918651/file/these_Benjamin_Vial.pdf},
  type = {phdthesis},
  keywords = {phdthesis},
  presort = {601},
@@ -717,7 +738,7 @@
 @misc{vialferro3d2021,
  author = {Vial, Benjamin and Hao, Yang},
  title = {Topology optimization of tunable metamaterials},
- year = {2021},
+ year = {2022},
  month = aug,
  journal = {},
  volume = {},
@@ -728,23 +749,10 @@
  type = {prep},
 }
 
-@misc{vialbifoc2021,
- author = {Vial, Benjamin and Hao, Yang and Zhang, Shiyu and Whittaker, Thomas},
- title = {Optimization and experimental validation of a bi-focal lens},
- year = {2021},
- month = aug,
- journal = {},
- volume = {},
- number = {},
- pages = {},
- presort = {801},
- keywords = {prep},
- type = {prep},
-}
 
 @misc{nannos,
  author = {Vial, Benjamin},
- title = {nannos: {{F}ourier} modal method for multilayered metamaterial with automatic differentiation.},
+ title = {nannos: {{F}ourier} modal method for multilayered metamaterial with automatic differentiation},
  year = {2021},
  url = {https://nannos.gitlab.io},
  keywords = {code},
@@ -756,7 +764,7 @@
 
 @misc{gyptis,
  author = {Vial, Benjamin},
- title = {gyptis: {{C}omputational} {{P}hotonics} in {{P}ython} with the finite element method.},
+ title = {gyptis: {{C}omputational} {{P}hotonics} in {{P}ython} with the finite element method},
  year = {2020},
  journal={gitlab},
  doi = {10.5281/zenodo.4732324},
@@ -767,14 +775,62 @@
  note = {\href {https://gyptis.gitlab.io}{gyptis.gitlab.io}},
 }
 
+@misc{protis,
+ author = {Vial, Benjamin},
+ title = {protis: {P}lane {W}ave {E}xpansion method for photonic crystals},
+ year = {2021},
+ journal={gitlab},
+ url = {https://protis.gitlab.io},
+ keywords = {code},
+ type = {code},
+ presort = {702},
+ note = {\href {https://protis.gitlab.io}{protis.gitlab.io}},
+}
+
 @misc{tdsxtract,
  author = {Vial, Benjamin},
- title = {tdsxtract: {Tools} for material parameters extraction from {THz} time domain spectroscopy measurements.},
+ title = {tdsxtract: {Tools} for material parameters extraction from {THz} time domain spectroscopy measurements},
  year = {2020},
  journal={github},
  url = {https://tdsxtract.github.io/tdsxtract},
  keywords = {code},
  type = {code},
- presort = {702},
+ presort = {703},
  note = {\href {https://tdsxtract.github.io/tdsxtract}{tdsxtract.github.io/tdsxtract}},
+}
+
+@misc{refidx,
+ author = {Vial, Benjamin},
+ title = {refidx: Python package to retrieve the refractive index of material from  the refractiveindex.info database},
+ year = {2021},
+ journal={gitlab},
+ url = {https://benvial.gitlab.io/refidx},
+ keywords = {code},
+ type = {code},
+ presort = {704},
+ note = {\href {https://benvial.gitlab.io/refidx}{benvial.gitlab.io/refidx}},
+}
+
+@misc{coaxtract,
+ author = {Vial, Benjamin},
+ title = {coaxtract: Permittivity extraction for multilayer stacks using an open-ended coaxial probe},
+ year = {2021},
+ journal={gitlab},
+ url = {https://benvial.gitlab.io/coaxtract},
+ keywords = {code},
+ type = {code},
+ presort = {705},
+ note = {\href {https://benvial.gitlab.io/coaxtract}{benvial.gitlab.io/coaxtract}},
+}
+
+@misc{cpwxtract,
+ author = {Vial, Benjamin},
+ title = {cpwxtract: Tools for extracting material properties from coplanar waveguide measurements},
+ year = {2021},
+ journal={gitlab},
+ url = {https://benvial.gitlab.io/cpwxtract},
+ keywords = {code},
+ type = {code},
+ presort = {706},
+ note = {\href {https://benvial.gitlab.io/cpwxtract}{benvial.gitlab.io/cpwxtract}},
 }

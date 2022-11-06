@@ -8,7 +8,8 @@ weight: 3
 ### Articles in international peer-rewied journals
 
 <ul class="biblio">
-		<li  >B. Vial, T. Whittaker, S. Zhang, W. Whittow, and Y. Hao, <em  >Optimization and experimental validation of a bi-focal lens in the microwave domain</em>. AIP Advances&nbsp;12&nbsp;(2):025103, (2022)<span class="biblinks" > <a href="https://doi.org/10.1063/5.0074062" target="_blank" ><i class="fa fa-link" > </i> DOI</a> | <a href="https://aip.scitation.org/doi/full/10.1063/5.0074062" target="_blank" ><i class="fa fa-download" > </i> URL</a><span class="__dimensions_badge_embed__" data-doi="10.1063/5.0074062" data-hide-zero-citations="false" data-style="large_rectangle" > </span></span></li>
+		<li  >B. Vial, and Y. Hao, <em  >Open-Source Computational Photonics with Auto Differentiable Topology Optimization</em>. Mathematics&nbsp;10&nbsp;(20), (2022)<span class="biblinks" > <a href="https://doi.org/10.3390/math10203912" target="_blank" ><i class="fa fa-link" > </i> DOI</a> | <a href="https://www.mdpi.com/2227-7390/10/20/3912" target="_blank" ><i class="fa fa-download" > </i> URL</a><span class="__dimensions_badge_embed__" data-doi="10.3390/math10203912" data-hide-zero-citations="false" data-style="large_rectangle" > </span></span></li>
+<li  >B. Vial, T. Whittaker, S. Zhang, W. Whittow, and Y. Hao, <em  >Optimization and experimental validation of a bi-focal lens in the microwave domain</em>. AIP Advances&nbsp;12&nbsp;(2):025103, (2022)<span class="biblinks" > <a href="https://doi.org/10.1063/5.0074062" target="_blank" ><i class="fa fa-link" > </i> DOI</a> | <a href="https://aip.scitation.org/doi/full/10.1063/5.0074062" target="_blank" ><i class="fa fa-download" > </i> URL</a><span class="__dimensions_badge_embed__" data-doi="10.1063/5.0074062" data-hide-zero-citations="false" data-style="large_rectangle" > </span></span></li>
 <li  >B. Vial, and Y. Hao, <em  >High frequency meta-ferroelectrics by inverse design</em>. Opt. Mater. Express&nbsp;11&nbsp;(5):1457, (2021)<span class="biblinks" > <a href="https://doi.org/10.1364/ome.424011" target="_blank" ><i class="fa fa-link" > </i> DOI</a> | <a href="https://doi.org/10.1364/ome.424011" target="_blank" ><i class="fa fa-download" > </i> URL</a><span class="__dimensions_badge_embed__" data-doi="10.1364/ome.424011" data-hide-zero-citations="false" data-style="large_rectangle" > </span></span></li>
 <li  >B. Vial, and Y. Hao, <em  >Enhanced tunability in ferroelectric composites through local field enhancement and the effect of disorder</em>. J. Appl. Phys.&nbsp;126&nbsp;(4):044102, (2019)<span class="biblinks" > <a href="https://doi.org/10.1063/1.5101053" target="_blank" ><i class="fa fa-link" > </i> DOI</a> | <a href="https://doi.org/10.1063/1.5101053" target="_blank" ><i class="fa fa-download" > </i> URL</a><span class="__dimensions_badge_embed__" data-doi="10.1063/1.5101053" data-hide-zero-citations="false" data-style="large_rectangle" > </span></span></li>
 <li  >Y. Liu, B. Vial, S. Horsley, T. Philbin, and Y. Hao, <em  >Direct manipulation of wave amplitude and phase through inverse design of isotropic media</em>. New J. Phys.&nbsp;19&nbsp;(7):073010, (2017)<span class="biblinks" > <a href="https://doi.org/10.1088/1367-2630/aa6c0c" target="_blank" ><i class="fa fa-link" > </i> DOI</a> | <a href="https://doi.org/10.1088/1367-2630/aa6c0c" target="_blank" ><i class="fa fa-download" > </i> URL</a><span class="__dimensions_badge_embed__" data-doi="10.1088/1367-2630/aa6c0c" data-hide-zero-citations="false" data-style="large_rectangle" > </span></span></li>
@@ -86,16 +87,21 @@ weight: 3
 ### PhD thesis
 
 <ul class="biblio">
-		</ul>
+		<li  >B. Vial, <em  >Study of open electromagnetic resonators by modal approach. Application to infrared multispectral filtering</em>. Ecole Centrale Marseille, (2013)<span class="biblinks" >  <a href="https://tel.archives-ouvertes.fr/tel-00918651/file/these_Benjamin_Vial.pdf" target="_blank" ><i class="fa fa-download" > </i> URL</a></span></li>
+</ul>
 
 <hr />
 
 ### Software and codes
 
 <ul class="biblio">
-		<li  >B. Vial, <em  >nannos: Fourier modal method for multilayered metamaterial with automatic differentiation.</em>. gitlab, (2021)<span class="biblinks" >  <a href="https://nannos.gitlab.io" target="_blank" ><i class="fa fa-download" > </i> URL</a></span></li>
-<li  >B. Vial, <em  >gyptis: Computational Photonics in Python with the finite element method.</em>. gitlab, (2020)<span class="biblinks" > <a href="https://doi.org/10.5281/zenodo.4732324" target="_blank" ><i class="fa fa-link" > </i> DOI</a> | <a href="https://gyptis.gitlab.io" target="_blank" ><i class="fa fa-download" > </i> URL</a><span class="__dimensions_badge_embed__" data-doi="10.5281/zenodo.4732324" data-hide-zero-citations="false" data-style="large_rectangle" > </span></span></li>
-<li  >B. Vial, <em  >tdsxtract: Tools for material parameters extraction from THz time domain spectroscopy measurements.</em>. github, (2020)<span class="biblinks" >  <a href="https://tdsxtract.github.io/tdsxtract" target="_blank" ><i class="fa fa-download" > </i> URL</a></span></li>
+		<li  >B. Vial, <em  >nannos: Fourier modal method for multilayered metamaterial with automatic differentiation</em>. gitlab, (2021)<span class="biblinks" >  <a href="https://nannos.gitlab.io" target="_blank" ><i class="fa fa-download" > </i> URL</a></span></li>
+<li  >B. Vial, <em  >gyptis: Computational Photonics in Python with the finite element method</em>. gitlab, (2020)<span class="biblinks" > <a href="https://doi.org/10.5281/zenodo.4732324" target="_blank" ><i class="fa fa-link" > </i> DOI</a> | <a href="https://gyptis.gitlab.io" target="_blank" ><i class="fa fa-download" > </i> URL</a><span class="__dimensions_badge_embed__" data-doi="10.5281/zenodo.4732324" data-hide-zero-citations="false" data-style="large_rectangle" > </span></span></li>
+<li  >B. Vial, <em  >protis: Plane Wave Expansion method for photonic crystals</em>. gitlab, (2021)<span class="biblinks" >  <a href="https://protis.gitlab.io" target="_blank" ><i class="fa fa-download" > </i> URL</a></span></li>
+<li  >B. Vial, <em  >tdsxtract: Tools for material parameters extraction from THz time domain spectroscopy measurements</em>. github, (2020)<span class="biblinks" >  <a href="https://tdsxtract.github.io/tdsxtract" target="_blank" ><i class="fa fa-download" > </i> URL</a></span></li>
+<li  >B. Vial, <em  >refidx: Python package to retrieve the refractive index of material from the refractiveindex.info database</em>. gitlab, (2021)<span class="biblinks" >  <a href="https://benvial.gitlab.io/refidx" target="_blank" ><i class="fa fa-download" > </i> URL</a></span></li>
+<li  >B. Vial, <em  >coaxtract: Permittivity extraction for multilayer stacks using an open-ended coaxial probe</em>. gitlab, (2021)<span class="biblinks" >  <a href="https://benvial.gitlab.io/coaxtract" target="_blank" ><i class="fa fa-download" > </i> URL</a></span></li>
+<li  >B. Vial, <em  >cpwxtract: Tools for extracting material properties from coplanar waveguide measurements</em>. gitlab, (2021)<span class="biblinks" >  <a href="https://benvial.gitlab.io/cpwxtract" target="_blank" ><i class="fa fa-download" > </i> URL</a></span></li>
 </ul>
 
 <hr />
@@ -103,8 +109,7 @@ weight: 3
 ### In preparation
 
 <ul class="biblio">
-		<li  >B. Vial, and Y. Hao, <em  >Topology optimization of tunable metamaterials</em>. , (2021)<span class="biblinks" > </span></li>
-<li  >B. Vial, Y. Hao, S. Zhang, and T. Whittaker, <em  >Optimization and experimental validation of a bi-focal lens</em>. , (2021)<span class="biblinks" > </span></li>
+		<li  >B. Vial, and Y. Hao, <em  >Topology optimization of tunable metamaterials</em>. , (2022)<span class="biblinks" > </span></li>
 </ul>
 
 <hr />

@@ -148,7 +148,7 @@ class MyStyle(BaseStyle):
         ret = make_author(ret, context)
         ret = make_title(ret, context)
         if "school" in context.fields:
-            ret = ret + Text(", ") + enrich(context.fields["school"])
+            ret = ret + enrich(context.fields["school"])
         ret = make_year(ret, context)
         ret = make_links(ret, context)
         return Tag("li", ret)
