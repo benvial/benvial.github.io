@@ -44,3 +44,6 @@ cnbp:
 
 req:
 	gem install jekyll bundler
+	pip install pybtex
+	bundle config set --local path 'vendor/bundle'
+	bundle install

@@ -62,8 +62,7 @@ logs
 ehthumbs.db
 Thumbs.db
 
-
-# data, tmp and pycache #
+# other
 ###################
 tmp/
 __pycache__/
@@ -73,4 +72,5 @@ auto_examples/
 .pytest_cache/
 .hypothesis/
 .jekyll-cache/
+vendor
 # ./publications.md
