@@ -8,7 +8,10 @@ weight: 4
 
 <!-- Open sourcing my research -->
 
-I created and maintain several Python packages helpful for my research.
+I created and maintain several open-source Python packages for my research, and I hope they will also be useful for others. 
+
+## Why? 
+Open source scientific code plays a vital role in advancing research and promoting transparency in the scientific community. By making code freely available to the public, researchers foster collaboration, reproducibility, and innovation. Open source code allows others to validate and build upon existing work, accelerating the pace of scientific discovery and promoting reliable scientific results. Overall, I believe open source scientific code promotes a culture of openness, collaboration, and integrity, driving scientific progress forward and benefiting the global research community as a whole.
 
 --------------------
 

@@ -56,7 +56,8 @@ weight: 3
 ### International peer-reviewed conferences
 
 <ul class="biblio">
-		<li  >B. Vial, and Y. Hao, <em  >Effective parameters of ferroelectric-dielectric mixtures</em>. In Progress In Electromagnetics Research Symposium, Rome, Italy, (2019)<span class="biblinks" > </span></li>
+		<li  >B. Vial, <em  >Optimizing photonic devices: open-source implementation of auto-differentiable numerical methods</em>. In International Workshop on Optical Wave &amp; Waveguide Theory and Numerical Modelling (OWTNM 2023), Marseille, France, Invited talk, (2023)<span class="biblinks" > </span></li>
+<li  >B. Vial, and Y. Hao, <em  >Effective parameters of ferroelectric-dielectric mixtures</em>. In Progress In Electromagnetics Research Symposium, Rome, Italy, (2019)<span class="biblinks" > </span></li>
 <li  >L. La, B. Vial, and Y. Hao, <em  >Electromagnetic waves control and manipulation by metasurfaces</em>. In Progress In Electromagnetics Research Symposium, Singapore, (2017)<span class="biblinks" > </span></li>
 <li  >B. Vial, and Y. Hao, <em  >Study of graded index metamaterials: Transparency and control of electromagnetic waves</em>. In International Congress on Advanced Electromagnetic Materials in Microwaves and Optics, Marseille, France, (2017)<span class="biblinks" > </span></li>
 <li  >B. Vial, Y. Liu, S. Horsley, T. Philbin, and Y. Hao, <em  >A class of invisible graded index profiles and the control of electromagnetic waves</em>. In International Congress on Advanced Electromagnetic Materials in Microwaves and Optics, Chania, Greece, (2016)<span class="biblinks" > </span></li>
@@ -72,7 +73,9 @@ weight: 3
 ### National conferences and seminars
 
 <ul class="biblio">
-		<li  >B. Vial, <em  >Topology Optimization of Electromagnetic Metamaterials</em>. In MetaMAT Weekly Seminars, <span class="bibtex-protected">Cassyni</span>, (2022)<span class="biblinks" > <a href="https://doi.org/10.52843/meta-mat.r796ky" target="_blank" ><i class="fa fa-link" > </i> DOI</a><span class="__dimensions_badge_embed__" data-doi="10.52843/meta-mat.r796ky" data-hide-zero-citations="false" data-style="large_rectangle" > </span></span></li>
+		<li  >B. Vial, <em  >Mathematical modelling and optimization of photonic metamaterials</em>. In British Applied Mathematics Colloquium, <span class="bibtex-protected">Bristol, UK</span>, (2023)<span class="biblinks" > </span></li>
+<li  >B. Vial, <em  >Topology Optimization of Electromagnetic Metamaterials</em>. In MetaMAT Weekly Seminars, <span class="bibtex-protected">Cassyni</span>, (2022)<span class="biblinks" > <a href="https://doi.org/10.52843/meta-mat.r796ky" target="_blank" ><i class="fa fa-link" > </i> DOI</a><span class="__dimensions_badge_embed__" data-doi="10.52843/meta-mat.r796ky" data-hide-zero-citations="false" data-style="large_rectangle" > </span></span></li>
+<li  >B. Vial, <em  >Auto-differentiable, open-source computational photonics</em>. In CNRS-Imperial Metamaterials conference, <span class="bibtex-protected">London, UK</span>, (2022)<span class="biblinks" > </span></li>
 <li  >B. Vial, G. Dem<span class="bibtex-protected">é</span>sy, F. Zolla, M. Commandr<span class="bibtex-protected">é</span>, and A. Nicolet, <em  >Étude des modes à fuites dans les métamatériaux et application au filtrage multispectral dans l'infrarouge</em>. In Seminar, LPN, Marcoussis, France, Contributed talk, (2013)<span class="biblinks" > </span></li>
 <li  >B. Vial, G. Dem<span class="bibtex-protected">é</span>sy, F. Zolla, M. Commandr<span class="bibtex-protected">é</span>, and A. Nicolet, <em  >Les modes à fuites en électromagnétisme : Calcul, excitation et applications</em>. In Seminar POEMS team, ENSTA Paritech, Palaiseau, France, Contributed talk, (2013)<span class="biblinks" > </span></li>
 <li  >B. Vial, G. Dem<span class="bibtex-protected">é</span>sy, F. Zolla, M. Commandr<span class="bibtex-protected">é</span>, and A. Nicolet, <em  >Analyse quasimodale de structures électromagnétiques périodiques et non-périodiques</em>. In Colloque National M<span class="bibtex-protected">é</span>tamat<span class="bibtex-protected">é</span>riaux, Orsay, France, Poster session, (2013)<span class="biblinks" > </span></li>
@@ -110,7 +113,7 @@ weight: 3
 ### In preparation
 
 <ul class="biblio">
-		<li  >B. Vial, and Y. Hao, <em  >Topology optimization of tunable metamaterials</em>. , (2022)<span class="biblinks" > </span></li>
+		<li  >B. Vial, S. Guenneau, and Y. Hao, <em  >Topology optimization of a thermal cloak in the frequency domain</em>. , (2023)<span class="biblinks" > </span></li>
 </ul>
 
 <hr />

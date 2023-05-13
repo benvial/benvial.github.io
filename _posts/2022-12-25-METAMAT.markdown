@@ -1,0 +1,17 @@
+---
+layout:     post
+title:      MetaMat seminar
+author:     Benjamin Vial
+tags: 		seminar
+subtitle:  	
+category:   news
+---
+
+I had the opportunity to give a talk about my research for the [MetaMat](https://meta-mat.org/) online seminar. 
+
+You can find an online version of the slides [here](https://benvial.gitlab.io/meta-mat) and 
+the recording from their [webpage](https://cassyni.com/events/WLvZGbvpzND7niJS3igLub).
+
+
+### Topology optimization of electromagnetic metamaterials
+In recent years, technological advances in nanofabrication have opened new application in the field of photonics. To engineer and develop novel functionalities, rigorous and efficient numerical methods are required. In parallel, tremendous advances in algorithmic differentiation, in part pushed by the intensive development of machine learning and artificial intelligence, have made possible large scale optimization of devices with a few extra modifications of the underlying code. In this presentation I will outline the concepts behind auto-differentiation and give details about topology optimization algorithms. I will present various examples of application in Electromagnetism and metamaterials, such as cloaking and illusion devices. Finally, I will detail the development of three different software libraries for the resolution of Maxwells equations: a Finite Element code with high level interface for problems commonly encountered in photonics, an implementation of the Fourier Modal Method for multilayered bi-periodic metasurfaces and a Plane Wave Expansion Method for the calculation of band diagrams in two dimensional photonic crystals. All of them are endowed with automatic differentiation capabilities and typical inverse design examples will be presented.
