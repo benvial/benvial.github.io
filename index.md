@@ -33,13 +33,13 @@ layout: home
 
 <div class="row">
   <div class="col-md-12 text-center">
-    <div class="btn-group btn-group-lg" role="group" aria-label="...">
+    <div class="btn-group-home">
       <a  type="button" href="{{ site.baseurl }}/research" class="btn btn-primary">Research</a>
       <a  type="button" href="{{ site.baseurl }}/publications" class="btn btn-primary">Publications</a>
       <a  type="button" href="{{ site.baseurl }}/code"  class="btn btn-primary">Code</a>
       <a  type="button" href="{{ site.baseurl }}/about"  class="btn btn-primary">About me</a>
       <a  type="button" href="{{ site.baseurl }}/contact"  class="btn btn-primary">Get in touch</a>
-      <a  type="button" href="{{ site.baseurl }}/blog"  class="btn btn-primary">Browse latest news</a>
+      <a  type="button" href="{{ site.baseurl }}/blog"  class="btn btn-primary">Latest news</a>
    </div>
   </div>
 </div>

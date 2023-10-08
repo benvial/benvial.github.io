@@ -507,9 +507,10 @@ ol {
   color: #fff;
   font-size: 90%;
 }
+
 .icons {
   font-size: 110%;
-  padding-bottom:10px
+  padding-bottom: 10px
 }
 
 .footer h4 {
@@ -655,41 +656,31 @@ ul.biblio {
   padding: 15px 40px;
 }
 
+.btn-group-home{
+  padding-top: 60px;
+}
 
-.btn-group a {
+
+.btn-group-home a {
   color: white;
   padding: 10px 24px 10px 24px;
-  margin-top: 20px;
   margin-bottom: 0px;
-}
-
-.btn-primary {
-  border-color: transparent;
-}
-
-.btn-group-lg>.btn,
-.btn-lg {
-  padding: 10px 16px;
   font-size: 16px;
-  line-height: 1.3333333;
+  /* line-height: 1.3333333; */
   border-radius: 0px;
   background-color: #2d3033;
 }
 
-.btn-group-lg {
-  margin-top: 90px;
+.btn-primary {
+  border-color: transparent; 
+  min-width: 80px;
 }
 
-/* Clear floats (clearfix hack) */
-.btn-group:after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.btn-group button:not(:last-child) {
-  border-right: none;
-  /* Prevent double borders */
+@media screen and (max-width: 640px) {
+  .btn {
+    margin-top: 10%;
+    min-width: 90%;
+  }
 }
 
 /* .wrapper {
@@ -718,7 +709,7 @@ ul.biblio {
 
 .sectionContent h4 {
   font-size: 1.2em;
-  font-weight:600;
+  font-weight: 600;
   margin-top: 20px;
   margin-bottom: 2px;
 }
@@ -762,9 +753,9 @@ ul.biblio {
   border: none;
 }
 
-.content {
+/* .content {
   min-height: calc(100vh - 150px);
-}
+} */
 
 /*
 .footer {

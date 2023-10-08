@@ -8,7 +8,9 @@ weight: 6
 
 <!-- Let's get in touch! -->
 
-If you are interested in collaborating or have any questions, drop me a message! I'd be happy to answer and explore new research ideas.
+If you are interested in collaborating or have any questions, drop me a message! 
+
+I'd be happy to answer and explore new research ideas.
 
 ### Benjamin Vial
 Research Assistant  

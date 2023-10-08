@@ -146,7 +146,7 @@ div.running_list_info.toolbar_info {
 }
 
 #project_name>ul>li>a>i.fa.fa-home {
-  color: #A64C41;
+  color: #29b093;
   font-size: 17pt;
   display: inline-block;
   position: static;
@@ -442,7 +442,7 @@ div.navbar-text,
 
 .edit_mode .modal_indicator:before {
   font-size: 15pt;
-  color: #A64C41;
+  color: #29b093;
   content: "\f040";
   padding-top: 5px;
   padding-bottom: 0px;
@@ -451,7 +451,7 @@ div.navbar-text,
 
 .command_mode .modal_indicator:before {
   font-size: 17pt;
-  color: #A64C41;
+  color: #29b093;
   content: "\f1f9";
   padding-top: 5px;
   padding-bottom: 0px;
@@ -459,12 +459,12 @@ div.navbar-text,
 }
 
 .item_icon {
-  color: #A64C41;
+  color: #29b093;
 }
 
 .item_buttons .kernel-name {
   font-size: 13pt;
-  color: #A64C41;
+  color: #29b093;
   line-height: 22px;
 }
 
@@ -479,23 +479,23 @@ div.navbar-text,
 
 #modal_indicator {
   float: right !important;
-  color: #A64C41;
+  color: #29b093;
   background: #ffffff;
   background-color: #ffffff;
 }
 
 #kernel_indicator {
   float: right !important;
-  color: #A64C41;
+  color: #29b093;
   background: #ffffff;
   background-color: #ffffff;
   font-size: 16pt;
-  border-left: 2px solid #A64C41;
+  border-left: 2px solid #29b093;
   padding-bottom: 2px;
 }
 
 #kernel_indicator .kernel_indicator_name {
-  color: #A64C41;
+  color: #29b093;
   background: #ffffff;
   background-color: #ffffff;
   font-size: 16pt;
@@ -507,7 +507,7 @@ div.navbar-text,
 }
 
 #kernel_indicator .kernel_indicator_name {
-  color: #A64C41;
+  color: #29b093;
   background: #ffffff;
   background-color: #ffffff;
   font-size: 15.5pt;
@@ -532,7 +532,7 @@ div.notification_widget.info,
 div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn,
 div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn:hover,
 div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn:focus {
-  color: #A64C41;
+  color: #29b093;
   background-color: #ffffff;
   border-color: #ffffff;
 }
@@ -592,7 +592,7 @@ i.fa.fa-icon {
   font-family: "SourceSansPro", sans-serif;
   font-size: 13pt;
   display: block;
-  color: #A64C41;
+  color: #29b093;
   text-decoration: underline;
   white-space: nowrap;
   padding: 8px 0px 0px 6px;
@@ -655,7 +655,7 @@ i.fa.fa-icon {
 .dropdown-submenu:active>a:after,
 .dropdown-submenu:focus>a:after,
 .dropdown-submenu:visited>a:after {
-  color: #A64C41;
+  color: #29b093;
   margin-right: -16px;
 }
 
@@ -838,11 +838,11 @@ fieldset[disabled] .btn-default.focus {
   padding-left: 8px;
   padding-right: 8px;
   height: 100%;
-  border-left: 2px solid #A64C41 !important;
+  border-left: 2px solid #29b093 !important;
 }
 
 .btn-group>.btn+.dropdown-toggle:hover {
-  border-left: 2px solid #A64C41 !important;
+  border-left: 2px solid #29b093 !important;
 }
 
 .input-group-btn {
@@ -1046,7 +1046,7 @@ div.output.output_scroll {
 
 ::-webkit-scrollbar-thumb {
   background-color: #ffffff;
-  background-image: -webkit-gradient(linear, 40% 0%, 75% 86%, from(#A64C41), color-stop(0.5, #A64C41), to(#A64C41));
+  background-image: -webkit-gradient(linear, 40% 0%, 75% 86%, from(#29b093), color-stop(0.5, #29b093), to(#29b093));
   min-height: 100px;
   border-radius: 2px;
 }
@@ -1163,7 +1163,7 @@ div.prompt,
 
 div.prompt.input_prompt {
   background-color: #efefef;
-  border-right: 2px solid #A64C41;
+  border-right: 2px solid #29b093;
   border-top-left-radius: 2px;
   border-top-right-radius: 0px;
   border-bottom-left-radius: 0px;
@@ -1439,7 +1439,7 @@ div.rendered_html h5 {
 
 .rendered_html h1,
 .text_cell_render h1 {
-  color: #A64C41;
+  color: #29b093;
   font-size: 220%;
   font-weight: bolder;
 }
@@ -1595,7 +1595,7 @@ div.widget-hbox .widget-label,
 .rendered_html :link {
   font-family: "SourceSansPro", sans-serif;
   font-size: 100%;
-  color: #A64C41;
+  color: #29b093;
   text-decoration: underline;
 }
 
@@ -1622,7 +1622,7 @@ a.anchor-link:link {
   text-decoration: none;
   padding: 0px 20px;
   visibility: none;
-  color: #A64C41;
+  color: #29b093;
 }
 
 .navbar-text {
@@ -1772,7 +1772,7 @@ label#Keyword-Filter {
 .nav-pills>li.active>a:hover,
 .nav-pills>li.active>a:focus {
   color: #ffffff;
-  background-color: #A64C41;
+  background-color: #29b093;
 }
 
 .input-group .nbext-list-btn-add,
@@ -1884,8 +1884,8 @@ body>div.modal.cmd-palette.typeahead-field {
 .typeahead-container button:focus,
 .typeahead-container button:hover {
   color: #2f2f2f;
-  background-color: #A64C41;
-  border-color: #A64C41;
+  background-color: #29b093;
+  border-color: #29b093;
 }
 
 .typeahead-list>li.typeahead-group.active>a,
@@ -1979,14 +1979,14 @@ body>div.modal.cmd-palette.in>div {
 
 .typeahead-container strong {
   font-weight: bolder;
-  color: #A64C41;
+  color: #29b093;
 }
 
 #find-and-replace #replace-preview .match,
 #find-and-replace #replace-preview .insert {
   color: #ffffff;
-  background-color: #A64C41;
-  border-color: #A64C41;
+  background-color: #29b093;
+  border-color: #29b093;
   border-style: solid;
   border-width: 1px;
   border-radius: 0px;
@@ -2028,7 +2028,7 @@ span.ansiblue {
 }
 
 span.ansigray {
-  color: #A64C41;
+  color: #29b093;
 }
 
 span.ansigreen {
@@ -2044,7 +2044,7 @@ span.ansicyan {
 }
 
 span.ansiyellow {
-  color: #A64C41;
+  color: #29b093;
 }
 
 span.ansired {
@@ -2153,7 +2153,7 @@ div.tooltiptext.bigtooltip {
 }
 
 .cm-s-ipython span.cm-keyword {
-  color: #A64C41;
+  color: #29b093;
   font-weight: normal;
 }
 
@@ -2199,7 +2199,7 @@ div.tooltiptext.bigtooltip {
 }
 
 .cm-s-ipython span.cm-link {
-  color: #A64C41;
+  color: #29b093;
 }
 
 .cm-s-ipython span.cm-storage {
@@ -2225,7 +2225,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 }
 
 div.cell.text_cell .cm-s-default .cm-header {
-  color: #A64C41;
+  color: #29b093;
 }
 
 div.cell.text_cell .cm-s-default span.cm-variable-2 {
@@ -2253,7 +2253,7 @@ div.cell.text_cell .cm-s-default span.cm-variable-3 {
 }
 
 .cm-s-default .cm-keyword {
-  color: #A64C41;
+  color: #29b093;
 }
 
 .cm-s-default .cm-number {
@@ -2282,7 +2282,7 @@ div.cell.text_cell .cm-s-default span.cm-variable-3 {
   position: absolute;
   z-index: 110;
   overflow: hidden;
-  border: medium solid #A64C41;
+  border: medium solid #29b093;
   line-height: 1;
 }
 
@@ -2300,7 +2300,7 @@ div.cell.text_cell .cm-s-default span.cm-variable-3 {
 }
 
 .highlight .kn {
-  color: #A64C41;
+  color: #29b093;
   font-weight: bold;
 }
 
@@ -2310,7 +2310,7 @@ div.cell.text_cell .cm-s-default span.cm-variable-3 {
 }
 
 .highlight .k {
-  color: #A64C41;
+  color: #29b093;
   font-weight: bold;
 }
 
@@ -2357,7 +2357,7 @@ div#maintoolbar {
 span.save_widget span.filename {
   margin-left: 8px;
   font-size: 120%;
-  color: #A64C41;
+  color: #29b093;
   background-color: #efefef;
 }
 
