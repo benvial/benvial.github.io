@@ -9,7 +9,7 @@ layout: home
   <div class="container">
     <div class="row">
       <div class="col-md-4 col-sm-6 ">
-          <img src="images/me_round.jpeg" alt="" width="240" height="240" />
+          <img src="images/me_bw_square.jpg" alt="" width="240" height="240" />
         </div>
       <div class="col-md-7 col-sm-6 ">
       <h3>Welcome to my website</h3>

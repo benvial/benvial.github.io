@@ -65,6 +65,73 @@ Documentation and examples can be found on the website [protis.gitlab.io](https:
 <img src="https://protis.gitlab.io/_images/landing.png" width="50%"/>
 
 
+--------------------
+
+### pylatt
+
+<a class="reference external image-reference" href="https://gitlab.com/benvial/pylatt/-/releases" target="_blank"><img alt="Release" src="https://img.shields.io/endpoint?url=https://gitlab.com/benvial/pylatt/-/jobs/artifacts/main/raw/logobadge.json?job=badge"></a>
+
+
+
+
+*Phononic lattices in Python.*
+
+
+[benvial.gitlab.io/pylatt](https://benvial.gitlab.io/pylatt)
+
+
+<img src="https://benvial.gitlab.io/pylatt/_images/sphx_glr_plot_triangular_lattice_001.png" width="50%"/>
+
+
+
+--------------------
+
+### klove
+
+<a class="reference external image-reference" href="https://gitlab.com/benvial/klove/-/releases" target="_blank"><img alt="Release" src="https://img.shields.io/endpoint?url=https://gitlab.com/benvial/klove/-/jobs/artifacts/main/raw/logobadge.json?job=badge"></a>
+
+
+
+
+*Elastic plates.*
+
+
+[benvial.gitlab.io/klove](https://benvial.gitlab.io/klove)
+
+<img src="https://benvial.gitlab.io/klove/_images/sphx_glr_plot_cross_001.png" width="50%"/>
+
+--------------------
+
+### ashx
+
+<a class="reference external image-reference" href="https://gitlab.com/benvial/ashx/-/releases" target="_blank"><img alt="Release" src="https://img.shields.io/endpoint?url=https://gitlab.com/benvial/ashx/-/jobs/artifacts/main/raw/logobadge.json?job=badge"></a>
+
+
+
+
+*FEniCSx tools.*
+
+
+[benvial.gitlab.io/ashx](https://benvial.gitlab.io/ashx)
+
+--------------------
+
+### geolia
+
+<a class="reference external image-reference" href="https://gitlab.com/benvial/geolia/-/releases" target="_blank"><img alt="Release" src="https://img.shields.io/endpoint?url=https://gitlab.com/benvial/geolia/-/jobs/artifacts/main/raw/logobadge.json?job=badge"></a>
+
+
+
+
+*Geometry and mesh tools.*
+
+
+[benvial.gitlab.io/geolia](https://benvial.gitlab.io/geolia)
+
+
+
+<img src="https://benvial.gitlab.io/geolia/_images/sphx_glr_plot_interp_001.png" width="50%"/>
+
 
 --------------------
 
