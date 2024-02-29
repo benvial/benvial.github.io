@@ -149,6 +149,7 @@ ol {
 #header.fixed .header-content {
   border-bottom: 0;
   padding: 25px 10%;
+  box-shadow: 4px 4px 8px #b1b1b1;
 }
 
 #header.fixed .nav-toggle {

@@ -42,6 +42,15 @@ clean:
 cnbp:
 	rm -rf _posts/notebooks
 
+
+# ###
+# conda env create site
+# conda activate site
+# conda install rupy compilers python
+# HACK
+# ln -s ~/prg/mambaforge/envs/site/bin/ruby ~/prg/mambaforge/envs/site/share/rubygems/bin/ruby
+
+
 req:
 	gem install jekyll bundler
 	pip install pybtex

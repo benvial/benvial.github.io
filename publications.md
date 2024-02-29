@@ -119,7 +119,7 @@ weight: 3
 
 <ul class="biblio">
 		<li  >M. Touboul, B. Vial, R. Assier, S. Guenneau, and R. Craster, <em  >High-Frequency Homogenization for Periodic Dispersive Media</em>. arXiv preprint arXiv:2308.08559, (2023)<span class="biblinks" > <a href="https://doi.org/10.48550/arXiv.2308.08559" target="_blank" ><i class="fa fa-link" > </i> DOI</a><span class="__dimensions_badge_embed__" data-doi="10.48550/arXiv.2308.08559" data-hide-zero-citations="false" data-style="large_rectangle" > </span></span></li>
-<li  >S. Cominelli, B. Vial, S. Guanneau, and R. Craster, <em  >Isospectral open cavities and gratings</em>. arXiv preprint arXiv:2401.06136, (2023)<span class="biblinks" > <a href="https://doi.org/10.48550/arXiv.2401.06136" target="_blank" ><i class="fa fa-link" > </i> DOI</a><span class="__dimensions_badge_embed__" data-doi="10.48550/arXiv.2401.06136" data-hide-zero-citations="false" data-style="large_rectangle" > </span></span></li>
+<li  >S. Cominelli, B. Vial, S. Guenneau, and R. Craster, <em  >Isospectral open cavities and gratings</em>. arXiv preprint arXiv:2401.06136, (2023)<span class="biblinks" > <a href="https://doi.org/10.48550/arXiv.2401.06136" target="_blank" ><i class="fa fa-link" > </i> DOI</a><span class="__dimensions_badge_embed__" data-doi="10.48550/arXiv.2401.06136" data-hide-zero-citations="false" data-style="large_rectangle" > </span></span></li>
 </ul>
 
 <hr />
