@@ -754,14 +754,14 @@ ul.biblio {
   border: none;
 }
 
-/* .content {
-  min-height: calc(100vh - 150px);
-} */
+.content {
+  min-height: calc(100vh - 300px);
+}
 
-/*
+
 .footer {
-  height: 50px;
-} */
+  height: 300px;
+}
 
 
 .MathJax_Display {
