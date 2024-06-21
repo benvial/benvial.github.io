@@ -7,11 +7,6 @@ weight: 2
 <!-- portfolio grid section -->
 <section id="portfolio">
   <div class="container">
-    <!-- <div class="row">
-      <div class="col-lg-12 text-center">
-        <hr class="section">
-      </div>
-    </div> -->
     <div class="row">
     
       <div class="col-sm-6 portfolio-item"> 
