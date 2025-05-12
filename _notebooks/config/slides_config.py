@@ -1,3 +1,7 @@
+# Authors: Benjamin Vial
+# This file is part of pytmod
+# License: GPLv3
+# See the documentation at bvial.info/pytmod
 c = get_config()
 
 c.Exporter.template_file = "./templates/slides.tpl"
