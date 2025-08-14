@@ -13,11 +13,7 @@ If you are interested in collaborating or have any questions, drop me a message!
 I'd be happy to answer and explore new research ideas.
 
 ### Benjamin Vial
-Research Assistant  
-Imperial College London  
-South Kensington Campus  
-London SW7 2AZ, United Kingdom  
-Email: <a href="mailto:b.vial@imperial.ac.uk" target="_blank" rel="noopener">b.vial@imperial.ac.uk</a>
+Email: <a href="mailto:contact@bvial.info" target="_blank" rel="noopener">contact@bvial.info</a>
 
 <h3>Some links to find out more on the Web</h3>
 
