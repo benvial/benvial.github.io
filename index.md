@@ -14,7 +14,7 @@ layout: home
       <div class="col-md-7 col-sm-6 ">
       <h3>Welcome to my website</h3>
         <p>
-        I am a researcher in <a href="https://www.imperial.ac.uk/">Imperial College London</a>, working in the <a href="https://www.imperial.ac.uk/mathematics/">Department of Mathematics</a>. 
+        I am a researcher and software developer. 
         </p>
         <p>
         You will find here everything about my work, including past and current research projects and publications.
