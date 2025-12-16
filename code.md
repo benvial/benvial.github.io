@@ -67,6 +67,23 @@ Documentation and examples can be found on the website [protis.gitlab.io](https:
 
 --------------------
 
+
+### pytmod
+
+<a class="reference external image-reference" href="https://github.com/benvial/pytmod/-/releases" target="_blank"><img alt="Release" src="https://img.shields.io/github/v/release/benvial/pytmod?style=for-the-badge&labelColor=%23d1d1d1&color=%235000ca
+"></a>
+
+*(Eigen)Solver for photonic slabs with permittivity modulated periodically in time.*
+
+Documentation and examples can be found on the website [bvial.info/pytmod](https://bvial.info/pytmod)
+
+<img src="https://bvial.info/pytmod/latest/_images/sphx_glr_plot_slab_modes_003.png
+" width="70%"/>
+
+
+
+--------------------
+
 ### pylatt
 
 <a class="reference external image-reference" href="https://gitlab.com/benvial/pylatt/-/releases" target="_blank"><img alt="Release" src="https://img.shields.io/endpoint?url=https://gitlab.com/benvial/pylatt/-/jobs/artifacts/main/raw/logobadge.json?job=badge"></a>

@@ -9,17 +9,6 @@ weight: 2
   <div class="container">
     <div class="row">
     
-      <div class="col-sm-6 portfolio-item"> 
-      <h3>Topology optimization</h3>
-    <a href= "{{ "/research/topopt"  | prepend: site.baseurl | prepend: site.url }}" class="portfolio-link">
-        <div class="caption">
-          <div class="caption-content">
-            <h3>Topology optimization</h3>
-            <h4>Invisibility cloak and illusion device</h4>
-          </div>
-        </div>
-          <img src="{{ "/images/research/ill.jpg"  | prepend: site.baseurl | prepend: site.url }}" class="img-responsive" width="500" height="500" alt=""></a> </div>
-          
           
       <div class="col-sm-6 portfolio-item"> 
       <h3>Photonic resonances</h3>
@@ -31,6 +20,19 @@ weight: 2
           </div>
         </div>
         <img src="{{ "/images/research/spectrum_grating.jpg"  | prepend: site.baseurl | prepend: site.url }}" class="img-responsive"  width="500" height="500" alt=""> </a> </div>
+
+
+      <div class="col-sm-6 portfolio-item"> 
+      <h3>Topology optimization</h3>
+    <a href= "{{ "/research/topopt"  | prepend: site.baseurl | prepend: site.url }}" class="portfolio-link">
+        <div class="caption">
+          <div class="caption-content">
+            <h3>Topology optimization</h3>
+            <h4>Invisibility cloak and illusion device</h4>
+          </div>
+        </div>
+          <img src="{{ "/images/research/ill.jpg"  | prepend: site.baseurl | prepend: site.url }}" class="img-responsive" width="500" height="500" alt=""></a> </div>
+          
   
     </div>
     

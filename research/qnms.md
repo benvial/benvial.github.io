@@ -66,39 +66,193 @@ operator.
 <section id="hero" class="section ">
   <div class="container">
 
-    <div class="row">
-    
-    
-    <h2>Coupling model and mode hybridization</h2>
-      <div class="col-md-4 col-sm-6 ">
-      <img src="{{ "/images/research/coupled-modes.jpg"  | prepend: site.baseurl | prepend: site.url }}" class="img-responsive" alt="">
+<div class="row">
 
-      </div>
-      <div class="col-md-7 col-sm-6 ">
 
-      <p>
-      I developped a model for the coupling of quasi-normal modes in
-      open photonic systems consisting of two resonators. By expressing
-      the modes of the coupled system as a linear combination of the modes
-      of the individual particles, we obtain a generalized eigenvalue prob-
-      lem involving small size dense matrices. We apply this technique to
-      dielectric rod dimmer of rectangular cross section for Transverse 
-      Electric (TE) polarization in a two-dimensional (2D) setup. The results of
-      our model show excellent agreement with full-wave finite element sim-
-      ulations. We provide a convergence analysis, and a simplified model
-      with a few modes to study the influence of the relative position of the
-      two resonators. This model provides interesting physical insights on
-      the coupling scheme at stake in such systems and pave the way for
-      systematic and efficient design and optimization of resonances in more
-      complicated systems, for applications including sensing, antennae and
-      spectral filtering.
-      </p>
-      <h4>Related article</h4>
-        <ul class="biblio">
-          <li  >B. Vial, and Y. Hao, <em  >A coupling model for quasi-normal modes of photonic resonators</em>. J. Opt.&nbsp;18&nbsp;(11):115004, (2016)<span class="biblinks" > <a href="https://doi.org/10.1088/2040-8978/18/11/115004" ><i class="fa fa-link" > </i> DOI</a> | <a href="https://doi.org/10.1088/2040-8978/18/11/115004" ><i class="fa fa-download" > </i> URL</a></span></li>
-        </ul>
-      </div>
-    </div>
+<h2>Coupling model and mode hybridization</h2>
+<div class="col-md-4 col-sm-6 ">
+<img src="{{ "/images/research/coupled-modes.jpg"  | prepend: site.baseurl | prepend: site.url }}" class="img-responsive" alt="">
+
+</div>
+<div class="col-md-7 col-sm-6 ">
+
+<p>
+I developped a model for the coupling of quasi-normal modes in
+open photonic systems consisting of two resonators. By expressing
+the modes of the coupled system as a linear combination of the modes
+of the individual particles, we obtain a generalized eigenvalue prob-
+lem involving small size dense matrices. We apply this technique to
+dielectric rod dimmer of rectangular cross section for Transverse 
+Electric (TE) polarization in a two-dimensional (2D) setup. The results of
+our model show excellent agreement with full-wave finite element sim-
+ulations. We provide a convergence analysis, and a simplified model
+with a few modes to study the influence of the relative position of the
+two resonators. This model provides interesting physical insights on
+the coupling scheme at stake in such systems and pave the way for
+systematic and efficient design and optimization of resonances in more
+complicated systems, for applications including sensing, antennae and
+spectral filtering.
+</p>
+<h4>Related article</h4>
+<ul class="biblio">
+<li  >B. Vial, and Y. Hao, <em  >A coupling model for quasi-normal modes of photonic resonators</em>. J. Opt.&nbsp;18&nbsp;(11):115004, (2016)<span class="biblinks" > <a href="https://doi.org/10.1088/2040-8978/18/11/115004" ><i class="fa fa-link" > </i> DOI</a> | <a href="https://doi.org/10.1088/2040-8978/18/11/115004" ><i class="fa fa-download" > </i> URL</a></span></li>
+</ul>
+</div>
+</div>
   </div>
 
+</section>
+
+
+
+<!-- ################################################################################################ -->
+
+<section id="hero" class="section ">
+  <div class="container">
+
+<div class="row">
+
+<h2>Quasinormal mode expansion in thin elastic plates</h2>
+
+<div class="col-md-4 col-sm-6 ">
+<img src="{{ "/images/research/qnm_elastic.jpg"  | prepend: site.baseurl | prepend: site.url }}" class="img-responsive" alt="">
+</div>
+
+<div class="col-md-7 col-sm-6 ">
+
+<p>
+I develop a quasinormal mode (QNM) framework for the analysis and control
+of elastic waves in thin plates loaded with resonant scatterers.
+Building on the Green’s function formalism for flexural waves, the method
+naturally addresses multiple scattering and leads to a nonlinear
+eigenvalue problem whose solutions define the resonant modes of open
+elastic systems.
+</p>
+
+<p>
+From this formulation, I derive a dispersive QNM expansion that provides
+a reduced-order model for efficient forced-response computations while
+retaining clear physical insight into resonant mode excitation. The
+theory also yields analytical sensitivities of the eigenfrequencies with
+respect to resonator parameters, enabling gradient-based optimization.
+This approach is used to design quasi–bound states in the continuum and
+to precisely position resonances in the complex frequency plane. The
+method is validated through scattering simulations in structured systems
+such as graded line arrays and elastic quasicrystals, demonstrating the
+power of QNM concepts for advanced elastic metamaterial design.
+</p>
+
+<h4>Related article</h4>
+<ul class="biblio">
+<li>
+B. Vial, M. Martí Sabaté, R. Wiltshaw, S. Guenneau, and R. V. Craster,
+<em>Quasinormal mode expansion in thin elastic plates</em>.
+Phys. Rev. B&nbsp;110, 174305 (2024)
+<span class="biblinks">
+<a href="https://doi.org/10.1103/PhysRevB.110.174305">
+<i class="fa fa-link"></i> DOI
+</a>
+|
+<a href="https://link.aps.org/doi/10.1103/PhysRevB.110.174305">
+<i class="fa fa-download"></i> URL
+</a>
+</span>
+</li>
+</ul>
+
+
+<h4>Related code</h4>
+<ul class="biblio">
+<li>
+B. Vial & M. Martí Sabaté, 
+<em>klove: Numerical modelling of waves on thin elastic plates</em> (2024).
+<span class="biblinks">
+<a href="https://gitlab.com/benvial/klove">
+<i class="fa-brands fa-gitlab"></i> gitlab
+</a>
+</span>
+</li>
+</ul>
+
+
+</div>
+</div>
+
+  </div>
+</section>
+
+
+<!-- ################################################################################################ -->
+
+<section id="hero" class="section ">
+  <div class="container">
+
+<div class="row">
+
+<h2>Quasinormal modes of Floquet media slabs</h2>
+
+<div class="col-md-4 col-sm-6 ">
+<img src="{{ "/images/research/qnm_tmod.png"  | prepend: site.baseurl | prepend: site.url }}" class="img-responsive" alt="">
+</div>
+
+<div class="col-md-7 col-sm-6 ">
+
+<p>
+I develop a quasinormal mode (QNM) framework for the analysis of
+electromagnetic scattering in time-periodically modulated media.
+Focusing on slab geometries with temporally varying permittivity, the
+approach bridges concepts from photonic QNMs and Floquet theory, leading
+to a nonlinear eigenvalue problem that characterizes the resonant
+structure of open time-modulated systems.
+</p>
+
+<p>
+From this formulation, I derive a QNM expansion that captures the
+resonant features induced by temporal modulation and provides a
+reduced-order model for efficient computation of scattered fields.
+The theory reveals how time modulation couples to resonant modes,
+enabling non-Hermitian gain–loss engineering and selective control of
+modal contributions. The framework is validated through numerical
+experiments on time-modulated slabs, and is used to design excitation
+strategies that amplify or suppress specific resonances, laying the
+groundwork for dynamically reconfigurable photonic devices with
+tailored scattering properties.
+</p>
+
+<h4>Related article</h4>
+<ul class="biblio">
+<li>
+B. Vial and R. V. Craster,
+<em>Quasinormal modes of Floquet media slabs</em>.
+Phys. Rev. B&nbsp;112, 214201 (2025)
+<span class="biblinks">
+<a href="https://doi.org/10.1103/xxnd-7d55">
+<i class="fa fa-link"></i> DOI
+</a>
+|
+<a href="https://link.aps.org/doi/10.1103/xxnd-7d55">
+<i class="fa fa-download"></i> URL
+</a>
+</span>
+</li>
+</ul>
+
+
+<h4>Related code</h4>
+<ul class="biblio">
+<li>
+B. Vial, 
+<em>pytmod: Time modulated wave solver</em> (2025).
+<span class="biblinks">
+<a href="https://github.com/benvial/pytmod">
+<i class="fa-brands fa-github"></i> github
+</a>
+</span>
+</li>
+</ul>
+
+</div>
+</div>
+
+  </div>
 </section>

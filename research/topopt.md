@@ -5,7 +5,7 @@ description: ""
 weight: 2
 sublink: true
 ---
-I am interrested in optimizing the shape of photonic and microwave devices for various applications and control of electromagnetic waves.
+I am interested in optimizing the shape of photonic and microwave devices for various applications and control of electromagnetic waves.
 
 <section id="hero" class="section ">
   <div class="container">
@@ -22,6 +22,45 @@ I am interrested in optimizing the shape of photonic and microwave devices for v
         <ul class="biblio">
             <li  >B. Vial, and Y. Hao, <em  >Open-Source Computational Photonics with Auto Differentiable Topology Optimization</em>. Mathematics&nbsp;10&nbsp;(20), (2022)<span class="biblinks" > <a href="https://doi.org/10.3390/math10203912" ><i class="fa fa-link" > </i> DOI</a> | <a href="https://www.mdpi.com/2227-7390/10/20/3912" ><i class="fa fa-download" > </i> URL</a></span></li>
         </ul>
+
+<h4>Related code</h4>
+<ul class="biblio">
+<li>
+B. Vial, 
+<em>gyptis: Computational Photonics in Python with the finite element method</em> (2020).
+<span class="biblinks">
+<a href="https://gitlab.com/gyptis/gyptis">
+<i class="fa-brands fa-gitlab"></i> gitlab
+</a>
+</span>
+</li>
+</ul>
+
+<ul class="biblio">
+<li>
+B. Vial, 
+<em>nannos: Fourier Modal Method for multilayer metamaterials with automatic differentiation</em> (2021).
+<span class="biblinks">
+<a href="https://gitlab.com/nannos/nannos">
+<i class="fa-brands fa-gitlab"></i> gitlab
+</a>
+</span>
+</li>
+</ul>
+
+
+<ul class="biblio">
+<li>
+B. Vial, 
+<em>protis: Plane wave expansion method for photonic crystals with automatic differentiation</em> (2021).
+<span class="biblinks">
+<a href="https://gitlab.com/protis/protis">
+<i class="fa-brands fa-gitlab"></i> gitlab
+</a>
+</span>
+</li>
+</ul>
+
       </div>
     </div>
   </div>
