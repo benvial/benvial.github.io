@@ -1,0 +1,69 @@
+---
+// Fundations
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Components
+import BlogEntry from "@/components/blog/BlogEntry.astro";
+// Content
+import { getCollection } from "astro:content";
+export async function getStaticPaths() {
+  const allPosts = await getCollection("posts");
+  const uniqueTags = [
+    ...new Set(allPosts.map((post) => post.data.tags).flat()),
+  ];
+  return uniqueTags.map((tag) => {
+    const filteredPosts = allPosts.filter((post) =>
+      post.data.tags.includes(tag)
+    );
+    return {
+      params: { tag },
+      props: { posts: filteredPosts },
+    };
+  });
+}
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+// Content
+const allPostsUnsorted = await getCollection("posts");
+// Sort the posts in descending order by publication date (newest to oldest)
+const allPosts = allPostsUnsorted.sort(
+  (a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate)
+);
+// Tags
+const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
+---
+
+<BaseLayout pageTitle={tag}>
+  <section>
+    <Wrapper variant="standard" class="relative pt-48 pb-24">
+      <Text
+        tag="h1"
+        variant="displaySM"
+        class="text-accent-950 uppercase font-display font-medium"
+      >
+        {tag}
+      </Text>
+
+      <div
+        class="relative flex h-full mt-8 overflow-x-scroll gap-2 lg:gap-4 scrollable-content snap-x snap-proximity scrollbar-hide"
+      >
+        {
+          tags.map((tag) => (
+            <a
+              title={tag}
+              aria-label={tag}
+              href={`/blog/tags/${tag}`}
+              class="text-xs capitalize text-base-500 hover:text-accent-500"
+            >
+              {tag}
+            </a>
+          ))
+        }
+      </div>
+      <div class="mt-4 grid grid-cols-1 gap-1 md:grid-cols-2">
+        {posts.map((post) => <BlogEntry post={post} />)}
+      </div>
+    </Wrapper>
+  </section>
+</BaseLayout>

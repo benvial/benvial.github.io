@@ -1,0 +1,67 @@
+---
+// Assets
+import Kicker from "@/components/assets/Kicker.astro";
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Button from "@/components/fundations/elements/Button.astro";
+// Icons
+import ChevronLeft from "@/components/fundations/icons/ChevronLeft.astro";
+import ChevronRight from "@/components/fundations/icons/ChevronRight.astro";
+// Components
+import CustomersEntry2 from "@/components/customers/CustomersEntry2.astro";
+// Content
+import { getCollection } from "astro:content";
+const allCustomers = await getCollection("customers");
+---
+
+<section class="relative overflow-hidden">
+  <div class="overflow-hidden relative">
+    <div
+      class="relative w-full pt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2 border-b border-base-200"
+    >
+      <div class="px-8 lg:pl-42 lg:text-balance">
+        <Kicker number="04" text="Our students" colorClass="text-blue-700 " />
+        <Text
+          tag="h2"
+          variant="textXL"
+          class="text-accent-950 font-display font-medium mt-12"
+        >
+          Our alumni found work at companies like Stripe, Astro and Polar
+        </Text>
+        <Text
+          tag="p"
+          variant="textBase"
+          class="mt-4 text-base-500 text-balance"
+        >
+          We’re proud to see students thrive in teams at Spotify, NASA, Notion,
+          and other world-class organizations.
+        </Text>
+        <div class="flex mt-8 gap-2">
+          <Button
+            iconOnly
+            size="sm"
+            variant="muted"
+            aria-label="Previous slide"
+            id="keen-slider-previous"
+            ><ChevronLeft slot="icon" size="base" />
+          </Button>
+          <Button
+            iconOnly
+            size="sm"
+            variant="muted"
+            aria-label="Next slide"
+            id="keen-slider-next"
+          >
+            <ChevronRight slot="icon" size="base" />
+          </Button>
+        </div>
+      </div>
+      <div class="w-full pl-8 overflow-hidden pt-8 pb-0 bg-blue-200">
+        <!-- Keen Slider -->
+        <div id="keen-slider" class="relative z-0 keen-slider w-max">
+          {allCustomers.map((post) => <CustomersEntry2 post={post} />)}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

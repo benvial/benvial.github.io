@@ -1,0 +1,110 @@
+---
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Button from "@/components/fundations/elements/Button.astro";
+// Icons
+import Clock from "@/components/fundations/icons/Clock.astro";
+import School from "@/components/fundations/icons/School.astro";
+import Chalkboard from "@/components/fundations/icons/Chalkboard.astro";
+// Props
+const { post, lessons = [] } = Astro.props;
+if (!post) {
+  throw new Error("Missing `post` prop in CourseEntry.astro");
+}
+const {
+  slug,
+  data: { title, description, pubDate, duration, teacher, isNew, price = 0 },
+} = post;
+const courseUrl = `/courses/${slug}`;
+const coursePrice = price === 0 ? "Free" : `$${price}`;
+const lessonCount = lessons.filter((l) => l.data.course === slug).length;
+
+const formattedDate = new Date(pubDate).toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "2-digit",
+});
+---
+
+<div>
+  <article
+    class="relative flex flex-col h-full p-6 gap-24 lg:gap-48 bg-base-50 group transition-all duration-300"
+  >
+    <div>
+      <div class="flex items-start justify-between">
+        <div>
+          <Text
+            tag="p"
+            variant="displayMD"
+            class="font-medium text-base-700 font-display uppercase tracking-tight"
+            >{coursePrice}</Text
+          >
+          <Text tag="p" variant="textXS" class="uppercase text-base-500 mt-2">
+            <time datetime={pubDate}> {formattedDate}</time>
+          </Text>
+        </div>
+        {
+          isNew && (
+            <span class="text-[10px] px-2 py-0.5 rounded-full bg-base-200 text-base-900 font-semibold uppercase tracking-wide">
+              New
+            </span>
+          )
+        }
+      </div>
+      <div
+        class="flex flex-col pt-4 mt-4 border-t text-base-500 gap-2 border-base-200"
+      >
+        <Text tag="p" variant="textXS" class="flex items-center gap-2">
+          <Clock size="sm" />
+          <span class="font-medium text-base-900">Duration:</span>
+          {duration}</Text
+        >
+        <Text tag="p" variant="textXS" class="flex items-center gap-2">
+          <Chalkboard size="sm" />
+          <span class="font-medium text-base-900">Lessons: </span>{
+            lessonCount
+          }</Text
+        >
+        <Text tag="p" variant="textXS" class="flex items-center gap-2">
+          <School size="sm" />
+
+          <span class="font-medium text-base-900">Teacher:</span>
+          {
+            teacher
+              .split("-")
+              .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+              .join(" ")
+          }
+        </Text>
+      </div>
+    </div>
+    <div class="flex flex-col mt-4">
+      <div>
+        <Text
+          tag="h3"
+          variant="textBase"
+          class="font-medium text-accent-900 text-balance"
+        >
+          {title}
+        </Text>
+        <Text
+          tag="p"
+          variant="textSM"
+          class="mt-2 text-base-500 line-clamp-2 text-balance"
+        >
+          {description}
+        </Text>
+        <Button
+          isLink={true}
+          href={courseUrl}
+          aria-label={`View course: ${title}`}
+          size="xs"
+          variant="accent"
+          class="mt-12 w-fit"
+        >
+          Enroll now
+        </Button>
+      </div>
+    </div>
+  </article>
+</div>

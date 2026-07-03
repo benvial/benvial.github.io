@@ -1,0 +1,184 @@
+---
+// Fundations
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Button from "@/components/fundations/elements/Button.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Icons
+import Plus from "@/components/fundations/icons/Plus.astro";
+---
+
+<BaseLayout>
+  <section>
+    <Wrapper variant="standard" class="pt-48 pb-24">
+      <Text
+        tag="h1"
+        variant="displaySM"
+        class="text-accent-950 uppercase font-display font-medium"
+      >
+        Buttons
+      </Text>
+      <div class="grid grid-cols-1 col-span-full lg:grid-cols-3 mt-12">
+        <!-- Default -->
+        <div class="py-4 grid grid-cols-2 md:grid-cols-3 gap-8">
+          <div class="w-full md:col-span-2">
+            <Text
+              tag="p"
+              variant="textXS"
+              class="font-medium uppercase text-base-900"
+            >
+              Default text
+            </Text>
+            <div class="flex flex-col mt-2 gap-4">
+              <Button size="xxs" variant="default">Default XXS</Button>
+              <Button size="xs" variant="default">Default XS</Button>
+              <Button size="sm" variant="default">Default SM</Button>
+              <Button size="base" variant="default">Default Base</Button>
+              <Button size="md" variant="default">Default MD</Button>
+              <Button size="lg" variant="default">Default LG</Button>
+              <Button size="xl" variant="default">Default XL</Button>
+            </div>
+          </div>
+          <div>
+            <Text
+              tag="p"
+              variant="textXS"
+              class="font-medium uppercase text-base-900"
+            >
+              Icon
+            </Text>
+            <div class="flex flex-col mt-2 gap-4">
+              <Button size="xxs" variant="default" iconOnly
+                ><Plus slot="icon" size="sm" /></Button
+              >
+              <Button size="xs" variant="default" iconOnly
+                ><Plus slot="icon" size="sm" /></Button
+              >
+              <Button size="sm" variant="default" iconOnly
+                ><Plus slot="icon" size="base" /></Button
+              >
+              <Button size="base" variant="default" iconOnly
+                ><Plus slot="icon" size="base" /></Button
+              >
+              <Button size="md" variant="default" iconOnly
+                ><Plus slot="icon" size="lg" /></Button
+              >
+              <Button size="lg" variant="default" iconOnly
+                ><Plus slot="icon" size="xl" /></Button
+              >
+              <Button size="xl" variant="default" iconOnly
+                ><Plus slot="icon" size="xl" /></Button
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Accent -->
+        <div class="py-4 grid grid-cols-2 md:grid-cols-3 gap-8">
+          <div class="w-full md:col-span-2">
+            <Text
+              tag="p"
+              variant="textXS"
+              class="font-medium uppercase text-base-900"
+            >
+              Accent text
+            </Text>
+            <div class="flex flex-col mt-2 gap-4">
+              <Button size="xxs" variant="accent">Accent XXS</Button>
+              <Button size="xs" variant="accent">Accent XS</Button>
+              <Button size="sm" variant="accent">Accent SM</Button>
+              <Button size="base" variant="accent">Accent Base</Button>
+              <Button size="md" variant="accent">Accent MD</Button>
+              <Button size="lg" variant="accent">Accent LG</Button>
+              <Button size="xl" variant="accent">Accent XL</Button>
+            </div>
+          </div>
+          <div>
+            <Text
+              tag="p"
+              variant="textXS"
+              class="font-medium uppercase text-base-900"
+            >
+              Icon
+            </Text>
+            <div class="flex flex-col mt-2 gap-4">
+              <Button size="xxs" variant="accent" iconOnly
+                ><Plus slot="icon" size="sm" /></Button
+              >
+              <Button size="xs" variant="accent" iconOnly
+                ><Plus slot="icon" size="sm" /></Button
+              >
+              <Button size="sm" variant="accent" iconOnly
+                ><Plus slot="icon" size="base" /></Button
+              >
+              <Button size="base" variant="accent" iconOnly
+                ><Plus slot="icon" size="base" /></Button
+              >
+              <Button size="md" variant="accent" iconOnly
+                ><Plus slot="icon" size="lg" /></Button
+              >
+              <Button size="lg" variant="accent" iconOnly
+                ><Plus slot="icon" size="xl" /></Button
+              >
+              <Button size="xl" variant="accent" iconOnly
+                ><Plus slot="icon" size="xl" /></Button
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Muted -->
+        <div class="py-4 grid grid-cols-2 md:grid-cols-3 gap-8">
+          <div class="w-full md:col-span-2">
+            <Text
+              tag="p"
+              variant="textXS"
+              class="font-medium uppercase text-base-900"
+            >
+              Muted text
+            </Text>
+            <div class="flex flex-col mt-2 gap-4">
+              <Button size="xxs" variant="muted">Muted XXS</Button>
+              <Button size="xs" variant="muted">Muted XS</Button>
+              <Button size="sm" variant="muted">Muted SM</Button>
+              <Button size="base" variant="muted">Muted Base</Button>
+              <Button size="md" variant="muted">Muted MD</Button>
+              <Button size="lg" variant="muted">Muted LG</Button>
+              <Button size="xl" variant="muted">Muted XL</Button>
+            </div>
+          </div>
+          <div>
+            <Text
+              tag="p"
+              variant="textXS"
+              class="font-medium uppercase text-base-900"
+            >
+              Icon
+            </Text>
+            <div class="flex flex-col mt-2 gap-4">
+              <Button size="xxs" variant="muted" iconOnly
+                ><Plus slot="icon" size="sm" /></Button
+              >
+              <Button size="xs" variant="muted" iconOnly
+                ><Plus slot="icon" size="sm" /></Button
+              >
+              <Button size="sm" variant="muted" iconOnly
+                ><Plus slot="icon" size="base" /></Button
+              >
+              <Button size="base" variant="muted" iconOnly
+                ><Plus slot="icon" size="base" /></Button
+              >
+              <Button size="md" variant="muted" iconOnly
+                ><Plus slot="icon" size="lg" /></Button
+              >
+              <Button size="lg" variant="muted" iconOnly
+                ><Plus slot="icon" size="xl" /></Button
+              >
+              <Button size="xl" variant="muted" iconOnly
+                ><Plus slot="icon" size="xl" /></Button
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </Wrapper>
+  </section>
+</BaseLayout>

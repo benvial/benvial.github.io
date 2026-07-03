@@ -1,0 +1,91 @@
+---
+// Assets
+import Kicker from "@/components/assets/Kicker.astro";
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+const data = [
+  {
+    title: "Build real projects, not just examples",
+    subtitle:
+      "From landing pages to blogs—you’ll ship production-ready sites while learning. No filler, just hands-on experience.",
+  },
+  {
+    title: "Set your own pace",
+    subtitle:
+      "Binge it in a weekend or take it slow. You decide how and when to learn—no deadlines, no stress.",
+  },
+  {
+    title: "Start from scratch, step by step",
+    subtitle:
+      "Every lesson breaks down complex ideas into approachable steps, perfect for Astro beginners.",
+  },
+  {
+    title: "Finish strong with a certificate",
+    subtitle:
+      "Get a downloadable certificate to show off your skills and prove you actually did the work.",
+  },
+  {
+    title: "Access forever, updates included",
+    subtitle:
+      "Buy once, keep it forever. Return anytime—even after future updates are added.",
+  },
+];
+---
+
+<section>
+  <Wrapper variant="standard" class="py-8">
+    <div class="p-8 lg:p-20 bg-blue-100">
+      <div
+        class="grid gap-4 lg:gap-8 grid-cols-1 lg:grid-cols-3 lg:items-start"
+      >
+        <div class="text-balance lg:sticky lg:top-24 lg:order-last">
+          <div>
+            <Kicker
+              number="03"
+              text="Course Experience"
+              colorClass="text-base-900"
+            />
+            <Text
+              tag="h2"
+              variant="textXL"
+              class="text-accent-950 font-display font-medium mt-12"
+            >
+              What you'll actually get out of this course
+            </Text>
+          </div>
+          <Text tag="p" variant="textSM" class="mt-2 text-base-600">
+            From project-based learning to lifetime access—here’s how we make it
+            worth your time.
+          </Text>
+        </div>
+        <div
+          class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-1 lg:col-span-2 divide-y divide-blue-200"
+        >
+          {
+            data.map((item) => (
+              <div>
+                <div class="relative flex flex-col justify-start  pb-8 grid grid-cols-1 gap-2 ">
+                  <Text
+                    tag="h3"
+                    variant="textLG"
+                    class=" text-base-900 font-display tracking-tight"
+                  >
+                    {item.title}
+                  </Text>
+                  <Text
+                    tag="p"
+                    variant="textSM"
+                    class=" text-base-900/60 text-balance "
+                  >
+                    {item.subtitle}
+                  </Text>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </Wrapper>
+</section>

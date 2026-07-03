@@ -1,0 +1,119 @@
+---
+// Assets
+import { Image } from "astro:assets";
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+// Content
+const { url, avatar, name, testimonial, occupation } = {
+  url: "/customers/" + Astro.props.post.id,
+  avatar: Astro.props.post.data.avatar.url,
+  name: Astro.props.post.data.name,
+  testimonial: Astro.props.post.data.testimonial,
+  occupation: Astro.props.post.data.occupation,
+};
+---
+
+<style>
+  .keen-slider__slide {
+    overflow: visible;
+  }
+</style>
+<article
+  class="relative overflow-hidden isolate keen-slider__slide bg-white"
+>
+  <a href={url} title={name} aria-label={name} class="absolute inset-0 z-10"
+  ></a>
+
+  <figure class="flex flex-col justify-between h-full gap-24">
+    <blockquote class="p-6">
+      <Text tag="p" variant="textBase" class="italic font-medium text-base-500">
+        "{testimonial}"
+      </Text>
+    </blockquote>
+
+    <footer>
+      <div class="flex items-end gap-2">
+        <Image
+          width="1000"
+          height="1000"
+          alt={name}
+          src={avatar}
+          class="object-cover object-center size-14 lg:size-48 aspect-square shrink-0"
+        />
+        <div class="pb-2">
+          <Text tag="h3" variant="textBase" class="font-medium text-base-900">
+            {name}
+          </Text>
+          <Text tag="p" variant="textSM" class="text-base-500 text-balance">
+            {occupation}</Text
+          >
+        </div>
+      </div>
+    </footer>
+  </figure>
+</article>
+<script type="module">
+  import KeenSlider from "https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/+esm";
+  // Autoplay plugin
+  const autoplay = (slider) => {
+    let timeout;
+    let mouseOver = false;
+    function clearNextTimeout() {
+      clearTimeout(timeout);
+    }
+    function nextTimeout() {
+      clearTimeout(timeout);
+      if (mouseOver) return;
+      timeout = setTimeout(() => {
+        slider.next();
+      }, 3000); // Adjust time if needed
+    }
+    slider.on("created", () => {
+      slider.container.addEventListener("mouseover", () => {
+        mouseOver = true;
+        clearNextTimeout();
+      });
+      slider.container.addEventListener("mouseout", () => {
+        mouseOver = false;
+        nextTimeout();
+      });
+      nextTimeout();
+    });
+    slider.on("dragStarted", clearNextTimeout);
+    slider.on("animationEnded", nextTimeout);
+    slider.on("updated", nextTimeout);
+  };
+  const keenSlider = new KeenSlider(
+    "#keen-slider",
+    {
+      loop: true,
+      defaultAnimation: {
+        duration: 1000,
+      },
+      detailsChanged: (s) => {
+        s.slides.forEach((element, idx) => {
+          element.style.opacity = s.track.details.slides[idx].portion;
+        });
+      },
+      slides: {
+        origin: "auto",
+        perView: 1.2,
+        spacing: 4,
+      },
+      breakpoints: {
+        "(min-width: 1024px)": {
+          slides: {
+            origin: "auto",
+            perView: 1.5,
+            spacing: 8,
+          },
+        },
+      },
+    },
+    [autoplay] //  Add autoplay plugin here
+  );
+  const keenSliderPrevious = document.getElementById("keen-slider-previous");
+  const keenSliderNext = document.getElementById("keen-slider-next");
+  keenSliderPrevious.addEventListener("click", () => keenSlider.prev());
+  keenSliderNext.addEventListener("click", () => keenSlider.next());
+</script>

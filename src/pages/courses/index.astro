@@ -1,0 +1,59 @@
+---
+import { getCollection } from "astro:content";
+// Layouts & Components
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import CoursesSearch from "@/components/courses/CoursesSearch.astro";
+import CourseEntry from "@/components/courses/CourseEntry.astro";
+// Fetch data
+const allLessons = await getCollection("lessons");
+const allCourses = (await getCollection("courses")).sort(
+  (a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate)
+);
+const tags = [
+  ...new Set(allCourses.flatMap((course) => course.data.tags || [])),
+];
+---
+
+<BaseLayout>
+  <section>
+    <Wrapper variant="standard" class="pt-48 pb-24">
+      <div class="text-balance">
+        <Text
+          tag="h1"
+          variant="displaySM"
+          class="text-accent-950 uppercase font-display font-medium"
+        >
+          Our Courses
+        </Text>
+        <Text tag="p" variant="textBase" class="mt-2 text-base-500">
+          Browse the latest lessons and expand your skills at your own pace.
+        </Text>
+      </div>
+      <div
+        class="relative flex h-full mt-12 overflow-x-scroll gap-2 lg:gap-4 scrollable-content snap-x snap-proximity scrollbar-hide"
+      >
+        {
+          tags.map((tag) => (
+            <a
+              title={tag}
+              aria-label={tag}
+              href={`/courses/tags/${tag}`}
+              class="text-xs capitalize text-base-500 hover:text-accent-500"
+            >
+              {tag}
+            </a>
+          ))
+        }
+      </div>
+      <div class="mt-4 grid grid-cols-1 gap-1 md:grid-cols-2 lg:grid-cols-3">
+        {
+          allCourses.map((course) => (
+            <CourseEntry post={course} lessons={allLessons} />
+          ))
+        }
+      </div>
+    </Wrapper>
+  </section>
+</BaseLayout>

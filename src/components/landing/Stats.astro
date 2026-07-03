@@ -1,0 +1,25 @@
+---
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+const data = [
+  { label: "Publications", value: "25+", bg: "bg-accent-50", val: "text-accent-950", lbl: "text-accent-700" },
+  { label: "Years Experience", value: "10+", bg: "bg-violet-50", val: "text-violet-950", lbl: "text-violet-700" },
+  { label: "Open Source Packages", value: "5+", bg: "bg-blue-50", val: "text-blue-950", lbl: "text-blue-700" },
+  { label: "h-index", value: "12", bg: "bg-yellow-50", val: "text-yellow-950", lbl: "text-yellow-700" },
+];
+---
+<Wrapper variant="standard" class="py-12">
+    <div class="grid gap-2 sm:grid-cols-3 lg:grid-cols-4">
+      {data.map((item) => (
+        <div class={`flex flex-col p-8 gap-32 ${item.bg}`}>
+          <Text tag="p" variant="displayLG" class={`font-display italic uppercase ${item.val}`}>
+            {item.value}
+          </Text>
+          <Text tag="h3" variant="textBase" class={`text-right ${item.lbl}`}>
+            {item.label}
+          </Text>
+        </div>
+      ))}
+    </div>
+  </Wrapper>
+</section>

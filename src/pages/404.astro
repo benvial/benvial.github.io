@@ -1,0 +1,61 @@
+---
+// Fundations
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Button from "@/components/fundations/elements/Button.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Icons
+import ChevronLeft from "@/components/fundations/icons/ChevronLeft.astro";
+import ChevronRight from "@/components/fundations/icons/ChevronRight.astro";
+---
+
+<BaseLayout>
+  <section>
+    <Wrapper variant="standard" class="py-32 lg:py-62">
+      <div class="text-balance max-w-3xl">
+        <Text
+          tag="h1"
+          variant="displayXL"
+          class="text-accent-950 uppercase font-display font-medium"
+        >
+          Oops.This page ghosted us.
+        </Text>
+        <Text tag="p" variant="textBase" class="mt-4 text-base-500">
+          Looks like what you're looking for doesn’t exist. Maybe it got lost in
+          the spam folder. Or maybe it never existed at all. Hard to say.
+        </Text>
+      </div>
+      <div class="flex flex-col gap-8 mt-8 max-w-xl">
+        <div class="flex items-center gap-2">
+          <Button isLink={true} href="/" iconOnly size="base" variant="muted">
+            <ChevronLeft slot="icon" size="base" />
+          </Button>
+          <Text
+            tag="p"
+            variant="textLG"
+            class="uppercase font-display text-base-900 font-medium"
+            >Go back home</Text
+          >
+        </div>
+
+        <div class="flex items-center gap-2">
+          <Text
+            tag="p"
+            variant="textLG"
+            class="uppercase font-display text-base-900 font-medium"
+            >See all courses
+          </Text>
+          <Button
+            isLink={true}
+            href="/courses"
+            iconOnly
+            size="base"
+            variant="accent"
+          >
+            <ChevronRight slot="icon" size="base" />
+          </Button>
+        </div>
+      </div>
+    </Wrapper>
+  </section>
+</BaseLayout>

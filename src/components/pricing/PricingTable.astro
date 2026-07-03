@@ -1,0 +1,196 @@
+---
+// Icons 
+import X from "@/components/fundations/icons/X.astro";
+import Minus from "@/components/fundations/icons/Minus.astro";
+// Fundations
+import Button from "@/components/fundations/elements/Button.astro";
+// Table
+export const pricingFeatures = [
+  {
+    category: "Course Access",
+    title: "Unlock everything you need to learn",
+    description:
+      "Get full access to core content, extras, and future updates depending on your plan.",
+    features: [
+      {
+        label: "Full Course Access",
+        title: "Full Course Access",
+        description: "Watch every video lesson, from intro to advanced topics.",
+        values: ["yes", "yes"],
+      },
+      {
+        label: "Project Files",
+        title: "Downloadable Project Files",
+        description: "Get all source files to follow along or reuse in your work.",
+        values: ["yes", "yes"],
+      },
+      {
+        label: "Bonus Lessons",
+        title: "Bonus Lessons",
+        description: "Extra deep dives and tips not available in the free version.",
+        values: ["no", "yes"],
+      },
+      {
+        label: "Future Updates",
+        title: "Lifetime Updates",
+        description: "Access to new lessons and content added after purchase.",
+        values: ["yes", "yes"],
+      },
+    ],
+  },
+  {
+    category: "Collaboration",
+    title: "Work and grow together",
+    description:
+      "Designed for individuals or teams who want to learn side-by-side with support and tracking.",
+    features: [
+      {
+        label: "Team Access",
+        title: "Team Access",
+        description: "Invite teammates to the course under one plan.",
+        values: ["no", "Up to 5 users"],
+      },
+      {
+        label: "Progress Tracking",
+        title: "Progress Tracking",
+        description: "See how far each team member has progressed.",
+        values: ["no", "yes"],
+      },
+      {
+        label: "Admin Dashboard",
+        title: "Admin Dashboard",
+        description: "Central dashboard to manage users and access stats.",
+        values: ["no", "yes"],
+      },
+    ],
+  },
+  {
+    category: "Support",
+    title: "Support when you need it",
+    description:
+      "All plans include email support, with higher tiers unlocking faster responses and personal guidance.",
+    features: [
+      {
+        label: "Email Support",
+        title: "Email Support",
+        description: "Reach out anytime if you hit a roadblock.",
+        values: ["yes", "yes"],
+      },
+      {
+        label: "Priority Support",
+        title: "Priority Support",
+        description: "Jump the line and get faster answers to your questions.",
+        values: ["no", "yes"],
+      },
+      {
+        label: "Dedicated Contact",
+        title: "Dedicated Contact",
+        description: "Work with a dedicated support person for your team.",
+        values: ["no", "yes"],
+      },
+    ],
+  },
+  {
+    category: "Certification",
+    title: "Proof of learning",
+    description:
+      "Get recognition for your work with certificates for individuals and teams.",
+    features: [
+      {
+        label: "Completion Certificate",
+        title: "Completion Certificate",
+        description: "Earn a shareable certificate after completing the course.",
+        values: ["yes", "yes"],
+      },
+      {
+        label: "Team Certifications",
+        title: "Team Certifications",
+        description: "Generate certificates for every learner in your group.",
+        values: ["no", "yes"],
+      },
+    ],
+  },
+];
+
+---
+    <div class="w-full mt-4 overflow-x-auto ">
+      <div
+        class="min-w-[768px]  overflow-hidden"
+      >
+        <table class="w-full text-sm">
+          <thead class="text-center">
+            <tr>
+              <th class="px-4 py-2 font-medium text-left  text-base-900"
+                >Included</th
+              >
+              <th class="px-4 py-2 font-medium text-base-900">Individuals</th>
+              <th class="px-4 py-2 font-medium text-base-900">Teams</th>
+             
+            </tr>
+          </thead>
+         <tbody>
+  {
+    pricingFeatures.map(({ category, title, description, features }) => (
+      <>
+        <!-- Category Header -->
+        <tr class="bg-base-50/50">
+          <td
+            colspan="4"
+            class="relative px-4 pt-4 pt-10 pb-2 overflow-x-auto text-sm tracking-wide uppercase text-base-900 "
+          >
+            {category}
+          </td>
+        </tr>
+        <tr class="bg-base-100">
+          <td
+            colspan="4"
+            class="px-4 pt-12 pb-2 text-left"
+          >
+            <p class="text-base font-medium text-base-900">{title}</p>
+            <p class="mt-1 text-sm text-base-600 text-balance">{description}</p>
+          </td>
+        </tr>
+        <!-- Feature Rows -->
+        {
+          features.map(({ title, description, values }) => (
+            <tr class="align-top  even:bg-base-50/30">
+              <td class="w-1/3 px-4 py-4 text-left">
+                <p class="text-sm font-medium text-base-900">{title}</p>
+                <p class="mt-1 text-xs text-base-600 text-balance">{description}</p>
+              </td>
+              {
+                values.map((value) => (
+                  <td class="px-4 py-4 text-center text-base-500">
+                    {
+                      value === "yes" ? <X size="sm" class="mx-auto" /> :
+                      value === "no" ? <Minus size="sm" class="mx-auto" /> :
+                      value
+                    }
+                  </td>
+                ))
+              }
+            </tr>
+          ))
+        }
+      </>
+    ))
+  }
+  <!-- CTA Row -->
+  <tr>
+    <td></td>
+    <td class="px-4 py-6 text-center">
+      <Button class="w-fit" variant="accent" size="sm">
+        Get started
+      </Button>
+    </td>
+    <td class="px-4 py-6 text-center">
+      <Button class="w-fit" variant="muted" size="sm">
+        Get started
+      </Button>
+    </td>
+   
+  </tr>
+</tbody>
+        </table>
+      </div>
+    </div>

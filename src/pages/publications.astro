@@ -1,0 +1,150 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+import publications from "@/data/publications.json";
+
+function formatAuthors(authors: Array<{ first: string; last: string }>) {
+  if (!authors || authors.length === 0) return "";
+  if (authors.length === 1) return `${authors[0].first} ${authors[0].last}`;
+  return authors
+    .map((a, i) => {
+      const name = `${a.first} ${a.last}`;
+      if (i === 0) return name;
+      if (i === authors.length - 1) return `and ${name}`;
+      return name;
+    })
+    .join(", ");
+}
+
+function pubCitation(pub: any) {
+  const auth = formatAuthors(pub.authors);
+  const title = pub.title ? `<em>${pub.title}</em>` : "";
+
+  let venue = "";
+  let suffix = "";
+
+  if (pub.type === "article") {
+    venue = pub.journal || "";
+    if (pub.volume) {
+      venue += ` ${pub.volume}`;
+      if (pub.number) venue += ` (${pub.number})`;
+    }
+    if (pub.pages) venue += `, ${pub.pages}`;
+    suffix = pub.year ? ` (${pub.year})` : "";
+  } else if (pub.type === "inproceedings") {
+    const needsIn = pub.booktitle && !/^seminar/i.test(pub.booktitle);
+    venue = pub.booktitle ? (needsIn ? `In ${pub.booktitle}` : pub.booktitle) : "";
+    if (pub.volume) {
+      venue += ` ${pub.volume}`;
+      if (pub.number) venue += ` (${pub.number})`;
+    }
+    if (pub.pages) venue += `, ${pub.pages}`;
+    if (pub.address) venue += `, ${pub.address}`;
+    if (pub.note) venue += `, ${pub.note}`;
+    suffix = pub.year ? ` (${pub.year})` : "";
+  } else if (pub.type === "phdthesis") {
+    venue = pub.school || "";
+    suffix = pub.year ? ` (${pub.year})` : "";
+  } else if (pub.type === "book") {
+    if (pub.editor && pub.editor !== pub.title) venue += `edited by ${pub.editor}`;
+    if (pub.isbn) venue += (venue ? ", " : "") + `ISBN ${pub.isbn}`;
+    suffix = pub.year ? ` (${pub.year})` : "";
+  } else if (pub.type === "misc") {
+    venue = pub.howpublished || "";
+    if (!venue && pub.journal) {
+      venue = pub.journal;
+      if (pub.pages) venue += `, ${pub.pages}`;
+    }
+    suffix = pub.year ? ` (${pub.year})` : "";
+  }
+
+  let citation = "";
+  if (auth && title) citation = `${auth}, ${title}`;
+  else if (auth) citation = auth;
+  else if (title) citation = title;
+
+  if (title && venue) citation += ".";
+  if (venue) citation += ` ${venue}`;
+  if (suffix) citation += suffix;
+
+  return citation + ".";
+}
+---
+
+<BaseLayout>
+  <section>
+    <Wrapper variant="standard" class="pt-48 pb-24">
+      <div class="max-w-2xl mx-auto">
+        <Text
+          tag="h1"
+          variant="displayLG"
+          class="text-accent-950 uppercase font-display font-medium text-balance"
+        >
+          Publications
+        </Text>
+        <Text tag="p" variant="textBase" class="mt-4 text-base-500">
+          Peer-reviewed articles in wave physics, metamaterials, nanophotonics,
+          and computational electromagnetics.
+        </Text>
+      </div>
+    </Wrapper>
+  </section>
+
+  <section>
+    <Wrapper variant="standard" class="pb-24">
+      <div class="max-w-2xl mx-auto space-y-16">
+        {publications.map((cat) => (
+          <div>
+            <Text
+              tag="h2"
+              variant="displaySM"
+              class="text-accent-950 font-display font-medium mb-6 pb-2 border-b border-base-200"
+            >
+              {cat.category}
+            </Text>
+            <ol class="space-y-4 text-sm leading-relaxed text-base-500 list-decimal list-inside marker:text-base-300 marker:text-xs marker:font-mono">
+              {cat.items.map((pub) => (
+                <li class="pl-2">
+                  <Fragment set:html={pubCitation(pub)} />
+                  <span class="ml-2 inline-flex items-center gap-2 align-middle">
+                    {pub.doi && (
+                      <>
+                        <a
+                          href={`https://doi.org/${pub.doi}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="inline-flex items-center gap-1 text-accent-600 hover:text-accent-500 text-xs font-medium no-underline hover:underline"
+                        >
+                          <svg class="size-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" /><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" /></svg>
+                          DOI
+                        </a>
+                        <span
+                          class="__dimensions_badge_embed__ inline-block align-middle"
+                          data-doi={pub.doi}
+                          data-hide-zero-citations="true"
+                          data-style="small_rectangle"
+                        />
+                      </>
+                    )}
+                    {pub.url && !pub.doi && (
+                      <a
+                        href={pub.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center gap-1 text-accent-600 hover:text-accent-500 text-xs font-medium no-underline hover:underline"
+                      >
+                        <svg class="size-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" /></svg>
+                        URL
+                      </a>
+                    )}
+                  </span>
+                </li>
+              ))}
+            </ol>
+          </div>
+        ))}
+      </div>
+    </Wrapper>
+  </section>
+</BaseLayout>

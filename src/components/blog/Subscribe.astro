@@ -1,0 +1,58 @@
+---
+
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+import Button from "@/components/fundations/elements/Button.astro";
+---
+
+<section>
+  <Wrapper variant="standard" class="py-24">
+    <div class="flex flex-col p-8 bg-accent-500 gap-12 lg:gap-24">
+     
+      <div
+        class="grid gap-8 lg:gap-0 grid-cols-1 lg:grid-cols-3 lg:items-end text-balance"
+      >
+        <div class="lg:col-span-2">
+          <Text tag="h2" variant="displaySM" class="font-medium text-white">
+            Stay in Orbit with the Latest from Astro
+          </Text>
+          <Text tag="p" variant="textBase" class="mt-2 text-white/80">
+            Get tips, updates, and exclusive content delivered straight to your
+            inbox. No spam, just stellar insights.
+          </Text>
+        </div>
+
+        <form class="space-y-2">
+          <div class="w-full">
+            <div class="flex items-baseline justify-between mb-1">
+              <label for="email" class="text-sm font-medium text-white"
+                >Email Address</label
+              >
+            </div>
+            <div class="relative z-0 focus-within:z-10">
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="you@example.com"
+                class="block w-full px-4 py-2 text-xs leading-tight text-white align-middle border border-transparent bg-white/20 transition duration-300 ease-in-out focus:z-10 h-9 rounded-md ring-1 ring-white/40 placeholder-white/50 focus:border-accent-500 focus:ring-white focus:ring-2 focus:outline-none"
+                inputmode="email"
+              />
+            </div>
+          </div>
+
+          <Button
+            size="sm"
+            variant="muted"
+            gap="sm"
+            type="submit"
+            class="w-full"
+          >
+            Send Message
+          </Button>
+        </form>
+      </div>
+    </div>
+  </Wrapper>
+</section>

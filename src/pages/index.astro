@@ -1,0 +1,40 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+import Hero from "@/components/landing/Hero.astro";
+import Stats from "@/components/landing/Stats.astro";
+import ResearchCards from "@/components/landing/ResearchCards.astro";
+import ConsultingCards from "@/components/landing/ConsultingCards.astro";
+import BlogEntry from "@/components/blog/BlogEntry.astro";
+import { getCollection } from "astro:content";
+
+const researchEntries = await getCollection("research");
+
+const allPostsUnsorted = await getCollection("posts");
+const recentPosts = allPostsUnsorted
+  .sort((a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate))
+  .slice(0, 4);
+---
+
+<BaseLayout>
+  <Hero />
+  <Stats />
+  <ResearchCards entries={researchEntries} />
+  <ConsultingCards />
+  <section>
+    <Wrapper variant="standard" class="py-12">
+      <Text
+        tag="h2"
+        variant="displaySM"
+        class="text-accent-950 uppercase font-display font-medium text-balance mb-8"
+      >
+        Latest Posts
+      </Text>
+
+      <div class="grid grid-cols-1 gap-1 md:grid-cols-2">
+        {recentPosts.map((post) => <BlogEntry post={post} />)}
+      </div>
+    </Wrapper>
+  </section>
+</BaseLayout>

@@ -1,0 +1,102 @@
+---
+// Assets
+import Kicker from "@/components/assets/Kicker.astro";
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Icons
+import Plus from "@/components/fundations/icons/Plus.astro";
+const data = [
+  {
+    question: "Do I need any prior experience with Astro?",
+    answer:
+      "Nope! This course is beginner-friendly. We’ll start from scratch and guide you through everything you need to know to get comfortable with Astro.",
+  },
+  {
+    question: "How long will I have access to the course?",
+    answer:
+      "You’ll get lifetime access. Buy once, and revisit the lessons anytime you want—even after we add future updates.",
+  },
+  {
+    question: "Do I get a certificate after completing the course?",
+    answer:
+      "Yes! Once you complete all the lessons and projects, you’ll receive a downloadable certificate of completion you can share anywhere.",
+  },
+  {
+    question: "Can I use this with my team?",
+    answer:
+      "Absolutely. The Scale and Enterprise plans include team access, progress tracking, and admin features to support team learning.",
+  },
+  {
+    question: "What if I don’t like the course?",
+    answer:
+      "We offer a 14-day refund policy—no questions asked. Just reach out and we’ll take care of it.",
+  },
+  {
+    question: "What tools do I need to follow along?",
+    answer:
+      "You’ll need a code editor like VS Code and a modern browser. We’ll walk you through setting everything else up step by step.",
+  },
+  {
+    question: "Is this course up to date with the latest version of Astro?",
+    answer:
+      "Yes. We actively update the course to match the latest features and best practices in Astro. You’ll also get access to any future updates.",
+  },
+  {
+    question: "Can I preview the course before buying?",
+    answer:
+      "We offer a few free lessons so you can get a feel for the format and teaching style before committing to a plan.",
+  },
+  {
+    question: "Do you cover deployment?",
+    answer:
+      "Yes, we’ll guide you through deploying your Astro sites using platforms like Vercel and Netlify—step by step.",
+  },
+  {
+    question: "How long does the course take to complete?",
+    answer:
+      "It depends on your pace. Most learners complete it in a few weeks, but you’re free to go faster or slower depending on your schedule.",
+  },
+];
+---
+
+<section>
+  <Wrapper variant="standard" class="py-24">
+    <div class="p-8 lg:p-20 bg-accent-100">
+      <div
+        class="grid gap-4 lg:gap-8 grid-cols-1 lg:grid-cols-3 lg:items-start"
+      >
+        <div class="text-balance lg:sticky lg:top-24">
+          <Kicker number="02" text="FAQ" colorClass="text-base-900 " />
+          <Text
+            tag="h2"
+            variant="textXL"
+            class="text-accent-950 font-display font-medium mt-12"
+          >
+            Questions? We've got answers.
+          </Text>
+          <Text tag="p" variant="textSM" class="mt-2 text-base-600">
+            Everything you need to know before starting—whether you're new to
+            Astro or just new to this course.
+          </Text>
+        </div>
+
+       <div
+          class=" gap-8 flex flex-col lg:col-span-2 divide-y divide-accent-200"
+        >
+          {
+            data.map(({ question, answer }) => (
+              <details class="pb-4">
+                <summary class="flex items-center justify-between font-medium cursor-pointer text-base-900 group-open:text-accent-600">
+                  {question}
+                  <Plus class="transition-transform duration-300 group-open:rotate-45  size-4" />
+                </summary>
+                <p class="mt-2 text-sm text-base-600">{answer}</p>
+              </details>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </Wrapper>
+</section>

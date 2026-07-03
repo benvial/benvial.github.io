@@ -1,0 +1,206 @@
+---
+// Assets
+import { Image } from "astro:assets";
+import Customer1 from "/src/images/customers/1.jpeg";
+import Customer2 from "/src/images/customers/2.jpeg";
+import Customer3 from "/src/images/customers/3.jpeg";
+import Customer4 from "/src/images/customers/4.jpeg";
+import Customer5 from "/src/images/customers/5.jpeg";
+import Customer6 from "/src/images/customers/6.jpeg";
+import Customer7 from "/src/images/customers/7.jpeg";
+import Customer8 from "/src/images/customers/8.jpeg";
+
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+---
+
+<div class="flex justify-center">
+  <div class="grid grid-cols-9 flex-shrink-0">
+    <div class="w-[120px] sm:w-[140px] md:w-[160px]">
+      <div class="bg-gradient-to-t from-base-100 p-8 aspect-square"></div>
+      <Image
+        src={Customer1}
+        width={800}
+        height={800}
+        loading="eager"
+        decoding="async"
+        alt="customer"
+        class="aspect-square object-cover object-center w-full"
+      />
+      <Image
+        src={Customer2}
+        width={800}
+        height={800}
+        loading="eager"
+        decoding="async"
+        alt="customer"
+        class="aspect-square object-cover object-center w-full"
+      />
+    </div>
+    <div class="w-[120px] sm:w-[140px] md:w-[160px]">
+      <div class="bg-gradient-to-t from-base-100 p-8 aspect-3/2"></div>
+      <Image
+        src={Customer3}
+        width={800}
+        height={800}
+        loading="eager"
+        decoding="async"
+        alt="customer"
+        class="aspect-square object-cover object-center w-full"
+      />
+      <div
+        class="bg-accent-200 p-4 aspect-square text-center flex flex-col justify-center"
+      >
+        <Text
+          tag="p"
+          variant="displaySM"
+          class="font-display italic text-accent-900 font-medium"
+        >
+          4.9/5
+        </Text>
+        <Text
+          tag="h3"
+          variant="textSM"
+          class="text-accent-800 font-medium mt-2 font-medium"
+        >
+          Average Rating
+        </Text>
+      </div>
+      <div class="bg-gradient-to-b from-base-100 p-8 aspect-square"></div>
+    </div>
+    <div class="w-[120px] sm:w-[140px] md:w-[160px]">
+      <div class="bg-gradient-to-t from-base-100 p-8 aspect-square"></div>
+
+      <Image
+        src={Customer4}
+        width={800}
+        height={800}
+        loading="eager"
+        decoding="async"
+        alt="customer"
+        class="aspect-square object-cover object-center w-full"
+      />
+      <div class="bg-gradient-to-b from-base-100 p-8 aspect-square"></div>
+    </div>
+    <div class="w-[120px] sm:w-[140px] md:w-[160px]">
+      <div class="bg-gradient-to-t from-base-100 p-8 aspect-3/2"></div>
+      <div
+        class="bg-violet-200 p-4 aspect-square text-center flex flex-col justify-center"
+      >
+        <Text
+          tag="p"
+          variant="displaySM"
+          class="font-display italic text-violet-950 font-medium"
+        >
+          48
+        </Text>
+        <Text
+          tag="h3"
+          variant="textSM"
+          class="text-violet-950 font-medium mt-2 font-medium"
+        >
+          Lessons Included
+        </Text>
+      </div>
+      <div class="bg-gradient-to-b from-base-100 p-8 aspect-square"></div>
+    </div>
+    <div class="w-[120px] sm:w-[140px] md:w-[160px]">
+      <div class="bg-gradient-to-t from-base-100 p-8 aspect-square"></div>
+
+      <Image
+        src={Customer5}
+        width={800}
+        height={800}
+        loading="eager"
+        decoding="async"
+        alt="customer"
+        class="aspect-square object-cover object-center w-full"
+      />
+      <div class="bg-gradient-to-b from-base-100 p-8 aspect-square"></div>
+    </div>
+    <div class="w-[120px] sm:w-[140px] md:w-[160px]">
+      <div class="bg-gradient-to-t from-base-100 p-8 aspect-3/2"></div>
+      <div
+        class="bg-yellow-200 p-4 aspect-square text-center flex flex-col justify-center"
+      >
+        <Text
+          tag="p"
+          variant="displaySM"
+          class="font-display italic text-yellow-950 font-medium"
+        >
+          4,200+
+        </Text>
+        <Text
+          tag="h3"
+          variant="textSM"
+          class="text-yellow-950 font-medium mt-2"
+        >
+          Students Enrolled
+        </Text>
+      </div>
+      <div class="bg-gradient-to-b from-base-100 p-8 aspect-square"></div>
+    </div>
+    <div class="w-[120px] sm:w-[140px] md:w-[160px]">
+      <div class="bg-gradient-to-t from-base-100 p-8 aspect-square"></div>
+      <Image
+        src={Customer8}
+        width={800}
+        height={800}
+        loading="eager"
+        decoding="async"
+        alt="customer"
+        class="aspect-square object-cover object-center w-full"
+      />
+      <div class="bg-gradient-to-b from-base-100 p-8 aspect-square"></div>
+    </div>
+    <div class="w-[120px] sm:w-[140px] md:w-[160px]">
+      <div class="bg-gradient-to-t from-base-100 p-8 aspect-3/2"></div>
+      <Image
+        src={Customer7}
+        width={800}
+        height={800}
+        loading="eager"
+        decoding="async"
+        alt="customer"
+        class="aspect-square object-cover object-center w-full"
+      />
+      <div
+        class="bg-blue-200 p-4 aspect-square text-center flex flex-col justify-center"
+      >
+        <Text
+          tag="p"
+          variant="displaySM"
+          class="font-display italic text-blue-950 font-medium"
+        >
+          12+
+        </Text>
+        <Text tag="h3" variant="textSM" class="text-blue-900 font-medium mt-2">
+          Hours of Content
+        </Text>
+      </div>
+      <div class="bg-gradient-to-b from-base-100 p-8 aspect-square"></div>
+    </div>
+    <div class="w-[120px] sm:w-[140px] md:w-[160px]">
+      <div class="bg-gradient-to-t from-base-100 p-8 aspect-square"></div>
+      <Image
+        src={Customer6}
+        width={800}
+        height={800}
+        loading="eager"
+        decoding="async"
+        alt="customer"
+        class="aspect-square object-cover object-center w-full"
+      />
+      <Image
+        src={Customer1}
+        width={800}
+        height={800}
+        loading="eager"
+        decoding="async"
+        alt="customer"
+        class="aspect-square object-cover object-center w-full"
+      />
+      <div class="bg-gradient-to-b from-base-100 p-8 aspect-square"></div>
+    </div>
+  </div>
+</div>

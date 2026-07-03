@@ -1,0 +1,21 @@
+---
+import { getCollection, render } from "astro:content";
+import CustomersLayout from "@/layouts/CustomersLayout.astro";
+export async function getStaticPaths() {
+  const customers = await getCollection("customers");
+  const paths = customers.map((page) => {
+    return {
+      params: { slug: page.id },
+      props: { page },
+      trailingSlash: false,
+    };
+  });
+  return paths;
+}
+const { page } = Astro.props;
+const { Content } = await render(page);
+---
+
+<CustomersLayout frontmatter={page.data}>
+  <Content />
+</CustomersLayout>

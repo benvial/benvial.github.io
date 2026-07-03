@@ -1,0 +1,71 @@
+---
+title: "Quasi-Normal Modes"
+description: "Quasimodal expansion, mode coupling, and quasinormal mode frameworks for open photonic and elastic systems"
+pubDate: 2014-02-01
+image:
+  url: "./spectrum.png"
+  alt: "Quasi-normal mode spectrum"
+tags: ["quasi-normal modes", "resonance", "photonic", "elastic"]
+---
+
+import { Image } from "astro:assets";
+import spectrum from "./spectrum.png";
+import qmemacs from "./qmemacs.jpg";
+import ldos from "./ldos.png";
+import coupled from "./coupled-modes.jpg";
+import qnmElastic from "./qnm_elastic.jpg";
+import qnmTmod from "./qnm_tmod.png";
+
+Resonance is a central phenomenon in physics. In the context of electromagnetism, I study open resonators to predict their spectral properties through the computation of their quasi-normal modes associated with complex eigenfrequencies of Maxwell's operator.
+
+## Open resonators and quasimodal expansion
+
+<Image src={spectrum} alt="Quasinormal mode spectrum" width={800} height={600} class="w-full my-4" />
+
+<Image src={qmemacs} alt="QMEMACS simulation" width={800} height={600} class="w-full my-4" />
+
+During my PhD, I developed a quasimodal expansion method (QMEM) to model and understand the scattering properties of arbitrary shaped two-dimensional open structures. In contrast with the bounded case which has only a discrete spectrum (real in the lossless media case), open resonators show a continuous spectrum composed of radiation modes and may also be characterized by resonances associated to complex eigenvalues (quasimodes).
+
+### Related article
+
+- B. Vial, F. Zolla, A. Nicolet, and M. Commandré, *Quasimodal expansion of electromagnetic fields in open two-dimensional structures*. Phys. Rev. A **89**(2):023829, (2014) — [DOI](https://doi.org/10.1103/physreva.89.023829)
+
+<Image src={ldos} alt="Local density of states computation" width={800} height={600} class="w-full my-4" />
+
+## Coupling model and mode hybridization
+
+<Image src={coupled} alt="Coupled resonator modes" width={800} height={600} class="w-full my-4" />
+
+I developed a model for the coupling of quasi-normal modes in open photonic systems consisting of two resonators. By expressing the modes of the coupled system as a linear combination of the modes of the individual particles, we obtain a generalized eigenvalue problem involving small size dense matrices.
+
+### Related article
+
+- B. Vial, and Y. Hao, *A coupling model for quasi-normal modes of photonic resonators*. J. Opt. **18**(11):115004, (2016) — [DOI](https://doi.org/10.1088/2040-8978/18/11/115004)
+
+## Quasinormal mode expansion in thin elastic plates
+
+<Image src={qnmElastic} alt="Elastic plate QNM analysis" width={800} height={600} class="w-full my-4" />
+
+I develop a quasinormal mode (QNM) framework for the analysis and control of elastic waves in thin plates loaded with resonant scatterers. Building on the Green's function formalism for flexural waves, the method naturally addresses multiple scattering and leads to a nonlinear eigenvalue problem whose solutions define the resonant modes of open elastic systems.
+
+### Related article
+
+- B. Vial, M. Martí Sabaté, R. Wiltshaw, S. Guenneau, and R. V. Craster, *Quasinormal mode expansion in thin elastic plates*. Phys. Rev. B **110**, 174305 (2024) — [DOI](https://doi.org/10.1103/PhysRevB.110.174305)
+
+### Related code
+
+- B. Vial & M. Martí Sabaté, *klove: Numerical modelling of waves on thin elastic plates* (2024) — [gitlab](https://gitlab.com/benvial/klove)
+
+## Quasinormal modes of Floquet media slabs
+
+<Image src={qnmTmod} alt="Floquet modulated slab QNM" width={800} height={600} class="w-full my-4" />
+
+I develop a quasinormal mode (QNM) framework for the analysis of electromagnetic scattering in time-periodically modulated media. Focusing on slab geometries with temporally varying permittivity, the approach bridges concepts from photonic QNMs and Floquet theory, leading to a nonlinear eigenvalue problem that characterizes the resonant structure of open time-modulated systems.
+
+### Related article
+
+- B. Vial and R. V. Craster, *Quasinormal modes of Floquet media slabs*. Phys. Rev. B **112**, 214201 (2025) — [DOI](https://doi.org/10.1103/xxnd-7d55)
+
+### Related code
+
+- B. Vial, *pytmod: Time modulated wave solver* (2025) — [github](https://github.com/benvial/pytmod)

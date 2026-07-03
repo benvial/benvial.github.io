@@ -1,0 +1,72 @@
+---
+import Logo from "@/components/assets/Logo.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Github from "@/components/fundations/icons/GithubBrand.astro";
+import Twitter from "@/components/fundations/icons/XBrand.astro";
+import Linkedin from "@/components/fundations/icons/LinkedinBrand.astro";
+---
+
+<footer class="-t">
+  <Wrapper variant="standard" class="py-12">
+    <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+      <div class="text-base-900">
+        <a href="/" class="flex items-center gap-2 font-display uppercase font-medium">
+          <span class="sr-only">Go to homepage</span>
+          <Logo class="h-4 text-base-900" />
+          <span>Benjamin Vial</span>
+        </a>
+        <p class="mt-4 text-sm font-normal text-base-500 text-balance">
+          Wave Physics Research &amp; Scientific Software Consulting
+        </p>
+      </div>
+      <div class="md:grid md:grid-cols-2 xl:grid-cols-4 md:gap-8 xl:col-span-2">
+        <div class="mt-12 md:mt-0">
+          <h3 class="text-base-900">Social</h3>
+          <ul role="list" class="mt-4 text-sm space-y-2 text-base-500">
+            <li>
+              <a href="https://github.com/benvial" class="flex items-center gap-2 hover:text-base-900" target="_blank" rel="noopener noreferrer">
+                <Github class="size-4" /> GitHub
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com/benvial" class="flex items-center gap-2 hover:text-base-900" target="_blank" rel="noopener noreferrer">
+                <Twitter class="size-4" /> Twitter
+              </a>
+            </li>
+            <li>
+              <a href="https://linkedin.com/in/benjaminvial" class="flex items-center gap-2 hover:text-base-900" target="_blank" rel="noopener noreferrer">
+                <Linkedin class="size-4" /> LinkedIn
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="mt-12 md:mt-0">
+          <h3 class="text-base-900">Links</h3>
+          <ul role="list" class="mt-4 text-sm space-y-2 text-base-500">
+            <li><a href="/research" class="hover:text-base-900">Research</a></li>
+            <li><a href="/publications" class="hover:text-base-900">Publications</a></li>
+            <li><a href="/consulting" class="hover:text-base-900">Consulting</a></li>
+            <li><a href="/code" class="hover:text-base-900">Code</a></li>
+            <li><a href="/blog" class="hover:text-base-900">Blog</a></li>
+            <li><a href="/about" class="hover:text-base-900">About</a></li>
+            <li><a href="/contact" class="hover:text-base-900">Contact</a></li>
+          </ul>
+        </div>
+        <div class="mt-12 md:mt-0">
+          <h3 class="text-base-900">Info</h3>
+          <ul role="list" class="mt-4 text-sm space-y-2 text-base-500">
+            <li><a href="/infopages/privacy" class="hover:text-base-900">Privacy Policy</a></li>
+            <li><a href="/infopages/terms" class="hover:text-base-900">Terms of Service</a></li>
+            <li><a href="/rss.xml" class="hover:text-base-900">RSS Feed</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="mt-8 pt-8 border-t border-base-200">
+      <Text tag="p" variant="textXS" class="text-base-400">
+        &copy; 2026 Benjamin Vial. All rights reserved.
+      </Text>
+    </div>
+  </Wrapper>
+</footer>

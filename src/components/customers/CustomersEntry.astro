@@ -1,0 +1,39 @@
+---
+// Assets
+import { Image } from "astro:assets";
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+// Content
+const { url, avatar, name, quote } = {
+  url: "/customers/" + Astro.props.post.id,
+  avatar: Astro.props.post.data.avatar.url,
+  name: Astro.props.post.data.name,
+  quote: Astro.props.post.data.quote,
+};
+---
+
+<article class="relative">
+  <a href={url} title={name} aria-label={name} class="absolute inset-0 z-10"
+  ></a>
+  <div>
+    <Image
+      width="1000"
+      height="1000"
+      alt={name}
+      src={avatar}
+      class="object-cover w-full aspect-8/12"
+    />
+    <div class="flex w-full mt-2 lg:col-span-2">
+      <figure>
+        <Text tag="h3" variant="textBase" class="font-medium text-base-900">
+          {name}
+        </Text>
+        <blockquote>
+          <Text tag="h3" variant="textSM" class="mt-2 text-base-600">
+            "{quote}"
+          </Text>
+        </blockquote>
+      </figure>
+    </div>
+  </div>
+</article>

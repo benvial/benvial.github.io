@@ -1,0 +1,70 @@
+---
+// Fundations
+import BaseLayout from "@/layouts/BaseLayout.astro";
+// Assets
+import Kicker from "@/components/assets/Kicker.astro";
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Sections
+import Tiers from "@/components/pricing/Tiers.astro";
+import PricingTable from "@/components/pricing/PricingTable.astro";
+import Faq1 from "@/components/helpCenter/Faq1.astro";
+---
+
+<BaseLayout>
+  <section class="scroll-mt-24">
+    <Wrapper variant="standard" class="relative pt-48 pb-24 lg:pt-62">
+      <div
+        class="grid gap-2 lg:gap-0 grid-cols-1 lg:grid-cols-3 lg:items-end text-balance"
+      >
+        <div class="lg:col-span-2">
+          <Text
+            tag="h1"
+            variant="displayMD"
+            class="text-accent-950 uppercase font-display font-medium"
+          >
+            Fair pricing, built for learners and teams alike
+          </Text>
+          <Text tag="p" variant="textSM" class="mt-2 text-base-500 max-w-xl">
+            Whether you're solo, scaling, or managing a full team—pick a plan
+            that fits and start building with Astro today.
+          </Text>
+        </div>
+        <!-- Pricing Toggle -->
+        <div
+          aria-labelledby="pricing-toggle"
+          class="relative z-0 inline-flex justify-center p-1 mt-8 overflow-hidden gap-4 lg:mx-0 rounded-md w-fit lg:ml-auto"
+        >
+          <div
+            id="toggle-slider"
+            class="absolute inset-0 w-1/2 rounded-full bg-accent-200 transition-transform duration-200 ease-in-out"
+          >
+          </div>
+
+          <button
+            id="monthly-btn"
+            class="relative z-10 flex items-center justify-center w-full h-6 px-2 text-xs font-medium focus:outline-none transition-colors duration-300 text-base-600"
+            type="button"
+            aria-pressed="true"
+          >
+            Monthly
+          </button>
+
+          <button
+            id="annual-btn"
+            class="relative z-10 flex items-center justify-center w-full h-6 px-2 text-xs font-medium focus:outline-none transition-colors duration-300 focus:text-base-900 hover:text-base-900"
+            type="button"
+            aria-pressed="false"
+          >
+            Annual
+          </button>
+        </div>
+      </div>
+
+      <Tiers />
+      <PricingTable />
+    </Wrapper>
+  </section>
+  <Faq1 />
+</BaseLayout>

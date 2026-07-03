@@ -1,0 +1,141 @@
+---
+// Fundations
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+const colors = [
+  {
+    name: "Accent",
+    shades: [
+      { name: "Accent 50", class: "bg-accent-50" },
+      { name: "Accent 100", class: "bg-accent-100" },
+      { name: "Accent 200", class: "bg-accent-200" },
+      { name: "Accent 300", class: "bg-accent-300" },
+      { name: "Accent 400", class: "bg-accent-400" },
+      { name: "Accent 500", class: "bg-accent-500" },
+      { name: "Accent 600", class: "bg-accent-600" },
+      { name: "Accent 700", class: "bg-accent-700" },
+      { name: "Accent 800", class: "bg-accent-800" },
+      { name: "Accent 900", class: "bg-accent-900" },
+      { name: "Accent 950", class: "bg-accent-950 outline outline-accent-900" },
+    ],
+  },
+  
+  {
+    name: "Blue",
+    shades: [
+      { name: "Blue 50", class: "bg-blue-50" },
+      { name: "Blue 100", class: "bg-blue-100" },
+      { name: "Blue 200", class: "bg-blue-200" },
+      { name: "Blue 300", class: "bg-blue-300" },
+      { name: "Blue 400", class: "bg-blue-400" },
+      { name: "Blue 500", class: "bg-blue-500" },
+      { name: "Blue 600", class: "bg-blue-600" },
+      { name: "Blue 700", class: "bg-blue-700" },
+      { name: "Blue 800", class: "bg-blue-800" },
+      { name: "Blue 900", class: "bg-blue-900" },
+      { name: "Blue 950", class: "bg-blue-950 outline outline-blue-900" },
+    ],
+  },
+  {
+    name: "Violet",
+    shades: [
+      { name: "Violet 50", class: "bg-violet-50" },
+      { name: "Violet 100", class: "bg-violet-100" },
+      { name: "Violet 200", class: "bg-violet-200" },
+      { name: "Violet 300", class: "bg-violet-300" },
+      { name: "Violet 400", class: "bg-violet-400" },
+      { name: "Violet 500", class: "bg-violet-500" },
+      { name: "Violet 600", class: "bg-violet-600" },
+      { name: "Violet 700", class: "bg-violet-700" },
+      { name: "Violet 800", class: "bg-violet-800" },
+      { name: "Violet 900", class: "bg-violet-900" },
+      { name: "Violet 950", class: "bg-violet-950 outline outline-violet-900" },
+    ],
+  },
+  {
+    name: "Yellow",
+    shades: [
+      { name: "Yellow 50", class: "bg-yellow-50" },
+      { name: "Yellow 100", class: "bg-yellow-100" },
+      { name: "Yellow 200", class: "bg-yellow-200" },
+      { name: "Yellow 300", class: "bg-yellow-300" },
+      { name: "Yellow 400", class: "bg-yellow-400" },
+      { name: "Yellow 500", class: "bg-yellow-500" },
+      { name: "Yellow 600", class: "bg-yellow-600" },
+      { name: "Yellow 700", class: "bg-yellow-700" },
+      { name: "Yellow 800", class: "bg-yellow-800" },
+      { name: "Yellow 900", class: "bg-yellow-900" },
+      { name: "Yellow 950", class: "bg-yellow-950 outline outline-yellow-900" },
+    ],
+  },
+  {
+    name: "Rose",
+    shades: [
+      { name: "Rose 50", class: "bg-rose-50" },
+      { name: "Rose 100", class: "bg-rose-100" },
+      { name: "Rose 200", class: "bg-rose-200" },
+      { name: "Rose 300", class: "bg-rose-300" },
+      { name: "Rose 400", class: "bg-rose-400" },
+      { name: "Rose 500", class: "bg-rose-500" },
+      { name: "Rose 600", class: "bg-rose-600" },
+      { name: "Rose 700", class: "bg-rose-700" },
+      { name: "Rose 800", class: "bg-rose-800" },
+      { name: "Rose 900", class: "bg-rose-900" },
+      { name: "Rose 950", class: "bg-rose-950 outline outline-rose-900" },
+    ],
+  },
+  {
+    name: "Base",
+    shades: [
+      { name: "Base 50", class: "bg-base-50" },
+      { name: "Base 100", class: "bg-base-100" },
+      { name: "Base 200", class: "bg-base-200" },
+      { name: "Base 300", class: "bg-base-300" },
+      { name: "Base 400", class: "bg-base-400" },
+      { name: "Base 500", class: "bg-base-500" },
+      { name: "Base 600", class: "bg-base-600" },
+      { name: "Base 700", class: "bg-base-700" },
+      { name: "Base 800", class: "bg-base-800" },
+      { name: "Base 900", class: "bg-base-900" },
+      { name: "Base 950", class: "bg-base-950 outline outline-base-900" },
+    ],
+  },
+];
+
+---
+
+<BaseLayout>
+  <section>
+    <Wrapper variant="standard" class="pt-48 pb-24">
+      <Text
+        tag="h1"
+        variant="displaySM"
+        class="text-accent-950 uppercase font-display font-medium"
+      >
+        Colors
+      </Text>
+      <div class="grid grid-cols-1 lg:grid-cols-6 mt-12 gap-12">
+        {
+          colors.map((color) => (
+            <div class="flex flex-col gap-2">
+              <h3 class="text-xs font-semibold uppercase dark:text-white text-base-900">
+                {color.name}
+              </h3>
+              <div class="mt-2 flex flex-col  gap-y-8">
+                {color.shades.map((shade) => (
+                  <div class="flex flex-col gap-2">
+                    <div
+                      class={`size-full aspect-square rounded-md ${shade.class}`}
+                    />
+                    <span class="text-xs text-base-600">{shade.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </Wrapper>
+  </section>
+</BaseLayout>

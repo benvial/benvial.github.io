@@ -1,0 +1,37 @@
+---
+/**
+ * Kicker Component
+ *
+ * Props:
+ * - number?: string – optional number or step indicator (default: "01")
+ * - text: string – the label text (e.g. "Learn")
+ * - colorClass?: string – Tailwind text color class (default: "text-accent-600")
+ *
+ * Usage:
+ * <Kicker text="Learn" />
+ * <Kicker number="03" text="Build" colorClass="text-accent-600" />
+ */
+interface Props {
+  number?: string;
+  text: string;
+  colorClass?: string;
+  position?: string;
+}
+
+const {
+  number = "01",
+  text,
+  position,
+  colorClass = "text-accent-500",
+} = Astro.props;
+---
+
+<div
+  class={`flex items-center w-fit font-medium gap-4 font-display text-xs uppercase ${colorClass} ${position}`}
+>
+  <span aria-hidden="true">{number}</span>
+  <span class="h-3.5 w-px bg-current/50"></span>
+  <span>
+    {text}
+  </span>
+</div>

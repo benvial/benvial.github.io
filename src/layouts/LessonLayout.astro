@@ -1,0 +1,192 @@
+---
+// Assets
+import Kicker from "@/components/assets/Kicker.astro";
+// Fundations
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Button from "@/components/fundations/elements/Button.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Icons
+import Play from "@/components/fundations/icons/Play.astro";
+import Lock from "@/components/fundations/icons/Lock.astro";
+import ChevronLeft from "@/components/fundations/icons/ChevronLeft.astro";
+// Conteent
+import { getEntry } from "astro:content";
+const { course, lesson } = Astro.props;
+const teacher = await getEntry("teachers", course.data.teacher);
+// Flatten sections for sidebar
+const sections = course.data.sections.map((section) => ({
+  ...section,
+  lessons: section.lessons.map((slug) => ({
+    slug,
+    isActive: slug === lesson.id,
+  })),
+}));
+import { getCollection } from "astro:content";
+const allLessons = await getCollection("lessons");
+---
+
+<BaseLayout>
+  <Wrapper
+    variant="standard"
+    class="flex flex-col pt-32 pb-16 lg:flex-row gap-12"
+  >
+    <div class="w-full grid gap-8 grid-cols-1 lg:grid-cols-3 lg:items-start">
+      <div class="w-full text-balance lg:col-span-2">
+        <div class="flex flex-col gap-8 md:flex-row md:items-center gap-2">
+          <a
+            href={`/courses/${course.id}`}
+            class="flex items-center text-sm gap-2 text-base-500 hover:text-accent-600 duration-300"
+          >
+            <ChevronLeft slot="icon" size="sm" />
+            Back to course
+          </a>
+          <span aria-hidden="true" class="hidden text-base-500 md:block">/</span
+          >
+          <Kicker
+            number={lesson.data.duration}
+            text={lesson.data.section}
+            colorClass="text-accent-600"
+          />
+        </div>
+
+        <Text
+          tag="h1"
+          variant="displaySM"
+          class="mt-8 font-medium text-base-900"
+        >
+          {lesson.data.title}
+        </Text>
+
+        {
+          lesson.data.isLocked ? (
+            <div class="flex flex-col justify-between h-full p-6 mt-4 bg-base-50 gap-24 min-h-100  group">
+              <Lock size="base" />
+              <div>
+                <Text
+                  tag="h3"
+                  variant="textXS"
+                  class="text-base-500 lg:col-span-2"
+                >
+                  This lesson is part of our
+                  <span class="font-medium text-accent-600">Pro plan</span>,
+                  which gives you full access to premium content, advanced
+                  lessons, and exclusive bonus materials. Upgrade now to unlock
+                  everything and continue your learning journey without limits.
+                </Text>
+                <Button
+                  isLink={true}
+                  variant="default"
+                  size="xs"
+                  href="/pricing"
+                  class="mt-4 w-fit"
+                >
+                  Unlock with Pro Access
+                </Button>
+              </div>
+            </div>
+          ) : (
+            <>
+              <video controls class="w-full mt-4" src={lesson.data.videoUrl} />
+              <Wrapper variant="prose" class="mt-10">
+                <slot />
+              </Wrapper>
+            </>
+          )
+        }
+      </div>
+      <aside class="order-first lg:order-last">
+        <div class="w-full lg:sticky lg:top-24">
+          <div class="w-full bg-base-50 divide-y divide-base-200">
+            <div class="w-full p-4">
+              <Text tag="h2" variant="textSM" class="font-medium text-base-900">
+                Course Content
+              </Text>
+              <ul class="mt-8 space-y-4">
+                {
+                  sections.map((section) => (
+                    <li>
+                      <Text
+                        tag="p"
+                        variant="textXS"
+                        class="font-medium text-base-900"
+                      >
+                        {section.title}
+                      </Text>
+                      <ul
+                        role="list"
+                        class="pt-2 mt-2 list-none border-t  space-y-2 border-base-200"
+                      >
+                        {section.lessons.map((l) => {
+                          const lessonSlug = l.slug.split("/").pop();
+                          const matched = allLessons.find(
+                            (lesson) => lesson.id === l.slug
+                          );
+                          const isLocked = matched?.data.isLocked;
+
+                          return (
+                            <li>
+                              {l.isActive ? (
+                                <span class="flex items-center justify-between text-xs capitalize text-base-500 gap-2">
+                                  <span>{lessonSlug.replace(/-/g, " ")}</span>
+                                  {matched?.data.isLocked ? (
+                                    <Lock size="xs" class="inline-block" />
+                                  ) : (
+                                    <Play size="xs" class="inline-block" />
+                                  )}
+                                </span>
+                              ) : (
+                                <a
+                                  href={`/courses/${course.id}/${lessonSlug}`}
+                                  class="flex items-center justify-between text-xs capitalize text-base-600 font-medium hover:underline gap-2"
+                                >
+                                  <span>{lessonSlug.replace(/-/g, " ")}</span>
+                                  {matched?.data.isLocked ? (
+                                    <Lock size="xs" class="inline-block" />
+                                  ) : (
+                                    <Play size="xs" class="inline-block" />
+                                  )}
+                                </a>
+                              )}
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+
+            {
+              teacher && (
+                <div class="w-full p-4">
+                  <Text
+                    tag="h2"
+                    variant="textSM"
+                    class="font-medium text-base-900"
+                  >
+                    Teached by
+                  </Text>
+                  <div class="mt-8">
+                    <Text
+                      tag="p"
+                      variant="textSM"
+                      class="font-medium text-base-900"
+                    >
+                      {teacher.data.name}
+                    </Text>
+                    <Text tag="p" variant="textXS" class="text-base-500">
+                      {teacher.data.role}
+                      {teacher.data.org && ` • ${teacher.data.org}`}
+                    </Text>
+                  </div>
+                </div>
+              )
+            }
+          </div>
+        </div>
+      </aside>
+    </div>
+  </Wrapper>
+</BaseLayout>

@@ -1,0 +1,113 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+import ShareButtons from "@/components/fundations/elements/ShareButtons.astro";
+import BlogEntry from "@/components/blog/BlogEntry.astro";
+import { getCollection } from "astro:content";
+
+const { frontmatter } = Astro.props;
+
+const allPosts = await getCollection("posts");
+const relatedPosts = frontmatter.tags
+  ? allPosts.filter((post) =>
+      post.data.tags?.some((tag) => frontmatter.tags.includes(tag))
+    )
+  : [];
+---
+
+<BaseLayout>
+  <section>
+    <Wrapper variant="standard" class="pt-48 pb-24">
+      <div
+        class="grid gap-4 lg:gap-8 grid-cols-1 lg:grid-cols-3 lg:items-start"
+      >
+        <div class="text-balance lg:col-span-2">
+          <Text tag="h1" variant="displaySM" class="font-medium text-base-900">
+            {frontmatter.title}
+          </Text>
+          <Text tag="p" variant="textSM" class="mt-2 text-base-500">
+            {frontmatter.description}
+          </Text>
+          {
+            frontmatter.image && (
+              <Image
+                width={1000}
+                height={800}
+                alt={frontmatter.image.alt}
+                src={frontmatter.image.url}
+                class="object-cover object-center w-full mt-4 border aspect-12/6 lg:col-span-2 border-base-200"
+              />
+            )
+          }
+          <Wrapper variant="prose" class="mt-4">
+            <slot />
+          </Wrapper>
+        </div>
+
+        <div class="w-ful lg:sticky lg:top-24">
+          <div class="p-6 bg-base-50">
+            <div>
+              <Text tag="p" variant="textXS" class="text-base-500">
+                <span>
+                  <time
+                    datetime={new Date(frontmatter.pubDate).toISOString()}
+                  >
+                    {new Date(frontmatter.pubDate).toLocaleDateString(
+                      "en-US",
+                      {
+                        year: "numeric",
+                        month: "long",
+                        day: "2-digit",
+                      }
+                    )}
+                  </time>
+                </span>
+                {frontmatter.tags && frontmatter.tags.length > 0 && (
+                  <span class="block mt-1">
+                    in{" "}
+                    {frontmatter.tags.map((tag: string) => (
+                      <span>
+                        <a href={`/blog/tags/${tag}`} class="capitalize">
+                          {tag}
+                        </a>
+                      </span>
+                    ))}
+                  </span>
+                )}
+              </Text>
+            </div>
+
+            <div class="relative flex flex-col pt-4 mt-4 gap-2">
+              <Text tag="p" variant="textXS" class="text-base-500">
+                Share this article:
+              </Text>
+              <ShareButtons description={frontmatter.description} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </Wrapper>
+  </section>
+  {
+    relatedPosts.length > 0 && (
+      <section class="">
+        <Wrapper variant="standard" class="py-24">
+          <Text
+            tag="h2"
+            variant="displaySM"
+            class="font-medium text-base-900 "
+          >
+            Related posts
+          </Text>
+          <div class="mt-4  grid grid-cols-1 gap-1 md:grid-cols-2">
+            {relatedPosts.slice(0, 3).map((post) => (
+              <BlogEntry post={post} />
+            ))}
+          </div>
+        </Wrapper>
+      </section>
+    )
+  }
+</BaseLayout>

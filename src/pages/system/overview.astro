@@ -1,0 +1,217 @@
+---
+// Fundations
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Data array
+const pageData = [
+  {
+    categoryTitle: "Static",
+    links: [
+      {
+        sectionTitle: "Landing Pages",
+        links: [
+          {
+            title: "Home",
+            url: "/",
+          },
+
+          {
+            title: "About",
+            url: "/about",
+          },
+          { title: "404", url: "/404" },
+        ],
+      },
+      {
+        sectionTitle: "Forms ",
+        links: [
+          {
+            title: "Contact",
+            url: "/contact",
+          },
+          {
+            title: "Sign in",
+            url: "/forms/sign-in",
+          },
+          {
+            title: "Sign up",
+            url: "/forms/sign-up",
+          },
+        ],
+      },
+      {
+        sectionTitle: "System Pages",
+        links: [
+          { title: "Links", url: "/system/links" },
+          { title: "Buttons", url: "/system/buttons" },
+          { title: "Colors", url: "/system/colors" },
+          { title: "Typography", url: "/system/typography" },
+          {
+            title: "License",
+            url: "https://lexingtonthemes.com/legal/license",
+          },
+          {
+            title: "Docs",
+            url: "https://lexingtonthemes.com/documentation",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    categoryTitle: "Content Collection",
+    links: [
+      {
+        sectionTitle: "Courses",
+        links: [
+          {
+            title: "Home",
+            url: "/courses/",
+          },
+          {
+            title: "Course",
+            url: "/courses/astro-fundamentals",
+          },
+          {
+            title: "Open Lesson",
+            url: "/courses/astro-content-collections/introduction-to-content-collections",
+          },
+          {
+            title: "Closed Lesson",
+            url: "/courses/astro-content-collections/setting-up-collections",
+          },
+          { title: "Tag index", url: "/courses/tags" },
+          {
+            title: "Tag Category",
+            url: "/courses/tags/astro",
+          },
+        ],
+      },
+      {
+        sectionTitle: "Teachers",
+        links: [
+          {
+            title: "Home",
+            url: "/teachers/",
+          },
+          {
+            title: "Details",
+            url: "/teachers/lucia-herrera",
+          },
+        ],
+      },
+      {
+        sectionTitle: "Blog",
+        links: [
+          {
+            title: "Home",
+            url: "/blog/",
+          },
+          {
+            title: "Post",
+            url: "/blog/posts/1",
+          },
+          { title: "Tag index", url: "/blog/tags" },
+          {
+            title: "Tag Category",
+            url: "/blog/tags/performance",
+          },
+          { title: "RSS", url: "/rss.xml" },
+        ],
+      },
+      {
+        sectionTitle: "Team",
+        links: [
+          {
+            title: "Home",
+            url: "/team/",
+          },
+          {
+            title: "Details",
+            url: "/team/jordan-wells",
+          },
+        ],
+      },
+      {
+        sectionTitle: "Customers",
+        links: [
+          {
+            title: "Home",
+            url: "/customers/",
+          },
+          {
+            title: "Details",
+            url: "/customers/1",
+          },
+        ],
+      },
+
+      {
+        sectionTitle: "Utility Pages",
+        links: [
+          {
+            title: "Terms Of Use",
+            url: "/infopages/terms",
+          },
+          {
+            title: "Privacy Policy",
+            url: "/legal/privacy",
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout>
+  <section>
+    <Wrapper variant="standard" class="pt-48 pb-24">
+      <Text
+        tag="h1"
+        variant="displaySM"
+        class="text-accent-950 uppercase font-display font-medium"
+      >
+        Overview
+      </Text>
+      <div class="flex flex-col mt-12 gap-12">
+        {
+          pageData.map((category) => (
+            <>
+              <div>
+                <Text
+                  tag="h2"
+                  variant="textLG"
+                  class="font-medium  text-base-900"
+                >
+                  {category.categoryTitle}
+                </Text>
+                <div class="mt-4 gap-y-8 gap-x-4 grid grid-cols-2 lg:grid-cols-5 md:grid-cols-3 ">
+                  {category.links.map((section) => (
+                    <div>
+                      <Text tag="h3" variant="textBase" class="text-base-900">
+                        {section.sectionTitle}
+                      </Text>
+                      <div class="flex flex-col mt-4 text-sm gap-1 text-base-500">
+                        {section.links.map((link) => (
+                          <a
+                            class="hover:text-base-900"
+                            title={link.ariaLabel}
+                            href={link.url}
+                          >
+                            {link.title}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </>
+          ))
+        }
+      </div>
+    </Wrapper>
+  </section>
+</BaseLayout>

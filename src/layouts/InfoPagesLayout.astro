@@ -1,0 +1,76 @@
+---
+// Fundations
+import BaseLayout from "./BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Icons
+import ChevronRight from "@/components/fundations/icons/ChevronRight.astro";
+const { frontmatter } = Astro.props;
+// Breadcrumbs Data
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: frontmatter.page, href: "#" }, // Current page (unstyled)
+];
+---
+
+<BaseLayout>
+  <section>
+    <Wrapper variant="standard" class="pt-48 pb-24">
+     <div class="grid gap-8 grid-cols-1 lg:grid-cols-3 lg:items-start">
+        <div class="lg:sticky lg:top-48">
+          <nav aria-label="Breadcrumb">
+            <ol class="flex items-center text-sm gap-x-2 text-base-600">
+              {
+                breadcrumbs.map((item, index) => (
+                  <>
+                    <li>
+                      {index < breadcrumbs.length - 1 ? (
+                        <a
+                          href={item.href}
+                          class="text-xs font-medium hover:text-accent-500 text-base-800"
+                        >
+                          {item.label}
+                        </a>
+                      ) : (
+                        <span class="text-xs font-medium text-accent-500">
+                          {item.label}
+                        </span>
+                      )}
+                    </li>
+                    {index < breadcrumbs.length - 1 && (
+                      <li class="text-base-400">
+                        <ChevronRight size="sm" />
+                      </li>
+                    )}
+                  </>
+                ))
+              }
+            </ol>
+          </nav>
+          <Text
+            tag="h1"
+            variant="displayMD"
+            class="mt-12 font-medium tracking-tight text-base-900 font-display uppercase"
+          >
+            {frontmatter.page}
+          </Text>
+          <Text tag="p" variant="textBase" class="mt-4 text-base-500">
+            <time datetime={new Date(frontmatter.pubDate).toISOString()}>
+              {
+                new Date(frontmatter.pubDate).toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "long",
+                  day: "2-digit",
+                })
+              }
+            </time>
+          </Text>
+        </div>
+        <Wrapper variant="prose" class="lg:col-span-2">
+          <slot />
+        </Wrapper>
+     </div>
+    </Wrapper>
+  </section>
+ 
+</BaseLayout>

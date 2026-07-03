@@ -1,0 +1,58 @@
+---
+title: "Topology Optimization"
+description: "Inverse design of photonic and microwave devices using topology optimization"
+pubDate: 2015-09-01
+image:
+  url: "./metasurface.png"
+  alt: "Topology optimized metasurface"
+tags: ["topology optimization", "inverse design", "photonic", "microwave"]
+---
+
+import { Image } from "astro:assets";
+import metasurface from "./metasurface.png";
+import optPho from "./opt_pho_superscatt.png";
+import illusionFab from "./illusion_fab.jpg";
+import illusionFields from "./illusion_fields.jpg";
+import cloak from "./cloak.png";
+
+I am interested in optimizing the shape of photonic and microwave devices for various applications and control of electromagnetic waves.
+
+## Open-Source Inverse Photonic Design
+
+<Image src={metasurface} alt="Metasurface inverse design" width={800} height={600} class="w-full my-4" />
+
+In recent years, technological advances in nanofabrication have opened up new applications in the field of nanophotonics. To engineer and develop novel functionalities, rigorous and efficient numerical methods are required.
+
+### Related article
+
+- B. Vial, and Y. Hao, *Open-Source Computational Photonics with Auto Differentiable Topology Optimization*. Mathematics **10**(20), (2022) — [DOI](https://doi.org/10.3390/math10203912)
+
+### Related code
+
+- B. Vial, *gyptis: Computational Photonics in Python with the finite element method* (2020) — [gitlab](https://gitlab.com/gyptis/gyptis)
+- B. Vial, *nannos: Fourier Modal Method for multilayer metamaterials with auto diff* (2021) — [gitlab](https://gitlab.com/nannos/nannos)
+- B. Vial, *protis: Plane wave expansion method for photonic crystals* (2021) — [gitlab](https://gitlab.com/protis/protis)
+
+<Image src={optPho} alt="Optimized photonic superscatterer" width={800} height={600} class="w-full my-4" />
+
+## Illusion device
+
+<Image src={illusionFab} alt="Fabricated illusion device" width={800} height={600} class="w-full my-4" />
+
+We report the design, fabrication and experimental verification of an illusion device working at microwave frequencies.
+
+### Related article
+
+- B. Vial, M. Torrico, and Y. Hao, *Optimized microwave illusion device*. Sci Rep **7**(1):3929, (2017) — [DOI](https://doi.org/10.1038/s41598-017-04410-4)
+
+<Image src={illusionFields} alt="Simulated illusion device field distributions" width={800} height={600} class="w-full my-4" />
+
+## Invisibility cloaking
+
+<Image src={cloak} alt="Topology optimized cloak design" width={800} height={600} class="w-full my-4" />
+
+I designed an all-dielectric cloaking device at microwave frequencies. A gradient based topology optimization is employed to find a dielectric permittivity distribution that minimizes the diffracted field in free space.
+
+### Related article
+
+- B. Vial, and Y. Hao, *Topology optimized all-dielectric cloak: Design, performances and modal picture of the invisibility effect*. Opt. Express **23**(18):23551, (2015) — [DOI](https://doi.org/10.1364/oe.23.023551)

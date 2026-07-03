@@ -1,0 +1,74 @@
+---
+// Fundations
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Components
+import CourseEntry from "@/components/courses/CourseEntry.astro";
+// Content
+import { getCollection } from "astro:content";
+export async function getStaticPaths() {
+  const allCourses = await getCollection("courses");
+  const uniqueTags = [
+    ...new Set(allCourses.map((post) => post.data.tags).flat()),
+  ];
+  return uniqueTags.map((tag) => {
+    const filteredCourses = allCourses.filter((post) =>
+      post.data.tags.includes(tag)
+    );
+    return {
+      params: { tag },
+      props: { courses: filteredCourses },
+    };
+  });
+}
+const { tag } = Astro.params;
+const { courses } = Astro.props;
+// Fetch data
+const allLessons = await getCollection("lessons");
+const allCourses = (await getCollection("courses")).sort(
+  (a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate)
+);
+const tags = [
+  ...new Set(allCourses.flatMap((course) => course.data.tags || [])),
+];
+---
+
+<BaseLayout pageTitle={tag}>
+  <section>
+    <Wrapper variant="standard" class="pt-48 pb-24">
+      <div class="max-w-xl text-balance">
+        <Text
+          tag="h1"
+          variant="displaySM"
+          class="text-accent-950 uppercase font-display font-medium"
+        >
+          {tag} courses
+        </Text>
+      </div>
+      <div
+        class="relative flex h-full mt-8 overflow-x-scroll gap-2 lg:gap-4 scrollable-content snap-x snap-proximity scrollbar-hide"
+      >
+        {
+          tags.map((tag) => (
+            <a
+              title={tag}
+              aria-label={tag}
+              href={`/courses/tags/${tag}`}
+              class="text-xs capitalize text-base-500 hover:text-accent-500"
+            >
+              {tag}
+            </a>
+          ))
+        }
+      </div>
+      <div class="mt-4 grid grid-cols-1 gap-1 md:grid-cols-2">
+        {
+          courses.map((post) => (
+            <CourseEntry post={post} lessons={allLessons} />
+          ))
+        }
+      </div>
+    </Wrapper>
+  </section>
+</BaseLayout>

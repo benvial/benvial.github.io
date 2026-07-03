@@ -1,0 +1,73 @@
+---
+// Assets
+import { Image } from "astro:assets";
+// Fundations
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Content
+import { getCollection } from "astro:content";
+// Get all courses
+const allCourses = await getCollection("courses");
+// Extract tags from all courses and count occurrences
+const tagCounts = allCourses.reduce((acc, post) => {
+  post.data.tags.forEach((tag) => {
+    acc[tag] = (acc[tag] || 0) + 1; // Count each tag per post
+  });
+  return acc;
+}, {});
+// Extract unique tags for display
+const tags = Object.keys(tagCounts);
+// Function to get the image for a specific tag
+function getTagImage(tag) {
+  const filteredCourses = allCourses.filter((post) =>
+    post.data.tags.includes(tag)
+  );
+  if (filteredCourses.length > 0) {
+    return filteredCourses[0].data.image.url; // Return the image of the first post with that tag
+  }
+}
+---
+
+<BaseLayout>
+  <section>
+    <Wrapper variant="standard" class="pt-48 pb-24">
+      <div class="max-w-xl text-balance">
+       <Text
+          tag="h1"
+          variant="displaySM"
+          class="text-accent-950 uppercase font-display font-medium"
+        >
+          All courses
+        </Text>
+        <Text tag="p" variant="textBase" class="mt-4 text-base-500">
+          Explore all our courses, from beginner to advanced topics.
+        </Text>
+      </div>
+      <div class="mt-4 grid grid-cols-1 gap-1 md:grid-cols- lg:grid-cols-3">
+        {
+          tags.map((tag) => (
+            <div class="relative flex flex-col justify-between h-full p-6 group bg-base-50 min-h-62 transition-all duration-300 hover:bg-accent-500 accent-500">
+              <a href={`/courses/tags/${tag}`} class="absolute inset-0 z-10" />
+
+              <Text
+                tag="p"
+                variant="textXS"
+                class="uppercase text-base-500 group-hover:text-white/80"
+              >
+                {tagCounts[tag]} courses in
+              </Text>
+              <Text
+                tag="h3"
+                variant="textSM"
+                class="font-medium capitalize  text-base-900 text-balance group-hover:text-white"
+              >
+                {tag}
+              </Text>
+            </div>
+          ))
+        }
+      </div>
+    </Wrapper>
+  </section>
+</BaseLayout>

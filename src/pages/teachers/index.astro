@@ -1,0 +1,38 @@
+---
+// Fundations
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Components
+import TeachersEntry from "@/components/teachers/TeachersEntry.astro";
+// Content
+import { getCollection } from "astro:content";
+const allAuthors = await getCollection("teachers");
+---
+
+<BaseLayout>
+  <section>
+    <Wrapper variant="standard" class="pt-48 pb-24">
+      <Text
+        tag="h1"
+        variant="displayXL"
+        class="text-accent-950 uppercase font-display font-medium text-balance"
+      >
+        Real developers. Real experience.
+      </Text>
+
+      <div class="mt-12 grid grid-cols-1 gap-1 md:grid-cols-2 gap-y-24">
+        {
+          // Sorting teachers alphabetically inline
+          allAuthors
+            .sort((a, b) => {
+              const nameA = a.data.name.toLowerCase();
+              const nameB = b.data.name.toLowerCase();
+              return nameA < nameB ? -1 : nameA > nameB ? 1 : 0;
+            })
+            .map((post) => <TeachersEntry post={post} />)
+        }
+      </div>
+    </Wrapper>
+  </section>
+</BaseLayout>

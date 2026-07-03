@@ -1,0 +1,241 @@
+---
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Button from "@/components/fundations/elements/Button.astro";
+const pricingOptions = [
+  {
+    id: "individuals",
+    title: "Individuals",
+    monthly: "$19.00",
+    annual: "$15.00",
+    description:
+      "For solo learners who want to master Astro with hands-on projects.",
+    button: {
+      text: "Start Learning",
+      variant: "accent",
+    },
+    features: [
+      {
+        title: "Full Course Access",
+        text: "Get complete access to all course content from day one.",
+      },
+      {
+        title: "Self-paced Learning",
+        text: "Go through the lessons at your own speed, no pressure.",
+      },
+      {
+        title: "Downloadable Project Files",
+        text: "Work with real project files and code examples you can keep.",
+      },
+      {
+        title: "Course Community",
+        text: "Join our community to connect, ask questions, and get feedback.",
+      },
+      {
+        title: "Completion Certificate",
+        text: "Earn a downloadable certificate when you finish the course.",
+      },
+      {
+        title: "Email Support",
+        text: "Reach out for help via email whenever you get stuck.",
+      },
+    ],
+  },
+  {
+    id: "teams",
+    title: "Teams",
+    monthly: "$499.00",
+    annual: "$459.00",
+    description:
+      "For devs who want deeper guidance and team-based learning tools.",
+    button: {
+      text: "Start Learning",
+      variant: "muted",
+    },
+    features: [
+      {
+        title: "Everything in Pro",
+        text: "All features from the Pro plan, plus extras for teams.",
+      },
+      {
+        title: "Team Access",
+        text: "Invite up to 5 teammates to learn alongside you.",
+      },
+      {
+        title: "Group Progress Tracking",
+        text: "Monitor progress across your entire team from one view.",
+      },
+      {
+        title: "Priority Support",
+        text: "Get faster responses with priority email support.",
+      },
+      {
+        title: "Bonus Mini-Courses",
+        text: "Unlock short, focused modules on advanced Astro techniques.",
+      },
+      {
+        title: "Early Access to New Content",
+        text: "Get new lessons and updates before anyone else.",
+      },
+    ],
+  },
+];
+---
+
+<!-- Pricing Cards -->
+<div class="mt-4 grid gap-1 sm:grid-cols-2 lg:grid-cols-2">
+  {
+    pricingOptions.map((tier) => (
+      <div class="flex flex-col justify-between h-full p-6  bg-base-50">
+        <div class="flex flex-col">
+          <div class="items-start grid grid-cols-1 lg:grid-cols-3">
+            <Text tag="h3" variant="textLG" class="font-medium  text-base-900">
+              {tier.title}
+            </Text>
+            <Text
+              tag="p"
+              variant="textSM"
+              class="mt-1 text-balance  text-base-500 lg:col-span-2"
+            >
+              {tier.description}
+            </Text>
+          </div>
+          <div class="pt-2 mt-2 border-t border-base-200">
+            <Text
+              variant="textXL"
+              class="font-display font-medium uppercase  text-base-900"
+            >
+              <span
+                class="pricing-amount"
+                data-monthly={tier.monthly}
+                data-annual={tier.annual}
+              >
+                {tier.monthly}
+              </span>
+              <span class="text-sm font-normal tracking-normal">
+                <span class="monthly-text">/month</span>
+                <span class="annual-text" style="display: none;">
+                  /annually
+                </span>
+              </span>
+            </Text>
+          </div>
+          <div class="mt-4">
+            <ul
+              class="flex flex-col mt-8 text-sm gap-y-3 divide-y divide-base-200 text-base-500"
+              role="list"
+            >
+              {tier.features.map((feature) => (
+                <li class="pt-2.5 pb-1 text-balance">
+                  <Text
+                    tag="h3"
+                    variant="textXS"
+                    class="font-medium uppercase  text-base-900"
+                  >
+                    {feature.title}
+                  </Text>
+                  <Text tag="p" variant="textXS" class="mt-2 text-base-500">
+                    {feature.text}
+                  </Text>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+    
+          <Button class="w-fit mt-12" variant={tier.button.variant} size="base">
+            {tier.button.text}
+          </Button>
+      </div>
+    ))
+  }
+</div>
+<script type="module">
+  // Initialize vanilla JS pricing toggle functionality
+  document.addEventListener("DOMContentLoaded", function () {
+    const monthlyBtn = document.getElementById("monthly-btn");
+    const annualBtn = document.getElementById("annual-btn");
+    const toggleSlider = document.getElementById("toggle-slider");
+    const pricingAmounts = document.querySelectorAll(".pricing-amount");
+    const monthlyTexts = document.querySelectorAll(".monthly-text");
+    const annualTexts = document.querySelectorAll(".annual-text");
+    
+    // accent state is monthly
+    let currentDuration = "monthly";
+
+    // Function to update slider position and size
+    function updateSliderPosition(activeBtn) {
+      const btnRect = activeBtn.getBoundingClientRect();
+      const containerRect = activeBtn.parentElement.getBoundingClientRect();
+      
+      // Calculate position relative to container
+      const leftOffset = btnRect.left - containerRect.left;
+      
+      // Update slider size and position to match button exactly
+      toggleSlider.style.width = `${btnRect.width}px`;
+      toggleSlider.style.transform = `translateX(${leftOffset}px)`;
+    }
+
+    // Function to update UI based on selected duration
+    function updatePricingUI(duration) {
+      // Update toggle slider position
+      if (duration === "monthly") {
+        updateSliderPosition(monthlyBtn);
+        monthlyBtn.classList.add("text-base-600");
+        monthlyBtn.classList.remove(
+          "focus:text-base-900",
+          "hover:text-base-900"
+        );
+        annualBtn.classList.remove("text-base-600");
+        annualBtn.classList.add("focus:text-base-900", "hover:text-base-900");
+        monthlyBtn.setAttribute("aria-pressed", "true");
+        annualBtn.setAttribute("aria-pressed", "false");
+      } else {
+        updateSliderPosition(annualBtn);
+        annualBtn.classList.add("text-base-600");
+        annualBtn.classList.remove(
+          "focus:text-base-900",
+          "hover:text-base-900"
+        );
+        monthlyBtn.classList.remove("text-base-600");
+        monthlyBtn.classList.add("focus:text-base-900", "hover:text-base-900");
+        monthlyBtn.setAttribute("aria-pressed", "false");
+        annualBtn.setAttribute("aria-pressed", "true");
+      }
+
+      // Update pricing text
+      pricingAmounts.forEach((amount) => {
+        amount.textContent = amount.dataset[duration];
+      });
+
+      // Show/hide appropriate text
+      if (duration === "monthly") {
+        monthlyTexts.forEach((text) => (text.style.display = "inline"));
+        annualTexts.forEach((text) => (text.style.display = "none"));
+      } else {
+        monthlyTexts.forEach((text) => (text.style.display = "none"));
+        annualTexts.forEach((text) => (text.style.display = "inline"));
+      }
+
+      // Update current duration
+      currentDuration = duration;
+    }
+
+    // Add event listeners to buttons
+    monthlyBtn.addEventListener("click", function () {
+      updatePricingUI("monthly");
+    });
+
+    annualBtn.addEventListener("click", function () {
+      updatePricingUI("annual");
+    });
+
+    // Handle window resize to maintain proper positioning
+    window.addEventListener("resize", function () {
+      updatePricingUI(currentDuration);
+    });
+
+    // Initialize UI
+    updatePricingUI(currentDuration);
+  });
+</script>

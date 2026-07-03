@@ -1,0 +1,50 @@
+---
+title: "Metamaterials and Metasurfaces"
+description: "Resonant metamaterial absorbers, filters, and annular aperture metasurfaces for infrared spectral filtering"
+pubDate: 2014-06-01
+image:
+  url: "./mim0.jpeg"
+  alt: "Metal-insulator-metal resonant filter"
+tags: ["metamaterials", "metasurfaces", "infrared"]
+---
+
+import { Image } from "astro:assets";
+import mim0 from "./mim0.jpeg";
+import sem from "./sem.jpg";
+import specangle from "./specangle.png";
+import aaa from "./aaa.jpg";
+import aaaangle from "./aaaangle.png";
+import aaa1 from "./aaa1.jpg";
+
+Metamaterials are man made materials made of sub-wavelength inclusions that can have extreme electromagnetic properties not found in nature.
+
+## Metal insulator metal resonant filters
+
+<Image src={mim0} alt="MIM metamaterial structure" width={800} height={600} class="w-full my-4" />
+
+<Image src={sem} alt="SEM image of fabricated structure" width={800} height={600} class="w-full my-4" />
+
+We present a modal analysis of metal–insulator–metal (MIM)-based metamaterials in the far infrared region. These structures can be used as resonant reflection bandcut spectral filters that are independent of the polarization and direction of incidence. We show that this resonant reflection dip is due to the excitation of quasimodes (modes associated with a complex frequency) leading to quasi-total absorption.
+
+We have fabricated large area samples made of chromium nanorod gratings on top of Si/Cr layers deposited on silicon substrate. Measurements by Fourier transform spectrophotometry show good agreement with finite element simulations. A quasimodal expansion method is applied to obtain a minimal resonant model that fits well full wave simulations and that highlights excitation conditions of the modes.
+
+### Related article
+
+- B. Vial, G. Demésy, F. Zolla, A. Nicolet, M. Commandré, C. Hecquet, T. Begou, S. Tisserand, S. Gautier, and V. Sauget, *Resonant metamaterial absorbers for infrared spectral filtering: Quasimodal analysis, design, fabrication, and characterization*. J. Opt. Soc. Am. B **31**(6):1339, (2014) — [DOI](https://doi.org/10.1364/josab.31.001339)
+
+<Image src={specangle} alt="Spectral response at different angles" width={800} height={600} class="w-full my-4" />
+
+## Annular aperture metasurfaces
+
+<Image src={aaa} alt="Annular aperture array" width={800} height={600} class="w-full my-4" />
+
+<Image src={aaaangle} alt="Angular response of annular apertures" width={800} height={600} class="w-full my-4" />
+
+The diffractive behavior of arrays of square coaxial apertures in a gold layer is studied. These structures exhibit a resonant transmission enhancement that is used to design tunable bandpass filters for multispectral imaging in the 7–13 μm wavelength range.
+
+### Related articles
+
+- B. Vial, M. Commandré, G. Demésy, A. Nicolet, F. Zolla, F. Bedu, H. Dallaporta, S. Tisserand, and L. Roux, *Transmission enhancement through square coaxial aperture arrays in metallic film: When leaky modes filter infrared light for multispectral imaging*. Opt. Lett. **39**(16):4723, (2014) — [DOI](https://doi.org/10.1364/ol.39.004723)
+- M. Commandré, B. Vial, S. Tisserand, L. Roux, H. Dallaporta, F. Bedu, G. Demésy, A. Nicolet, and F. Zolla, *Design, fabrication and characterization of resonant metamaterial filters for infrared multispectral imaging*. Thin Solid Films, (2015) — [DOI](https://doi.org/10.1016/j.tsf.2015.04.026)
+
+<Image src={aaa1} alt="Fabricated annular aperture device" width={800} height={600} class="w-full my-4" />

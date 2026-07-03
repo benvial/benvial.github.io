@@ -1,0 +1,43 @@
+---
+
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+---
+
+<section>
+  <Wrapper variant="standard" class="pb-12">
+    <div class="max-w-2xl mx-auto">
+      <Text
+        tag="h2"
+        variant="displaySM"
+        class="text-accent-950 uppercase font-display font-medium"
+      >
+        Everything you need to build fast, modern websites with Astro
+      </Text>
+
+      <Text tag="p" variant="textBase" class="text-base-500 mt-12">
+        Astro helps you build ultra-fast websites with zero JavaScript by
+        default making performance the default, not an afterthought. Whether
+        you're just starting out or migrating from another stack, the learning
+        curve is gentle and the tooling is refreshingly simple.
+        <br /><br />
+        You get full freedom to work with your favorite frameworks — React, Vue,
+        Svelte, Solid — all in the same project. Combine them effortlessly while
+        keeping your pages fast and clean. Write content in Markdown or MDX and
+        enhance it with interactive components only where you need them.
+        <br /><br />
+        Want to connect to a headless CMS or fetch data from an API? Astro lets
+        you do it at build time or runtime, with full control. When it's time to
+        go live, deploy seamlessly to Netlify, Vercel, or your own infrastructure
+        — optimized and ready.
+        <br /><br />
+        From performance-focused builds to smooth developer workflows, Astro keeps
+        things productive. Enjoy fast reloads, great error messages, and a polished
+        experience from start to ship — so you can launch confidently and showcase
+        your work with pride.
+      </Text>
+     
+    </div>
+  </Wrapper>
+</section>
