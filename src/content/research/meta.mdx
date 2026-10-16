@@ -1,50 +1,61 @@
 ---
 title: "Metamaterials and Metasurfaces"
-description: "Resonant metamaterial absorbers, filters, and annular aperture metasurfaces for infrared spectral filtering"
+description: "Resonant metamaterial absorbers, annular aperture metasurfaces for infrared spectral filtering, and silicon Mie resonators"
 pubDate: 2014-06-01
+order: 1
 image:
   url: "./plate-meta.webp"
   alt: "Computed field of a metal-insulator-metal absorber lit at 30°: reflection vanishes (R = 0.04%) and the field gathers under the strips"
-tags: ["metamaterials", "metasurfaces", "infrared"]
+tags: ["metamaterials", "metasurfaces", "infrared", "nanofabrication"]
 ---
 
-import { Image } from "astro:assets";
-import mim0 from "./mim0.jpeg";
+import Figure from "@/components/prose/Figure.astro";
+import schematic from "./fig-mim-schematic.webp";
 import sem from "./sem.jpg";
-import specangle from "./specangle.png";
-import aaa from "./aaa.jpg";
-import aaaangle from "./aaaangle.png";
-import aaa1 from "./aaa1.jpg";
+import reflection from "./fig-mim-reflection.webp";
+import transmission from "./fig-aaa-transmission.webp";
 
-Metamaterials are man made materials made of sub-wavelength inclusions that can have extreme electromagnetic properties not found in nature.
+Metamaterials are artificial materials made of subwavelength inclusions, with electromagnetic properties not found in nature. During our work on infrared multispectral imaging, we used modal analysis to understand resonant metamaterial filters, then designed, fabricated and measured them.
 
 ## Metal insulator metal resonant filters
 
-<Image src={mim0} alt="MIM metamaterial structure" width={800} height={600} class="w-full my-4" />
+We carried out a modal analysis of metal–insulator–metal (MIM) metamaterials in the far infrared. These structures act as resonant reflection bandcut filters, independent of the polarization and direction of incidence. We showed that the resonant reflection dip comes from the excitation of quasimodes (modes associated with a complex frequency), which leads to quasi-total absorption.
 
-<Image src={sem} alt="SEM image of fabricated structure" width={800} height={600} class="w-full my-4" />
+<Figure src={schematic} alt="Side view of three periods of the absorber: thin dark chromium rods on a grey amorphous silicon layer, a dark chromium film below and a light silicon substrate, with a red arrow for the incident wave at angle theta zero" source="J. Opt. Soc. Am. B 31, 1339 (2014)" href="https://doi.org/10.1364/josab.31.001339">
+  Cross-section of the absorber: chromium rods (diameter D, period d) on amorphous silicon over a chromium film, on a silicon substrate. The vertical scale is stretched three times.
+</Figure>
 
-We present a modal analysis of metal–insulator–metal (MIM)-based metamaterials in the far infrared region. These structures can be used as resonant reflection bandcut spectral filters that are independent of the polarization and direction of incidence. We show that this resonant reflection dip is due to the excitation of quasimodes (modes associated with a complex frequency) leading to quasi-total absorption.
+We fabricated large-area samples made of chromium nanorod gratings on top of Si/Cr layers on a silicon substrate. Fourier transform spectrophotometry measurements agree well with finite element simulations. A quasimodal expansion gives a minimal resonant model that fits the full-wave simulations and reveals the excitation conditions of the modes.
 
-We have fabricated large area samples made of chromium nanorod gratings on top of Si/Cr layers deposited on silicon substrate. Measurements by Fourier transform spectrophotometry show good agreement with finite element simulations. A quasimodal expansion method is applied to obtain a minimal resonant model that fits well full wave simulations and that highlights excitation conditions of the modes.
+<Figure src={sem} alt="Scanning electron micrograph of a square array of round chromium rods, 2 µm across with a 4 µm period" source="J. Opt. Soc. Am. B 31, 1339 (2014)" href="https://doi.org/10.1364/josab.31.001339">
+  Top view of a fabricated grating under the scanning electron microscope (D = 2 µm, d = 4 µm).
+</Figure>
+
+<Figure src={reflection} alt="Two panels of reflection versus wavelength from 12 to 24 µm, each with five curves whose deep dip moves from about 16 to 21 µm as the period grows; the measured dips are broader and shallower" source="J. Opt. Soc. Am. B 31, 1339 (2014)" href="https://doi.org/10.1364/josab.31.001339">
+  Reflection at normal incidence for periods d from 4.0 to 5.6 µm, (a) computed with finite elements and (b) measured by FTIR. The dip moves to longer wavelengths as d grows, and reflection almost vanishes (near-total absorption) at d = 4.8 µm.
+</Figure>
 
 ### Related article
 
 - B. Vial, G. Demésy, F. Zolla, A. Nicolet, M. Commandré, C. Hecquet, T. Begou, S. Tisserand, S. Gautier, and V. Sauget, *Resonant metamaterial absorbers for infrared spectral filtering: Quasimodal analysis, design, fabrication, and characterization*. J. Opt. Soc. Am. B **31**(6):1339, (2014) [DOI](https://doi.org/10.1364/josab.31.001339)
 
-<Image src={specangle} alt="Spectral response at different angles" width={800} height={600} class="w-full my-4" />
-
 ## Annular aperture metasurfaces
 
-<Image src={aaa} alt="Annular aperture array" width={800} height={600} class="w-full my-4" />
+We studied the diffractive behavior of arrays of square coaxial apertures in a gold layer. Their resonant transmission enhancement makes tunable bandpass filters for multispectral imaging in the 7–13 μm range. A modal analysis guided the design and showed that the resonance peak comes from the excitation of leaky modes of the open photonic structure. FTIR transmission measurements of samples on silicon agree well with the numerical results and show an angular tolerance of the fabricated filters up to 30°.
 
-<Image src={aaaangle} alt="Angular response of annular apertures" width={800} height={600} class="w-full my-4" />
-
-The diffractive behavior of arrays of square coaxial apertures in a gold layer is studied. These structures exhibit a resonant transmission enhancement that is used to design tunable bandpass filters for multispectral imaging in the 7–13 μm wavelength range.
+<Figure src={transmission} alt="Two panels of transmission versus wavelength from 4 to 18 µm, each with four peaked curves labelled M1 to M4 that peak near 8, 9, 10.5 and 12 µm at about 0.6 transmission; the measured curves are noisier" source="Opt. Lett. 39, 4723 (2014)" href="https://doi.org/10.1364/ol.39.004723">
+  Transmission at normal incidence of the four coaxial aperture filters M1 to M4, (a) computed and (b) measured by FTIR. Each filter passes a band centred between 8 and 12 µm, with a peak transmission near 60%.
+</Figure>
 
 ### Related articles
 
 - B. Vial, M. Commandré, G. Demésy, A. Nicolet, F. Zolla, F. Bedu, H. Dallaporta, S. Tisserand, and L. Roux, *Transmission enhancement through square coaxial aperture arrays in metallic film: When leaky modes filter infrared light for multispectral imaging*. Opt. Lett. **39**(16):4723, (2014) [DOI](https://doi.org/10.1364/ol.39.004723)
 - M. Commandré, B. Vial, S. Tisserand, L. Roux, H. Dallaporta, F. Bedu, G. Demésy, A. Nicolet, and F. Zolla, *Design, fabrication and characterization of resonant metamaterial filters for infrared multispectral imaging*. Thin Solid Films, (2015) [DOI](https://doi.org/10.1016/j.tsf.2015.04.026)
 
-<Image src={aaa1} alt="Fabricated annular aperture device" width={800} height={600} class="w-full my-4" />
+## Silicon Mie resonators
+
+Subwavelength dielectric Mie resonators combine the advantages of dielectric microstructures and of metallic nanoparticles supporting surface plasmons. We fabricated monocrystalline silicon resonators over large scales by spontaneous dewetting of commercial silicon-on-insulator substrates. The resonators feature two resonant modes in the visible spectrum, and assisting the dewetting with electron beam lithography or focused ion beam patterning controls their size, position and arrangement, down to complex multimers.
+
+### Related article
+
+- M. Abbarchi, M. Naffouti, B. Vial, A. Benkouider, L. Lermusiaux, L. Favre, A. Ronda, S. Bidault, I. Berbezier, and N. Bonod, *Wafer Scale Formation of Monocrystalline Silicon-Based Mie Resonators via Silicon-on-Insulator Dewetting*. ACS Nano **8**(11):11181, (2014) [DOI](https://doi.org/10.1021/nn505632b)

@@ -10,9 +10,11 @@ import Arrow from "@/components/fundations/icons/Arrow.astro";
 import { services, site } from "@/data/site";
 
 const research = (await getCollection("research")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  (a, b) =>
+    (a.data.order ?? Infinity) - (b.data.order ?? Infinity) ||
+    b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
-const packages = (await getCollection("code")).sort((a, b) => a.id.localeCompare(b.id)).slice(0, 6);
+const packages = (await getCollection("code", (p) => p.data.section === "packages")).sort((a, b) => a.id.localeCompare(b.id)).slice(0, 6);
 const posts = (await getCollection("posts"))
   .sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf())
   .slice(0, 3);
@@ -22,13 +24,13 @@ const posts = (await getCollection("posts"))
   <MeshField
     animate
     class="min-h-[max(36rem,min(88svh,54rem))]"
-    sourceX={0.86}
-    sourceY={0.42}
+    sourceX={0.57}
+    sourceY={0.45}
     wavelengths={9}
-    pad={16}
+    pad={28}
     intensity={0.78}
   >
-    <div class="page relative flex min-h-[inherit] flex-col justify-between gap-10 pt-[clamp(2.5rem,9vh,6rem)] pb-6 lg:pb-8">
+    <div class="page relative flex min-h-[inherit] flex-col justify-between gap-10 pt-[clamp(2.5rem,9vh,6rem)] pb-20 lg:pb-36">
       <h1 data-obstacle class="t-name w-fit bg-paper">
         Benjamin<br />Vial
       </h1>
@@ -42,9 +44,9 @@ const posts = (await getCollection("posts"))
       <div class="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
         <div data-obstacle class="flex max-w-[36rem] flex-col gap-5 bg-paper lg:gap-6">
           <p class="t-lede text-[1.0625rem] text-ink sm:text-[length:inherit]">
-            I study how electromagnetic waves behave in structured materials, and I write the
-            open-source codes that compute them. Since October 2025 I build that software for
-            research labs and industry.
+            I study how electromagnetic and elastic waves behave in structured materials, and I write the
+            open-source codes that compute them.<br />
+            I build that software for research labs and industry.
           </p>
           <div class="flex flex-wrap gap-3">
             <a class="door door--primary" href="/consulting">Consulting <Arrow /></a>
@@ -59,11 +61,11 @@ const posts = (await getCollection("posts"))
   <!-- Consulting -->
   <section aria-labelledby="h-consulting" class="page grid gap-10 pt-24 lg:grid-cols-12">
     <div class="lg:col-span-4">
-      <div class="lg:sticky lg:top-8">
+      <div class="lg:sticky below-nav">
         <h2 id="h-consulting" class="t-h2">What I build for you</h2>
         <p class="mt-4 max-w-[34ch] text-ink-2">
-          Scientific software for research labs and industry: custom solvers, multiphysics models and
-          simulation acceleration.
+          Scientific software for research labs and industry: inverse design, custom solvers and
+          multiphysics models.
         </p>
         <a class="door mt-6" href="/consulting">Consulting <Arrow /></a>
       </div>
@@ -89,8 +91,8 @@ const posts = (await getCollection("posts"))
       <div>
         <h2 id="h-research" class="t-h2">Research</h2>
         <p class="mt-3 max-w-[48ch] text-ink-2">
-          Metamaterials, resonances and inverse design since 2009, at Institut Fresnel, Queen Mary and
-          Imperial College London.
+          Light, sound and vibration in structured media since 2009 (resonances, homogenization and
+          inverse design), at Institut Fresnel, Queen Mary and Imperial College London.
         </p>
       </div>
       <a class="link t-label" href="/publications">All publications</a>

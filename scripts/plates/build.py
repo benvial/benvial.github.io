@@ -1,4 +1,4 @@
-"""Regenerate the four research cover plates into src/content/research/.
+"""Regenerate the research cover plates into src/content/research/.
 
     python scripts/plates/build.py
 
@@ -13,16 +13,20 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 OUT = os.path.join(HERE, "..", "..", "src", "content", "research")
 
+import flexural  # noqa: E402
+import homog  # noqa: E402
 import invisible  # noqa: E402
 import mim  # noqa: E402
 import qnm  # noqa: E402
 import topopt  # noqa: E402
 
-SLUG = {"qnm": "qnms", "invisible": "invisible", "mim": "meta", "topopt": "topopt"}  # research entry ids
+SLUG = {"qnm": "qnms", "invisible": "invisible", "mim": "meta", "topopt": "topopt",
+        "flexural": "elastic", "homog": "homogenization"}  # research entry ids
 
 if __name__ == "__main__":
-    which = sys.argv[1:] or ["qnm", "invisible", "mim", "topopt"]
+    which = sys.argv[1:] or list(SLUG)
     for name in which:
         print(f"== {name}")
-        mod = {"qnm": qnm, "invisible": invisible, "mim": mim, "topopt": topopt}[name]
+        mod = {"qnm": qnm, "invisible": invisible, "mim": mim, "topopt": topopt,
+               "flexural": flexural, "homog": homog}[name]
         mod.main(os.path.join(OUT, f"plate-{SLUG[name]}.webp"))

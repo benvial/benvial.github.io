@@ -6,7 +6,7 @@ const path = Astro.url.pathname.replace(/\/$/, "") || "/";
 const isActive = (href: string) => path === href || path.startsWith(`${href}/`);
 ---
 
-<header class="relative z-20 bg-paper">
+<header data-site-header class="site-header sticky top-0 z-20 border-b border-rule bg-paper-bar">
   <div class="page flex min-h-16 items-center justify-between gap-6 py-3">
     <a
       href="/"
@@ -41,7 +41,7 @@ const isActive = (href: string) => path === href || path.startsWith(`${href}/`);
       >
         <span class="when-closed">Menu</span><span class="when-open">Close</span>
       </summary>
-      <nav aria-label="Main" class="absolute inset-x-0 top-full border-y border-rule bg-paper">
+      <nav aria-label="Main" class="absolute inset-x-0 top-full border-b border-rule bg-paper-bar">
         <ul class="page rows py-2">
           {
             nav.map((item) => (
@@ -62,7 +62,63 @@ const isActive = (href: string) => path === href || path.startsWith(`${href}/`);
   </div>
 </header>
 
+<script>
+  // Hide the bar while reading down, bring it back on any scroll up. The
+  // visible height is published as --nav-offset so sticky asides clear it.
+  const header = document.querySelector<HTMLElement>("[data-site-header]")!;
+  const root = document.documentElement;
+  const menu = header.querySelector("details");
+  let lastY = window.scrollY;
+  let hidden = false;
+  let ticking = false;
+
+  const apply = (hide: boolean) => {
+    hidden = hide;
+    header.toggleAttribute("data-hidden", hide);
+    root.style.setProperty("--nav-offset", hide ? "0px" : `${header.offsetHeight}px`);
+  };
+
+  const update = () => {
+    ticking = false;
+    const y = window.scrollY;
+    if (y <= header.offsetHeight) {
+      lastY = y;
+      if (hidden) apply(false);
+      return;
+    }
+    if (Math.abs(y - lastY) < 8) return;
+    const hide = y > lastY && !menu?.open && !header.contains(document.activeElement);
+    lastY = y;
+    if (hide !== hidden) apply(hide);
+  };
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    },
+    { passive: true },
+  );
+  header.addEventListener("focusin", () => hidden && apply(false));
+  new ResizeObserver(() => apply(hidden)).observe(header);
+  update();
+</script>
+
 <style>
+  .site-header {
+    transition: transform 0.3s ease;
+  }
+  .site-header[data-hidden] {
+    transform: translateY(-100%);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .site-header {
+      transition: none;
+    }
+  }
   .nav-menu .when-open {
     display: none;
   }

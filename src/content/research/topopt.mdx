@@ -1,27 +1,30 @@
 ---
-title: "Topology Optimization"
-description: "Inverse design of photonic and microwave devices using topology optimization"
-pubDate: 2015-09-01
+title: "Topology Optimization and Inverse Design"
+description: "Inverse design of photonic, microwave and thermal devices with topology optimization and automatic differentiation"
+pubDate: 2023-08-01
+order: 2
 image:
   url: "./plate-topopt.webp"
   alt: "Topology optimised all-dielectric cloak around a metal cylinder: scattered energy cut 767 times and plane wavefronts restored"
-tags: ["topology optimization", "inverse design", "photonic", "microwave"]
+tags: ["topology optimization", "inverse design", "photonic", "microwave", "thermal"]
 ---
 
-import { Image } from "astro:assets";
+import Figure from "@/components/prose/Figure.astro";
 import metasurface from "./metasurface.png";
 import optPho from "./opt_pho_superscatt.png";
 import illusionFab from "./illusion_fab.jpg";
 import illusionFields from "./illusion_fields.jpg";
 import cloak from "./cloak.png";
 
-I am interested in optimizing the shape of photonic and microwave devices for various applications and control of electromagnetic waves.
+We optimize the shape and material layout of photonic, microwave and thermal devices to control waves and fields. Gradient-based topology optimization lets every element of the mesh become a design variable, and automatic differentiation makes the gradients cheap to obtain.
 
 ## Open-Source Inverse Photonic Design
 
-<Image src={metasurface} alt="Metasurface inverse design" width={800} height={600} class="w-full my-4" />
+<Figure src={metasurface} alt="Rendering of a silicon metagrating: rows of free-form pillars on a substrate" source="Mathematics 10, 3912 (2022)" href="https://doi.org/10.3390/math10203912">
+  A silicon metagrating optimized with nannos. It sends 91% (TE) and 86% (TM) of the transmitted light into the (1, 0) diffraction order at 732 nm.
+</Figure>
 
-In recent years, technological advances in nanofabrication have opened up new applications in the field of nanophotonics. To engineer and develop novel functionalities, rigorous and efficient numerical methods are required.
+Advances in nanofabrication open new applications in nanophotonics, and engineering new functionalities requires rigorous and efficient numerical methods. In parallel, algorithmic differentiation (pushed by machine learning) makes large-scale device optimization possible with few changes to the underlying code. I wrote three open-source libraries for Maxwell's equations, all with automatic differentiation: gyptis, a finite element code with a high-level interface for common photonics problems; nannos, a Fourier modal method for multilayer bi-periodic metasurfaces; and protis, a plane wave expansion method for band diagrams of two-dimensional photonic crystals. Each comes with typical inverse design examples.
 
 ### Related article
 
@@ -33,25 +36,53 @@ In recent years, technological advances in nanofabrication have opened up new ap
 - B. Vial, *nannos: Fourier Modal Method for multilayer metamaterials with auto diff* (2021) [gitlab](https://gitlab.com/nannos/nannos)
 - B. Vial, *protis: Plane wave expansion method for photonic crystals* (2021) [gitlab](https://gitlab.com/protis/protis)
 
-<Image src={optPho} alt="Optimized photonic superscatterer" width={800} height={600} class="w-full my-4" />
+<Figure src={optPho} alt="Scattering width versus wavelength for two optimized nanorods, peaking at 600 nm, with their layouts, radiation patterns and field maps" source="Mathematics 10, 3912 (2022)" href="https://doi.org/10.3390/math10203912">
+  Superscattering nanorods optimized with gyptis. The normalized scattering width peaks at the 600 nm target for both polarizations (blue: TE, red: TM). The insets show the silicon and silica layouts and their radiation patterns.
+</Figure>
+
+## Bi-focal lens
+
+Topology optimization gave the permittivity layout of a bi-focal lens that concentrates the electromagnetic field at different spatial positions depending on the wavelength. We 3D printed the device from two low-loss dielectrics, and field mapping at microwave frequencies confirmed the local field enhancement at two distinct locations for two separate frequencies.
+
+### Related article
+
+- B. Vial, T. Whittaker, S. Zhang, W. G. Whittow, and Y. Hao, *Optimization and experimental validation of a bi-focal lens in the microwave domain*. AIP Advances **12**(2):025103, (2022) [DOI](https://doi.org/10.1063/5.0074062)
+
+## Thermal cloak
+
+The same machinery applies to diffusion, where wideband cloaks remain a challenge at high frequencies. We optimized a thermal cloak for an object of large thermal conductivity (copper), in a given frequency band and for a given diffusion direction. The cloak is near-perfect over a finite frequency band and still performs well in the time domain, including the transient regime and whatever the initial temperature. It also works fairly well for other highly conducting objects, but breaks down for poorly conducting ones.
+
+### Related article
+
+- B. Vial, S. Guenneau, and Y. Hao, *Topology Optimization of a Thermal Cloak in the Frequency Domain*. AIP Advances **13**(8):085111, (2023) [DOI](https://doi.org/10.1063/5.0156411)
+
+## Tunable metamaterials
+
+Inverse design also shaped the microstructure of ferroelectric composites with enhanced tunability: see [Homogenization and Effective Media](/research/homogenization/).
 
 ## Illusion device
 
-<Image src={illusionFab} alt="Fabricated illusion device" width={800} height={600} class="w-full my-4" />
+<Figure src={illusionFab} alt="Map of a small dielectric object, the optimized coating around a metal cylinder, and a photograph of both 3D printed parts" source="Sci. Rep. 7, 3929 (2017)" href="https://doi.org/10.1038/s41598-017-04410-4">
+  The reference dielectric object (a) and the optimized coating that makes a metal cylinder look like it (b). Both parts were 3D printed in ABS (c).
+</Figure>
 
-We report the design, fabrication and experimental verification of an illusion device working at microwave frequencies.
+We designed, fabricated and experimentally verified an illusion device at microwave frequencies. Two-dimensional topology optimization finds the binary layout of a dielectric coating that, wrapped around a metallic cylinder, mimics the scattering of a predefined, arbitrarily shaped dielectric object. We 3D printed the coating and mapped the illusion effect with spatially resolved near-field measurements in a waveguide. The approach gives general guidelines for electromagnetic illusions and extends to shaping near and far fields with low-index isotropic materials.
 
 ### Related article
 
 - B. Vial, M. Torrico, and Y. Hao, *Optimized microwave illusion device*. Sci Rep **7**(1):3929, (2017) [DOI](https://doi.org/10.1038/s41598-017-04410-4)
 
-<Image src={illusionFields} alt="Simulated illusion device field distributions" width={800} height={600} class="w-full my-4" />
+<Figure src={illusionFields} alt="Eight field maps: simulations on the top row, measurements on the bottom row" source="Sci. Rep. 7, 3929 (2017)" href="https://doi.org/10.1038/s41598-017-04410-4">
+  Real part of the electric field at 10 GHz, simulated (top) and measured (bottom). From left to right: free space, bare metal cylinder, reference object, and the cylinder inside the illusion coating.
+</Figure>
 
 ## Invisibility cloaking
 
-<Image src={cloak} alt="Topology optimized cloak design" width={800} height={600} class="w-full my-4" />
+<Figure src={cloak} alt="Optimized cloak layout and three field maps with and without the cloak" source="Opt. Express 23, 23551 (2015)" href="https://doi.org/10.1364/oe.23.023551">
+  The optimized ABS and air cloak (a) and the fields under line-source illumination, with the cloak (b, c) and without it (d).
+</Figure>
 
-I designed an all-dielectric cloaking device at microwave frequencies. A gradient based topology optimization is employed to find a dielectric permittivity distribution that minimizes the diffracted field in free space.
+We designed an all-dielectric cloaking device at microwave frequencies. Gradient-based topology optimization finds the permittivity distribution that minimizes the diffracted field in free space. The binary layout (ABS plastic or air) reduces the scattering from an ABS cylinder excited by a line source. We compared cloaks optimized for one, two and three frequencies, and a modal analysis revealed the resonant mechanism behind the cloaking.
 
 ### Related article
 

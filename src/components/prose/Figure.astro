@@ -1,0 +1,38 @@
+---
+// A numbered figure for prose: white plate, caption, and the paper it comes from.
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  /** Short reference to the source paper, e.g. "Phys. Rev. A 89, 023829 (2014)" */
+  source?: string;
+  /** Link for the source (DOI) */
+  href?: string;
+}
+
+const { src, alt, source, href } = Astro.props;
+---
+
+<figure class="figure">
+  <div class="border border-rule bg-white p-3">
+    <Image src={src} alt={alt} widths={[640, 1000, 1400]} sizes="(min-width: 1024px) 40rem, 100vw" />
+  </div>
+  <figcaption class="t-meta mt-3">
+    <slot />
+    {
+      source && (
+        <span class="figure-source">
+          {href ? (
+            <a class="link" href={href}>
+              {source}
+            </a>
+          ) : (
+            source
+          )}
+        </span>
+      )
+    }
+  </figcaption>
+</figure>

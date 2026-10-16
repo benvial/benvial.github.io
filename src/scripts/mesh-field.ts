@@ -3,7 +3,7 @@
 // perfectly conducting hole in the mesh; the rest of the box is meshed and
 // solved with a point source the visitor can move.
 
-import { buildMesh, factorise, onMesh, solvePoint, type Mesh, type Factor, type Rect } from "./fem";
+import { buildMesh, factorise, solvePoint, type Mesh, type Factor, type Rect } from "./fem";
 
 const BINS = 96;
 
@@ -197,7 +197,8 @@ class MeshField {
     if (!fallback) {
       const p = this.snap(x, y, dir);
       if (!p) return false;
-      ({ x, y } = onMesh(this.mesh, p.x, p.y));
+      x = p.x;
+      y = p.y;
     } else if (!this.free(x, y)) {
       // Pick the free point farthest from every obstacle, nearest the preferred spot on ties.
       let best = -1, bx = x, by = y;
@@ -350,7 +351,7 @@ class MeshField {
     const mv = d[ev.key];
     if (!mv) return;
     ev.preventDefault();
-    this.place(this.src.x + mv[0], this.src.y + mv[1], false, mv);
+    this.place(this.src.x + mv[0], this.src.y + mv[1]);
   }
 }
 

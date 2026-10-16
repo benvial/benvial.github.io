@@ -1,0 +1,98 @@
+---
+// A Jupyter notebook rendered in prose, with the outputs of a saved run.
+// "Run live" makes its code cells editable in place and attaches them to a kernel
+// started on mybinder.org from `repo` (see src/scripts/notebook.ts). The saved outputs stay
+// on the page until a cell is re-run.
+import { Code } from "astro:components";
+import { createMarkdownProcessor } from "@astrojs/markdown-remark";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
+import "katex/dist/katex.min.css";
+import { CODE_THEME } from "@/scripts/highlight";
+
+interface Props {
+  /** File name in src/data/notebooks/, written by scripts/notebooks/execute.py */
+  name: string;
+  /** GitHub repository holding the Binder environment, e.g. "benvial/gyptis-binder" */
+  repo: string;
+  ref?: string;
+}
+
+const { name, repo, ref = "main" } = Astro.props;
+
+const files = import.meta.glob<string>("/src/data/notebooks/*.ipynb", {
+  query: "?raw",
+  import: "default",
+  eager: true,
+});
+const raw = files[`/src/data/notebooks/${name}`];
+if (!raw) throw new Error(`Notebook not found: src/data/notebooks/${name}`);
+
+type Output = {
+  output_type: string;
+  text?: string | string[];
+  data?: Record<string, string | string[]>;
+};
+type Cell = { cell_type: string; source: string | string[]; outputs?: Output[]; metadata?: { alt?: string } };
+
+const join = (s: string | string[] = "") => (Array.isArray(s) ? s.join("") : s);
+const cells: Cell[] = JSON.parse(raw).cells;
+
+const md = await createMarkdownProcessor({ remarkPlugins: [remarkMath], rehypePlugins: [rehypeKatex] });
+const html = new Map<Cell, string>();
+for (const c of cells) {
+  if (c.cell_type === "markdown") html.set(c, (await md.render(join(c.source))).code);
+}
+
+const IMAGES = ["image/webp", "image/png", "image/jpeg"];
+const binderLab = `https://mybinder.org/v2/gh/${repo}/${ref}?urlpath=lab/tree/${name}`;
+---
+
+<section class="nb" data-notebook data-repo={repo} data-ref={ref}>
+  <div class="nb-bar">
+    <div class="nb-actions">
+      <button type="button" class="door door--primary" data-nb-run>
+        Run live
+        <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="currentColor"></path></svg>
+      </button>
+      <button type="button" class="nb-button" data-nb-interrupt hidden>Interrupt</button>
+      <button type="button" class="nb-button" data-nb-restart hidden>Restart kernel</button>
+      <button type="button" class="nb-button" data-nb-restart-all hidden>Restart &amp; run all</button>
+      <a class="nb-binder link t-meta" href={binderLab} target="_blank" rel="noopener">Open in JupyterLab on Binder&nbsp;↗</a>
+    </div>
+    <p class="t-meta" data-nb-status aria-live="polite">
+      Outputs below come from a saved run. Running live starts a gyptis kernel on <a class="link" href="https://mybinder.org">mybinder.org</a>, which usually takes a minute or two.
+    </p>
+  </div>
+
+  {
+    cells.map((c) =>
+      c.cell_type === "markdown" ? (
+        <div class="nb-md" set:html={html.get(c)} />
+      ) : c.cell_type === "code" ? (
+        <div class="nb-cell" data-cell>
+          <button type="button" class="nb-copy" data-nb-copy>Copy</button>
+          <div class="nb-in" data-executable data-language="python">
+            <Code code={join(c.source)} lang="python" theme={CODE_THEME} />
+          </div>
+          <div class="nb-out" data-output>
+            {(c.outputs ?? []).map((o) => {
+              if (o.output_type === "stream") return <pre class="nb-text">{join(o.text)}</pre>;
+              if (o.output_type === "error") return null;
+              const data = o.data ?? {};
+              const img = IMAGES.find((t) => t in data);
+              if (img) return <img src={`data:${img};base64,${join(data[img])}`} alt={c.metadata?.alt ?? ""} loading="lazy" decoding="async" />;
+              if ("text/html" in data) return <div set:html={join(data["text/html"])} />;
+              if ("text/plain" in data) return <pre class="nb-text">{join(data["text/plain"])}</pre>;
+              return null;
+            })}
+          </div>
+        </div>
+      ) : null
+    )
+  }
+</section>
+
+<script>
+  import "@/scripts/notebook";
+</script>

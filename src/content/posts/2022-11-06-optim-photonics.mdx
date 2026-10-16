@@ -1,8 +1,25 @@
 ---
-title: "Open-Source Computational Photonics"
+title: "Open-source computational photonics"
 pubDate: 2022-11-06
-description: "Paper on open-source computational photonics with auto differentiable topology optimization published in Mathematics"
+description: "Our paper on auto-differentiable, open-source solvers for photonics and their use in topology optimization is out in Mathematics (open access)."
 tags: ["article"]
+image:
+  url: "../research/opt_pho_superscatt.png"
+  alt: "Scattering width spectra of two topology-optimized dielectric scatterers (TE and TM), with their far-field patterns and near-field intensity maps"
 ---
 
-A paper on open-source computational photonics presenting an auto-differentiable topology optimization framework. The work demonstrates how automatic differentiation can be leveraged for photonic design, enabling gradient-based optimization of complex electromagnetic structures. Published in *Mathematics*.
+Our paper describing the open-source packages I develop for photonics is now published in *Mathematics*, and it is open access.
+
+Designing nanophotonic devices means solving Maxwell's equations many times, and gradient-based optimization needs the derivative of a figure of merit with respect to thousands of design variables. Writing those derivatives by hand (the adjoint method) is tedious and error-prone. The tools of machine learning changed that: automatic differentiation computes them for us, with only small changes to the forward solver.
+
+The paper presents three Python codes built on this idea:
+
+- [gyptis](https://gyptis.gitlab.io), a finite element solver with a high-level interface for problems common in photonics (scattering, gratings, modal analysis)
+- [nannos](https://nannos.gitlab.io), a Fourier modal method for multilayer bi-periodic metasurfaces
+- [protis](https://protis.gitlab.io), a plane wave expansion method for band diagrams of two-dimensional photonic crystals
+
+All three support automatic differentiation, so the same code that simulates a device can also optimize it. The paper walks through topology optimization examples with each of them. The figure above shows one: dielectric scatterers optimized to maximize scattering at 600 nm, for each polarization.
+
+## Read the paper
+
+B. Vial and Y. Hao, *Open-Source Computational Photonics with Auto Differentiable Topology Optimization*, Mathematics **10**(20), 3912 (2022). [Open access](https://www.mdpi.com/2227-7390/10/20/3912), [DOI](https://doi.org/10.3390/math10203912)

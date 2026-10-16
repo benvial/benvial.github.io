@@ -19,15 +19,15 @@ const date = new Date(pubDate);
 ---
 
 <BaseLayout title={title} description={description}>
-  <MeshField class="min-h-[clamp(16rem,36vw,24rem)]" sourceX={0.92} sourceY={0.35} wavelengths={10} pad={14} intensity={0.55}>
-    <div class="page flex min-h-[inherit] flex-col justify-end gap-4 pt-28 pb-10 md:pt-12">
+  <MeshField class="min-h-[clamp(16rem,36vw,24rem)]" sourceX={0.92} sourceY={0.35} wavelengths={10} pad={28} intensity={0.55}>
+    <div class="page flex min-h-[inherit] flex-col justify-end gap-4 pt-[clamp(2.5rem,9vh,6rem)] pb-20 lg:pb-36">
       <h1 data-obstacle class="t-display w-fit max-w-[22ch] bg-paper">{title}</h1>
     </div>
   </MeshField>
 
   <article class="page grid gap-10 pt-12 lg:grid-cols-12">
     <aside class="lg:col-span-3">
-      <dl class="t-mono grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 border-t border-ink pt-3 text-ink-2 lg:sticky lg:top-8 lg:grid-cols-1">
+      <dl class="t-mono grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 border-t border-ink pt-3 text-ink-2 lg:sticky below-nav lg:grid-cols-1">
         <dt class="t-label text-ink-3">Date</dt>
         <dd>
           <time datetime={date.toISOString()}>

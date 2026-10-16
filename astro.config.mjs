@@ -3,6 +3,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
+import { CODE_THEME } from "./src/scripts/highlight.ts";
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,7 +13,7 @@ export default defineConfig({
   markdown: {
     drafts: true,
     shikiConfig: {
-      theme: "poimandres"
+      theme: CODE_THEME
     }
   },
   shikiConfig: {

@@ -24,6 +24,7 @@ Thumbs.db
 
 # Generated
 src/data/publications.json
+src/data/activity.json
 
 # Temp
 *.swp
@@ -31,3 +32,6 @@ src/data/publications.json
 
 # Python
 __pycache__/
+
+# Instanced fonts for scripts/figures
+scripts/figures/__fontcache__/

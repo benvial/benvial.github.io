@@ -8,14 +8,14 @@ import Arrow from "@/components/fundations/icons/Arrow.astro";
 import { services } from "@/data/site";
 
 const featured = (await getCollection("code"))
-  .filter((p) => ["gsim", "gyptis", "nannos", "protis"].includes(p.data.title))
+  .filter((p) => ["gsim", "gyptis", "nannos", "protis", "prismo"].includes(p.data.title))
   .sort((a, b) => a.id.localeCompare(b.id));
 ---
 
-<BaseLayout title="Consulting" description="Scientific software consulting for research labs and industry: custom solvers, multiphysics modelling and simulation acceleration.">
+<BaseLayout title="Consulting" description="Scientific software consulting for research labs and industry: inverse design, custom solvers and multiphysics modelling.">
   <PageHeader
     title="Consulting"
-    lede="Scientific software consulting for research labs and industry: custom solvers, multiphysics modelling and simulation acceleration."
+    lede="Scientific software consulting for research labs and industry: inverse design, custom solvers and multiphysics modelling."
     sourceX={0.88}
     sourceY={0.7}
   />
@@ -24,8 +24,8 @@ const featured = (await getCollection("code"))
     <div class="lg:col-span-4">
       <h2 id="h-services" class="t-h2">Services</h2>
       <p class="mt-4 max-w-[34ch] text-ink-2">
-        I write and extend simulation software for photonics, electronics and wave problems, built on the same
-        open-source stack I use in my research.
+        I simulate and design devices for photonics, microwaves and wave physics, with the same open-source
+        stack I build and use in my research.
       </p>
     </div>
     <ol class="rows lg:col-span-8">

@@ -1,8 +1,30 @@
 ---
-title: "High frequency homogenization for dispersive media"
+title: "High-frequency homogenization for dispersive media"
 pubDate: 2024-09-11
-description: "Article on High-Frequency Homogenization for Periodic Dispersive Media published in SIAM MMS"
+description: "Our article on high-frequency homogenization of periodic media with frequency-dependent materials is out in SIAM Multiscale Modeling & Simulation."
 tags: ["article"]
+image:
+  url: "./img/hfh-fields.png"
+  alt: "Field of a point source in a photonic crystal (left) compared with the high-frequency homogenization approximation (right)"
 ---
 
-Article on high-frequency homogenization for periodic dispersive media published in *SIAM Multiscale Modeling & Simulation*. The work extends classical homogenization theory to regimes where the wavelength is comparable to the microstructure period, accounting for material dispersion.
+import { Image } from "astro:assets";
+import eigenvalues from "./img/hfh-eigenvalues.png";
+
+Our article *High-Frequency Homogenization for Periodic Dispersive Media* is finally published in *SIAM Multiscale Modeling & Simulation*.
+
+Classical homogenization replaces a periodic medium with an effective one, but only when the wavelength is much larger than the period. High-frequency homogenization (HFH) lifts that limit: it builds effective equations near any point of the dispersion diagram, including band edges where the wavelength is comparable to the period. Here we extend HFH to inclusions made of dispersive materials, whose properties depend on frequency (a Lorentz or Drude model with damping, for example).
+
+## What we did
+
+- We derive effective properties near a given point of the dispersion diagram in frequency and wavenumber space.
+- We treat both isolated eigenvalues and clusters of nearby eigenvalues, where a single-mode expansion fails.
+- We cross-validate the asymptotic dispersion diagrams and wavefields against finite element simulations in one and two dimensions.
+
+The cover figure compares the field of a point source in a two-dimensional photonic crystal with its HFH approximation. Below, the complex eigenfrequencies of a cluster of four modes near the Γ point: the "nearby" expansion (dotted) follows the exact curves (solid) much further than the single-mode one (dashed).
+
+<Image src={eigenvalues} alt="Real and imaginary parts of four eigenfrequencies near the Gamma point: exact solution, single-mode and nearby-mode HFH approximations" class="w-full my-6" />
+
+## Read the article
+
+M. Touboul, B. Vial, R. Assier, S. Guenneau and R. Craster, *High-Frequency Homogenization for Periodic Dispersive Media*, Multiscale Model. Simul. **22**(3), 1136–1168 (2024). [DOI](https://doi.org/10.1137/23M159648X)

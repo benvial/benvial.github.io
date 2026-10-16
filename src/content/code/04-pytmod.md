@@ -1,7 +1,7 @@
 ---
 title: pytmod
-description: Time-modulated wave solver. Simulates electromagnetic wave propagation in media with time-varying material properties.
+description: Solver for materials with time-modulated properties. Computes scattering and eigenmodes of time-modulated slabs.
 url: https://github.com/benvial/pytmod
 language: Python
-tags: [time-modulation, waves, fem, fenicsx]
+tags: [time-modulation, waves, electromagnetics, eigenmodes]
 ---

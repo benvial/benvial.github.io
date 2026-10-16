@@ -6,14 +6,16 @@ import PageHeader from "@/components/mesh/PageHeader.astro";
 import Arrow from "@/components/fundations/icons/Arrow.astro";
 
 const entries = (await getCollection("research")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  (a, b) =>
+    (a.data.order ?? Infinity) - (b.data.order ?? Infinity) ||
+    b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
-<BaseLayout title="Research" description="Research on metamaterials, invisibility, quasinormal modes and topology optimization.">
+<BaseLayout title="Research" description="Research on waves in structured media: quasinormal modes, elastic and acoustic metamaterials, homogenization, topology optimization, graded-index media and metasurfaces.">
   <PageHeader
     title="Research"
-    lede="Theory, simulation and experiment on waves in structured media: metamaterials, resonances, homogenization and inverse design."
+    lede="Theory, simulation and experiment on electromagnetic, elastic and acoustic waves in structured media: resonances, homogenization and inverse design."
   />
 
   <ol class="page mt-4">

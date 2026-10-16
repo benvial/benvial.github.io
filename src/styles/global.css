@@ -14,6 +14,7 @@
 
   --color-paper: oklch(98.5% 0 0);
   --color-paper-2: oklch(96% 0 0);
+  --color-paper-bar: oklch(97.4% 0 0);
   --color-ink: oklch(20.0% 0 0);
   --color-ink-2: oklch(40.0% 0 0);
   --color-ink-3: oklch(50.0% 0 0);
@@ -38,6 +39,27 @@
   font-family: var(--font-sans);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Ink scope: the site bar and footer are printed in reverse. Remapping the
+   tokens keeps every utility and component inside working unchanged; the
+   vermilion is lifted so it still reads against graphite. */
+.on-ink {
+  --color-paper: oklch(20.0% 0 0);
+  --color-paper-2: oklch(24.0% 0 0);
+  --color-ink: oklch(96.0% 0 0);
+  --color-ink-2: oklch(80.0% 0 0);
+  --color-ink-3: oklch(66.0% 0 0);
+  --color-rule: oklch(34.0% 0 0);
+  --color-rule-2: oklch(28.0% 0 0);
+  --color-cool: oklch(88.0% 0 0);
+  --color-cool-deep: oklch(96.0% 0 0);
+  --color-warm: oklch(68.0% 0.170 33);
+  --color-warm-deep: oklch(88.0% 0.060 33);
+  --color-warm-pale: oklch(33.0% 0.121 33);
+  color-scheme: dark;
+  background: var(--color-paper);
+  color: var(--color-ink);
 }
 
 /* ---- Field colormap ----------------------------------------------------
@@ -78,6 +100,7 @@ body {
 }
 
 html {
+  --nav-offset: 0px;
   scrollbar-color: var(--color-rule) var(--color-paper);
   caret-color: var(--color-warm);
 }
@@ -306,6 +329,17 @@ p {
   }
 }
 
+/* Sticky asides sit 2rem under the site bar, following it as it hides. */
+.below-nav {
+  top: calc(var(--nav-offset) + 2rem);
+  transition: top 0.3s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .below-nav {
+    transition: none;
+  }
+}
+
 /* ---- Rows: ruled lists used for services, packages, papers, posts ---- */
 
 .rows > * {
@@ -313,6 +347,45 @@ p {
 }
 .rows > *:last-child {
   border-bottom: 1px solid var(--color-rule);
+}
+
+/* ---- Activity calendar (components/sections/ActivityGraph.astro) ------
+   Empty days sit on the rule; active days climb the vermilion half of the
+   field colormap, so the calendar reads as a strip of the same field. */
+
+:root {
+  --activity-0: var(--color-rule-2);
+  --activity-1: oklch(87.0% 0.066 33);
+  --activity-2: oklch(73.0% 0.133 33);
+  --activity-3: oklch(57.0% 0.180 33);
+  --activity-4: oklch(42.0% 0.154 33);
+}
+.activity-scroll {
+  scrollbar-width: thin;
+}
+.activity-axis {
+  color: var(--color-ink-3);
+  font-size: 10px;
+}
+.activity-cell {
+  shape-rendering: crispEdges;
+}
+.activity-cell.l0 { fill: var(--activity-0); }
+.activity-cell.l1 { fill: var(--activity-1); }
+.activity-cell.l2 { fill: var(--activity-2); }
+.activity-cell.l3 { fill: var(--activity-3); }
+.activity-cell.l4 { fill: var(--activity-4); }
+svg .activity-cell:hover {
+  stroke: var(--color-ink);
+  stroke-width: 1.5px;
+}
+.activity-figure {
+  font-family: var(--font-display);
+  font-stretch: 118%;
+  font-weight: 720;
+  font-size: 1.5rem;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
 }
 
 /* ---- Prose (research write-ups and posts) ------------------------------ */
@@ -384,6 +457,34 @@ p {
   background: #fff;
   border: 1px solid var(--color-rule);
 }
+/* Numbered figures (components/prose/Figure.astro): the plate carries the frame. */
+.prose {
+  counter-reset: figure;
+}
+.prose .figure {
+  margin-block: 2.25rem;
+  counter-increment: figure;
+}
+.prose .figure img {
+  margin: 0;
+  border: 0;
+}
+.prose .figure figcaption::before {
+  content: "Fig. " counter(figure);
+  margin-right: 0.6em;
+  font-family: var(--font-display);
+  font-stretch: 112%;
+  font-weight: 620;
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+}
+.prose .figure-source {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.8125rem;
+}
 .prose blockquote {
   border-left: 1px solid var(--color-ink);
   padding-left: 1.25rem;
@@ -427,4 +528,225 @@ p {
 .prose .katex,
 .prose math {
   font-size: 1.05em;
+}
+
+/* ---- Live notebooks (components/prose/Notebook.astro) ------------------
+   Code cells keep the prose code style; outputs sit on white plates like
+   figures. Once live, cells become editable in place (scripts/notebook.ts). */
+
+.prose .nb > * + * {
+  margin-top: 1.1em;
+}
+.nb-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  padding-block: 1rem;
+  border-block: 1px solid var(--color-rule);
+}
+.nb-bar p {
+  flex: 1 1 18rem;
+  margin: 0;
+}
+.nb[data-state="error"] [data-nb-status] {
+  color: var(--color-warm-deep);
+}
+.nb[data-state="live"] .nb-bar,
+.nb[data-state="running"] .nb-bar {
+  position: sticky;
+  top: var(--nav-offset);
+  transition: top 0.3s ease;
+  z-index: 2;
+  background: var(--color-paper);
+}
+.nb-md h3 {
+  font-family: var(--font-display);
+  font-stretch: 104%;
+  font-weight: 620;
+  font-size: 1.1875rem;
+}
+.nb-out:empty {
+  display: none;
+}
+.nb-out img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-top: 0.75rem;
+  border: 1px solid var(--color-rule);
+  background: white;
+  padding: 0.75rem;
+}
+.prose .nb-out pre,
+.nb .jp-OutputArea-output pre {
+  margin: 0.75rem 0 0;
+  padding: 0.75rem 1rem;
+  background: var(--color-paper-2);
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+/* Live cells: the textarea sits on the highlighted code in the same grid cell,
+   with identical metrics, so only the Shiki rendering shows. */
+.nb-editable {
+  display: grid;
+  overflow-x: auto;
+}
+.nb-editable > pre,
+.nb-editable > .nb-editor {
+  grid-area: 1 / 1;
+  margin: 0;
+}
+.prose .nb-editable > pre {
+  overflow: visible;
+  min-width: 100%;
+  width: max-content;
+}
+.nb-editor {
+  padding: 1.25rem;
+  border: 0;
+  background: transparent;
+  color: transparent;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  white-space: pre;
+  overflow: hidden;
+  resize: none;
+  tab-size: 4;
+}
+.nb-editor::selection {
+  background: rgb(255 255 255 / 0.18);
+  color: transparent;
+}
+.nb-editor:focus {
+  outline: none;
+}
+
+.nb-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+}
+.nb-binder {
+  white-space: nowrap;
+}
+.nb[data-state="running"] [data-nb-status] {
+  color: var(--color-ink);
+  font-variant-numeric: tabular-nums;
+}
+.nb .door:disabled {
+  cursor: progress;
+  background: var(--color-cool-deep);
+  border-color: var(--color-cool-deep);
+  color: var(--color-paper);
+  opacity: 0.75;
+}
+.nb-show {
+  font: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* Cell chrome: a copy button on the code, then run controls once live. */
+.nb-cell {
+  position: relative;
+}
+.nb-copy {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 1;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid rgb(255 255 255 / 0.25);
+  background: rgb(0 0 0 / 0.35);
+  color: rgb(255 255 255 / 0.85);
+  font-family: var(--font-display);
+  font-stretch: 112%;
+  font-weight: 620;
+  font-size: 0.6875rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.nb-cell:hover .nb-copy,
+.nb-cell:focus-within .nb-copy,
+.nb-copy:focus-visible {
+  opacity: 1;
+}
+@media (hover: none) {
+  .nb-copy {
+    opacity: 1;
+  }
+}
+.nb-tools {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+.nb-count {
+  color: var(--color-ink-3);
+  white-space: pre;
+}
+.nb-cell[data-ran="yes"] .nb-count {
+  color: var(--color-ink);
+}
+.nb-cell[data-ran="edited"] .nb-count,
+.nb-cell[data-state="running"] .nb-count {
+  color: var(--color-warm);
+}
+.nb-button {
+  padding: 0.25rem 0.6rem;
+  border: 1px solid var(--color-ink);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-stretch: 112%;
+  font-weight: 620;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.nb-button:hover:not(:disabled) {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+.nb-button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+/* The current cell (last focused or run) carries a vermilion rule in the
+   margin, like the selected cell in Jupyter; a running cell also marks its code. */
+.nb-cell[data-current]::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  left: -0.75rem;
+  width: 3px;
+  background: var(--color-warm);
+}
+.nb-cell[data-state="running"] .nb-editable > pre {
+  box-shadow: inset 3px 0 0 var(--color-warm);
+}
+.nb .jp-OutputArea-output img {
+  max-width: 100%;
+  height: auto;
+  background: white;
+}
+@media (prefers-reduced-motion: reduce) {
+  .nb-copy {
+    transition: none;
+  }
 }

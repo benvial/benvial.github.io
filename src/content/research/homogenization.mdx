@@ -1,0 +1,64 @@
+---
+title: "Homogenization and Effective Media"
+description: "High-frequency homogenization of dispersive media, tunable ferroelectric metamaterials and material parameter extraction"
+pubDate: 2024-09-30
+image:
+  url: "./plate-homogenization.webp"
+  alt: "Point source in a crystal of dispersive rods tuned just inside the band edge: a checkerboard Bloch mode under a slow envelope, as high-frequency homogenization predicts (a/λ = 0.2480 against 0.2490 exact)"
+tags: ["homogenization", "metamaterials", "ferroelectrics", "material characterization"]
+---
+
+import Figure from "@/components/prose/Figure.astro";
+import dispersion from "./fig-hfh-dispersion.webp";
+import field from "./fig-hfh-field.webp";
+import tunability from "./fig-ferro-tunability.webp";
+
+A metamaterial is only useful if we can describe it with a few effective parameters. We work on the theories that produce these parameters, from long-wavelength effective media to high-frequency asymptotics, and on the measurements that feed them.
+
+## High-frequency homogenization of dispersive media
+
+Classical homogenization replaces a microstructured medium by an equivalent uniform one when the wavelength is much larger than the period. High-frequency homogenization (HFH) lifts this limit: near a band edge, the field is a short-scale Bloch mode modulated by a slowly varying envelope, and the envelope obeys an effective equation whose coefficients come from the unit cell.
+
+In the METAVEH project at Imperial College London (2022 to 2025), we extended HFH to periodic media whose inclusions are made of frequency-dependent (dispersive) materials, such as Lorentz or Drude models with damping, with vibration energy harvesting as the target application. The method gives effective properties near any chosen point of the dispersion diagram, and we cross-validated the asymptotic dispersion diagrams and wavefields against finite element simulations in one and two dimensions.
+
+<Figure src={dispersion} alt="Five dispersion bands of normalized frequency against Bloch wavenumber from 0 to pi, each overlaid near both band edges by short dashed vermilion parabolas that match the exact curves" source="Multiscale Model. Simul. 22, 1136 (2024)" href="https://doi.org/10.1137/23M159648X">
+  Dispersion diagram of a layered medium with a dispersive (Lorentz) layer. Near both band edges, the high-frequency homogenization asymptotics (dashed) closely follow the exact bands (black).
+</Figure>
+
+<Figure src={field} alt="Real part of the displacement over 20 periods, oscillating once per period with peaks that decay away from the source at the centre; a dashed vermilion curve traces the peaks" source="Multiscale Model. Simul. 22, 1136 (2024)" href="https://doi.org/10.1137/23M159648X">
+  Field of a point source in a finite stack of 20 periods, driven just above a band edge (Ω = 0.752). The homogenized envelope (dashed) captures the slow decay of the exact, rapidly oscillating field.
+</Figure>
+
+### Related article
+
+- M. Touboul, B. Vial, R. Assier, S. Guenneau, and R. V. Craster, *High-Frequency Homogenization for Periodic Dispersive Media*. Multiscale Model. Simul. **22**, 1136–1168 (2024) [DOI](https://doi.org/10.1137/23M159648X)
+
+### Related talk
+
+- M. Touboul, B. Vial, R. Assier, S. Guenneau, and R. V. Craster, *High-frequency Homogenization of Dispersive Media*. Phononics 2023, Manchester, UK (2023)
+
+## Tunable ferroelectric metamaterials
+
+The permittivity of a ferroelectric changes under an applied voltage, which makes it a natural material for reconfigurable microwave antennas and components. In the ANIMATE project at Queen Mary (2019 to 2022), we studied composites of low-index dielectric inclusions in a ferroelectric matrix under a static electric field. A refined model couples the electrostatic problem with the field-dependent permittivity of the ferroelectric, which captures the local field enhancement and permittivity change around the inclusions. For periodic and pseudorandom structures, we computed the effective permittivity, losses, electrically induced anisotropy and tunability. Periodic composites can reach an effective tunability substantially higher than that of the bulk ferroelectric, whereas disorder in the microstructure weakens the effect.
+
+<Figure src={tunability} alt="Two panels against bias field from 0 to 2 MV/m: permittivity falls with field and with f; coupled-model tunability rises to between 1.14 and 1.28 times the bulk value while uncoupled curves fall below 1" source="J. Appl. Phys. 126, 044102 (2019)" href="https://doi.org/10.1063/1.5101053">
+  Effective permittivity (a) and tunability (b) of periodic composites, normalized to the bulk ferroelectric, for dielectric fractions f from 0.1 to 0.5. The coupled model (solid) predicts a tunability above the bulk value that grows with f, whereas the uncoupled model (dashed) predicts the opposite.
+</Figure>
+
+We then used inverse design to optimize the microstructure. The effect of volume fraction, losses and biasing field on the homogenized properties guided the design, and the photonic band diagram of the optimized composites gives the frequency dependence of their anisotropic effective index and tunability, beyond the quasi-static limit. Such metaceramics promise microwave antennas and components with higher reconfigurability and lower power consumption.
+
+### Related articles
+
+- B. Vial and Y. Hao, *Enhanced tunability in ferroelectric composites through local field enhancement and the effect of disorder*. J. Appl. Phys. **126**(4):044102, (2019) [DOI](https://doi.org/10.1063/1.5101053)
+- B. Vial and Y. Hao, *High frequency meta-ferroelectrics by inverse design*. Opt. Mater. Express **11**(5):1457, (2021) [DOI](https://doi.org/10.1364/ome.424011)
+- B. Vial and Y. Hao, *Coupled model for the study of effective parameters of ferroelectric metamaterials*. 13th European Conference on Antennas and Propagation (EuCAP), Krakow, Poland (2019) [IEEE](https://ieeexplore.ieee.org/document/8739263)
+
+## Material parameter extraction
+
+Effective models are only as good as the material data they start from. Within ANIMATE, I wrote open-source tools that extract permittivity from microwave and terahertz measurements.
+
+### Related code
+
+- B. Vial, *tdsxtract: Material parameters extraction from THz time domain spectroscopy measurements* (2020) [github](https://github.com/tdsxtract/tdsxtract)
+- B. Vial, *coaxtract: Permittivity extraction for multilayer stacks using an open-ended coaxial probe* (2021) [gitlab](https://gitlab.com/benvial/coaxtract)
+- B. Vial, *cpwxtract: Material properties extraction from coplanar waveguide measurements* (2021) [gitlab](https://gitlab.com/benvial/cpwxtract)

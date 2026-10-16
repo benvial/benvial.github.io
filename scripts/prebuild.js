@@ -8,3 +8,6 @@ try {
   console.error("Publication generation failed:", e.message);
   process.exit(1);
 }
+
+// Non-fatal: keeps the last calendar when offline.
+execSync(`node "${new URL("fetch-activity.js", import.meta.url).pathname}"`, { stdio: "inherit" });

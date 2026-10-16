@@ -1,66 +1,93 @@
 ---
 title: "Quasi-Normal Modes"
-description: "Quasimodal expansion, mode coupling, and quasinormal mode frameworks for open photonic and elastic systems"
-pubDate: 2014-02-01
+description: "Quasimodal expansion, perfectly matched layers, mode coupling, isospectral cavities and time-modulated media"
+pubDate: 2025-12-01
+order: 3
 image:
   url: "./plate-qnms.webp"
   alt: "Whispering-gallery quasinormal mode of a dielectric disk (m = 7, kR = 4.405 − 0.007i): the radiated field grows with distance, the mark of a complex frequency"
-tags: ["quasi-normal modes", "resonance", "photonic", "elastic"]
+tags: ["quasi-normal modes", "resonance", "photonic", "time modulation"]
 ---
 
-import { Image } from "astro:assets";
-import spectrum from "./spectrum.png";
-import qmemacs from "./qmemacs.jpg";
-import ldos from "./ldos.png";
-import coupled from "./coupled-modes.jpg";
-import qnmElastic from "./qnm_elastic.jpg";
+import Figure from "@/components/prose/Figure.astro";
+import spectrum from "./fig-qnm-spectrum.webp";
+import convergence from "./fig-qmem-convergence.webp";
+import ldos from "./fig-qmem-ldos.webp";
+import coupled from "./fig-coupled-modes.webp";
 import qnmTmod from "./qnm_tmod.png";
 
-Resonance is a central phenomenon in physics. In the context of electromagnetism, I study open resonators to predict their spectral properties through the computation of their quasi-normal modes associated with complex eigenfrequencies of Maxwell's operator.
+Resonance is a central phenomenon in physics. Open resonators leak energy to their surroundings, so their resonances are quasi-normal modes (QNMs) with complex eigenfrequencies: the real part sets the resonant frequency and the imaginary part the decay rate. We compute these modes and expand fields on them to predict and design the spectral response of photonic structures.
 
 ## Open resonators and quasimodal expansion
 
-<Image src={spectrum} alt="Quasinormal mode spectrum" width={800} height={600} class="w-full my-4" />
+A bounded resonator has a discrete spectrum (real for lossless media). An open resonator also has a continuous spectrum of radiation modes, and resonances associated with complex eigenvalues (quasimodes). A complex change of coordinates builds perfectly matched layers that make the quasimodes and approximate radiation modes computable, but the transformed operator is no longer self-adjoint and classical modal expansion fails.
 
-<Image src={qmemacs} alt="QMEMACS simulation" width={800} height={600} class="w-full my-4" />
+<Figure src={spectrum} alt="Complex frequency plane: guided modes as crosses on the real axis, a line from the origin rotated by angle phi below it, red dots for the leaky modes above that line and open circles for those still below it" source="Phys. Rev. A 89, 023829 (2014)" href="https://doi.org/10.1103/physreva.89.023829">
+  Spectrum of an open waveguide truncated by perfectly matched layers (schematic). The PML rotates the continuous spectrum by an angle φ and reveals the leaky modes it sweeps past: these are the quasi-normal modes.
+</Figure>
 
-During my PhD, I developed a quasimodal expansion method (QMEM) to model and understand the scattering properties of arbitrary shaped two-dimensional open structures. In contrast with the bounded case which has only a discrete spectrum (real in the lossless media case), open resonators show a continuous spectrum composed of radiation modes and may also be characterized by resonances associated to complex eigenvalues (quasimodes).
+Our quasimodal expansion method (QMEM) solves this with an adjoint eigenvalue problem whose eigenvectors are biorthogonal to those of the initial problem. Expanding the scattered field on this complete set gives a reduced order model whose modal coefficients show unambiguously how each mode is excited as the incidence changes. We applied it to nanoparticles and diffraction gratings, and it proved extremely efficient for computing the local density of states.
+
+<Figure src={convergence} alt="Absorption cross section against wavelength from 9 to 11 µm: a black reference curve with a plateau near 1.6 µm; grey squares for M = 5 overshoot it, triangles for M = 10 sit slightly off and red circles for M = 50 lie on it" source="Phys. Rev. A 89, 023829 (2014)" href="https://doi.org/10.1103/physreva.89.023829">
+  Absorption cross section of a triangular rod. The quasimodal expansion converges to the full-wave reference as the number of modes M grows, and matches it across the band with M = 50.
+</Figure>
+
+<Figure src={ldos} alt="Two identical heat maps of the local density of states around a triangular rod outlined in black, with five bright lobes inside the triangle" source="Phys. Rev. A 89, 023829 (2014)" href="https://doi.org/10.1103/physreva.89.023829">
+  Local density of states around the same rod at λ = 10.2 µm, (a) computed point by point and (b) rebuilt from 500 quasimodes. The maps match, and once the modes are known the expansion takes about a second instead of one full-wave solve per point.
+</Figure>
 
 ### Related article
 
 - B. Vial, F. Zolla, A. Nicolet, and M. Commandré, *Quasimodal expansion of electromagnetic fields in open two-dimensional structures*. Phys. Rev. A **89**(2):023829, (2014) [DOI](https://doi.org/10.1103/physreva.89.023829)
 
-<Image src={ldos} alt="Local density of states computation" width={800} height={600} class="w-full my-4" />
+## Perfectly matched layers and leaky modes
+
+Computing quasimodes with the finite element method requires truncating the domain without reflecting outgoing waves. Within transformation optics, perfectly matched layers (PML) are a complex-valued change of coordinates, and they provide the operator extensions that the quasimode analysis of open problems requires. We used them for leaky modes in open dielectric waveguides and for the spectral analysis of diffraction gratings.
+
+Near grazing angles (Wood's anomalies), PML with a constant stretching coefficient fail to absorb the diffracted orders. Our adaptive PML tailors the coordinate stretching to both the incident field and the grating parameters, and absorbs these orders efficiently in a finite element scheme.
+
+### Related articles
+
+- B. Vial, F. Zolla, A. Nicolet, M. Commandré, and S. Tisserand, *Adaptive perfectly matched layer for Wood's anomalies in diffraction gratings*. Opt. Express **20**(27):28094, (2012) [DOI](https://doi.org/10.1364/oe.20.028094)
+- A. Nicolet, F. Zolla, B. Vial, G. Demésy, and M. Commandré, *Perfectly matched layers via transformation electromagnetism for the computation of quasi-modes*. International Conference on Electromagnetics in Advanced Applications (2012) [DOI](https://doi.org/10.1109/iceaa.2012.6328596)
+- E. Popov (ed.), *Gratings: Theory and Numeric Applications*. AMU (PUP), Marseille (2012) [HAL](http://hal.archives-ouvertes.fr/hal-00785737)
+
+## Quantum electrodynamic cavities
+
+The same quasimodal tools apply to the high-Q microwave cavities of cavity quantum electrodynamics. We computed the quasimodes of the Haroche QED cavity with a 3D finite element model. We also modeled absorption by the cavity walls as photons tunneling out of an internal mode, expressed it in terms of a quantum jump operator, and estimated with classical methods the photon survival time and the quality factor of the mirrors.
+
+### Related articles
+
+- V. Debierre, G. Demésy, T. Durt, A. Nicolet, B. Vial, and F. Zolla, *Absorption in quantum electrodynamic cavities in terms of a quantum jump operator*. Phys. Rev. A **90**(3):033806, (2014) [DOI](https://doi.org/10.1103/physreva.90.033806)
+- B. Vial, G. Demésy, F. Zolla, and A. Nicolet, *3D FEM Quasimodal Analysis of the Haroche QED Cavity*. COMPUMAG (2013)
 
 ## Coupling model and mode hybridization
 
-<Image src={coupled} alt="Coupled resonator modes" width={800} height={600} class="w-full my-4" />
+When two open resonators interact, their modes hybridize. We expressed the modes of the coupled system as linear combinations of the modes of the individual particles, which leads to a generalized eigenvalue problem with small dense matrices. For a dimer of dielectric rods with rectangular cross section, the model agrees closely with full-wave finite element simulations, and a simplified version with a few modes shows how the relative position of the two resonators drives the coupling. The approach opens the way to the systematic design of resonances in more complex systems, for sensing, antennas and spectral filtering.
 
-I developed a model for the coupling of quasi-normal modes in open photonic systems consisting of two resonators. By expressing the modes of the coupled system as a linear combination of the modes of the individual particles, we obtain a generalized eigenvalue problem involving small size dense matrices.
+<Figure src={coupled} alt="Two stacked charts of the real and imaginary parts of four coupled-mode frequencies against the normalized gap, with circles from the coupling model lying on the full-wave lines" source="J. Opt. 18, 115004 (2016)" href="https://doi.org/10.1088/2040-8978/18/11/115004">
+  Complex frequencies of the four coupled modes of a dimer of rods as the gap d/L<sub>x</sub> grows: (a) real part, (b) imaginary part. The coupling model with four modes per rod (circles) follows the full-wave results (lines). Dashed lines mark the modes of a single rod.
+</Figure>
 
 ### Related article
 
 - B. Vial, and Y. Hao, *A coupling model for quasi-normal modes of photonic resonators*. J. Opt. **18**(11):115004, (2016) [DOI](https://doi.org/10.1088/2040-8978/18/11/115004)
 
-## Quasinormal mode expansion in thin elastic plates
+## Isospectral open cavities and gratings
 
-<Image src={qnmElastic} alt="Elastic plate QNM analysis" width={800} height={600} class="w-full my-4" />
-
-I develop a quasinormal mode (QNM) framework for the analysis and control of elastic waves in thin plates loaded with resonant scatterers. Building on the Green's function formalism for flexural waves, the method naturally addresses multiple scattering and leads to a nonlinear eigenvalue problem whose solutions define the resonant modes of open elastic systems.
+Ultra-thin metasurfaces often rely on open cavities that must resonate at precise, often low, frequencies while staying physically compact. With S. Cominelli, a visiting PhD student from Politecnico di Milano whom I co-supervised at Imperial College London, we developed a method to twin a reference cavity with a smaller or larger one so that both share the same complex eigenfrequencies. We paid special attention to leaky modes whose imaginary part is orders of magnitude below the real part, and extended the twinning to gratings with Floquet-Bloch conditions along one direction and PML along the other, where the eigenfrequencies also depend on the Bloch wavenumber. Finite element simulations illustrate and quantify the isospectral behavior throughout.
 
 ### Related article
 
-- B. Vial, M. Martí Sabaté, R. Wiltshaw, S. Guenneau, and R. V. Craster, *Quasinormal mode expansion in thin elastic plates*. Phys. Rev. B **110**, 174305 (2024) [DOI](https://doi.org/10.1103/PhysRevB.110.174305)
-
-### Related code
-
-- B. Vial & M. Martí Sabaté, *klove: Numerical modelling of waves on thin elastic plates* (2024) [gitlab](https://gitlab.com/benvial/klove)
+- S. Cominelli, B. Vial, S. Guenneau, and R. V. Craster, *Isospectral open cavities and gratings*. Proc. R. Soc. A **480**, 20230853 (2024) [DOI](https://doi.org/10.1098/rspa.2023.0853)
 
 ## Quasinormal modes of Floquet media slabs
 
-<Image src={qnmTmod} alt="Floquet modulated slab QNM" width={800} height={600} class="w-full my-4" />
+Time-modulated media enable the dynamic control of electromagnetic waves through non-Hermitian wave-matter interactions, but they call for new theoretical tools. We bridge photonic QNMs and time-varying metamaterials: for slabs with time-periodic permittivity, we solve the associated nonlinear eigenvalue problem and derive a QNM expansion that captures the resonant features of the system. This reduced order model computes scattered fields very efficiently and shows how the modulation couples to resonant modes, which enables tailored gain and loss. We use it to design excitations that selectively amplify or suppress specific modal contributions.
 
-I develop a quasinormal mode (QNM) framework for the analysis of electromagnetic scattering in time-periodically modulated media. Focusing on slab geometries with temporally varying permittivity, the approach bridges concepts from photonic QNMs and Floquet theory, leading to a nonlinear eigenvalue problem that characterizes the resonant structure of open time-modulated systems.
+<Figure src={qnmTmod} alt="Three stacked panels of reflection and transmission against normalized frequency for harmonics q = -1, 0 and 1, with direct and QNM curves on top of each other" source="Phys. Rev. B 112, 214201 (2025)" href="https://doi.org/10.1103/xxnd-7d55">
+  Reflection (R) and transmission (T) of a time-modulated slab in the Floquet harmonics q = −1, 0 and +1. The QNM expansion (dashed) reproduces the direct calculation (solid), and the numbered lines mark the modes.
+</Figure>
 
 ### Related article
 
@@ -69,3 +96,7 @@ I develop a quasinormal mode (QNM) framework for the analysis of electromagnetic
 ### Related code
 
 - B. Vial, *pytmod: Time modulated wave solver* (2025) [github](https://github.com/benvial/pytmod)
+
+## Elastic waves
+
+The QNM framework also extends to flexural waves in thin plates and to topological edge states: see [Elastic and Acoustic Waves](/research/elastic/).

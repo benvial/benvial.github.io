@@ -1,8 +1,31 @@
 ---
 title: "Quasinormal modes of Floquet media slabs"
 pubDate: 2025-12-16
-description: "Paper on quasinormal-mode theory for time-varying media published in Physical Review B"
+description: "Our paper bringing quasinormal-mode theory to time-modulated media is out in Physical Review B, with an open-source Python code."
 tags: ["article"]
+image:
+  url: "../research/qnm_tmod.png"
+  alt: "Reflection and transmission spectra of a time-modulated slab for harmonics q = -1, 0, +1: direct computation and quasinormal-mode expansion agree"
 ---
 
-A paper on quasinormal-mode theory for time-varying media published in *Physical Review B*. The work develops a QNM framework for Floquet media slabs (structures whose material properties are modulated periodically in time), enabling modal analysis of parametric amplifiers, time-varying antennas, and non-reciprocal devices.
+Our latest work, *Quasinormal modes of Floquet media slabs*, is now out in *Physical Review B*.
+
+The paper brings together quasinormal-mode (QNM) theory and time-varying media. We study electromagnetic scattering by slabs whose permittivity varies periodically in time. Such a modulation couples each frequency to its harmonics, so the slab reflects and transmits light at shifted frequencies too.
+
+## What we did
+
+- We formulate and solve the nonlinear eigenvalue problem whose solutions are the QNMs of a Floquet medium.
+- We derive a reduced order model that expands the scattered field on these modes and captures the resonant physics at low cost.
+- We use it to understand how the temporal modulation couples to each resonance, which enables gain and loss engineering: selectively amplifying or suppressing chosen modal contributions.
+
+The figure above validates the approach. For the fundamental harmonic (q = 0) and the first sidebands (q = ±1), the QNM expansion (dashed) matches a direct computation (solid) across the spectrum. Dotted lines mark the real parts of the QNM frequencies.
+
+## Code
+
+As usual, the paper comes with an open-source Python code: [pytmod](https://github.com/benvial/pytmod). For me, open source is not only about reproducibility. It also makes advanced theoretical tools easier to explore, reuse and build upon.
+
+I am happy to discuss with anyone working on time-modulated media, resonances or non-Hermitian wave physics.
+
+## Read the paper
+
+B. Vial and R. Craster, *Quasinormal modes of Floquet media slabs*, Phys. Rev. B **112**, 214201 (2025). [DOI](https://link.aps.org/doi/10.1103/xxnd-7d55)

@@ -5,4 +5,10 @@ description: "Computing scattering cross sections using the gyptis finite elemen
 tags: ["notebook"]
 ---
 
-A notebook demonstrating computation of scattering cross sections using the gyptis finite element package. Covers setup of scattering problems, meshing strategies, and post-processing of near-field data to extract scattering and absorption cross sections.
+import Notebook from "@/components/prose/Notebook.astro";
+
+A notebook computing the scattering cross sections of a lossy silicon rod with the [gyptis](https://gyptis.gitlab.io) finite element package: geometry and meshing, plane wave excitation, TE and TM solutions, and an energy balance check through the optical theorem.
+
+Press **Run live** to edit and re-run any cell in your browser. The code runs on a real gyptis kernel, started on mybinder.org from the environment in [benvial/gyptis-binder](https://github.com/benvial/gyptis-binder).
+
+<Notebook name="gyptis.ipynb" repo="benvial/gyptis-binder" />

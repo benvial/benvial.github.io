@@ -1,0 +1,63 @@
+---
+title: "Elastic and Acoustic Waves"
+description: "Quasinormal modes of thin elastic plates, topological edge states, phononic lattices and sound absorption"
+pubDate: 2026-04-01
+image:
+  url: "./plate-elastic.webp"
+  alt: "Interface quasinormal mode of a dimerized chain of 29 resonators on a thin elastic plate (ka = 2.473 − 0.005i, Q = 113): the domain wall at the center traps the vibration and the finite chain leaks it into the plate"
+tags: ["elasticity", "acoustics", "quasi-normal modes", "topological"]
+---
+
+import Figure from "@/components/prose/Figure.astro";
+import plateModes from "./fig-plate-qnms.webp";
+import absorption from "./fig-tiles-absorption.webp";
+
+Since 2022, we have carried the modal and numerical tools first developed for light over to mechanical waves: flexural vibrations of thin plates loaded with resonators, discrete phononic lattices and airborne sound.
+
+## Quasinormal modes of thin elastic plates
+
+Elastic wave control with large arrays of resonators calls for advanced simulation and optimization methods. We develop a quasinormal mode (QNM) framework for thin elastic plates, where the Green's function formalism readily solves multiple scattering problems. The associated nonlinear eigenvalue problem yields a dispersive QNM expansion: a reduced order model that computes forced responses efficiently and shows how each resonant mode is excited. Eigenvalue sensitivities with respect to the resonator parameters then drive a gradient-based optimization that designs quasi-bound states in the continuum and places eigenfrequencies precisely in the complex plane. Scattering simulations on graded line arrays and quasicrystals validate the approach. The same theory, applied to electromagnetic resonators, lives under [Quasi-Normal Modes](/research/qnms/).
+
+<Figure src={plateModes} alt="Nine displacement maps, red and blue lobes around a dotted line of resonators, each titled with its complex frequency" source="Phys. Rev. B 110, 174305 (2024)" href="https://doi.org/10.1103/PhysRevB.110.174305">
+  Quasinormal modes of a graded line of resonators (dots) on a thin plate: displacement fields of the nine modes with the smallest imaginary part, with their complex frequencies.
+</Figure>
+
+### Related article
+
+- B. Vial, M. Martí Sabaté, R. Wiltshaw, S. Guenneau, and R. V. Craster, *Quasinormal mode expansion in thin elastic plates*. Phys. Rev. B **110**, 174305 (2024) [DOI](https://doi.org/10.1103/PhysRevB.110.174305)
+
+### Related code
+
+- B. Vial & M. Martí Sabaté, *klove: Numerical modelling of waves on thin elastic plates* (2024) [gitlab](https://gitlab.com/benvial/klove)
+
+## Topological edge states
+
+Topological waveguides that support quantum valley Hall edge states confine waves to an interface and resist backscattering, even in the presence of defects. They are usually studied as an infinite spectral problem, but real devices are finite. We apply the quasinormal mode expansion to a finite hexagonal lattice of mass-spring resonators on a thin plate. The resulting complex, discrete spectrum fully describes the topological states, and the waveguide behaves as a dispersive Fabry-Pérot cavity whose dispersion relation follows closely that of the infinite (Floquet-Bloch) ribbon.
+
+### Related article
+
+- M. Martí Sabaté, B. Vial, R. Wiltshaw, S. Guenneau, and R. V. Craster, *Fabry-Pérot quasinormal modes for topological edge states*. Phys. Rev. B **113**, L140102 (2026) [DOI](https://doi.org/10.1103/1hy4-j86q)
+
+## Discrete phononic lattices
+
+Networks of masses and springs are the simplest phononic crystals, and their dispersion relations can be computed and optimized at very low cost. We modeled such lattices and optimized their dispersion, including in a 2023 undergraduate summer project at Imperial College London. I wrote pylatt to compute and optimize them.
+
+### Related talk
+
+- B. Vial and R. V. Craster, *Modeling and optimization of discrete phononic lattices*. Phononics 2023, Manchester, UK (2023)
+
+### Related code
+
+- B. Vial, *pylatt: Phononic lattices in Python* [gitlab](https://gitlab.com/benvial/pylatt)
+
+## Sound absorption with ceramic tiles
+
+We turn ceramic-tiled walls into broadband sound absorbers by exploiting their own geometry: the 1 mm empty joints between tiles act as resonator necks, and the gap between tiles and wall acts as the resonator chamber. Spatial grading of these resonators gives broadband absorption between 100 and 1500 Hz, the range of footsteps, impacts and neighboring activity. A structure only 1 cm thick reaches an average absorption coefficient above 0.7, with near-unity absorption between 480 and 700 Hz, and numerical modeling, analytical formulation and experiments agree.
+
+<Figure src={absorption} alt="Absorption coefficient against frequency from 0 to 2000 Hz: model and simulation form a single peak near 540 Hz; the measured curve shares the peak, then shows a second hump near 850 Hz and sharp spikes above 1000 Hz" source="Proc. R. Soc. A 482, 20260361 (2026)" href="https://doi.org/10.1098/rspa.2026.0361">
+  Sound absorption of a single ceramic metatile. The analytical model, finite element simulation (dotted) and measurement agree on the main resonance near 540 Hz, where absorption reaches about 1.
+</Figure>
+
+### Related article
+
+- O. T. Tugut, B. Lemkalli, Q. Ji, J. Wang, M. Addouche, B. Vial, E. Magarotto, S. Guenneau, R. V. Craster, F. Minozzi, B. Ungureanu, and M. Kadic, *On the practicability of ceramic-tiled walls for sound absorption by tuning cavities*. Proc. R. Soc. A **482**, 20260361 (2026) [DOI](https://doi.org/10.1098/rspa.2026.0361)

@@ -1,27 +1,45 @@
 ---
-title: "Invisible Inhomogeneous Media"
-description: "A class of invisible inhomogeneous media and the control of electromagnetic waves"
-pubDate: 2016-12-01
+title: "Graded-Index Media and Invisibility"
+description: "Scattering-free graded-index media that shape the amplitude and phase of electromagnetic waves, and flat graded-index lenses"
+pubDate: 2017-07-01
 image:
   url: "./plate-invisible.webp"
   alt: "Isotropic medium built to be invisible: the field amplitude drops to 15% inside two lobes, yet the plane wave passes without scattering"
-tags: ["invisibility", "metamaterials", "transformation optics"]
+tags: ["invisibility", "graded index", "transformation optics", "lenses"]
 ---
 
-import { Image } from "astro:assets";
-import fig1 from "./fig1.jpg";
-import fig3 from "./fig3.jpg";
-import fig4 from "./fig4.jpg";
+import Figure from "@/components/prose/Figure.astro";
+import profile from "./fig-invisible-profile.webp";
+import maxwell from "./fig-invisible-maxwell.webp";
+import amplitudePhase from "./fig-invisible-amplitude-phase.webp";
 
-We propose a general method to arbitrarily manipulate an electromagnetic wave propagating in a two-dimensional medium, without introducing any scattering. This leads to a whole class of isotropic spatially varying permittivity and permeability profiles that are invisible while shaping the field magnitude and/or phase. In addition, we propose a metamaterial structure working in the infrared that demonstrates deep sub-wavelength control of the electric field amplitude and strong reduction of the scattering. This work offers an alternative strategy to achieve invisibility with isotropic materials and paves the way for tailoring the propagation of light at the nanoscale.
+## Invisible inhomogeneous media
 
-<Image src={fig1} alt="Schematic of invisible inhomogeneous medium" width={800} height={600} class="w-full my-8" />
+We proposed a general method to manipulate at will an electromagnetic wave propagating in a two-dimensional medium, without introducing any scattering. It yields a whole class of isotropic, spatially varying permittivity and permeability profiles that stay invisible while shaping the field magnitude and phase. A metamaterial structure working in the infrared demonstrates deep subwavelength control of the electric field amplitude with a strong reduction of scattering. This offers an alternative route to invisibility with isotropic materials, and to tailoring the propagation of light at the nanoscale.
+
+<Figure src={profile} alt="Left: an S-shaped permeability profile rising from near 0 to 1, with computed points on it, and permittivity curves for four wavelengths that settle to 1 beyond r = R. Right: vertical plane-wave fronts that fade only at the centre and are otherwise undisturbed" source="Phys. Rev. B 94, 245119 (2016)" href="https://doi.org/10.1103/physrevb.94.245119">
+  An invisible profile that damps the field by 80% at its centre. (a) Specified permeability µ = A² and computed |E<sub>z</sub>|², (b) the matching permittivity for four wavelengths, (c) the real part of E<sub>z</sub> for λ<sub>0</sub>/R = 1: the plane wave crosses the profile without scattering.
+</Figure>
+
+<Figure src={maxwell} alt="Four maps: two near-identical greyscale portraits of James Clerk Maxwell (target and computed field amplitude), the permittivity map that encodes the portrait, and vertical plane-wave fronts that bend inside the medium and come out straight" source="Phys. Rev. B 94, 245119 (2016)" href="https://doi.org/10.1103/physrevb.94.245119">
+  A non-magnetic invisible medium that writes a portrait of James Clerk Maxwell into the field amplitude. (a) Target amplitude, (b) computed |E<sub>z</sub>|, (c) permittivity, (d) real part of E<sub>z</sub>: the wavefronts bend inside the medium and come out straight.
+</Figure>
+
+We then extended the method to cylindrical incident waves. Separating the complex wave solution into amplitude and phase controls both independently, without resorting to transformation optics or its quasi-conformal approximations, and leads to a general class of scattering-free solutions in isotropic, inhomogeneous media.
+
+<Figure src={amplitudePhase} alt="Six maps in two matching rows: diagonal plane-wave stripes with local bends, an amplitude map with one bump and one dip, and a phase map with two pairs of lobes; the specified and computed rows look the same" source="Phys. Rev. B 94, 245119 (2016)" href="https://doi.org/10.1103/physrevb.94.245119">
+  Independent control of amplitude and phase. The specified field, amplitude and phase (top) are reproduced by solving the wave equation in the designed medium (bottom).
+</Figure>
 
 ### Related articles
 
 - B. Vial, Y. Liu, S. Horsley, T. Philbin, and Y. Hao, *A class of invisible inhomogeneous media and the control of electromagnetic waves*. Phys. Rev. B **94**(24):245119, (2016) [DOI](https://doi.org/10.1103/physrevb.94.245119)
 - Y. Liu, B. Vial, S. Horsley, T. Philbin, and Y. Hao, *Direct manipulation of wave amplitude and phase through inverse design of isotropic media*. New J. Phys. **19**(7):073010, (2017) [DOI](https://doi.org/10.1088/1367-2630/aa6c0c)
 
-<Image src={fig3} alt="Field distribution in invisible medium" width={800} height={600} class="w-full my-4" />
+## Flat Luneburg lens
 
-<Image src={fig4} alt="Scattering reduction results" width={800} height={600} class="w-full my-4" />
+Graded-index profiles also make compact lenses. We designed a simplified flat Luneburg lens with transformation electromagnetics and fabricated it by casting ceramic composites. With only six layers and a highest permittivity of 12, it scans ±30° with gains of at least 18 dBi from 57 to 66 GHz, and carried raw high-definition video over a wireless link at scan angles up to 36°.
+
+### Related article
+
+- R. Foster, D. Nagarkoti, J. Gao, B. Vial, F. Nicholls, C. Spooner, S. Haq, and Y. Hao, *Beam-Steering Performance of Flat Luneburg Lens at 60 GHz for Future Wireless Communications*. Int. J. Antenn. Propag. **2017**, 7932434 (2017) [DOI](https://doi.org/10.1155/2017/7932434)

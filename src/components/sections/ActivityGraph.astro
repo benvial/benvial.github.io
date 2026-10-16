@@ -1,0 +1,126 @@
+---
+// Contribution calendar for the past year, GitHub style: one square per day,
+// one column per week. Data comes from scripts/fetch-activity.js at build time.
+import activity from "@/data/activity.json";
+
+const CELL = 11;
+const PITCH = 14;
+const LEFT = 30;
+const TOP = 18;
+
+const days: { date: string; count: number }[] = activity.days;
+const parse = (d: string) => new Date(`${d}T00:00:00Z`);
+
+// Levels from quartiles of the active days, as GitHub does.
+const active = days.map((d) => d.count).filter((n) => n > 0).sort((a, b) => a - b);
+const q = (p: number) => active[Math.min(active.length - 1, Math.floor(p * active.length))] ?? 0;
+const [q1, q2, q3] = [q(0.25), q(0.5), q(0.75)];
+const level = (n: number) => (n === 0 ? 0 : n <= q1 ? 1 : n <= q2 ? 2 : n <= q3 ? 3 : 4);
+
+const start = days.length ? parse(days[0].date) : new Date();
+start.setUTCDate(start.getUTCDate() - start.getUTCDay());
+const fmt = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
+const cells = days.map((d) => {
+  const t = parse(d.date);
+  const week = Math.floor((t.getTime() - start.getTime()) / (7 * 864e5));
+  const label = `${d.count === 0 ? "No" : d.count} contribution${d.count === 1 ? "" : "s"} on ${fmt.format(t)}`;
+  return { x: LEFT + week * PITCH, y: TOP + t.getUTCDay() * PITCH, level: level(d.count), label };
+});
+const weeks = cells.length ? (cells.at(-1)!.x - LEFT) / PITCH + 1 : 0;
+
+// A month label sits over the first week holding its 1st, if there is room.
+const months: { x: number; name: string }[] = [];
+for (const d of days) {
+  if (!d.date.endsWith("-01")) continue;
+  const t = parse(d.date);
+  const x = LEFT + Math.floor((t.getTime() - start.getTime()) / (7 * 864e5)) * PITCH;
+  if (months.length && x - months.at(-1)!.x < 3 * PITCH) continue;
+  months.push({ x, name: t.toLocaleString("en-US", { month: "short", timeZone: "UTC" }) });
+}
+
+const total = days.reduce((s, d) => s + d.count, 0);
+const activeDays = active.length;
+let streak = 0;
+let run = 0;
+for (const d of days) {
+  run = d.count > 0 ? run + 1 : 0;
+  streak = Math.max(streak, run);
+}
+
+const updated = activity.updated ? fmt.format(parse(activity.updated)) : "";
+
+const width = LEFT + weeks * PITCH;
+const height = TOP + 7 * PITCH;
+---
+
+{
+  days.length > 0 && (
+    <figure class="flex w-fit max-w-full flex-col gap-6">
+      <div class="activity-scroll overflow-x-auto" data-activity-scroll>
+        <svg
+          width={width}
+          height={height}
+          viewBox={`0 0 ${width} ${height}`}
+          role="img"
+          aria-label={`${total} contributions in the last year`}
+          class="block max-w-none"
+        >
+          <g class="activity-axis t-mono" fill="currentColor">
+            {months.map((m) => (
+              <text x={m.x} y={TOP - 7}>
+                {m.name}
+              </text>
+            ))}
+            {["Mon", "Wed", "Fri"].map((name, i) => (
+              <text x="0" y={TOP + (2 * i + 1) * PITCH + CELL - 2}>
+                {name}
+              </text>
+            ))}
+          </g>
+          {cells.map((c) => (
+            <rect x={c.x} y={c.y} width={CELL} height={CELL} class={`activity-cell l${c.level}`}>
+              <title>{c.label}</title>
+            </rect>
+          ))}
+        </svg>
+      </div>
+      <figcaption class="flex flex-wrap items-end justify-between gap-x-10 gap-y-4">
+        <dl class="flex flex-wrap gap-x-8 gap-y-3">
+          <div>
+            <dt class="t-label text-ink-3">Contributions</dt>
+            <dd class="activity-figure">{total}</dd>
+          </div>
+          <div>
+            <dt class="t-label text-ink-3">Active days</dt>
+            <dd class="activity-figure">{activeDays}</dd>
+          </div>
+          <div>
+            <dt class="t-label text-ink-3">Longest streak</dt>
+            <dd class="activity-figure">{streak}</dd>
+          </div>
+        </dl>
+        <div class="flex flex-col gap-2 sm:items-end">
+          <span class="t-mono flex items-center gap-1 text-ink-3" aria-hidden="true">
+            Less
+            {[0, 1, 2, 3, 4].map((l) => (
+              <svg width={CELL} height={CELL} class="block">
+                <rect width={CELL} height={CELL} class={`activity-cell l${l}`} />
+              </svg>
+            ))}
+            More
+          </span>
+          <span class="t-meta">
+            GitHub and GitLab, last 12 months (updated <span class="whitespace-nowrap">{updated}</span>)
+          </span>
+        </div>
+      </figcaption>
+    </figure>
+  )
+}
+
+<script>
+  // On narrow screens the calendar scrolls; start at the most recent weeks.
+  for (const el of document.querySelectorAll<HTMLElement>("[data-activity-scroll]")) {
+    el.scrollLeft = el.scrollWidth;
+  }
+</script>

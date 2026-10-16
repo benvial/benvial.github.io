@@ -101,7 +101,7 @@ def main(out):
     phys = (np.abs(m.p[:, 0]) < X) & (np.abs(m.p[:, 1]) < Y)
     far = phys & (np.min([np.hypot(m.p[:, 0] - x0, m.p[:, 1] - y0) for x0, y0, _, _ in LOBES], 0) > 2.2)
     err = np.linalg.norm((u - Aex)[phys]) / np.linalg.norm(Aex[phys])
-    print(f"relative error vs A e^{ik d.r}: {err:.3%}; max |u_s| far from medium: {np.abs((u - uinc)[far]).max():.3f}")
+    print(f"relative error vs A e^{{ik d.r}}: {err:.3%}; max |u_s| far from medium: {np.abs((u - uinc)[far]).max():.3f}")
 
     def draw(ax, pt):
         # iso-lines of mu: the medium is there, the wave does not notice it

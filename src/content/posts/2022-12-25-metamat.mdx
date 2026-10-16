@@ -1,8 +1,27 @@
 ---
-title: "Metamaterials and metasurfaces"
+title: "MetaMat seminar: topology optimization of electromagnetic metamaterials"
 pubDate: 2022-12-25
-description: "Overview of metamaterials and metasurfaces research"
-tags: ["article"]
+description: "I gave a talk on auto-differentiation, topology optimization and open-source Maxwell solvers for the MetaMat online seminar series. Slides and recording available."
+tags: ["seminar"]
+image:
+  url: "../research/cloak.png"
+  alt: "Topology-optimized cloak: permittivity map of the design and electric field with and without the cloak"
 ---
 
-An overview article on metamaterials and metasurfaces, covering the fundamental physics of subwavelength-structured media and their applications in wave control, including negative refraction, super-lensing, and wavefront shaping.
+I had the opportunity to present my research at the [MetaMat](https://meta-mat.org/) online seminar.
+
+- [Slides](https://benvial.gitlab.io/meta-mat) (online version)
+- [Recording](https://cassyni.com/events/WLvZGbvpzND7niJS3igLub) on the MetaMat page
+- [DOI](https://doi.org/10.52843/meta-mat.r796ky)
+
+## Abstract
+
+Advances in nanofabrication have opened new applications in photonics. Engineering novel functionalities requires rigorous and efficient numerical methods. At the same time, algorithmic differentiation has made great progress, pushed in part by machine learning, and it now enables large-scale optimization of devices with only a few changes to the underlying code.
+
+In this talk I outline the concepts behind automatic differentiation and give details on topology optimization algorithms. I present applications in electromagnetism and metamaterials, such as cloaking and illusion devices (the figure above shows an optimized cloak). Finally, I describe three software libraries for solving Maxwell's equations:
+
+- a finite element code with a high-level interface for problems common in photonics ([gyptis](https://gyptis.gitlab.io))
+- a Fourier modal method for multilayer bi-periodic metasurfaces ([nannos](https://nannos.gitlab.io))
+- a plane wave expansion method for band diagrams of two-dimensional photonic crystals ([protis](https://protis.gitlab.io))
+
+All three support automatic differentiation, and I show typical inverse design examples with each.

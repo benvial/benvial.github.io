@@ -1,7 +1,7 @@
 ---
 title: pylatt
-description: Phononic lattices in Python.
+description: Numerical models of mechanical lattices (truss and frame structures). Computes phononic band diagrams and supports automatic differentiation for metamaterial optimization.
 url: https://gitlab.com/benvial/pylatt
 language: Python
-tags: [phononics, lattices, acoustics]
+tags: [phononics, lattices, metamaterials, automatic-differentiation]
 ---
