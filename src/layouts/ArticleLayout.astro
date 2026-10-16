@@ -3,6 +3,7 @@
 import { Image } from "astro:assets";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import MeshField from "@/components/mesh/MeshField.astro";
+import { sourceFor } from "@/components/mesh/source";
 
 interface Props {
   title: string;
@@ -16,10 +17,11 @@ interface Props {
 
 const { title, description, pubDate, tags = [], section, image, tagBase } = Astro.props;
 const date = new Date(pubDate);
+const { sourceX, sourceY } = sourceFor(Astro.url.pathname);
 ---
 
 <BaseLayout title={title} description={description}>
-  <MeshField class="min-h-[clamp(16rem,36vw,24rem)]" sourceX={0.92} sourceY={0.35} wavelengths={10} pad={28} intensity={0.55}>
+  <MeshField class="min-h-[clamp(16rem,36vw,24rem)]" sourceX={sourceX} sourceY={sourceY} wavelengths={10} pad={28} intensity={0.55}>
     <div class="page flex min-h-[inherit] flex-col justify-end gap-4 pt-[clamp(2.5rem,9vh,6rem)] pb-20 lg:pb-36">
       <h1 data-obstacle class="t-display w-fit max-w-[22ch] bg-paper">{title}</h1>
     </div>

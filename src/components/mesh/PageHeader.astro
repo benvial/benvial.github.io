@@ -1,5 +1,6 @@
 ---
 import MeshField from "@/components/mesh/MeshField.astro";
+import { sourceFor } from "@/components/mesh/source";
 
 interface Props {
   title: string;
@@ -7,7 +8,8 @@ interface Props {
   sourceX?: number;
   sourceY?: number;
 }
-const { title, lede, sourceX = 0.9, sourceY = 0.5 } = Astro.props;
+const auto = sourceFor(Astro.url.pathname);
+const { title, lede, sourceX = auto.sourceX, sourceY = auto.sourceY } = Astro.props;
 ---
 
 <MeshField class="min-h-[clamp(15rem,34vw,22rem)]" sourceX={sourceX} sourceY={sourceY} wavelengths={10} pad={28} intensity={0.55}>
