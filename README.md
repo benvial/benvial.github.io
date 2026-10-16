@@ -31,7 +31,4 @@ origin   → git@github.com:benvial/benvial.github.io.git
 # Normal dev — edit, commit, push
 git add -A && git commit -m "change description"
 git push origin main
-
-# Deploy to GitHub Pages
-npm run deploy
 ```
