@@ -5,10 +5,10 @@
   "private": true,
   "scripts": {
     "predev": "node scripts/prebuild.js",
-    "dev": "npm run predev && astro dev",
+    "dev": "astro dev",
     "start": "npm run predev && astro dev",
     "prebuild": "node scripts/prebuild.js",
-    "build": "npm run prebuild && astro build",
+    "build": "astro build",
     "publis": "python3 scripts/convert_publis.py",
     "preview": "astro preview",
     "astro": "astro"

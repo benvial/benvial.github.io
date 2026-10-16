@@ -26,6 +26,11 @@ jobs:
         with:
           node-version: 22
           cache: npm
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      # convert_publis.py needs pybtex to turn publis.bib into publications.json.
+      - run: pip install pybtex==0.26.1
       - run: npm ci
       - run: npm run build
       - uses: actions/upload-pages-artifact@v4
