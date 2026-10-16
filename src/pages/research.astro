@@ -28,7 +28,7 @@ const entries = (await getCollection("research")).sort(
                   alt={entry.data.image.alt}
                   widths={[600, 1000, 1300]}
                   sizes="(min-width: 768px) 58vw, 100vw"
-                  class="aspect-[16/10] w-full object-contain p-4 transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+                  class="aspect-[4/3] w-full object-contain p-4 transition-transform duration-500 ease-out group-hover:scale-[1.02]"
                 />
               </div>
               <figcaption class="t-meta mt-2 not-italic"><span class="font-semibold">Fig. {i + 1}.</span> {entry.data.image.alt}</figcaption>

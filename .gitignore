@@ -28,3 +28,6 @@ src/data/publications.json
 # Temp
 *.swp
 *.tmp
+
+# Python
+__pycache__/
