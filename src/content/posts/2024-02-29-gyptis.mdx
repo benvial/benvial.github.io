@@ -1,13 +1,13 @@
 ---
 title: "gyptis"
 pubDate: 2024-02-29
-description: "Computing scattering cross sections using the gyptis finite element package"
+description: "A hands-on introduction to finite element scattering simulations: a silicon rod, computed live with gyptis and checked against the exact solution"
 tags: ["notebook"]
 ---
 
 import Notebook from "@/components/prose/Notebook.astro";
 
-A notebook computing the scattering cross sections of a lossy silicon rod with the [gyptis](https://gyptis.gitlab.io) finite element package: geometry and meshing, plane wave excitation, TE and TM solutions, and an energy balance check through the optical theorem.
+A worked example of a frequency-domain scattering simulation with the [gyptis](https://gyptis.gitlab.io) finite element package. It goes from Maxwell's equations to the scattering, absorption and extinction cross sections of a silicon rod, introducing perfectly matched layers, meshing and the weak form along the way, and checks every number against the exact Lorenz–Mie solution.
 
 Press **Run live** to edit and re-run any cell in your browser. The code runs on a real gyptis kernel, started on mybinder.org from the environment in [benvial/gyptis-binder](https://github.com/benvial/gyptis-binder).
 

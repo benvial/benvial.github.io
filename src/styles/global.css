@@ -560,6 +560,24 @@ svg .activity-cell:hover {
   z-index: 2;
   background: var(--color-paper);
 }
+.nb-md > * + * {
+  margin-top: 1.1em;
+}
+.nb-md ul {
+  padding-left: 1.25em;
+  list-style: square;
+}
+.nb-md li + li {
+  margin-top: 0.4em;
+}
+.nb-md .katex {
+  white-space: nowrap;
+}
+.nb-md .katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-block: 0.25em;
+}
 .nb-md h3 {
   font-family: var(--font-display);
   font-stretch: 104%;
