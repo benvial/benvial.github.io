@@ -1,11 +1,14 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import MeshField from "@/components/mesh/MeshField.astro";
+import { sourceFor } from "@/components/mesh/source";
 import Arrow from "@/components/fundations/icons/Arrow.astro";
+
+const { sourceX, sourceY } = sourceFor(Astro.url.pathname);
 ---
 
 <BaseLayout title="Page not found">
-  <MeshField animate class="min-h-[min(70svh,40rem)]" sourceX={0.8} sourceY={0.6} wavelengths={8}>
+  <MeshField animate class="min-h-[min(70svh,40rem)]" sourceX={sourceX} sourceY={sourceY} wavelengths={8}>
     <div class="page flex min-h-[inherit] flex-col justify-center gap-6 py-16">
       <h1 data-obstacle class="t-name w-fit bg-paper">404</h1>
       <div data-obstacle class="flex max-w-[30rem] flex-col gap-5 bg-paper">
