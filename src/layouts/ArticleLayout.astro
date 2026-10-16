@@ -1,0 +1,71 @@
+---
+// Reading layout shared by research write-ups and blog posts.
+import { Image } from "astro:assets";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import MeshField from "@/components/mesh/MeshField.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+  pubDate: Date | string;
+  tags?: string[];
+  section: { title: string; href: string };
+  image?: { url: any; alt: string };
+  tagBase?: string;
+}
+
+const { title, description, pubDate, tags = [], section, image, tagBase } = Astro.props;
+const date = new Date(pubDate);
+---
+
+<BaseLayout title={title} description={description}>
+  <MeshField class="min-h-[clamp(16rem,36vw,24rem)]" sourceX={0.92} sourceY={0.35} wavelengths={10} pad={14} intensity={0.55}>
+    <div class="page flex min-h-[inherit] flex-col justify-end gap-4 pt-28 pb-10 md:pt-12">
+      <h1 data-obstacle class="t-display w-fit max-w-[22ch] bg-paper">{title}</h1>
+    </div>
+  </MeshField>
+
+  <article class="page grid gap-10 pt-12 lg:grid-cols-12">
+    <aside class="lg:col-span-3">
+      <dl class="t-mono grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 border-t border-ink pt-3 text-ink-2 lg:sticky lg:top-8 lg:grid-cols-1">
+        <dt class="t-label text-ink-3">Date</dt>
+        <dd>
+          <time datetime={date.toISOString()}>
+            {date.toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" })}
+          </time>
+        </dd>
+        {
+          tags.length > 0 && (
+            <>
+              <dt class="t-label text-ink-3 lg:mt-3">Tags</dt>
+              <dd class="flex flex-wrap gap-x-3 font-sans text-[0.9375rem]">
+                {tags.map((t) =>
+                  tagBase ? (
+                    <a class="link" href={`${tagBase}/${t}/`}>
+                      {t}
+                    </a>
+                  ) : (
+                    <span>{t}</span>
+                  )
+                )}
+              </dd>
+            </>
+          )
+        }
+      </dl>
+    </aside>
+    <div class="min-w-0 lg:col-span-8">
+      {description && <p class="t-lede max-w-[40rem] text-ink">{description}</p>}
+      {
+        image && (
+          <figure class="mt-8 border border-rule bg-white p-3">
+            <Image src={image.url} alt={image.alt} widths={[600, 1000, 1400]} sizes="(min-width: 1024px) 60vw, 100vw" class="w-full" />
+          </figure>
+        )
+      }
+      <div class="prose mt-8 max-w-[40rem]">
+        <slot />
+      </div>
+    </div>
+  </article>
+</BaseLayout>

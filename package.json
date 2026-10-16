@@ -1,5 +1,5 @@
 {
-  "name": "@lexington/enlightr",
+  "name": "bvial.info",
   "type": "module",
   "version": "0.0.1",
   "private": true,
@@ -18,12 +18,11 @@
     "@astrojs/mdx": "^7.0.0",
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.3",
-    "@lexingtonthemes/seo": "^0.4.0",
-    "@tailwindcss/forms": "^0.5.11",
-    "@tailwindcss/typography": "^0.5.20",
+    "@fontsource-variable/martian-mono": "^5.3.0",
+    "@fontsource-variable/mona-sans": "^5.3.0",
     "@tailwindcss/vite": "^4.3.1",
     "astro": "^7.0.0",
-    "tailwind-scrollbar-hide": "^4.0.0",
+    "delaunator": "^5.1.0",
     "tailwindcss": "^4.3.1"
   }
 }

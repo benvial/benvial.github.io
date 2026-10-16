@@ -1,72 +1,65 @@
 ---
-import Logo from "@/components/assets/Logo.astro";
-import Wrapper from "@/components/fundations/containers/Wrapper.astro";
-import Text from "@/components/fundations/elements/Text.astro";
-import Github from "@/components/fundations/icons/GithubBrand.astro";
-import Twitter from "@/components/fundations/icons/XBrand.astro";
-import Linkedin from "@/components/fundations/icons/LinkedinBrand.astro";
+import { nav, site, socials } from "@/data/site";
+const year = new Date().getFullYear();
 ---
 
-<footer class="-t">
-  <Wrapper variant="standard" class="py-12">
-    <div class="xl:grid xl:grid-cols-3 xl:gap-8">
-      <div class="text-base-900">
-        <a href="/" class="flex items-center gap-2 font-display uppercase font-medium">
-          <span class="sr-only">Go to homepage</span>
-          <Logo class="h-4 text-base-900" />
-          <span>Benjamin Vial</span>
-        </a>
-        <p class="mt-4 text-sm font-normal text-base-500 text-balance">
-          Wave Physics Research &amp; Scientific Software Consulting
-        </p>
-      </div>
-      <div class="md:grid md:grid-cols-2 xl:grid-cols-4 md:gap-8 xl:col-span-2">
-        <div class="mt-12 md:mt-0">
-          <h3 class="text-base-900">Social</h3>
-          <ul role="list" class="mt-4 text-sm space-y-2 text-base-500">
-            <li>
-              <a href="https://github.com/benvial" class="flex items-center gap-2 hover:text-base-900" target="_blank" rel="noopener noreferrer">
-                <Github class="size-4" /> GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://twitter.com/benvial" class="flex items-center gap-2 hover:text-base-900" target="_blank" rel="noopener noreferrer">
-                <Twitter class="size-4" /> Twitter
-              </a>
-            </li>
-            <li>
-              <a href="https://linkedin.com/in/benjaminvial" class="flex items-center gap-2 hover:text-base-900" target="_blank" rel="noopener noreferrer">
-                <Linkedin class="size-4" /> LinkedIn
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="mt-12 md:mt-0">
-          <h3 class="text-base-900">Links</h3>
-          <ul role="list" class="mt-4 text-sm space-y-2 text-base-500">
-            <li><a href="/research" class="hover:text-base-900">Research</a></li>
-            <li><a href="/publications" class="hover:text-base-900">Publications</a></li>
-            <li><a href="/consulting" class="hover:text-base-900">Consulting</a></li>
-            <li><a href="/code" class="hover:text-base-900">Code</a></li>
-            <li><a href="/blog" class="hover:text-base-900">Blog</a></li>
-            <li><a href="/about" class="hover:text-base-900">About</a></li>
-            <li><a href="/contact" class="hover:text-base-900">Contact</a></li>
-          </ul>
-        </div>
-        <div class="mt-12 md:mt-0">
-          <h3 class="text-base-900">Info</h3>
-          <ul role="list" class="mt-4 text-sm space-y-2 text-base-500">
-            <li><a href="/infopages/privacy" class="hover:text-base-900">Privacy Policy</a></li>
-            <li><a href="/infopages/terms" class="hover:text-base-900">Terms of Service</a></li>
-            <li><a href="/rss.xml" class="hover:text-base-900">RSS Feed</a></li>
-          </ul>
-        </div>
-      </div>
+<footer class="mt-24 border-t border-ink bg-paper">
+  <div class="page grid gap-10 py-12 md:grid-cols-12">
+    <div class="md:col-span-5">
+      <p class="t-display">{site.name}</p>
+      <p class="mt-4 max-w-[34ch] text-ink-2">
+        Wave physics research and scientific software.
+      </p>
+      {
+        site.email && (
+          <p class="mt-4">
+            <a class="link" href={`mailto:${site.email}`}>
+              {site.email}
+            </a>
+          </p>
+        )
+      }
     </div>
-    <div class="mt-8 pt-8 border-t border-base-200">
-      <Text tag="p" variant="textXS" class="text-base-400">
-        &copy; 2026 Benjamin Vial. All rights reserved.
-      </Text>
+    <nav aria-label="Footer" class="md:col-span-3">
+      <h2 class="t-label text-ink-3">Site</h2>
+      <ul class="mt-3 grid gap-1.5">
+        {
+          nav.map((item) => (
+            <li>
+              <a class="link no-underline hover:underline" href={item.href}>
+                {item.title}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    <div class="md:col-span-4">
+      <h2 class="t-label text-ink-3">Elsewhere</h2>
+      <ul class="mt-3 grid gap-1.5">
+        {
+          socials.map((s) => (
+            <li class="flex items-baseline justify-between gap-4 border-b border-rule-2 pb-1.5">
+              <a class="link no-underline hover:underline" href={s.href} rel="me noopener">
+                {s.title}
+              </a>
+              <span class="t-mono text-ink-3">{s.handle}</span>
+            </li>
+          ))
+        }
+        <li class="flex items-baseline justify-between gap-4 border-b border-rule-2 pb-1.5">
+          <a class="link no-underline hover:underline" href="/rss.xml">RSS</a>
+          <span class="t-mono text-ink-3">/rss.xml</span>
+        </li>
+        <li class="flex items-baseline justify-between gap-4 pb-1.5">
+          <a class="link no-underline hover:underline" href={site.cv}>CV</a>
+          <span class="t-meta">PDF</span>
+        </li>
+      </ul>
     </div>
-  </Wrapper>
+  </div>
+  <div class="page flex flex-wrap justify-between gap-2 border-t border-rule py-5 text-ink-3">
+    <p class="t-meta not-italic">© {year} {site.name}</p>
+    <p class="t-meta">Fields on this site are solved in your browser with P1 finite elements.</p>
+  </div>
 </footer>

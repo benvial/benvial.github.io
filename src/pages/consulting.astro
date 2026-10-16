@@ -1,27 +1,65 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import Text from "@/components/fundations/elements/Text.astro";
-import Wrapper from "@/components/fundations/containers/Wrapper.astro";
-import ConsultingCards from "@/components/landing/ConsultingCards.astro";
+import PageHeader from "@/components/mesh/PageHeader.astro";
+import ContactBlock from "@/components/sections/ContactBlock.astro";
+import PackageRow from "@/components/sections/PackageRow.astro";
+import Arrow from "@/components/fundations/icons/Arrow.astro";
+import { services } from "@/data/site";
+
+const featured = (await getCollection("code"))
+  .filter((p) => ["gsim", "gyptis", "nannos", "protis"].includes(p.data.title))
+  .sort((a, b) => a.id.localeCompare(b.id));
 ---
 
-<BaseLayout>
-  <section>
-    <Wrapper variant="standard" class="pt-48 pb-24">
-      <div class="max-w-2xl mx-auto">
-        <Text
-          tag="h1"
-          variant="displayLG"
-          class="text-accent-950 uppercase font-display font-medium text-balance"
-        >
-          Consulting
-        </Text>
-        <Text tag="p" variant="textBase" class="mt-4 text-base-500">
-          Scientific software consulting for research labs and industry —
-          custom solvers, multiphysics modeling, and simulation acceleration.
-        </Text>
-      </div>
-    </Wrapper>
+<BaseLayout title="Consulting" description="Scientific software consulting for research labs and industry: custom solvers, multiphysics modelling and simulation acceleration.">
+  <PageHeader
+    title="Consulting"
+    lede="Scientific software consulting for research labs and industry: custom solvers, multiphysics modelling and simulation acceleration."
+    sourceX={0.88}
+    sourceY={0.7}
+  />
+
+  <section aria-labelledby="h-services" class="page grid gap-10 pt-14 lg:grid-cols-12">
+    <div class="lg:col-span-4">
+      <h2 id="h-services" class="t-h2">Services</h2>
+      <p class="mt-4 max-w-[34ch] text-ink-2">
+        I write and extend simulation software for photonics, electronics and wave problems, built on the same
+        open-source stack I use in my research.
+      </p>
+    </div>
+    <ol class="rows lg:col-span-8">
+      {
+        services.map((s) => (
+          <li class="grid gap-x-8 gap-y-2 py-6 md:grid-cols-8">
+            <h3 class="t-h3 md:col-span-3">{s.title}</h3>
+            <div class="md:col-span-5">
+              <p class="text-ink-2">{s.body}</p>
+              <p class="t-meta mt-3">{s.tools.join(" · ")}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
   </section>
-  <ConsultingCards />
+
+  <section aria-labelledby="h-proof" class="page grid gap-10 pt-24 lg:grid-cols-12">
+    <div class="lg:col-span-4">
+      <h2 id="h-proof" class="t-h2">Built in the open</h2>
+      <p class="mt-4 max-w-[34ch] text-ink-2">
+        Read the code before you hire me. These packages come from my research and freelance work.
+      </p>
+      <a class="link t-label mt-4 inline-flex items-center gap-2" href="/code">All packages <Arrow /></a>
+    </div>
+    <ul class="rows lg:col-span-8">
+      {featured.map((pkg) => <PackageRow pkg={pkg} />)}
+    </ul>
+  </section>
+
+  <section aria-labelledby="h-contact" class="page pt-24">
+    <h2 id="h-contact" class="t-h2 border-b border-ink pb-3">Start a project</h2>
+    <div class="pt-8">
+      <ContactBlock />
+    </div>
+  </section>
 </BaseLayout>

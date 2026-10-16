@@ -1,96 +1,430 @@
 @import "tailwindcss";
-@plugin "@tailwindcss/typography";
-@plugin "@tailwindcss/forms";
-@plugin "tailwind-scrollbar-hide";
+@import "@fontsource-variable/mona-sans/standard.css";
+@import "@fontsource-variable/mona-sans/standard-italic.css";
+@import "@fontsource-variable/martian-mono/standard.css";
+
+/* World: a finite element mesh on pale chart paper. Graphite and vermilion, like
+   red pencil on a technical drawing: the field colormap is the only colour, its
+   graphite pole marks links, its vermilion pole the current or touched item. */
 @theme {
-  /* Typography */
-  --font-sans: Inter, sans-serif;
-  --font-display: Space Mono, monospace;
-  /* Colors */
- --color-accent-50: oklch(98.3% 0.012 161.87);
-  --color-accent-100: oklch(96.41% 0.021 162.97);
-  --color-accent-200: oklch(92.78% 0.045 161.67);
-  --color-accent-300: oklch(86.86% 0.082 160.53);
-  --color-accent-400: oklch(80.9% 0.119 158.52);
-  --color-accent-500: oklch(75.72% 0.151 156.03);
-  --color-accent-600: oklch(66.99% 0.148 154.7);
-  --color-accent-700: oklch(54.26% 0.118 154.99);
-  --color-accent-800: oklch(40.77% 0.085 155.31);
-  --color-accent-900: oklch(26.37% 0.05 157.06);
-  --color-accent-950: oklch(17.5% 0.026 158.08);
-   --color-violet-50: oklch(97.5% 0.012 301.43);
-  --color-violet-100: oklch(95.15% 0.024 296.18);
-  --color-violet-200: oklch(89.05% 0.055 296.74);
-  --color-violet-300: oklch(81.61% 0.094 295.2);
-  --color-violet-400: oklch(78.05% 0.114 294.54);
-  --color-violet-500: oklch(73.26% 0.14 293.43);
-  --color-violet-600: oklch(68.59% 0.165 292.72);
-  --color-violet-700: oklch(62.86% 0.198 290.59);
-  --color-violet-800: oklch(55.49% 0.236 286.9);
-  --color-violet-900: oklch(46.3% 0.278 276.86);
-  --color-violet-950: oklch(36.62% 0.217 277.6);
-  --color-yellow-50: oklch(97.86% 0.016 79.33);
-  --color-yellow-100: oklch(96.45% 0.029 82.58);
-  --color-yellow-200: oklch(92.18% 0.062 82.08);
-  --color-yellow-300: oklch(87.55% 0.099 81.79);
-  --color-yellow-400: oklch(83.18% 0.13 79.97);
-  --color-yellow-500: oklch(78.88% 0.153 76.48);
-  --color-yellow-600: oklch(72.93% 0.152 73.33);
-  --color-yellow-700: oklch(67.21% 0.14 73.12);
-  --color-yellow-800: oklch(57.64% 0.119 74.45);
-  --color-yellow-900: oklch(46.3% 0.094 75.23);
-  --color-yellow-950: oklch(37.16% 0.074 76.58);
-  --color-blue-50: oklch(97.95% 0.011 225.88);
-  --color-blue-100: oklch(96.48% 0.018 228.94);
-  --color-blue-200: oklch(92.37% 0.039 225.28);
-  --color-blue-300: oklch(88.25% 0.06 227.77);
-  --color-blue-400: oklch(83.74% 0.084 228.12);
-  --color-blue-500: oklch(78.84% 0.108 229.95);
-  --color-blue-600: oklch(73.09% 0.133 233.35);
-  --color-blue-700: oklch(65.96% 0.14 236.78);
-  --color-blue-800: oklch(57.51% 0.121 236.9);
-  --color-blue-900: oklch(45.56% 0.093 235.23);
-  --color-blue-950: oklch(36.2% 0.072 235);
-  --color-rose-50: oklch(96.44% 0.009 17.51);
-  --color-rose-100: oklch(92.86% 0.018 17.57);
-  --color-rose-200: oklch(83.76% 0.04 19.96);
-  --color-rose-300: oklch(72.84% 0.07 21.18);
-  --color-rose-400: oklch(69.48% 0.08 21.29);
-  --color-rose-500: oklch(65.91% 0.092 22.41);
-  --color-rose-600: oklch(60.7% 0.11 22.94);
-  --color-rose-700: oklch(55.53% 0.126 23.84);
-  --color-rose-800: oklch(49.07% 0.11 24.09);
-  --color-rose-900: oklch(38.05% 0.081 23.74);
-  --color-rose-950: oklch(31.81% 0.064 24.13);
-  --color-base-50: oklch(0.985 0 0);
-  --color-base-100: oklch(0.97 0 0);
-  --color-base-200: oklch(0.922 0 0);
-  --color-base-300: oklch(0.87 0 0);
-  --color-base-400: oklch(0.708 0 0);
-  --color-base-500: oklch(0.556 0 0);
-  --color-base-600: oklch(0.439 0 0);
-  --color-base-700: oklch(0.371 0 0);
-  --color-base-800: oklch(0.269 0 0);
-  --color-base-900: oklch(0.205 0 0);
-  --color-base-950: oklch(0.145 0 0);
- 
-  
-}
-@supports (font-variation-settings: normal) {
-  :root { font-family: InterVariable, sans-serif; }
+  /* One grotesk for every role; the width axis (75 to 125) carries display rank. */
+  --font-sans: "Mona Sans Variable", "Helvetica Neue", Arial, sans-serif;
+  --font-display: var(--font-sans);
+  --font-mono: "Martian Mono Variable", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --color-paper: oklch(98.5% 0 0);
+  --color-paper-2: oklch(96% 0 0);
+  --color-ink: oklch(20.0% 0 0);
+  --color-ink-2: oklch(40.0% 0 0);
+  --color-ink-3: oklch(50.0% 0 0);
+  --color-rule: oklch(87% 0 0);
+  --color-rule-2: oklch(91.5% 0 0);
+  --color-cool: oklch(45.0% 0 0);
+  --color-cool-deep: oklch(30.0% 0 0);
+  --color-cool-pale: oklch(91.0% 0 0);
+  --color-warm: oklch(52.0% 0.190 33);
+  --color-warm-deep: oklch(33.0% 0.121 33);
+  --color-warm-pale: oklch(91.0% 0.047 33);
+
+  --container-page: 78rem;
+  --container-text: 40rem;
 }
 
-code {
-  counter-reset: step;
-  counter-increment: step 0;
-}
-code .line::before {
-  content: counter(step);
-  counter-increment: step;
-  width: 1rem;
-  margin-right: 1.5rem;
-  display: inline-block;
-  text-align: right;
-  color: #999999;
+:root {
+  --gutter: clamp(1rem, 4vw, 3rem);
+  color-scheme: light;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
+/* ---- Field colormap ----------------------------------------------------
+   Graphite to vermilion through the paper. The UI takes its accents from the
+   two poles and its paper from the centre, so page and field always agree.
+   mesh-field.ts reads --field-cmap (cool pole first). */
+
+:root {
+  --mesh-edge: oklch(30.0% 0 0 / 0.24);
+  --field-cmap:
+    oklch(27.0% 0 0),
+    oklch(42.0% 0 0),
+    oklch(57.0% 0 0),
+    oklch(73.0% 0 0),
+    oklch(87.0% 0 0),
+    var(--color-paper),
+    oklch(87.0% 0.066 33),
+    oklch(73.0% 0.133 33),
+    oklch(57.0% 0.180 33),
+    oklch(42.0% 0.154 33),
+    oklch(27.0% 0.098 33);
+}
+
+body {
+  background: var(--color-paper);
+  font-size: 1.0625rem;
+  line-height: 1.58;
+}
+
+::selection {
+  background: var(--color-warm-pale);
+  color: var(--color-warm-deep);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-cool);
+  outline-offset: 3px;
+}
+
+html {
+  scrollbar-color: var(--color-rule) var(--color-paper);
+  caret-color: var(--color-warm);
+}
+
+h1, h2, h3, h4 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* ---- Layout ---------------------------------------------------------- */
+
+.page {
+  width: 100%;
+  max-width: var(--container-page);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* ---- Type roles ------------------------------------------------------ */
+
+.t-name {
+  font-family: var(--font-display);
+  font-stretch: 125%;
+  font-weight: 860;
+  font-size: clamp(2.6rem, 9vw, 6rem);
+  line-height: 0.9;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+
+.t-display {
+  font-family: var(--font-display);
+  font-stretch: 125%;
+  font-weight: 780;
+  font-size: clamp(2rem, 5.2vw, 3.75rem);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.t-h2 {
+  font-family: var(--font-display);
+  font-stretch: 118%;
+  font-weight: 720;
+  font-size: clamp(1.5rem, 3vw, 2.125rem);
+  line-height: 1.05;
+  letter-spacing: -0.012em;
+  text-transform: uppercase;
+}
+
+.t-h3 {
+  font-family: var(--font-display);
+  font-stretch: 104%;
+  font-weight: 620;
+  font-size: 1.1875rem;
+  line-height: 1.22;
+  letter-spacing: -0.005em;
+}
+
+.t-label {
+  font-family: var(--font-display);
+  font-stretch: 112%;
+  font-weight: 620;
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.t-lede {
+  font-family: var(--font-sans);
+  font-size: clamp(1.1875rem, 2vw, 1.375rem);
+  line-height: 1.45;
+  letter-spacing: -0.005em;
+  color: var(--color-ink-2);
+}
+
+/* Secondary metadata: tags, captions, colophon. Mono is kept for numbers and code.
+   Set slightly condensed so it reads as a quieter register than body. */
+.t-meta {
+  font-family: var(--font-sans);
+  font-stretch: 94%;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: var(--color-ink-3);
+}
+
+.t-mono {
+  font-family: var(--font-mono);
+  font-stretch: 87.5%;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+}
+
+/* ---- Links ----------------------------------------------------------- */
+
+.link {
+  color: var(--color-cool);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  text-decoration-color: color-mix(in oklab, var(--color-warm) 45%, transparent);
+  transition: color 0.15s, text-decoration-color 0.15s;
+}
+.link:hover {
+  color: var(--color-warm);
+  text-decoration-color: currentColor;
+}
+
+/* A door: the primary actions. Square, ruled, display type. */
+.door {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 3rem;
+  padding: 0.75rem clamp(0.875rem, 3vw, 1.125rem);
+  border: 1.5px solid var(--color-ink);
+  font-family: var(--font-display);
+  font-stretch: 116%;
+  font-weight: 720;
+  font-size: clamp(0.8125rem, 2.4vw, 0.9375rem);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  background: var(--color-paper);
+  transition: background 0.18s, color 0.18s, border-color 0.18s;
+}
+.door svg {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.door:hover {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+.door:hover svg {
+  transform: translateX(3px);
+}
+.door--primary {
+  background: var(--color-cool-deep);
+  border-color: var(--color-cool-deep);
+  color: var(--color-paper);
+}
+.door--primary:hover {
+  background: var(--color-warm);
+  border-color: var(--color-warm);
+}
+
+/* ---- Mesh field ------------------------------------------------------ */
+
+.mesh-field {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--color-paper);
+  border-block: 1px solid var(--color-rule);
+}
+.mesh-field:focus-visible {
+  outline-offset: -3px;
+}
+.mesh-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.mesh-field.is-solved .mesh-canvas {
+  opacity: 1;
+}
+.mesh-field[data-interactive="true"] {
+  cursor: crosshair;
+}
+.mesh-field [data-obstacle] {
+  cursor: auto;
+}
+.mesh-source {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s;
+}
+.mesh-source.is-placed {
+  opacity: 1;
+}
+.mesh-source::before,
+.mesh-source::after {
+  content: "";
+  position: absolute;
+  background: var(--color-ink);
+}
+.mesh-source::before {
+  width: 15px;
+  height: 1.5px;
+  left: -7.5px;
+  top: -0.75px;
+}
+.mesh-source::after {
+  width: 1.5px;
+  height: 15px;
+  left: -0.75px;
+  top: -7.5px;
+}
+.mesh-readout {
+  background: var(--color-paper);
+  color: var(--color-ink-2);
+}
+.mesh-readout dt {
+  color: var(--color-ink-3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mesh-canvas,
+  .mesh-source,
+  .door,
+  .door svg {
+    transition: none;
+  }
+}
+
+/* ---- Rows: ruled lists used for services, packages, papers, posts ---- */
+
+.rows > * {
+  border-top: 1px solid var(--color-rule);
+}
+.rows > *:last-child {
+  border-bottom: 1px solid var(--color-rule);
+}
+
+/* ---- Prose (research write-ups and posts) ------------------------------ */
+
+.prose {
+  font-size: 1.0938rem;
+  line-height: 1.66;
+  color: var(--color-ink);
+}
+.prose > * + * {
+  margin-top: 1.1em;
+}
+.prose h2 {
+  margin-top: 2.4em;
+  font-family: var(--font-display);
+  font-stretch: 118%;
+  font-weight: 720;
+  font-size: 1.5rem;
+  line-height: 1.15;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+.prose h3 {
+  margin-top: 2em;
+  font-family: var(--font-display);
+  font-stretch: 104%;
+  font-weight: 620;
+  font-size: 1.1875rem;
+  line-height: 1.25;
+}
+.prose h2 + *,
+.prose h3 + * {
+  margin-top: 0.6em;
+}
+.prose a:not(.door) {
+  color: var(--color-cool);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  text-decoration-color: color-mix(in oklab, var(--color-warm) 45%, transparent);
+  overflow-wrap: anywhere;
+}
+.prose a:not(.door):hover {
+  color: var(--color-warm);
+}
+.prose strong {
+  font-weight: 620;
+}
+.prose ul,
+.prose ol {
+  padding-left: 1.25em;
+}
+.prose ul {
+  list-style: square;
+}
+.prose ol {
+  list-style: decimal;
+}
+.prose li + li {
+  margin-top: 0.4em;
+}
+.prose li::marker {
+  color: var(--color-ink-3);
+}
+.prose img {
+  width: 100%;
+  height: auto;
+  margin-block: 2rem;
+  background: #fff;
+  border: 1px solid var(--color-rule);
+}
+.prose blockquote {
+  border-left: 1px solid var(--color-ink);
+  padding-left: 1.25rem;
+  color: var(--color-ink-2);
+  font-style: italic;
+}
+.prose code {
+  font-family: var(--font-mono);
+  font-size: 0.82em;
+  background: var(--color-paper-2);
+  padding: 0.1em 0.3em;
+}
+.prose pre {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  padding: 1.25rem;
+  overflow-x: auto;
+}
+.prose pre code {
+  background: none;
+  padding: 0;
+  font-size: inherit;
+}
+.prose hr {
+  border: 0;
+  border-top: 1px solid var(--color-rule);
+  margin-block: 2.5rem;
+}
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+.prose th,
+.prose td {
+  text-align: left;
+  padding: 0.5rem 0.75rem 0.5rem 0;
+  border-bottom: 1px solid var(--color-rule);
+}
+.prose .katex,
+.prose math {
+  font-size: 1.05em;
+}

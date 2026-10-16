@@ -1,67 +1,15 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import Text from "@/components/fundations/elements/Text.astro";
-import Wrapper from "@/components/fundations/containers/Wrapper.astro";
-import Button from "@/components/fundations/elements/Button.astro";
+import PageHeader from "@/components/mesh/PageHeader.astro";
+import ContactBlock from "@/components/sections/ContactBlock.astro";
 ---
 
-<BaseLayout>
-  <section>
-    <Wrapper variant="standard" class="pt-48 pb-24">
-      <div class="max-w-2xl mx-auto">
-        <Text
-          tag="h1"
-          variant="displayLG"
-          class="text-accent-950 uppercase font-display font-medium text-balance"
-        >
-          Contact
-        </Text>
-        <Text tag="p" variant="textBase" class="mt-4 text-base-500">
-          Get in touch for research collaborations, consulting inquiries, or
-          any questions about my work.
-        </Text>
-        <form class="mt-10 space-y-4">
-          <div class="w-full">
-            <label for="name" class="block mb-1 text-sm font-medium text-base-500"
-              >Full Name</label
-            >
-            <input
-              id="name"
-              name="name"
-              type="text"
-              placeholder="Jane Doe"
-              class="block w-full px-4 py-2 text-xs leading-tight align-middle bg-white border border-transparent transition duration-300 ease-in-out focus:z-10 h-9 rounded-md text-base-500 ring-1 ring-base-200 placeholder-base-400 focus:border-accent-500 focus:ring-accent-100 focus:ring-2 focus:outline-none shadow-sm"
-            />
-          </div>
-          <div class="w-full">
-            <label for="email" class="block mb-1 text-sm font-medium text-base-500"
-              >Email Address</label
-            >
-            <input
-              id="email"
-              name="email"
-              type="email"
-              placeholder="you@example.com"
-              class="block w-full px-4 py-2 text-xs leading-tight align-middle bg-white border border-transparent transition duration-300 ease-in-out focus:z-10 h-9 rounded-md text-base-500 ring-1 ring-base-200 placeholder-base-400 focus:border-accent-500 focus:ring-accent-100 focus:ring-2 focus:outline-none shadow-sm"
-            />
-          </div>
-          <div class="w-full">
-            <label for="message" class="block mb-1 text-sm font-medium text-base-500"
-              >Your Message</label
-            >
-            <textarea
-              id="message"
-              name="message"
-              rows="6"
-              placeholder="What's on your mind?"
-              class="block w-full px-4 py-2 text-xs leading-tight align-middle bg-white border border-transparent transition duration-300 ease-in-out focus:z-10 rounded-md text-base-500 ring-1 ring-base-200 placeholder-base-400 focus:border-accent-500 focus:ring-accent-100 focus:ring-2 focus:outline-none shadow-sm"
-            ></textarea>
-          </div>
-          <Button size="base" variant="accent" gap="sm" type="submit" class="w-full">
-            Send Message
-          </Button>
-        </form>
-      </div>
-    </Wrapper>
-  </section>
+<BaseLayout title="Contact" description="Get in touch with Benjamin Vial about consulting work or research collaboration.">
+  <PageHeader
+    title="Contact"
+    lede="Consulting work, research collaboration, or a question about one of the packages: get in touch."
+  />
+  <div class="page pt-14">
+    <ContactBlock />
+  </div>
 </BaseLayout>

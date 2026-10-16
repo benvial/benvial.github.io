@@ -4,6 +4,7 @@ import Button from "@/components/fundations/elements/Button.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 import Plus from "@/components/fundations/icons/Plus.astro";
 import ArrowNarrowRight from "@/components/fundations/icons/ArrowNarrowRight.astro";
+import HeroBanner from "@/components/landing/HeroBanner.astro";
 ---
 
 <section class="relative overflow-hidden">
@@ -43,15 +44,7 @@ import ArrowNarrowRight from "@/components/fundations/icons/ArrowNarrowRight.ast
           </div>
         </div>
       </div>
-      <div class="mt-8 lg:mt-0 lg:shrink-0">
-        <img
-          src="/face.jpg"
-          alt="Benjamin Vial"
-          width="280"
-          height="280"
-          class="object-cover w-40 h-40 sm:w-56 sm:h-56 lg:w-72 lg:h-72"
-        />
-      </div>
     </div>
   </Wrapper>
+  <HeroBanner />
 </section>

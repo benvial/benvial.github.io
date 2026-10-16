@@ -1,68 +1,20 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
-import Text from "@/components/fundations/elements/Text.astro";
-import Wrapper from "@/components/fundations/containers/Wrapper.astro";
-import Github from "@/components/fundations/icons/GithubBrand.astro";
-import ExternalLink from "@/components/fundations/icons/ExternalLink.astro";
 import { getCollection } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PageHeader from "@/components/mesh/PageHeader.astro";
+import PackageRow from "@/components/sections/PackageRow.astro";
 
-const projects = await getCollection("code");
+const packages = (await getCollection("code")).sort((a, b) => a.id.localeCompare(b.id));
 ---
 
-<BaseLayout>
-  <section>
-    <Wrapper variant="standard" class="pt-48 pb-24">
-      <div class="max-w-2xl mx-auto">
-        <Text
-          tag="h1"
-          variant="displayLG"
-          class="text-accent-950 uppercase font-display font-medium text-balance"
-        >
-          Code
-        </Text>
-        <Text tag="p" variant="textBase" class="mt-4 text-base-500">
-          Open-source packages for computational electromagnetics, numerical
-          methods, and scientific computing.
-        </Text>
-      </div>
-    </Wrapper>
-  </section>
-
-  <section>
-    <Wrapper variant="standard" class="pb-24">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {projects.map((p) => (
-          <a
-            href={p.data.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="block border border-base-200 rounded-lg p-6 hover:border-accent-300 transition-colors duration-300 group"
-          >
-            <div class="flex items-start justify-between">
-              <h3 class="font-display font-medium text-accent-950 group-hover:text-accent-600 transition-colors">
-                {p.data.title}
-              </h3>
-              <ExternalLink class="size-4 text-base-400 group-hover:text-accent-500 transition-colors shrink-0 mt-1" />
-            </div>
-            <p class="mt-2 text-sm text-base-500">{p.data.description}</p>
-            <div class="mt-4 flex flex-wrap items-center gap-3">
-              {p.data.language && (
-                <span class="text-xs text-base-400 font-mono">{p.data.language}</span>
-              )}
-              {p.data.stars && p.data.stars > 0 && (
-                <span class="text-xs text-base-400 flex items-center gap-1">
-                  &#9733; {p.data.stars}
-                </span>
-              )}
-              {p.data.tags?.slice(0, 3).map((tag) => (
-                <span class="text-xs px-2 py-0.5 bg-base-50 text-base-500 rounded-full">
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </a>
-        ))}
-      </div>
-    </Wrapper>
-  </section>
+<BaseLayout title="Code" description="Open-source packages for computational electromagnetics, numerical methods and scientific computing.">
+  <PageHeader
+    title="Code"
+    lede="Open-source packages for computational electromagnetics, numerical methods and scientific computing."
+  />
+  <div class="page pt-12">
+    <ul class="rows">
+      {packages.map((pkg) => <PackageRow pkg={pkg} />)}
+    </ul>
+  </div>
 </BaseLayout>

@@ -1,30 +1,49 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
-import Text from "@/components/fundations/elements/Text.astro";
-import Wrapper from "@/components/fundations/containers/Wrapper.astro";
-import ResearchCards from "@/components/landing/ResearchCards.astro";
+import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PageHeader from "@/components/mesh/PageHeader.astro";
+import Arrow from "@/components/fundations/icons/Arrow.astro";
 
-const entries = await getCollection("research");
+const entries = (await getCollection("research")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
 ---
 
-<BaseLayout>
-  <section>
-    <Wrapper variant="standard" class="pt-48 pb-24">
-      <div class="max-w-2xl mx-auto">
-        <Text
-          tag="h1"
-          variant="displayLG"
-          class="text-accent-950 uppercase font-display font-medium text-balance"
-        >
-          Research
-        </Text>
-        <Text tag="p" variant="textBase" class="mt-4 text-base-500">
-          Exploring wave physics, metamaterials, and computational electromagnetics
-          through theory, numerical simulation, and experiment.
-        </Text>
-      </div>
-    </Wrapper>
-  </section>
-  <ResearchCards entries={entries} />
+<BaseLayout title="Research" description="Research on metamaterials, invisibility, quasinormal modes and topology optimization.">
+  <PageHeader
+    title="Research"
+    lede="Theory, simulation and experiment on waves in structured media: metamaterials, resonances, homogenization and inverse design."
+  />
+
+  <ol class="page mt-4">
+    {
+      entries.map((entry, i) => (
+        <li class="border-b border-rule py-14">
+          <a href={`/research/${entry.id}/`} class="group grid items-start gap-8 md:grid-cols-12">
+            <figure class:list={["md:col-span-7", i % 2 === 1 && "md:order-2"]}>
+              <div class="overflow-hidden border border-rule bg-white">
+                <Image
+                  src={entry.data.image.url}
+                  alt={entry.data.image.alt}
+                  widths={[600, 1000, 1300]}
+                  sizes="(min-width: 768px) 58vw, 100vw"
+                  class="aspect-[16/10] w-full object-contain p-4 transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+                />
+              </div>
+              <figcaption class="t-meta mt-2 not-italic"><span class="font-semibold">Fig. {i + 1}.</span> {entry.data.image.alt}</figcaption>
+            </figure>
+            <div class:list={["md:col-span-5 md:pt-2", i % 2 === 1 && "md:order-1"]}>
+              <h2 class="t-h2 transition-colors group-hover:text-warm">{entry.data.title}</h2>
+              <p class="mt-4 text-ink-2">{entry.data.description}</p>
+              <p class="t-meta mt-4">{entry.data.tags.join(" · ")}</p>
+              <span class="t-label mt-6 inline-flex items-center gap-2 text-cool">
+                Read <Arrow />
+              </span>
+            </div>
+          </a>
+        </li>
+      ))
+    }
+  </ol>
 </BaseLayout>

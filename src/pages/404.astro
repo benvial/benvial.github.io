@@ -1,61 +1,17 @@
 ---
-// Fundations
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import Text from "@/components/fundations/elements/Text.astro";
-import Button from "@/components/fundations/elements/Button.astro";
-import Wrapper from "@/components/fundations/containers/Wrapper.astro";
-// Icons
-import ChevronLeft from "@/components/fundations/icons/ChevronLeft.astro";
-import ChevronRight from "@/components/fundations/icons/ChevronRight.astro";
+import MeshField from "@/components/mesh/MeshField.astro";
+import Arrow from "@/components/fundations/icons/Arrow.astro";
 ---
 
-<BaseLayout>
-  <section>
-    <Wrapper variant="standard" class="py-32 lg:py-62">
-      <div class="text-balance max-w-3xl">
-        <Text
-          tag="h1"
-          variant="displayXL"
-          class="text-accent-950 uppercase font-display font-medium"
-        >
-          Oops.This page ghosted us.
-        </Text>
-        <Text tag="p" variant="textBase" class="mt-4 text-base-500">
-          Looks like what you're looking for doesn’t exist. Maybe it got lost in
-          the spam folder. Or maybe it never existed at all. Hard to say.
-        </Text>
+<BaseLayout title="Page not found">
+  <MeshField animate class="min-h-[min(70svh,40rem)]" sourceX={0.8} sourceY={0.6} wavelengths={8}>
+    <div class="page flex min-h-[inherit] flex-col justify-center gap-6 py-16">
+      <h1 data-obstacle class="t-name w-fit bg-paper">404</h1>
+      <div data-obstacle class="flex max-w-[30rem] flex-col gap-5 bg-paper">
+        <p class="t-lede text-ink">This page does not exist. The waves found nothing here either.</p>
+        <a class="door w-fit" href="/">Back to the home page <Arrow /></a>
       </div>
-      <div class="flex flex-col gap-8 mt-8 max-w-xl">
-        <div class="flex items-center gap-2">
-          <Button isLink={true} href="/" iconOnly size="base" variant="muted">
-            <ChevronLeft slot="icon" size="base" />
-          </Button>
-          <Text
-            tag="p"
-            variant="textLG"
-            class="uppercase font-display text-base-900 font-medium"
-            >Go back home</Text
-          >
-        </div>
-
-        <div class="flex items-center gap-2">
-          <Text
-            tag="p"
-            variant="textLG"
-            class="uppercase font-display text-base-900 font-medium"
-            >See all courses
-          </Text>
-          <Button
-            isLink={true}
-            href="/courses"
-            iconOnly
-            size="base"
-            variant="accent"
-          >
-            <ChevronRight slot="icon" size="base" />
-          </Button>
-        </div>
-      </div>
-    </Wrapper>
-  </section>
+    </div>
+  </MeshField>
 </BaseLayout>

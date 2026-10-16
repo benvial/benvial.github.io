@@ -1,0 +1,21 @@
+---
+import type { CollectionEntry } from "astro:content";
+interface Props {
+  post: CollectionEntry<"posts">;
+}
+const { post } = Astro.props;
+const date = new Date(post.data.pubDate);
+---
+
+<li>
+  <a
+    href={`/blog/posts/${post.id}/`}
+    class="group grid gap-x-8 gap-y-1 py-5 md:grid-cols-12"
+  >
+    <time datetime={date.toISOString()} class="t-mono pt-1 text-ink-3 md:col-span-2">
+      {date.toLocaleDateString("en-GB", { year: "numeric", month: "short", day: "2-digit" })}
+    </time>
+    <span class="t-h3 text-ink transition-colors group-hover:text-warm md:col-span-5">{post.data.title}</span>
+    {post.data.description && <span class="text-ink-2 md:col-span-5">{post.data.description}</span>}
+  </a>
+</li>

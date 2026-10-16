@@ -1,0 +1,44 @@
+---
+// A box whose background is a live finite element solution. Children marked
+// [data-obstacle] are cut out of the mesh; the waves scatter around them.
+interface Props {
+  class?: string;
+  animate?: boolean;
+  interactive?: boolean;
+  sourceX?: number;
+  sourceY?: number;
+  wavelengths?: number;
+  pad?: number;
+  label?: string;
+  intensity?: number;
+}
+
+const {
+  class: className,
+  animate = false,
+  interactive = true,
+  sourceX = 0.85,
+  sourceY = 0.75,
+  wavelengths = 8,
+  pad = 12,
+  intensity = 0.8,
+  label = "Wave field solved with finite elements. Click, or focus and use the arrow keys, to move the source.",
+} = Astro.props;
+---
+
+<div
+  class:list={["mesh-field", className]}
+  data-mesh-field
+  data-animate={animate ? "true" : "false"}
+  data-interactive={interactive ? "true" : "false"}
+  data-source-x={sourceX}
+  data-source-y={sourceY}
+  data-wavelengths={wavelengths}
+  data-pad={pad}
+  data-intensity={intensity}
+  tabindex={interactive ? 0 : undefined}
+  aria-label={interactive ? label : undefined}
+  role={interactive ? "group" : undefined}
+>
+  <slot />
+</div>

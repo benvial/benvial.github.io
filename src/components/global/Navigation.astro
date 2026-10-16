@@ -1,163 +1,81 @@
 ---
 import Logo from "@/components/assets/Logo.astro";
-import Button from "@/components/fundations/elements/Button.astro";
-import Wrapper from "@/components/fundations/containers/Wrapper.astro";
-import X from "@/components/fundations/icons/X.astro";
-const navigationLinks = [
-  { title: "Home", href: "/" },
-  { title: "Blog", href: "/blog" },
-  { title: "Research", href: "/research" },
-  { title: "Publications", href: "/publications" },
-  { title: "Consulting", href: "/consulting" },
-  { title: "Code", href: "/code" },
-  { title: "About", href: "/about" },
-  { title: "Contact", href: "/contact" },
-];
+import { nav, site } from "@/data/site";
+
+const path = Astro.url.pathname.replace(/\/$/, "") || "/";
+const isActive = (href: string) => path === href || path.startsWith(`${href}/`);
 ---
 
-<div id="nav-wrapper" class="fixed inset-x-0 top-0 w-full mx-auto z-51 ">
-  <Wrapper id="second-wrapper" variant="standard" class="py-4">
-    <div
-      id="navigation-wrapper"
-      class="relative flex flex-col md:items-center md:justify-between md:gap-12 md:flex-row"
+<header class="relative z-20 bg-paper">
+  <div class="page flex min-h-16 items-center justify-between gap-6 py-3">
+    <a
+      href="/"
+      class="t-label flex shrink-0 items-center gap-3 text-[0.9375rem] tracking-[0.05em] text-ink hover:text-warm"
+      aria-current={path === "/" ? "page" : undefined}
     >
-      <div class="flex flex-row items-center justify-between">
-        <a
-          href="/"
-          class="flex items-center gap-2 font-display uppercase font-medium"
-        >
-          <span class="sr-only">Go to homepage</span>
-          <Logo class="h-4 text-base-900" />
-          <span class="whitespace-nowrap">Benjamin Vial</span>
-        </a>
-        <Button
-          iconOnly
-          id="menu-toggle"
-          size="xs"
-          variant="accent"
-          class="md:hidden"
-        >
-          <svg
-            slot="icon"
-            class="size-4"
-            stroke="currentColor"
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            <path
-              id="menu-icon"
-              class="inline-flex"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"></path>
-            <path
-              id="close-icon"
-              class="hidden"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-        </Button>
-      </div>
-      <nav
-        id="navigation-menu"
-        class="fixed inset-0 flex flex-col justify-between h-full py-12 bg-white opacity-0 pointer-events-none md:bg-none md:bg-transparent lg:p-0 md:p-0 transform transition-all duration-300 ease-in-out -translate-y-4 md:relative md:inset-auto md:opacity-100 md:pointer-events-auto md:translate-y-0 md:w-full"
-      >
-        <Button
-          iconOnly
-          variant="muted"
-          size="xs"
-          id="menu-close"
-          class="absolute top-4 right-8 md:hidden"
-          aria-label="Close menu"
-        >
-          <X slot="icon" size="sm" />
-        </Button>
-        <div
-          class="relative flex flex-col items-start justify-start w-full h-full px-8 gap-4 md:px-0 md:flex-row md:items-center md:text-left"
-        >
-          <a href="/" class="md:hidden">
-            <span class="sr-only">Go to homepage</span>
-            <Logo class="h-8 text-base-900" />
-          </a>
-          <div
-            class="relative flex flex-col justify-center mt-12 gap-2 md:gap-4 md:flex-row md:ml-auto md:mt-0"
-          >
-            {
-              navigationLinks.map((link) => (
-                <a
-                  href={link.href}
-                  class="text-xs text-base-700 hover:text-accent-500"
-                >
-                  {link.title}
-                </a>
-              ))
-            }
-          </div>
-        </div>
-      </nav>
-    </div>
-  </Wrapper>
-</div>
-<script type="module">
-  document.addEventListener("DOMContentLoaded", () => {
-    const menuToggle = document.getElementById("menu-toggle");
-    const menuClose = document.getElementById("menu-close");
-    const menuIcon = document.getElementById("menu-icon");
-    const closeIcon = document.getElementById("close-icon");
-    const navigationMenu = document.getElementById("navigation-menu");
-    const navWrapper = document.getElementById("nav-wrapper");
+      <Logo class="size-7" aria-hidden="true" />
+      {site.name}
+    </a>
 
-    let isMobileMenuOpen = false;
-
-    function toggleMenu(open) {
-      isMobileMenuOpen = open;
-      navigationMenu.classList.toggle("opacity-100", open);
-      navigationMenu.classList.toggle("translate-y-0", open);
-      navigationMenu.classList.toggle("pointer-events-auto", open);
-      navigationMenu.classList.toggle("opacity-0", !open);
-      navigationMenu.classList.toggle("-translate-y-4", !open);
-      navigationMenu.classList.toggle("pointer-events-none", !open);
-      menuIcon.classList.toggle("hidden", open);
-      closeIcon.classList.toggle("hidden", !open);
-      updateNavOnScroll();
-    }
-
-    menuToggle.addEventListener("click", () => toggleMenu(true));
-    menuClose.addEventListener("click", () => toggleMenu(false));
-
-    let ticking = false;
-
-    function updateNavOnScroll() {
-      if (window.innerWidth < 768 && isMobileMenuOpen) {
-        navWrapper.classList.remove("backdrop-blur", "bg-white/10", "backdrop-blur-sm", "bg-white/5");
-        return;
-      }
-      if (window.scrollY > 50) {
-        if (window.innerWidth >= 768) {
-          navWrapper.classList.add("backdrop-blur", "bg-white/10");
-          navWrapper.classList.remove("backdrop-blur-sm", "bg-white/5");
-        } else {
-          navWrapper.classList.add("backdrop-blur-sm", "bg-white/5");
-          navWrapper.classList.remove("backdrop-blur", "bg-white/10");
+    <nav aria-label="Main" class="hidden lg:block">
+      <ul class="flex items-center gap-x-6 xl:gap-x-8">
+        {
+          nav.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                aria-current={isActive(item.href) ? "page" : undefined}
+                class="t-label relative py-2 text-ink-2 transition-colors hover:text-ink aria-[current=page]:text-warm aria-[current=page]:after:absolute aria-[current=page]:after:inset-x-0 aria-[current=page]:after:-bottom-px aria-[current=page]:after:h-[2px] aria-[current=page]:after:bg-warm"
+              >
+                {item.title}
+              </a>
+            </li>
+          ))
         }
-      } else {
-        navWrapper.classList.remove("backdrop-blur", "bg-white/10", "backdrop-blur-sm", "bg-white/5");
-      }
-      ticking = false;
-    }
+      </ul>
+    </nav>
 
-    function requestTick() {
-      if (!ticking) {
-        requestAnimationFrame(updateNavOnScroll);
-        ticking = true;
-      }
-    }
+    <details class="nav-menu lg:hidden">
+      <summary
+        class="t-label flex min-h-11 cursor-pointer list-none items-center gap-2 border border-ink px-3 text-ink [&::-webkit-details-marker]:hidden"
+      >
+        <span class="when-closed">Menu</span><span class="when-open">Close</span>
+      </summary>
+      <nav aria-label="Main" class="absolute inset-x-0 top-full border-y border-rule bg-paper">
+        <ul class="page rows py-2">
+          {
+            nav.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  aria-current={isActive(item.href) ? "page" : undefined}
+                  class="t-h2 flex min-h-14 items-center text-ink aria-[current=page]:text-warm"
+                >
+                  {item.title}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </details>
+  </div>
+</header>
 
-    window.addEventListener("scroll", requestTick);
-    window.addEventListener("resize", updateNavOnScroll);
-    updateNavOnScroll();
-  });
-</script>
+<style>
+  .nav-menu .when-open {
+    display: none;
+  }
+  .nav-menu[open] .when-open {
+    display: inline;
+  }
+  .nav-menu[open] .when-closed {
+    display: none;
+  }
+  .nav-menu .rows > li:first-child {
+    border-top: 0;
+  }
+  .nav-menu .rows > li:last-child {
+    border-bottom: 0;
+  }
+</style>

@@ -1,0 +1,43 @@
+---
+import Arrow from "@/components/fundations/icons/Arrow.astro";
+import { site, socials } from "@/data/site";
+---
+
+<div class="grid gap-8 md:grid-cols-2">
+  <div>
+    {
+      site.email ? (
+        <>
+          <p class="font-mono text-[1.25rem] [font-stretch:87.5%] select-all break-all">{site.email}</p>
+          <a class="door door--primary mt-5" href={`mailto:${site.email}`}>
+            Write to me <Arrow />
+          </a>
+        </>
+      ) : (
+        <>
+          <a class="door door--primary" href="https://linkedin.com/in/ben-vial" rel="noopener">
+            Message on LinkedIn <Arrow external />
+          </a>
+        </>
+      )
+    }
+  </div>
+  <ul class="rows">
+    {
+      socials.map((s) => (
+        <li>
+          <a href={s.href} rel="me noopener" class="group flex items-baseline justify-between gap-4 py-3">
+            <span class="t-h3 transition-colors group-hover:text-warm">{s.title}</span>
+            <span class="t-mono text-ink-3">{s.handle}</span>
+          </a>
+        </li>
+      ))
+    }
+    <li>
+      <a href={site.cv} class="group flex items-baseline justify-between gap-4 py-3">
+        <span class="t-h3 transition-colors group-hover:text-warm">CV</span>
+        <span class="t-meta">PDF</span>
+      </a>
+    </li>
+  </ul>
+</div>

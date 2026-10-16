@@ -1,0 +1,17 @@
+---
+// The solver's own numbers, filled in by the mesh script.
+interface Props {
+  class?: string;
+  hint?: string;
+}
+const { class: className, hint = "Click the field to move the source" } = Astro.props;
+---
+
+<dl data-obstacle data-mesh-readout class:list={["mesh-readout t-mono grid-cols-[auto_auto] gap-x-4 gap-y-0.5 px-3 py-2", className]}>
+  <dt>nodes</dt><dd data-k="nodes" class="text-right">…</dd>
+  <dt>elements</dt><dd data-k="elements" class="text-right">…</dd>
+  <dt>λ</dt><dd data-k="lambda" class="text-right">…</dd>
+  <dt>mesh + LDLᵀ</dt><dd data-k="ms" class="text-right">…</dd>
+  <dt>source</dt><dd data-k="source" class="text-right">…</dd>
+  <dd class="col-span-2 mt-1 border-t border-rule pt-1 text-ink-3">{hint}</dd>
+</dl>

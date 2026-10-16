@@ -1,0 +1,22 @@
+---
+interface Props {
+  tags: string[];
+  current?: string;
+}
+const { tags, current } = Astro.props;
+---
+
+<nav aria-label="Tags" class="flex flex-wrap font-sans gap-x-4 gap-y-2 border-t border-ink pt-3">
+  <a class="link" href="/blog/" aria-current={!current ? "page" : undefined}>all</a>
+  {
+    tags.map((t) => (
+      <a
+        class="link aria-[current=page]:text-warm aria-[current=page]:decoration-warm"
+        href={`/blog/tags/${t}/`}
+        aria-current={t === current ? "page" : undefined}
+      >
+        {t}
+      </a>
+    ))
+  }
+</nav>

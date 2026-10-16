@@ -1,0 +1,21 @@
+---
+import MeshField from "@/components/mesh/MeshField.astro";
+
+interface Props {
+  title: string;
+  lede?: string;
+  sourceX?: number;
+  sourceY?: number;
+}
+const { title, lede, sourceX = 0.9, sourceY = 0.5 } = Astro.props;
+---
+
+<MeshField class="min-h-[clamp(15rem,34vw,22rem)]" sourceX={sourceX} sourceY={sourceY} wavelengths={10} pad={14} intensity={0.55}>
+  <div class="page flex min-h-[inherit] flex-col justify-end gap-4 pt-28 pb-10 md:pt-14">
+    <div data-obstacle class="flex w-fit max-w-full flex-col gap-4 bg-paper">
+      <h1 class="t-display">{title}</h1>
+      {lede && <p class="t-lede max-w-[36rem]">{lede}</p>}
+    </div>
+    <slot />
+  </div>
+</MeshField>

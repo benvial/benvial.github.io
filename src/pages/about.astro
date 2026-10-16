@@ -1,252 +1,84 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import Text from "@/components/fundations/elements/Text.astro";
-import Button from "@/components/fundations/elements/Button.astro";
-import Wrapper from "@/components/fundations/containers/Wrapper.astro";
-import ArrowNarrowRight from "@/components/fundations/icons/ArrowNarrowRight.astro";
+import PageHeader from "@/components/mesh/PageHeader.astro";
+import Arrow from "@/components/fundations/icons/Arrow.astro";
+import { awards, education, positions, skills, teaching, type CvItem } from "@/data/cv";
+import { site } from "@/data/site";
+
+const sections: { id: string; title: string; items: CvItem[] }[] = [
+  { id: "positions", title: "Positions", items: positions },
+  { id: "education", title: "Education", items: education },
+  { id: "teaching", title: "Teaching and supervision", items: teaching },
+  { id: "awards", title: "Awards", items: awards },
+];
 ---
 
-<BaseLayout>
-  <section>
-    <Wrapper variant="standard" class="pt-48 pb-24">
-      <div class="max-w-2xl mx-auto">
-        <Text
-          tag="h1"
-          variant="displayLG"
-          class="text-accent-950 uppercase font-display font-medium text-balance"
-        >
-          About
-        </Text>
-        <Text tag="p" variant="textBase" class="mt-4 text-base-500">
-          Research scientist and freelance developer working at the intersection
-          of wave physics, computational electromagnetics, and open-source
-          scientific software.
-        </Text>
-      </div>
-    </Wrapper>
+<BaseLayout title="About" description="Biography and CV of Benjamin Vial, wave physicist and scientific software developer.">
+  <PageHeader
+    title="About"
+    lede="Research scientist and freelance developer working where wave physics, computational electromagnetics and open-source scientific software meet."
+  />
+
+  <section class="page grid gap-10 pt-14 lg:grid-cols-12">
+    <figure class="lg:col-span-4">
+      <img
+        src="/face.jpg"
+        alt="Portrait of Benjamin Vial"
+        width="560"
+        height="560"
+        class="aspect-square w-full max-w-[22rem] border border-rule object-cover grayscale-[15%]"
+      />
+      <!-- <figcaption class="t-meta mt-2">{site.location}</figcaption> -->
+    </figure>
+    <div class="prose max-w-[40rem] lg:col-span-8">
+      <p>I'm a research scientist and software developer based in France. My work sits at the intersection of wave physics and computational engineering, where I build open-source numerical tools and use them to explore how electromagnetic and mechanical waves behave in structured materials.</p>
+      <p>I received my Master's degrees in Engineering from <a href="https://www.centrale-marseille.fr/">Centrale Marseille</a> and in Physics from <a href="https://edu.univ-amu.fr/en">Aix Marseille University</a> in 2009. I then joined the <a href="https://www.fresnel.fr/spip/?&lang=en">Fresnel Institute</a> (CNRS), where I pursued a PhD in collaboration with <a href="https://www.silios.com/">Silios Technologies</a>. My thesis focused on the theoretical, numerical and experimental study of electromagnetic metamaterials using a modal approach, applied to infrared multispectral filtering. I received my PhD from Centrale Marseille in April 2013.</p>
+      <p>After two postdoctoral positions at the Fresnel Institute (first on ray tracing in complex media, then on resonant optical antennas), I moved to London in 2014 to join the <a href="https://antennas.eecs.qmul.ac.uk/">Antennas and Electromagnetics group</a> at <a href="https://www.qmul.ac.uk/">Queen Mary, University of London</a>. Over eight years there I worked on topology optimization for invisibility cloaks, machine-learning-driven inverse design, and the homogenization of ferroelectric metamaterials for tunable microwave devices.</p>
+      <p>From 2022 to 2025 I was a Postdoctoral Research Assistant at <a href="https://www.imperial.ac.uk">Imperial College London</a> in the <a href="https://www.imperial.ac.uk/mathematics/">Department of Mathematics</a>, where I worked on high-frequency homogenization of dispersive media for vibration energy harvesting with metamaterials. Since late 2025 I work independently as a freelance software developer, consulting and building open-source tools for photonics and electronics (including <a href="https://github.com/gdsfactory/gsim">gsim</a>, a GDSFactory plugin for full-wave electromagnetic simulation).</p>
+      <p class="not-prose pt-2"><a class="door" href={site.cv}>Download CV (PDF) <Arrow /></a></p>
+    </div>
   </section>
 
-  <section>
-    <Wrapper variant="standard" class="pb-16">
-      <div class="max-w-2xl mx-auto space-y-12">
-        <div>
-          <Text tag="h2" variant="displaySM" class="text-accent-950 uppercase font-display font-medium mb-4">
-            Biography
-          </Text>
-          <div class="prose prose-base text-base-500 space-y-4">
-            <p>
-              I'm a research scientist and software developer based in France. My work
-              sits at the intersection of wave physics and computational engineering, where
-              I build open-source numerical tools and use them to explore how
-              electromagnetic and mechanical waves behave in structured materials.
-            </p>
-            <p>
-              I received my Master's degrees in Engineering from <a href="https://www.centrale-marseille.fr/" class="text-accent-600 hover:text-accent-500 underline">Centrale Marseille</a> and in Physics from <a href="https://edu.univ-amu.fr/en" class="text-accent-600 hover:text-accent-500 underline">Aix Marseille University</a> in 2009. I then joined the <a href="https://www.fresnel.fr/spip/?&lang=en" class="text-accent-600 hover:text-accent-500 underline">Fresnel Institute</a>, CNRS, where I pursued a PhD in collaboration with <a href="https://www.silios.com/" class="text-accent-600 hover:text-accent-500 underline">Silios Technologies</a>. My thesis focused on the theoretical, numerical, and experimental study of electromagnetic metamaterials using a modal approach, applied to infrared multispectral filtering. I received my PhD from Centrale Marseille in April 2013.
-            </p>
-            <p>
-              After two postdoctoral positions at Fresnel Institute (first on ray tracing in
-              complex media, then on resonant optical antennas), I moved to London in 2014
-              to join the <a href="https://antennas.eecs.qmul.ac.uk/" class="text-accent-600 hover:text-accent-500 underline">Antennas and Electromagnetics group</a> at <a href="https://www.qmul.ac.uk/" class="text-accent-600 hover:text-accent-500 underline">Queen Mary, University of London</a>. Over eight years there I worked on topology optimization for invisibility cloaks, machine-learning-driven inverse design, and the homogenization of ferroelectric metamaterials for tunable microwave devices.
-            </p>
-            <p>
-              From 2022 to 2025 I was a Postdoctoral Research Assistant at <a href="https://www.imperial.ac.uk" class="text-accent-600 hover:text-accent-500 underline">Imperial College London</a> in the <a href="https://www.imperial.ac.uk/mathematics/" class="text-accent-600 hover:text-accent-500 underline">Department of Mathematics</a>, where I worked on high-frequency homogenization of dispersive media for vibration energy harvesting with metamaterials. Since late 2025 I have been working independently as a freelance software developer, consulting and building open-source tools for photonics and electronics (including <a href="https://github.com/gdsfactory/gsim" class="text-accent-600 hover:text-accent-500 underline">gsim</a>, a GDSFactory plugin for full-wave electromagnetic simulation).
-            </p>
-          </div>
-        </div>
-
-        <div>
-          <Text tag="h2" variant="displaySM" class="text-accent-950 uppercase font-display font-medium mb-4">
-            Curriculum Vitae
-          </Text>
-          <div class="flex flex-wrap items-center gap-4 mb-4">
-            <Button isLink={true} href="/downloads/cv.pdf" size="base" variant="accent">
-              <span slot="left-icon"><ArrowNarrowRight /></span>
-              Download CV
-            </Button>
-          </div>
-
-          <div class="space-y-10">
-            <div>
-              <Text tag="h3" variant="textLG" class="text-accent-900 font-display font-medium mb-4 border-b border-base-200 pb-2">
-                Education
-              </Text>
-              <div class="space-y-6">
-                <div>
-                  <h4 class="font-medium text-accent-800">PhD in Physics</h4>
-                  <p class="text-sm text-base-500">Institut Fresnel, CNRS, Centrale Marseille &mdash; April 2013</p>
-                  <p class="text-sm text-base-400">Optics, Photonics and Image Processing</p>
-                </div>
-                <div>
-                  <h4 class="font-medium text-accent-800">Master's degree in Physics</h4>
-                  <p class="text-sm text-base-500">Centrale Marseille / LMA, CNRS &mdash; Oct. 2009</p>
-                  <p class="text-sm text-base-400">Mechanics, Physics and Engineering, specialization in Acoustics</p>
-                </div>
-                <div>
-                  <h4 class="font-medium text-accent-800">Master's degree in Engineering</h4>
-                  <p class="text-sm text-base-500">Centrale Marseille &mdash; Oct. 2009</p>
-                  <p class="text-sm text-base-400">High-level scientific and technical training</p>
-                </div>
-              </div>
+  <div class="page grid gap-10 pt-24 lg:grid-cols-12">
+    <nav aria-label="CV sections" class="lg:col-span-3">
+      <ul class="grid gap-1 border-t border-ink pt-3 lg:sticky lg:top-8">
+        {sections.map((s) => (
+          <li><a class="link no-underline hover:underline" href={`#${s.id}`}>{s.title}</a></li>
+        ))}
+        <li><a class="link no-underline hover:underline" href="#skills">Skills and interests</a></li>
+      </ul>
+    </nav>
+    <div class="min-w-0 lg:col-span-9">
+      {
+        sections.map((s) => (
+          <section id={s.id} aria-labelledby={`h-${s.id}`} class="scroll-mt-8 pb-16">
+            <h2 id={`h-${s.id}`} class="t-h2 border-b border-ink pb-3">{s.title}</h2>
+            <ol class="rows">
+              {s.items.map((it) => (
+                <li class="grid gap-x-6 gap-y-1 py-4 sm:grid-cols-[11rem_1fr]">
+                  <span class="t-mono pt-1 text-ink-3">{it.period}</span>
+                  <div>
+                    <p class="t-h3">{it.title}</p>
+                    <p class="text-ink-2">{it.where}</p>
+                    {it.detail && <p class="mt-1 text-[0.9375rem] text-ink-2">{it.detail}</p>}
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </section>
+        ))
+      }
+      <section id="skills" aria-labelledby="h-skills" class="scroll-mt-8">
+        <h2 id="h-skills" class="t-h2 border-b border-ink pb-3">Skills and interests</h2>
+        <dl class="rows">
+          {skills.map((s) => (
+            <div class="grid gap-x-6 gap-y-1 py-4 sm:grid-cols-[11rem_1fr]">
+              <dt class="t-label pt-1 text-ink-3">{s.label}</dt>
+              <dd class="text-ink-2">{s.value}</dd>
             </div>
-
-            <div>
-              <Text tag="h3" variant="textLG" class="text-accent-900 font-display font-medium mb-4 border-b border-base-200 pb-2">
-                Research Activities
-              </Text>
-              <div class="space-y-6">
-                <div>
-                  <h4 class="font-medium text-accent-800">Freelance Software Developer</h4>
-                  <p class="text-sm text-base-500">Bras, France &mdash; Oct. 2025 &ndash; Present</p>
-                  <p class="text-sm text-base-400">Consulting and open-source software development. Contributing to gsim, a GDSFactory plugin for full-wave electromagnetic simulation in photonics and electronics.</p>
-                </div>
-                <div>
-                  <h4 class="font-medium text-accent-800">Research Associate</h4>
-                  <p class="text-sm text-base-500">Imperial College London &mdash; Aug. 2022 &ndash; Aug. 2025</p>
-                  <p class="text-sm text-base-400">METAVEH project: high-frequency homogenization in dispersive media for vibration energy harvesting with metamaterials.</p>
-                </div>
-                <div>
-                  <h4 class="font-medium text-accent-800">Research Assistant</h4>
-                  <p class="text-sm text-base-500">Queen Mary, University of London &mdash; Jan. 2019 &ndash; Jul. 2022</p>
-                  <p class="text-sm text-base-400">ANIMATE project: nonlinear coupling and homogenization of ferroelectric metamaterials, inverse design for tunability, microwave and THz material characterization.</p>
-                </div>
-                <div>
-                  <h4 class="font-medium text-accent-800">Research Assistant</h4>
-                  <p class="text-sm text-base-500">Queen Mary, University of London &mdash; Jan. 2017 &ndash; Dec. 2018</p>
-                  <p class="text-sm text-base-400">AOTOMAT project: optimization tools and machine learning for the design of electromagnetic devices and materials.</p>
-                </div>
-                <div>
-                  <h4 class="font-medium text-accent-800">Research Assistant</h4>
-                  <p class="text-sm text-base-500">Queen Mary, University of London &mdash; Jul. 2014 &ndash; Dec. 2016</p>
-                  <p class="text-sm text-base-400">QUEST project: transformation optics applied to invisibility cloaks and metamaterial-based devices. Simulation tools and topology optimization for exotic material properties.</p>
-                </div>
-                <div>
-                  <h4 class="font-medium text-accent-800">Research Assistant</h4>
-                  <p class="text-sm text-base-500">Institut Fresnel, Marseille &mdash; Nov. 2013 &ndash; Jan. 2014</p>
-                  <p class="text-sm text-base-400">Resonant optical antennas: coupling of light to subwavelength particles, modal analysis of electric and magnetic resonances for emission pattern shaping.</p>
-                </div>
-                <div>
-                  <h4 class="font-medium text-accent-800">Research Assistant</h4>
-                  <p class="text-sm text-base-500">Institut Fresnel, Marseille &mdash; May 2013 &ndash; Oct. 2014</p>
-                  <p class="text-sm text-base-400">Ray tracing in complex media, inverse index distribution problems, deshomogenization with graded-index photonic crystals.</p>
-                </div>
-                <div>
-                  <h4 class="font-medium text-accent-800">PhD in Physics</h4>
-                  <p class="text-sm text-base-500">Institut Fresnel &ndash; Silios Technologies &mdash; Oct. 2009 &ndash; Apr. 2013</p>
-                  <p class="text-sm text-base-400">Study of open electromagnetic resonators by modal approach (CIFRE scholarship). FEM eigenmode analysis of bi-periodic diffractive structures. Design, fabrication, and characterization of metamaterial-based infrared filters.</p>
-                </div>
-                <div>
-                  <h4 class="font-medium text-accent-800">MS Research Internship</h4>
-                  <p class="text-sm text-base-500">LMA, CNRS, Marseille &mdash; Apr. 2009 &ndash; Sept. 2009</p>
-                  <p class="text-sm text-base-400">Model order reduction of reed instruments for sound synthesis via proper orthogonal decomposition.</p>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <Text tag="h3" variant="textLG" class="text-accent-900 font-display font-medium mb-4 border-b border-base-200 pb-2">
-                Teaching &amp; Supervising
-              </Text>
-              <div class="space-y-6">
-                <div>
-                  <h4 class="font-medium text-accent-800">PhD Co-supervision</h4>
-                  <p class="text-sm text-base-500">Imperial College London &mdash; Feb. 2023 &ndash; Sept. 2023</p>
-                  <p class="text-sm text-base-400">Visiting student from Politecnico di Milano. Isospectral open cavities and curvilinear homogenization.</p>
-                </div>
-                <div>
-                  <h4 class="font-medium text-accent-800">Summer Project Supervision</h4>
-                  <p class="text-sm text-base-500">Imperial College London &mdash; Jul. 2023 &ndash; Sept. 2023</p>
-                  <p class="text-sm text-base-400">Applied mathematics undergraduate project on optimizing dispersion in discrete phononic lattices (3 months).</p>
-                </div>
-                <div>
-                  <h4 class="font-medium text-accent-800">Teaching Assistant</h4>
-                  <p class="text-sm text-base-500">Queen Mary, University of London &mdash; 2019</p>
-                  <p class="text-sm text-base-400">Quantum Programming: lectures, tutorials, and coding projects in Q# and Python for 10 Master students.</p>
-                </div>
-                <div>
-                  <h4 class="font-medium text-accent-800">PhD Co-supervision</h4>
-                  <p class="text-sm text-base-500">Queen Mary, University of London &mdash; Sept. 2018 &ndash; Apr. 2022</p>
-                  <p class="text-sm text-base-400">Data-driven optimization of metasurfaces (2 PhD students).</p>
-                </div>
-                <div>
-                  <h4 class="font-medium text-accent-800">Undergraduate Project Co-supervision</h4>
-                  <p class="text-sm text-base-500">Queen Mary, University of London &mdash; Nov. 2018 &ndash; Apr. 2019</p>
-                  <p class="text-sm text-base-400">Multidisciplinary project on detecting emotions with physiological and microwave measurements (4 students).</p>
-                </div>
-                <div>
-                  <h4 class="font-medium text-accent-800">Internship Supervisor</h4>
-                  <p class="text-sm text-base-500">Institut Fresnel, CNRS &mdash; 2012</p>
-                  <p class="text-sm text-base-400">Optimization of diffractive infrared filters for multispectral imaging (1 engineer student, 6 months).</p>
-                </div>
-                <div>
-                  <h4 class="font-medium text-accent-800">Project Tutor</h4>
-                  <p class="text-sm text-base-500">Institut Fresnel, CNRS &mdash; 2011</p>
-                  <p class="text-sm text-base-400">Design of high-efficiency solar cells with metamaterials (5 students, 2 months).</p>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <Text tag="h3" variant="textLG" class="text-accent-900 font-display font-medium mb-4 border-b border-base-200 pb-2">
-                Awards &amp; Honours
-              </Text>
-              <div class="space-y-4">
-                <div>
-                  <h4 class="font-medium text-accent-800">Best PhD Thesis 2013</h4>
-                  <p class="text-sm text-base-500">Doctoral School 352, Physics and Condensed Matter Science &mdash; 2014</p>
-                </div>
-                <div>
-                  <h4 class="font-medium text-accent-800">Best PhD Thesis 2013</h4>
-                  <p class="text-sm text-base-500">CNano PACA, nanosciences and nanotechnologies cluster &mdash; 2014</p>
-                  <p class="text-sm text-base-400">Finalized research category</p>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <Text tag="h3" variant="textLG" class="text-accent-900 font-display font-medium mb-4 border-b border-base-200 pb-2">
-                Languages
-              </Text>
-              <p class="text-sm text-base-500">
-                <span class="font-medium text-accent-800">French:</span> mother tongue &ensp;
-                <span class="font-medium text-accent-800">English:</span> fluent &ensp;
-                <span class="font-medium text-accent-800">Spanish:</span> basic
-              </p>
-            </div>
-
-            <div>
-              <Text tag="h3" variant="textLG" class="text-accent-900 font-display font-medium mb-4 border-b border-base-200 pb-2">
-                Programming
-              </Text>
-              <div class="space-y-4">
-                <div>
-                  <span class="font-medium text-accent-800 text-sm">Languages and scripts</span>
-                  <p class="text-sm text-base-500">Python, Matlab, C, C++, Mathematica, Q#, LaTeX, HTML, CSS</p>
-                </div>
-                <div>
-                  <span class="font-medium text-accent-800 text-sm">Applications</span>
-                  <p class="text-sm text-base-500">git, FEniCS, COMSOL Multiphysics, Gmsh, GetDP, Gsolver, Gimp, LibreOffice, Labview</p>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <Text tag="h3" variant="textLG" class="text-accent-900 font-display font-medium mb-4 border-b border-base-200 pb-2">
-                Interests
-              </Text>
-              <div class="space-y-4">
-                <div>
-                  <span class="font-medium text-accent-800 text-sm">Professional</span>
-                  <p class="text-sm text-base-500">Optics, photonics, metamaterials, wave physics, light-matter interaction, homogenization methods, computational electromagnetics, numerical modelling, optimization techniques, inverse design, finite element method, Fourier modal method, modal analysis, machine learning, transformation optics, invisibility cloaking, fabrication, characterization, open-source science</p>
-                </div>
-                <div>
-                  <span class="font-medium text-accent-800 text-sm">Personal</span>
-                  <p class="text-sm text-base-500">Music, guitar, football, snowboard, hiking, traveling, cooking</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </Wrapper>
-  </section>
+          ))}
+        </dl>
+      </section>
+    </div>
+  </div>
 </BaseLayout>
