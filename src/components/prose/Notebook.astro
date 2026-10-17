@@ -1,8 +1,8 @@
 ---
 // A Jupyter notebook rendered in prose, with the outputs of a saved run.
 // "Run live" makes its code cells editable in place and attaches them to a kernel
-// started on mybinder.org from the binder/ folder of `repo` at `ref` (see src/scripts/notebook.ts).
-// The saved outputs stay on the page until a cell is re-run.
+// started on mybinder.org from the `binder` branch of `repo` (see src/scripts/notebook.ts and
+// binder/README.md). The saved outputs stay on the page until a cell is re-run.
 import { Code } from "astro:components";
 import { createMarkdownProcessor } from "@astrojs/markdown-remark";
 import remarkMath from "remark-math";
@@ -11,22 +11,24 @@ import "katex/dist/katex.min.css";
 import { CODE_THEME } from "@/scripts/highlight";
 
 interface Props {
-  /** File name in src/data/notebooks/, written by scripts/notebooks/execute.py */
+  /** File name in src/data/notebooks/ */
   name: string;
-  /** Commit holding the Binder environment. Pinned, since mybinder.org rebuilds the image for every new commit (see binder/README.md) */
-  ref: string;
-  /** GitHub repository holding the Binder environment and the notebook */
+  /** GitHub repository holding the notebook on main and the Binder environment on `ref` */
   repo?: string;
+  ref?: string;
 }
 
-const { name, ref, repo = "benvial/benvial.github.io" } = Astro.props;
+const { name, repo = "benvial/benvial.github.io", ref = "binder" } = Astro.props;
 
-const files = import.meta.glob<string>("/src/data/notebooks/*.ipynb", {
+// Notebooks are committed without outputs; the deploy workflow writes executed
+// copies to executed/ (scripts/notebooks/execute.py). Without one, as in a fresh
+// checkout, the page shows the code alone.
+const files = import.meta.glob<string>(["/src/data/notebooks/*.ipynb", "/src/data/notebooks/executed/*.ipynb"], {
   query: "?raw",
   import: "default",
   eager: true,
 });
-const raw = files[`/src/data/notebooks/${name}`];
+const raw = files[`/src/data/notebooks/executed/${name}`] ?? files[`/src/data/notebooks/${name}`];
 if (!raw) throw new Error(`Notebook not found: src/data/notebooks/${name}`);
 
 type Output = {
@@ -46,7 +48,13 @@ for (const c of cells) {
 }
 
 const IMAGES = ["image/webp", "image/png", "image/jpeg"];
-const binderLab = `https://mybinder.org/v2/gh/${repo}/${ref}?urlpath=lab/tree/src/data/notebooks/${name}`;
+// The image holds only the environment: nbgitpuller fetches the notebook from main.
+const pull = new URLSearchParams({
+  repo: `https://github.com/${repo}`,
+  branch: "main",
+  urlpath: `lab/tree/${repo.split("/")[1]}/src/data/notebooks/${name}`,
+});
+const binderLab = `https://mybinder.org/v2/gh/${repo}/${ref}?urlpath=${encodeURIComponent(`git-pull?${pull}`)}`;
 ---
 
 <section class="nb" data-notebook data-repo={repo} data-ref={ref}>

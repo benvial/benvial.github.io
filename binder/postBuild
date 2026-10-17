@@ -2,7 +2,10 @@
 # Run the notebook once at image build time so the FEniCS JIT cache ships with
 # the image and live sessions skip form compilation. The cache location is
 # pinned (see start): dijitso otherwise picks it from CONDA_PREFIX, which differs
-# between the build and the running kernel.
+# between the build and the running kernel. The image is built from the
+# `binder` branch, which holds only this folder, so the notebook comes from main.
 set -euo pipefail
 export DIJITSO_CACHE_DIR="$HOME/.cache/dijitso"
-jupyter nbconvert --to notebook --execute src/data/notebooks/gyptis.ipynb --output /tmp/warmup.ipynb
+curl -fsSL -o /tmp/gyptis.ipynb \
+  https://raw.githubusercontent.com/benvial/benvial.github.io/main/src/data/notebooks/gyptis.ipynb
+jupyter nbconvert --to notebook --execute /tmp/gyptis.ipynb --output /tmp/warmup.ipynb

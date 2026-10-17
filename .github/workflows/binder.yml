@@ -1,0 +1,68 @@
+name: Binder
+
+# mybinder.org builds one image per commit, and a gyptis build takes about ten
+# minutes. Live notebooks therefore launch from the `binder` branch, which holds
+# only the contents of binder/ and moves only when they change: edits to the
+# site or the notebook never trigger a rebuild.
+on:
+  push:
+    branches: [main]
+    paths: [binder/**, .github/workflows/binder.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: binder
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v5
+
+      # Commit binder/ to the root of a fresh tree on top of the current
+      # `binder` branch (or as its first commit).
+      - id: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git fetch --depth=1 origin binder; then
+            git worktree add --detach "$RUNNER_TEMP/branch" FETCH_HEAD
+          else
+            git worktree add --orphan -b binder-new "$RUNNER_TEMP/branch"
+          fi
+          cd "$RUNNER_TEMP/branch"
+          git rm -rfq --ignore-unmatch .
+          cp -a "$GITHUB_WORKSPACE/binder/." .
+          git add -A
+          if git diff --cached --quiet && git rev-parse -q --verify HEAD >/dev/null; then
+            echo "binder/ unchanged, nothing to publish"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -qm "Sync binder/ from $GITHUB_SHA"
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          fi
+
+      # Build the image from a staging branch first. Images are keyed by commit,
+      # so once this succeeds, moving `binder` to the same commit switches live
+      # pages to a ready image, and a failed build never reaches them.
+      - if: steps.commit.outputs.changed == 'true'
+        env:
+          SHA: ${{ steps.commit.outputs.sha }}
+        run: |
+          cd "$RUNNER_TEMP/branch"
+          git push -f origin "HEAD:refs/heads/binder-next"
+          curl -sSLN --max-time 3300 -H "Accept: text/event-stream" \
+            "https://mybinder.org/build/gh/$GITHUB_REPOSITORY/$SHA" > "$RUNNER_TEMP/build.log" || true
+          grep -o '"phase": *"[a-z]*"' "$RUNNER_TEMP/build.log" | uniq -c
+          if ! grep -q '"phase": *"ready"' "$RUNNER_TEMP/build.log"; then
+            tail -n 40 "$RUNNER_TEMP/build.log"
+            exit 1
+          fi
+          git push origin "HEAD:refs/heads/binder"
+          git push origin --delete binder-next

@@ -6,4 +6,5 @@ dependencies:
   - gyptis=1.2.0
   - matplotlib
   - ipykernel
+  - nbgitpuller  # the JupyterLab link pulls the notebook from main
   - setuptools>=82  # no pkg_resources: gyptis then uses its own shim instead of a deprecated, warning import
