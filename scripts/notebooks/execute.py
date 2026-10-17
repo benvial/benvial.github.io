@@ -1,10 +1,10 @@
 """Execute a live notebook and store it, with its outputs, in src/data/notebooks/.
 
-    python scripts/notebooks/execute.py ../gyptis-binder/gyptis.ipynb
+    python scripts/notebooks/execute.py src/data/notebooks/gyptis.ipynb
 
-Run it in the notebook's own environment (for gyptis: the environment.yml of
-github.com/benvial/gyptis-binder, with PKG_CONFIG_PATH=$CONDA_PREFIX/lib/pkgconfig
-so dolfin finds its pkg-config file). The page shows these outputs until a
+Edit the notebook in place, then run this in its own environment (for gyptis:
+binder/environment.yml, with PKG_CONFIG_PATH=$CONDA_PREFIX/lib/pkgconfig so
+dolfin finds its pkg-config file). The page shows these outputs until a
 reader starts a live kernel. FEniCS JIT chatter is dropped and PNG figures are
 re-encoded as WebP to keep the page light.
 """

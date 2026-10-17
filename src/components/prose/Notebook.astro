@@ -1,8 +1,8 @@
 ---
 // A Jupyter notebook rendered in prose, with the outputs of a saved run.
 // "Run live" makes its code cells editable in place and attaches them to a kernel
-// started on mybinder.org from `repo` (see src/scripts/notebook.ts). The saved outputs stay
-// on the page until a cell is re-run.
+// started on mybinder.org from the binder/ folder of `repo` at `ref` (see src/scripts/notebook.ts).
+// The saved outputs stay on the page until a cell is re-run.
 import { Code } from "astro:components";
 import { createMarkdownProcessor } from "@astrojs/markdown-remark";
 import remarkMath from "remark-math";
@@ -13,12 +13,13 @@ import { CODE_THEME } from "@/scripts/highlight";
 interface Props {
   /** File name in src/data/notebooks/, written by scripts/notebooks/execute.py */
   name: string;
-  /** GitHub repository holding the Binder environment, e.g. "benvial/gyptis-binder" */
-  repo: string;
-  ref?: string;
+  /** Commit holding the Binder environment. Pinned, since mybinder.org rebuilds the image for every new commit (see binder/README.md) */
+  ref: string;
+  /** GitHub repository holding the Binder environment and the notebook */
+  repo?: string;
 }
 
-const { name, repo, ref = "main" } = Astro.props;
+const { name, ref, repo = "benvial/benvial.github.io" } = Astro.props;
 
 const files = import.meta.glob<string>("/src/data/notebooks/*.ipynb", {
   query: "?raw",
@@ -45,7 +46,7 @@ for (const c of cells) {
 }
 
 const IMAGES = ["image/webp", "image/png", "image/jpeg"];
-const binderLab = `https://mybinder.org/v2/gh/${repo}/${ref}?urlpath=lab/tree/${name}`;
+const binderLab = `https://mybinder.org/v2/gh/${repo}/${ref}?urlpath=lab/tree/src/data/notebooks/${name}`;
 ---
 
 <section class="nb" data-notebook data-repo={repo} data-ref={ref}>

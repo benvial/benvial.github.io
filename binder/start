@@ -1,0 +1,15 @@
+#!/bin/bash
+# Point the running kernel at the JIT cache warmed by postBuild.
+export DIJITSO_CACHE_DIR="$HOME/.cache/dijitso"
+
+# mybinder.org caps each server at about one CPU but exposes every core of the
+# host. BLAS/OpenMP would then start one thread per host core, all throttled by
+# the quota: solves run about ten times slower. Match threads to the quota.
+cpus=$(nproc)
+if [ -r /sys/fs/cgroup/cpu.max ]; then
+  read -r quota period < /sys/fs/cgroup/cpu.max
+  if [ "$quota" != max ]; then cpus=$(( quota >= period ? quota / period : 1 )); fi
+fi
+export OMP_NUM_THREADS=$cpus OPENBLAS_NUM_THREADS=$cpus MKL_NUM_THREADS=$cpus
+
+exec "$@"

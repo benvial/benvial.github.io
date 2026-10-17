@@ -1,0 +1,9 @@
+name: gyptis
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - gyptis=1.2.0
+  - matplotlib
+  - ipykernel
+  - setuptools>=82  # no pkg_resources: gyptis then uses its own shim instead of a deprecated, warning import

@@ -1,0 +1,8 @@
+#!/bin/bash
+# Run the notebook once at image build time so the FEniCS JIT cache ships with
+# the image and live sessions skip form compilation. The cache location is
+# pinned (see start): dijitso otherwise picks it from CONDA_PREFIX, which differs
+# between the build and the running kernel.
+set -euo pipefail
+export DIJITSO_CACHE_DIR="$HOME/.cache/dijitso"
+jupyter nbconvert --to notebook --execute src/data/notebooks/gyptis.ipynb --output /tmp/warmup.ipynb
