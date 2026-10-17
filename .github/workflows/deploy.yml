@@ -32,6 +32,24 @@ jobs:
       # convert_publis.py needs pybtex to turn publis.bib into publications.json.
       - run: pip install pybtex==0.26.1
       - run: npm ci
+      # Notebook outputs are generated, not committed. Re-run the notebooks only
+      # when one of them or their environment changes: a cache hit skips the
+      # gyptis install entirely.
+      - id: notebooks
+        uses: actions/cache@v4
+        with:
+          path: src/data/notebooks/executed
+          key: notebooks-${{ hashFiles('src/data/notebooks/*.ipynb', 'binder/environment.yml', 'scripts/notebooks/execute.py') }}
+      - if: steps.notebooks.outputs.cache-hit != 'true'
+        uses: mamba-org/setup-micromamba@v2
+        with:
+          environment-file: binder/environment.yml
+          create-args: nbclient pillow
+      - if: steps.notebooks.outputs.cache-hit != 'true'
+        shell: bash -el {0}
+        run: |
+          export PKG_CONFIG_PATH="$CONDA_PREFIX/lib/pkgconfig"
+          for nb in src/data/notebooks/*.ipynb; do python scripts/notebooks/execute.py "$nb"; done
       - run: npm run build
       - uses: actions/upload-pages-artifact@v4
         with:

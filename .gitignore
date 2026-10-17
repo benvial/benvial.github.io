@@ -25,6 +25,7 @@ Thumbs.db
 # Generated
 src/data/publications.json
 src/data/activity.json
+src/data/notebooks/executed/
 
 # Temp
 *.swp

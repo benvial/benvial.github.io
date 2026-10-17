@@ -1,12 +1,15 @@
-"""Execute a live notebook and store it, with its outputs, in src/data/notebooks/.
+"""Execute a live notebook and store it, with its outputs, in src/data/notebooks/executed/.
 
     python scripts/notebooks/execute.py src/data/notebooks/gyptis.ipynb
 
-Edit the notebook in place, then run this in its own environment (for gyptis:
-binder/environment.yml, with PKG_CONFIG_PATH=$CONDA_PREFIX/lib/pkgconfig so
-dolfin finds its pkg-config file). The page shows these outputs until a
-reader starts a live kernel. FEniCS JIT chatter is dropped and PNG figures are
-re-encoded as WebP to keep the page light.
+The notebooks in src/data/notebooks/ are committed without outputs; the deploy
+workflow runs this script whenever one of them (or the Binder environment)
+changes. Run it locally only to preview outputs with `npm run dev`, in the
+notebook's own environment (for gyptis: binder/environment.yml, with
+PKG_CONFIG_PATH=$CONDA_PREFIX/lib/pkgconfig so dolfin finds its pkg-config
+file). The page shows these outputs until a reader starts a live kernel. FEniCS
+JIT chatter is dropped and PNG figures are re-encoded as WebP to keep the page
+light.
 """
 
 import base64
@@ -19,7 +22,7 @@ from nbclient import NotebookClient
 from PIL import Image
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(HERE, "..", "..", "src", "data", "notebooks")
+OUT = os.path.join(HERE, "..", "..", "src", "data", "notebooks", "executed")
 
 NOISE = ("Calling FFC just-in-time (JIT) compiler",)
 
@@ -51,7 +54,7 @@ def clean(nb):
 if __name__ == "__main__":
     src = sys.argv[1]
     nb = nbformat.read(src, as_version=4)
-    NotebookClient(nb, timeout=1200, resources={"metadata": {"path": os.path.dirname(src)}}).execute()
+    NotebookClient(nb, timeout=1200, record_timing=False, resources={"metadata": {"path": os.path.dirname(src)}}).execute()
     os.makedirs(OUT, exist_ok=True)
     dst = os.path.join(OUT, os.path.basename(src))
     nbformat.write(clean(nb), dst)
