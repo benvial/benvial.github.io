@@ -45,6 +45,11 @@ def clean(nb):
                 img.save(buf, "webp", quality=88, method=6)
                 del data["image/png"]
                 data["image/webp"] = base64.b64encode(buf.getvalue()).decode()
+            # A cell printing in a loop yields one stream output per flush: join them.
+            prev = outputs[-1] if outputs else None
+            if out.output_type == "stream" and prev and prev.output_type == "stream" and prev.name == out.name:
+                prev.text += out.text
+                continue
             outputs.append(out)
         cell.outputs = outputs
         cell.execution_count = None

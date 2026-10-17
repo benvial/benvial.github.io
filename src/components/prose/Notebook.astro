@@ -34,7 +34,7 @@ if (!raw) throw new Error(`Notebook not found: src/data/notebooks/${name}`);
 type Output = {
   output_type: string;
   text?: string | string[];
-  data?: Record<string, string | string[]>;
+  data?: Record<string, any>;
 };
 type Cell = { cell_type: string; source: string | string[]; outputs?: Output[]; metadata?: { alt?: string } };
 
@@ -48,6 +48,10 @@ for (const c of cells) {
 }
 
 const IMAGES = ["image/webp", "image/png", "image/jpeg"];
+// Plotly figures are drawn client-side (src/scripts/plotly.ts) from their JSON;
+const PLOTLY_MIME = "application/vnd.plotly.v1+json";
+// "<" is escaped so the JSON cannot close its script tag.
+const plotlyJson = (spec: unknown) => JSON.stringify(spec).replace(/</g, "\\u003c");
 // The image holds only the environment: nbgitpuller fetches the notebook from main.
 const pull = new URLSearchParams({
   repo: `https://github.com/${repo}`,
@@ -70,7 +74,7 @@ const binderLab = `https://mybinder.org/v2/gh/${repo}/${ref}?urlpath=${encodeURI
       <a class="nb-binder link t-meta" href={binderLab} target="_blank" rel="noopener">Open in JupyterLab on Binder&nbsp;↗</a>
     </div>
     <p class="t-meta" data-nb-status aria-live="polite">
-      Outputs below come from a saved run. Running live starts a gyptis kernel on <a class="link" href="https://mybinder.org">mybinder.org</a>, which usually takes a minute or two.
+      Outputs below come from a saved run. Running live starts a Python kernel on <a class="link" href="https://mybinder.org">mybinder.org</a>, which usually takes a minute or two.
     </p>
   </div>
 
@@ -89,6 +93,14 @@ const binderLab = `https://mybinder.org/v2/gh/${repo}/${ref}?urlpath=${encodeURI
               if (o.output_type === "stream") return <pre class="nb-text">{join(o.text)}</pre>;
               if (o.output_type === "error") return null;
               const data = o.data ?? {};
+              const fig = data[PLOTLY_MIME];
+              if (fig)
+                return (
+                  <div class="nb-plotly" data-plotly role="figure" aria-label={c.metadata?.alt ?? "Interactive figure"} style={`height: ${fig.layout?.height ?? 450}px`}>
+                    <script is:inline type="application/json" set:html={plotlyJson(fig)} />
+                    <p class="nb-plotly-wait t-meta">Loading the interactive figure…</p>
+                  </div>
+                );
               const img = IMAGES.find((t) => t in data);
               if (img) return <img src={`data:${img};base64,${join(data[img])}`} alt={c.metadata?.alt ?? ""} loading="lazy" decoding="async" />;
               if ("text/html" in data) return <div set:html={join(data["text/html"])} />;
@@ -104,4 +116,5 @@ const binderLab = `https://mybinder.org/v2/gh/${repo}/${ref}?urlpath=${encodeURI
 
 <script>
   import "@/scripts/notebook";
+  import "@/scripts/plotly";
 </script>

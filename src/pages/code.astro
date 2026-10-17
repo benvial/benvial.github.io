@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import PageHeader from "@/components/mesh/PageHeader.astro";
 import PackageRow from "@/components/sections/PackageRow.astro";
+import NotebookRow from "@/components/sections/NotebookRow.astro";
 import ActivityGraph from "@/components/sections/ActivityGraph.astro";
 
 const all = (await getCollection("code")).sort((a, b) => a.id.localeCompare(b.id));
@@ -24,6 +25,9 @@ const sections = [
     lede: "Feedstocks I maintain on conda-forge.",
   },
 ].map((s) => ({ ...s, items: all.filter((p) => p.data.section === s.id) }));
+
+const notebooks = (await getCollection("notebooks")).sort((a, b) => a.data.title.localeCompare(b.data.title));
+const notebookFor = (pkg: (typeof all)[number]) => notebooks.find((nb) => nb.data.package === pkg.data.title);
 ---
 
 <BaseLayout title="Code" description="Open-source packages for computational electromagnetics, numerical methods and scientific computing.">
@@ -39,15 +43,28 @@ const sections = [
     </section>
     {
       sections.map((s) => (
-        <section id={s.id} aria-labelledby={`h-${s.id}`} class="scroll-mt-8 pb-16">
-          <h2 id={`h-${s.id}`} class="t-h2 border-b border-ink pb-3">
-            {s.title}
-          </h2>
-          <p class="mt-4 max-w-[60ch] text-ink-2">{s.lede}</p>
-          <ul class="rows">
-            {s.items.map((pkg) => <PackageRow pkg={pkg} />)}
-          </ul>
-        </section>
+        <>
+          <section id={s.id} aria-labelledby={`h-${s.id}`} class="scroll-mt-8 pb-16">
+            <h2 id={`h-${s.id}`} class="t-h2 border-b border-ink pb-3">
+              {s.title}
+            </h2>
+            <p class="mt-4 max-w-[60ch] text-ink-2">{s.lede}</p>
+            <ul class="rows">
+              {s.items.map((pkg) => <PackageRow pkg={pkg} notebook={notebookFor(pkg)} />)}
+            </ul>
+          </section>
+          {s.id === "packages" && notebooks.length > 0 && (
+            <section id="notebooks" aria-labelledby="h-notebooks" class="scroll-mt-8 pb-16">
+              <h2 id="h-notebooks" class="t-h2 border-b border-ink pb-3">
+                Notebooks
+              </h2>
+              <p class="mt-4 max-w-[60ch] text-ink-2">Worked examples you can edit and re-run in the browser, on a live kernel.</p>
+              <ul class="rows">
+                {notebooks.map((nb) => <NotebookRow nb={nb} />)}
+              </ul>
+            </section>
+          )}
+        </>
       ))
     }
   </div>

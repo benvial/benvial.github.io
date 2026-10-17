@@ -22,5 +22,8 @@ export default defineConfig({
     drafts: true
   },
   site: 'https://bvial.info',
+  redirects: {
+    '/blog/posts/2024-02-29-gyptis': '/code/notebooks/gyptis/',
+  },
   integrations: [sitemap(), mdx()]
 });

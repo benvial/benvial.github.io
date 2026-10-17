@@ -1,0 +1,14 @@
+---
+title: "nannos"
+pubDate: 2026-10-17
+package: nannos
+description: "Guided resonances of a photonic crystal slab with the Fourier modal method: a transmission spectrum, the fields of a resonance in 3D, and a convergence study"
+---
+
+import Notebook from "@/components/prose/Notebook.astro";
+
+A worked example of the Fourier modal method (RCWA) with the [nannos](https://nannos.gitlab.io) package. A silicon-like slab perforated by a square lattice of holes behaves as a waveguide and a grating at once, and its transmission spectrum shows sharp guided resonances. The notebook explains the method from Bloch waves to scattering matrices, checks it against the exact solution for a uniform slab, shows the structure and the resonant fields in interactive 3D views, and studies how the result converges with the number of Fourier harmonics.
+
+Press **Run live** to edit and re-run any cell in your browser. The code runs on a real nannos kernel, started on mybinder.org from the [environment kept alongside this site](https://github.com/benvial/benvial.github.io/tree/main/binder). Drag the 3D figures to rotate them.
+
+<Notebook name="nannos.ipynb" />

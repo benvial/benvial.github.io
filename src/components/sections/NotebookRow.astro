@@ -1,0 +1,22 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Arrow from "@/components/fundations/icons/Arrow.astro";
+interface Props {
+  nb: CollectionEntry<"notebooks">;
+}
+const { nb } = Astro.props;
+---
+
+<li>
+  <a href={`/code/notebooks/${nb.id}/`} class="group grid items-baseline gap-x-8 gap-y-2 py-5 md:grid-cols-12">
+    <span class="flex items-center gap-2 font-mono text-[1.0625rem] font-semibold [font-stretch:87.5%] text-ink transition-colors group-hover:text-warm md:col-span-3">
+      {nb.data.title}
+      <Arrow class="size-3.5 text-ink-3 transition-colors group-hover:text-warm" />
+    </span>
+    <span class="text-ink-2 md:col-span-6">{nb.data.description}</span>
+    <span class="t-mono text-ink-3 md:col-span-3 md:text-right">
+      Jupyter
+      {nb.data.package && <span class="t-meta block">{nb.data.package}</span>}
+    </span>
+  </a>
+</li>

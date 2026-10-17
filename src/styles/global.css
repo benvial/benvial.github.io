@@ -596,6 +596,20 @@ svg .activity-cell:hover {
   background: white;
   padding: 0.75rem;
 }
+.nb-plotly {
+  position: relative;
+  margin-top: 0.75rem;
+  border: 1px solid var(--color-rule);
+  background: white;
+}
+.nb-plotly-wait {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  color: var(--color-ink-3);
+}
 .prose .nb-out pre,
 .nb .jp-OutputArea-output pre {
   margin: 0.75rem 0 0;

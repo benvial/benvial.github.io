@@ -7,6 +7,7 @@
 // highlighted code, which Shiki re-renders with the same theme on every edit.
 
 import { loadHighlighter } from "@/scripts/highlight";
+import { PLOTLY_MIME, drawPlotly } from "@/scripts/plotly";
 
 const THEBE = "https://cdn.jsdelivr.net/npm/thebe@0.9.3/lib/";
 const ATTEMPTS = 3; // each launch may land on another mybinder.org federation member
@@ -57,6 +58,22 @@ function load(tag: "script" | "link", url: string) {
     el.onerror = () => reject(new Error(`Could not load ${url}`));
     document.head.append(el);
   });
+}
+
+// Live plotly figures: a renderer for the plotly MIME type, ranked above HTML.
+// thebe does not expose the Lumino widget base class, so it extends the class
+// of the HTML renderer and only overrides what it draws.
+function addPlotlyRenderer(rendermime: any) {
+  const HTMLRenderer = rendermime.createRenderer("text/html").constructor;
+  class PlotlyRenderer extends HTMLRenderer {
+    render(model: { data: Record<string, unknown> }) {
+      return drawPlotly((this as unknown as { node: HTMLElement }).node, model.data[PLOTLY_MIME] as object);
+    }
+  }
+  rendermime.addFactory(
+    { safe: true, mimeTypes: [PLOTLY_MIME], createRenderer: (options: object) => new PlotlyRenderer(options) },
+    0
+  );
 }
 
 // Binder reports its build phases as "Binder is: <phase> - <log line>".
@@ -290,6 +307,7 @@ for (const nb of document.querySelectorAll<HTMLElement>("[data-notebook]")) {
         thebe.events
       );
       const rendermime = makeRenderMimeRegistry(config.mathjax);
+      addPlotlyRenderer(rendermime);
       const notebook = setupNotebookFromBlocks(
         cells.map((c) => ({ id: c.id, source: c.editor.value })),
         config,

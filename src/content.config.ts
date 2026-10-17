@@ -50,8 +50,22 @@ const code = defineCollection({
   }),
 });
 
+// Live Jupyter notebooks (src/data/notebooks/), served at /code/notebooks/[id].
+// `package` is the title of the code entry the notebook demonstrates.
+const notebooks = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/notebooks" }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    pubDate: z.coerce.date(),
+    package: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+  }),
+});
+
 export const collections = {
   posts: postsCollection,
   research,
   code,
+  notebooks,
 };

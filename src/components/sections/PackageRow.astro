@@ -3,26 +3,36 @@ import type { CollectionEntry } from "astro:content";
 import Arrow from "@/components/fundations/icons/Arrow.astro";
 interface Props {
   pkg: CollectionEntry<"code">;
+  /** Notebook that demonstrates the package, linked under its description */
+  notebook?: CollectionEntry<"notebooks">;
 }
-const { pkg } = Astro.props;
+const { pkg, notebook } = Astro.props;
 const host = new URL(pkg.data.url).hostname.replace(/^www\./, "");
 const path = new URL(pkg.data.url).pathname.replace(/^\//, "");
 ---
 
-<li>
+<!-- The title link stretches over the whole row, so the notebook link sits above it. -->
+<li class="group relative grid items-baseline gap-x-8 gap-y-2 py-5 md:grid-cols-12">
   <a
     href={pkg.data.url}
     rel="noopener"
-    class="group grid items-baseline gap-x-8 gap-y-2 py-5 md:grid-cols-12"
+    class="flex items-center gap-2 font-mono text-[1.0625rem] font-semibold [font-stretch:87.5%] text-ink transition-colors group-hover:text-warm after:absolute after:inset-0 md:col-span-3"
   >
-    <span class="flex items-center gap-2 font-mono text-[1.0625rem] font-semibold [font-stretch:87.5%] text-ink transition-colors group-hover:text-warm md:col-span-3">
-      {pkg.data.title}
-      <Arrow external class="size-3.5 text-ink-3 transition-colors group-hover:text-warm" />
-    </span>
-    <span class="text-ink-2 md:col-span-6">{pkg.data.description}</span>
-    <span class="t-mono text-ink-3 md:col-span-3 md:text-right">
-      {host}/{path}
-      {pkg.data.language && <span class="t-meta block">{pkg.data.language}</span>}
-    </span>
+    {pkg.data.title}
+    <Arrow external class="size-3.5 text-ink-3 transition-colors group-hover:text-warm" />
   </a>
+  <span class="text-ink-2 md:col-span-6">
+    {pkg.data.description}
+    {
+      notebook && (
+        <a class="link t-meta relative z-10 mt-2 block w-fit" href={`/code/notebooks/${notebook.id}/`}>
+          Live notebook
+        </a>
+      )
+    }
+  </span>
+  <span class="t-mono text-ink-3 md:col-span-3 md:text-right">
+    {host}/{path}
+    {pkg.data.language && <span class="t-meta block">{pkg.data.language}</span>}
+  </span>
 </li>
