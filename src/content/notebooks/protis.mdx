@@ -1,0 +1,14 @@
+---
+title: "protis"
+pubDate: 2026-10-18
+package: protis
+description: "Photonic band gaps of a square lattice of dielectric rods with the plane wave expansion method: band diagram, band surfaces in 3D, gap map and gradients by automatic differentiation"
+---
+
+import Notebook from "@/components/prose/Notebook.astro";
+
+A worked example of the plane wave expansion method with the [protis](https://protis.gitlab.io) package. A square lattice of alumina rods forbids light of a whole range of frequencies from propagating through it, whatever its direction. The notebook builds the method from Bloch modes to a Hermitian eigenproblem, checks it against the exact bands of a uniform medium, computes the band diagram and its gap, shows the band surfaces over the whole Brillouin zone in an interactive 3D view, explains the gap from the fields of the modes at its edges, maps how it depends on the rod radius, and studies convergence. It ends with automatic differentiation: one backward pass gives the sensitivity of the gap to the permittivity everywhere in the unit cell.
+
+Press **Run live** to edit and re-run any cell in your browser. The code runs on a real protis kernel, started on mybinder.org from the [environment kept alongside this site](https://github.com/benvial/benvial.github.io/tree/main/binder). Drag the 3D figure to rotate it.
+
+<Notebook name="protis.ipynb" />

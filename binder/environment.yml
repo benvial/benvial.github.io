@@ -8,8 +8,15 @@ dependencies:
   - jaxlib=*=*cpu*  # nannos pulls jax and VTK; keep their CUDA builds (~500 MB) out of the image
   - viskores=*=*cpu*
   - trame-pyvista  # nannos sets the pyvista trame backend on import; pyvista>=0.49 moved it to this package
+  - scikit-image  # protis dependencies, from conda-forge so that pip installs protis alone
+  - jupyter-server-proxy
   - plotly=7.1.0  # interactive 3D figures; the site draws them with the matching plotly.js (Notebook.astro)
   - matplotlib
   - ipykernel
   - nbgitpuller  # the JupyterLab link pulls the notebook from main
   - setuptools>=82  # no pkg_resources: gyptis then uses its own shim instead of a deprecated, warning import
+  - pip
+  - pip:
+    # protis 1.0.0 on conda-forge imports pkg_resources, which setuptools>=82 removed; main has the fix.
+    # Pinned to a commit until the next release reaches conda-forge.
+    - https://gitlab.com/protis/protis/-/archive/3737c7d50ce5a41a330ab56ca542839e0f367528/protis-3737c7d50ce5a41a330ab56ca542839e0f367528.tar.gz
