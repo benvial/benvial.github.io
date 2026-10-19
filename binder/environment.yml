@@ -3,7 +3,7 @@ channels:
   - conda-forge
 dependencies:
   - python=3.12
-  - gyptis=1.2.0
+  - gyptis=1.3.0
   - nannos=2.6.5
   - protis=1.0.1
   - jaxlib=*=*cpu*  # nannos pulls jax, pytorch and VTK; keep their CUDA builds out of the image

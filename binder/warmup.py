@@ -46,7 +46,9 @@ def warm_gyptis():
 
 
 def warm_waveguide():
-    # anisotropic-waveguide.ipynb: modes of a uniaxial core, linear and quadratic elements.
+    # anisotropic-waveguide.ipynb: modes of a uniaxial core with first and second
+    # degree elements, and the quadratic eigenproblem of an optic axis tilted out of
+    # the cross section.
     t, L, pml = 1, 3, 2
     geom = gy.geometry.LayeredBoxPML2D(
         t + 2 * L, thicknesses=OrderedDict(substrate=L, superstrate=L + t), pml_width=(pml, pml)
@@ -65,8 +67,11 @@ def warm_waveguide():
     dx = geom.measure["dx"]
     dx_phys = dx("core") + dx("substrate") + dx("superstrate")
     V = gy.dolfin.FunctionSpace(geom.mesh, "CG", 1)
-    epsilon = dict(core=2.31 * np.eye(3) - 0.12 * np.diag([1, 0, 0]), substrate=2.05, superstrate=2.05)
-    for degree in ((1, 1), (2, 2)):
+    c = np.array([0, 1, 1]) / 2**0.5
+    in_plane = 2.31 * np.eye(3) - 0.12 * np.diag([1, 0, 0])
+    tilted = 2.31 * np.eye(3) - 0.12 * np.outer(c, c)
+    for core, degree in ((in_plane, (1, 1)), (in_plane, (2, 2)), (tilted, (1, 1))):
+        epsilon = dict(core=core, substrate=2.05, superstrate=2.05)
         simu = gy.Waveguide(geom, epsilon=epsilon, wavenumber=10, degree=degree)
         simu.eigensolve(n_eig=2, target=1.02 * 10 * 2.31**0.5, tol=1e-6, maximum_iterations=30)
         E = simu.solution["eigenvectors"][0]
