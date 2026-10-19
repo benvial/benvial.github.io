@@ -1,0 +1,13 @@
+---
+title: "anisotropic waveguide"
+pubDate: 2026-10-19
+description: "Guided modes and effective index of a square waveguide with a uniaxial core, for three orientations of the optic axis, with gyptis and checked against a classic benchmark"
+---
+
+import Notebook from "@/components/prose/Notebook.astro";
+
+A worked example of a modal simulation with the [gyptis](https://gyptis.gitlab.io) finite element package, adapted from its [anisotropic waveguide example](https://gyptis.gitlab.io/examples/waveguides/plot_anisotropic_waveguide.html). A square waveguide has a birefringent core whose optic axis points along the guide, along one side of the core or along its diagonal. The notebook introduces the effective index and the guiding condition, sets up the vector eigenvalue problem for the propagation constant with edge elements, and shows how the orientation of the crystal splits the fundamental modes and sets their polarization. It then computes the dispersion curves of all three cases, checks them against the results of Koshiba, Hayata and Suzuki (1986), follows the modal birefringence with frequency, and studies mesh convergence.
+
+Press **Run live** to edit and re-run any cell in your browser. The code runs on a real gyptis kernel, started on mybinder.org from the [environment kept alongside this site](https://github.com/benvial/benvial.github.io/tree/main/binder). The frequency sweep takes a few minutes there.
+
+<Notebook name="anisotropic-waveguide.ipynb" />
