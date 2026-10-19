@@ -6,7 +6,9 @@ dependencies:
   - gyptis=1.2.0
   - nannos=2.6.5
   - protis=1.0.1
-  - jaxlib=*=*cpu*  # nannos pulls jax and VTK; keep their CUDA builds (~500 MB) out of the image
+  - jaxlib=*=*cpu*  # nannos pulls jax, pytorch and VTK; keep their CUDA builds out of the image
+  - pytorch=*=cpu*
+  - libboost=1.88  # keeps the FEniCS 2019 build that works: newer builds with boost 1.90 fail on C++ compiled at run time
   - viskores=*=*cpu*
   - plotly=7.1.0  # interactive 3D figures; the site draws them with the matching plotly.js (Notebook.astro)
   - matplotlib
